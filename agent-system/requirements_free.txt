@@ -1,0 +1,24 @@
+# 100% FREE Requirements
+# No API keys needed - all local/open-source
+
+# Core
+pyyaml>=6.0
+rich>=13.0
+
+# Optional - for vector memory (free, open-source)
+# chromadb>=0.4.0
+
+# Optional - for free web search (no API key)
+# duckduckgo-search>=7.0
+
+# Testing (optional)
+pytest>=7.0
+
+# Code quality (optional)
+# ruff>=0.1.0
+
+# All other dependencies are:
+# - Standard library
+# - Already installed system tools (curl, git, docker, npm, npx)
+# - Ollama (free, open-source)
+# - Aider (free, open-source)

@@ -1,0 +1,21 @@
+# Ignore Python virtual environments
+venv_aider/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Ignore IDE
+.vscode/
+.idea/
+
+# Ignore OS
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Keep important files
+!.gitkeep

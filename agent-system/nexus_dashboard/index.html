@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS | Ultimate AI Command Center</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-dark: #030508;
+    --bg-panel: rgba(8, 15, 25, 0.85);
+    --bg-panel-solid: #080f19;
+    --accent-cyan: #00f0ff;
+    --accent-magenta: #ff00aa;
+    --accent-green: #00ff88;
+    --accent-orange: #ff6600;
+    --accent-purple: #8844ff;
+    --accent-yellow: #ffdd00;
+    --text-primary: #e0e8f0;
+    --text-secondary: #607080;
+    --text-dim: #304050;
+    --border-glow: rgba(0, 240, 255, 0.3);
+    --glass-bg: rgba(0, 20, 40, 0.6);
+    --scanline: rgba(0, 240, 255, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    position: relative;
+}
+
+/* Background Effects */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(136, 68, 255, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(0, 255, 136, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Grid Background */
+.grid-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg) translateY(-100px) scale(2);
+    transform-origin: center top;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Scanlines */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.3;
+}
+
+/* Layout */
+.app-container {
+    display: grid;
+    grid-template-columns: 80px 280px 1fr 320px;
+    grid-template-rows: 60px 1fr 180px;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    grid-column: 1 / -1;
+    background: linear-gradient(180deg, var(--bg-panel-solid) 0%, rgba(8, 15, 25, 0.95) 100%);
+    border-bottom: 1px solid var(--border-glow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    animation: headerPulse 3s ease-in-out infinite;
+}
+
+@keyframes headerPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--bg-dark);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+.logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--text-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-glow);
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--bg-panel);
+    border-right: 1px solid var(--border-glow);
+    padding: 8px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nav-icon {
+    font-size: 14px;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.nav-item:hover {
+    background: var(--glass-bg);
+    border-color: var(--border-glow);
+    color: var(--text-primary);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(136, 68, 255, 0.1));
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0, 240, 255, 0.05);
+}
+
+.nav-icon {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+/* Agent Panel */
+.agent-panel {
+    background: var(--bg-panel);
+    border-right: 1px solid var(--border-glow);
+    padding: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.panel-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--accent-cyan);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.agent-card {
+    background: linear-gradient(135deg, var(--bg-panel-solid), rgba(0, 20, 40, 0.8));
+    border: 1px solid var(--border-glow);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    min-width: 0;
+}
+
+.panel-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--accent-cyan);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-header::before {
+    content: '◆';
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.agent-card {
+    background: linear-gradient(135deg, var(--bg-panel-solid), rgba(0, 20, 40, 0.8));
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.agent-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent-cyan);
+}
+
+.agent-card.active::before {
+    background: var(--accent-green);
+    animation: statusPulse 1s ease-in-out infinite;
+}
+
+.agent-card.thinking::before {
+    background: var(--accent-orange);
+}
+
+.agent-card:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+    transform: translateX(3px);
+}
+
+.agent-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.agent-name {
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.agent-status {
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.agent-status.idle {
+    background: rgba(96, 112, 128, 0.2);
+    color: var(--text-secondary);
+}
+
+.agent-status.active {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--accent-green);
+}
+
+.agent-status.thinking {
+    background: rgba(255, 102, 0, 0.2);
+    color: var(--accent-orange);
+    animation: statusPulse 1s ease-in-out infinite;
+}
+
+.agent-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.agent-task {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.agent-progress {
+    height: 3px;
+    background: var(--bg-dark);
+    border-radius: 2px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.agent-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 10, 20, 0.5);
+    position: relative;
+}
+
+.terminal-container {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.terminal-tabs {
+    display: flex;
+    gap: 5px;
+}
+
+.terminal-tab {
+    padding: 8px 16px;
+    background: var(--bg-panel-solid);
+    border: 1px solid var(--border-glow);
+    border-radius: 8px 8px 0 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: none;
+}
+
+.terminal-tab.active {
+    background: var(--bg-panel);
+    color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+}
+
+.terminal-window {
+    flex: 1;
+    background: rgba(0, 10, 15, 0.95);
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-y: auto;
+    position: relative;
+}
+
+.terminal-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(0, 240, 255, 0.05), transparent);
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+}
+
+.terminal-line {
+    margin-bottom: 5px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.terminal-line.command {
+    color: var(--accent-green);
+}
+
+.terminal-line.command::before {
+    content: '> ';
+    color: var(--accent-cyan);
+}
+
+.terminal-line.output {
+    color: var(--text-primary);
+}
+
+.terminal-line.error {
+    color: var(--accent-orange);
+}
+
+.terminal-line.system {
+    color: var(--accent-purple);
+    font-style: italic;
+}
+
+/* Input Area */
+.input-container {
+    padding: 15px 20px;
+    background: var(--bg-panel-solid);
+    border-top: 1px solid var(--border-glow);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-prompt {
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+.command-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+.command-input::placeholder {
+    color: var(--text-dim);
+}
+
+.send-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    border: none;
+    border-radius: 8px;
+    color: var(--bg-dark);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
+/* Right Panel - Metrics */
+.metrics-panel {
+    background: var(--bg-panel);
+    border-left: 1px solid var(--border-glow);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.metric-card {
+    background: var(--bg-panel-solid);
+    border: 1px solid var(--border-glow);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.metric-label {
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.metric-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.metric-value.green {
+    color: var(--accent-green);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.metric-value.orange {
+    color: var(--accent-orange);
+    text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+}
+
+/* Neural Visualization */
+.neural-viz {
+    flex: 1;
+    background: var(--bg-panel-solid);
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.neural-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Bottom Panel - Models */
+.bottom-panel {
+    grid-column: 2 / 4;
+    background: var(--bg-panel);
+    border-top: 1px solid var(--border-glow);
+    padding: 15px 20px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+.model-card {
+    min-width: 180px;
+    background: var(--bg-panel-solid);
+    border: 1px solid var(--border-glow);
+    border-radius: 10px;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.model-card:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-2px);
+}
+
+.model-card.active {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.model-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.model-info {
+    flex: 1;
+}
+
+.model-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.model-status {
+    font-size: 10px;
+    color: var(--text-secondary);
+}
+
+/* Floating Particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--accent-cyan);
+    border-radius: 50%;
+    animation: float 10s infinite;
+    opacity: 0.5;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.5; }
+    90% { opacity: 0.5; }
+    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Code Display */
+.code-block {
+    background: rgba(0, 10, 15, 0.8);
+    border: 1px solid var(--border-glow);
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+.code-block .keyword { color: var(--accent-magenta); }
+.code-block .string { color: var(--accent-green); }
+.code-block .function { color: var(--accent-cyan); }
+.code-block .comment { color: var(--text-dim); font-style: italic; }
+.code-block .number { color: var(--accent-orange); }
+
+/* Tool Usage Graph */
+.tool-graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 60px;
+    padding: 10px 0;
+}
+
+.tool-bar {
+    flex: 1;
+    background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+    border-radius: 2px 2px 0 0;
+    min-height: 5px;
+    transition: height 0.5s ease;
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background: var(--bg-panel-solid);
+    border: 1px solid var(--accent-cyan);
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.notification-icon {
+    font-size: 20px;
+}
+
+.notification-text {
+    font-size: 13px;
+}
+
+/* Glowing Effects */
+.glow-text {
+    text-shadow: 0 0 10px currentColor;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-glow);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+/* Responsive */
+@media (max-width: 1600px) {
+    .app-container {
+        grid-template-columns: 70px 250px 1fr 280px;
+        grid-template-rows: 55px 1fr 160px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .app-container {
+        grid-template-columns: 60px 220px 1fr 250px;
+        grid-template-rows: 50px 1fr 150px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .app-container {
+        grid-template-columns: 60px 200px 1fr;
+        grid-template-rows: 50px 1fr 140px;
+    }
+    
+    .metrics-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .app-container {
+        grid-template-columns: 50px 1fr;
+        grid-template-rows: 50px 1fr 120px;
+    }
+    
+    .agent-panel {
+        display: none;
+    }
+    
+    .bottom-panel {
+        grid-column: 1 / -1;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="scanlines"></div>
+
+<div class="particles" id="particles"></div>
+
+<div class="app-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">N</div>
+            <span class="logo-text">NEXUS</span>
+        </div>
+        <div class="header-controls">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>OLLAMA ONLINE</span>
+            </div>
+            <div class="status-indicator">
+                <span style="color: var(--accent-green);">●</span>
+                <span>4 AGENTS ACTIVE</span>
+            </div>
+            <div class="status-indicator">
+                <span style="color: var(--accent-cyan);">⚡</span>
+                <span>14GB RAM</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="nav-item active">
+            <span class="nav-icon">◈</span>
+            <span>Command</span>
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">◉</span>
+            <span>Agents</span>
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">◇</span>
+            <span>Projects</span>
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">○</span>
+            <span>Memory</span>
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">□</span>
+            <span>Analytics</span>
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">△</span>
+            <span>Settings</span>
+        </div>
+    </nav>
+
+    <!-- Agent Panel -->
+    <aside class="agent-panel">
+        <div class="panel-header">ACTIVE AGENTS</div>
+        
+        <div class="agent-card active">
+            <div class="agent-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="agent-avatar">🏃</div>
+                    <span class="agent-name">Sprint Manager</span>
+                </div>
+                <span class="agent-status active">ACTIVE</span>
+            </div>
+            <div class="agent-task">Decomposing goal: "Build a React dashboard"</div>
+            <div class="agent-progress">
+                <div class="agent-progress-bar" style="width: 75%;"></div>
+            </div>
+        </div>
+
+        <div class="agent-card thinking">
+            <div class="agent-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="agent-avatar">🏗️</div>
+                    <span class="agent-name">Architect</span>
+                </div>
+                <span class="agent-status thinking">THINKING</span>
+            </div>
+            <div class="agent-task">Designing system architecture for React dashboard</div>
+            <div class="agent-progress">
+                <div class="agent-progress-bar" style="width: 45%;"></div>
+            </div>
+        </div>
+
+        <div class="agent-card idle">
+            <div class="agent-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="agent-avatar">💻</div>
+                    <span class="agent-name">Developer</span>
+                </div>
+                <span class="agent-status idle">IDLE</span>
+            </div>
+            <div class="agent-task">Waiting for architecture from Architect</div>
+        </div>
+
+        <div class="agent-card idle">
+            <div class="agent-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div class="agent-avatar">🔍</div>
+                    <span class="agent-name">Reviewer</span>
+                </div>
+                <span class="agent-status idle">IDLE</span>
+            </div>
+            <div class="agent-task">Waiting for code from Developer</div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-tabs">
+                    <div class="terminal-tab active">TERMINAL</div>
+                    <div class="terminal-tab">OUTPUT</div>
+                    <div class="terminal-tab">LOGS</div>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="send-btn" style="padding: 6px 12px; font-size: 10px;">CLEAR</button>
+                    <button class="send-btn" style="padding: 6px 12px; font-size: 10px;">EXPORT</button>
+                </div>
+            </div>
+            
+            <div class="terminal-window" id="terminal">
+                <div class="terminal-line system">[NEXUS v2.0] Initializing multi-agent orchestration system...</div>
+                <div class="terminal-line system">[NEXUS] Connected to Ollama at http://localhost:11434</div>
+                <div class="terminal-line system">[NEXUS] Loading models: qwen2.5-coder:14b, deepseek-r1:7b, dolphin-mistral</div>
+                <div class="terminal-line system">[NEXUS] MCP servers: filesystem, memory, ollama</div>
+                <div class="terminal-line system">[NEXUS] ✓ System ready. 4 agents loaded.</div>
+                <div class="terminal-line command">Build a React dashboard with authentication</div>
+                <div class="terminal-line system">[Sprint Manager] Decomposing goal into tasks...</div>
+                <div class="terminal-line output">[Sprint Manager] Created 5 tasks:</div>
+                <div class="terminal-line output">  • Project setup (Sprint)</div>
+                <div class="terminal-line output">  • Architecture design (Architect)</div>
+                <div class="terminal-line output">  • Code implementation (Developer)</div>
+                <div class="terminal-line output">  • Code review (Reviewer)</div>
+                <div class="terminal-line output">  • Testing & validation (Tester)</div>
+                <div class="terminal-line system">[Architect] Designing system architecture...</div>
+                <div class="terminal-line output">[Architect] Technology Stack:</div>
+                <div class="terminal-line output">  - React 18 with TypeScript</div>
+                <div class="terminal-line output">  - Vite for build tooling</div>
+                <div class="terminal-line output">  - Zustand for state management</div>
+                <div class="terminal-line output">  - React Router for navigation</div>
+                <div class="terminal-line output">  - JWT authentication with refresh tokens</div>
+                <div class="terminal-line system">[Developer] Generating code...</div>
+                <div class="terminal-line output">[Developer] Created: src/App.tsx</div>
+                <div class="terminal-line output">[Developer] Created: src/components/Login.tsx</div>
+                <div class="terminal-line output">[Developer] Created: src/components/Dashboard.tsx</div>
+                <div class="terminal-line output">[Developer] Created: src/hooks/useAuth.ts</div>
+                <div class="terminal-line output">[Developer] Created: src/api/auth.ts</div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <span class="input-prompt">NEXUS &gt;</span>
+            <input type="text" class="command-input" id="commandInput" placeholder="Describe what you want to build..." autofocus>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleImageUpload(this)">
+            <button class="send-btn" onclick="document.getElementById('imageInput').click()" title="Upload image for analysis">📷</button>
+            <button class="send-btn" onclick="sendCommand()">EXECUTE</button>
+        </div>
+    </main>
+
+    <!-- Metrics Panel -->
+    <aside class="metrics-panel">
+        <div class="panel-header">SYSTEM METRICS</div>
+        
+        <div class="metric-card">
+            <div class="metric-label">Tokens Generated</div>
+            <div class="metric-value green">24.5K</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-label">Tasks Completed</div>
+            <div class="metric-value">18</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-label">Files Modified</div>
+            <div class="metric-value orange">47</div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-label">Code Lines</div>
+            <div class="metric-value">2,340</div>
+        </div>
+        
+        <div class="neural-viz">
+            <div class="metric-label" style="margin-bottom: 10px;">THOUGHT PROCESS</div>
+            <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+        </div>
+        
+        <div class="metric-card" style="margin-top: 10px;">
+            <div class="metric-label">LIVE VISION</div>
+            <div id="liveVideoContainer" style="position: relative; width: 100%; height: 120px; background: #000; border-radius: 8px; overflow: hidden;">
+                <img id="liveVideoFrame" style="width: 100%; height: 100%; object-fit: contain; display: none;">
+                <div id="liveVideoPlaceholder" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #607080; font-size: 11px; text-align: center;">
+                    Click 👁️ to start<br>live viewing
+                </div>
+            </div>
+            <div style="display: flex; gap: 5px; margin-top: 8px;">
+                <button class="send-btn" style="flex: 1; padding: 6px; font-size: 9px;" onclick="startLiveView()">👁️ START</button>
+                <button class="send-btn" style="flex: 1; padding: 6px; font-size: 9px; background: linear-gradient(135deg, #ff6600, #ff00aa);" onclick="analyzeLiveFrame()">🔍 ANALYZE</button>
+                <button class="send-btn" style="flex: 1; padding: 6px; font-size: 9px;" onclick="stopLiveView()">⏹ STOP</button>
+            </div>
+            <div id="liveAnalysis" style="margin-top: 8px; font-size: 10px; color: #00ff88; min-height: 30px; max-height: 60px; overflow-y: auto;"></div>
+        </div>
+        
+        <div class="metric-card" style="margin-top: 10px;">
+            <div class="metric-label">🤖 COMPUTER CONTROL</div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 8px;">
+                <button class="send-btn" style="padding: 8px 4px; font-size: 16px;" onclick="computerAction('click', 100, 100)" title="Click">🖱️</button>
+                <button class="send-btn" style="padding: 8px 4px; font-size: 16px;" onclick="computerAction('right_click', 100, 100)" title="Right Click">➡️</button>
+                <button class="send-btn" style="padding: 8px 4px; font-size: 16px;" onclick="computerAction('double_click', 100, 100)" title="Double Click">⚡</button>
+                <button class="send-btn" style="padding: 8px 4px; font-size: 16px;" onclick="computerAction('scroll_up')" title="Scroll Up">⬆️</button>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 8px;">
+                <button class="send-btn" style="padding: 6px; font-size: 9px;" onclick="computerAction('hotkey', 0, 0, 'ctrl+c')">📋 COPY</button>
+                <button class="send-btn" style="padding: 6px; font-size: 9px;" onclick="computerAction('hotkey', 0, 0, 'ctrl+v')">📋 PASTE</button>
+                <button class="send-btn" style="padding: 6px; font-size: 9px;" onclick="computerAction('hotkey', 0, 0, 'alt+tab')">🔄 TAB</button>
+                <button class="send-btn" style="padding: 6px; font-size: 9px;" onclick="computerAction('hotkey', 0, 0, 'ctrl+a')">☑️ ALL</button>
+            </div>
+            <div style="display: flex; gap: 5px; margin-bottom: 8px;">
+                <input type="text" id="typeInput" placeholder="Type here..." style="flex: 1; background: #080f19; border: 1px solid #304050; color: #e0e8f0; padding: 6px; border-radius: 4px; font-size: 11px;">
+                <button class="send-btn" style="padding: 6px 10px; font-size: 9px;" onclick="doType()">TYPE</button>
+            </div>
+            <div style="display: flex; gap: 5px;">
+                <button class="send-btn" style="flex: 1; padding: 8px; font-size: 10px; background: linear-gradient(135deg, #ff00aa, #8844ff);" onclick="promptGoal()">🎯 EXECUTE GOAL</button>
+            </div>
+            <div id="computerStatus" style="margin-top: 8px; font-size: 10px; color: #00f0ff; min-height: 20px;"></div>
+        </div>
+        
+        <!-- Git Panel -->
+        <div class="metric-card" style="margin-top: 10px;">
+            <div class="metric-label">📂 GIT</div>
+            <div id="gitStatus" style="font-size: 10px; color: #607080; margin-bottom: 8px;">Loading...</div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;">
+                <button class="send-btn" style="padding: 6px; font-size: 9px;" onclick="gitStatus()">🔄 STATUS</button>
+                <button class="send-btn" style="padding: 6px; font-size: 9px;" onclick="gitCommit()">💾 COMMIT</button>
+                <button class="send-btn" style="padding: 6px; font-size: 9px;" onclick="gitLog()">📜 LOG</button>
+            </div>
+        </div>
+        
+        <!-- Terminal Panel -->
+        <div class="metric-card" style="margin-top: 10px;">
+            <div class="metric-label">💻 TERMINAL</div>
+            <input type="text" id="terminalInput" placeholder="Enter command..." style="width: 100%; background: #080f19; border: 1px solid #304050; color: #00ff88; padding: 6px; border-radius: 4px; font-size: 10px; margin-bottom: 6px; font-family: monospace;">
+            <button class="send-btn" style="width: 100%; padding: 6px; font-size: 9px; background: linear-gradient(135deg, #00ff88, #00f0ff);" onclick="execTerminal()">▶️ EXECUTE</button>
+            <div id="terminalOutput" style="margin-top: 6px; font-size: 9px; color: #00ff88; max-height: 60px; overflow-y: auto; font-family: monospace; background: #000; padding: 4px; border-radius: 4px;"></div>
+        </div>
+        
+        <!-- Sandbox Panel -->
+        <div class="metric-card" style="margin-top: 10px;">
+            <div class="metric-label">🔒 SANDBOX</div>
+            <textarea id="sandboxCode" placeholder="Python code to run safely..." style="width: 100%; height: 60px; background: #080f19; border: 1px solid #304050; color: #e0e8f0; padding: 6px; border-radius: 4px; font-size: 10px; font-family: monospace; resize: none;"></textarea>
+            <button class="send-btn" style="width: 100%; padding: 6px; font-size: 9px; margin-top: 4px; background: linear-gradient(135deg, #ff6600, #ffdd00);" onclick="runSandbox()">▶️ RUN SAFE</button>
+            <div id="sandboxOutput" style="margin-top: 6px; font-size: 9px; color: #ffdd00; max-height: 50px; overflow-y: auto; font-family: monospace;"></div>
+        </div>
+        
+        <!-- Memory Panel -->
+        <div class="metric-card" style="margin-top: 10px;">
+            <div class="metric-label">🧠 PROJECT MEMORY</div>
+            <div id="projectMemory" style="font-size: 10px; color: #8844ff; margin-bottom: 6px;">Analyzing...</div>
+            <button class="send-btn" style="width: 100%; padding: 6px; font-size: 9px;" onclick="analyzeProject()">🔍 ANALYZE PROJECT</button>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-label">Tool Usage</div>
+            <div class="tool-graph">
+                <div class="tool-bar" style="height: 80%;"></div>
+                <div class="tool-bar" style="height: 60%;"></div>
+                <div class="tool-bar" style="height: 90%;"></div>
+                <div class="tool-bar" style="height: 45%;"></div>
+                <div class="tool-bar" style="height: 70%;"></div>
+                <div class="tool-bar" style="height: 55%;"></div>
+                <div class="tool-bar" style="height: 85%;"></div>
+                <div class="tool-bar" style="height: 40%;"></div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Bottom Panel - Models -->
+    <div class="bottom-panel">
+        <div class="model-card active">
+            <div class="model-icon">⚡</div>
+            <div class="model-info">
+                <div class="model-name">qwen2.5-coder:14b</div>
+                <div class="model-status">● ACTIVE - Code Generation</div>
+            </div>
+        </div>
+        
+        <div class="model-card">
+            <div class="model-icon">🧠</div>
+            <div class="model-info">
+                <div class="model-name">deepseek-r1:7b</div>
+                <div class="model-status">● READY - Reasoning</div>
+            </div>
+        </div>
+        
+        <div class="model-card">
+            <div class="model-icon">🔓</div>
+            <div class="model-info">
+                <div class="model-name">dolphin-mistral</div>
+                <div class="model-status">● READY - Uncensored</div>
+            </div>
+        </div>
+        
+        <div class="model-card">
+            <div class="model-icon">🚀</div>
+            <div class="model-info">
+                <div class="model-name">qwen2.5-coder:7b</div>
+                <div class="model-status">● READY - Fast Tasks</div>
+            </div>
+        </div>
+        
+        <div class="model-card">
+            <div class="model-icon">📦</div>
+            <div class="model-info">
+                <div class="model-name">codellama</div>
+                <div class="model-status">● READY - Meta Code</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Particles
+function createParticles() {
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (5 + Math.random() * 10) + 's';
+        container.appendChild(particle);
+    }
+}
+
+// Neural Network Visualization
+function drawNeural() {
+    const canvas = document.getElementById('neuralCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    
+    const nodes = [];
+    const layers = [4, 6, 6, 4];
+    
+    // Create nodes
+    let y = 30;
+    layers.forEach((count, layerIndex) => {
+        const xStep = canvas.width / (count + 1);
+        for (let i = 0; i < count; i++) {
+            nodes.push({
+                x: xStep * (i + 1),
+                y: y + (Math.sin(Date.now() / 1000 + layerIndex + i) * 5),
+                layer: layerIndex,
+                pulse: Math.sin(Date.now() / 500 + i) * 0.5 + 0.5
+            });
+        }
+        y += (canvas.height - 60) / layers.length;
+    });
+    
+    // Draw connections
+    ctx.strokeStyle = 'rgba(0, 240, 255, 0.2)';
+    ctx.lineWidth = 1;
+    nodes.forEach(node => {
+        nodes.forEach(other => {
+            if (other.layer === node.layer + 1) {
+                const dist = Math.abs(node.x - other.x) + Math.abs(node.y - other.y);
+                if (dist < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(node.x, node.y);
+                    ctx.lineTo(other.x, other.y);
+                    ctx.stroke();
+                }
+            }
+        });
+    });
+    
+    // Draw nodes
+    nodes.forEach(node => {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 3 + node.pulse * 2, 0, Math.PI * 2);
+        ctx.fillStyle = node.layer === 0 ? '#ff00aa' : 
+                       node.layer === layers.length - 1 ? '#00ff88' : '#00f0ff';
+        ctx.fill();
+        
+        // Glow
+        const gradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, 10);
+        gradient.addColorStop(0, 'rgba(0, 240, 255, 0.5)');
+        gradient.addColorStop(1, 'transparent');
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 10, 0, Math.PI * 2);
+        ctx.fill();
+    });
+    
+    requestAnimationFrame(drawNeural);
+}
+
+// Command input
+function sendCommand() {
+    const input = document.getElementById('commandInput');
+    const terminal = document.getElementById('terminal');
+    const command = input.value.trim();
+    
+    if (!command) return;
+    
+    // Add command to terminal
+    const cmdLine = document.createElement('div');
+    cmdLine.className = 'terminal-line command';
+    cmdLine.textContent = command;
+    terminal.appendChild(cmdLine);
+    
+    // Clear input
+    input.value = '';
+    
+    // Simulate response
+    setTimeout(() => {
+        const response = document.createElement('div');
+        response.className = 'terminal-line system';
+        response.textContent = `[NEXUS] Processing: "${command}"...`;
+        terminal.appendChild(response);
+        terminal.scrollTop = terminal.scrollHeight;
+    }, 500);
+    
+    terminal.scrollTop = terminal.scrollHeight;
+}
+
+// Handle image upload for vision analysis
+function handleImageUpload(input) {
+    const file = input.files[0];
+    if (!file) return;
+    
+    const terminal = document.getElementById('terminal');
+    const analysisType = 'general'; // Could add UI to select type
+    
+    // Show upload notification
+    const notify = document.createElement('div');
+    notify.className = 'terminal-line system';
+    notify.textContent = `[NEXUS] Uploading image: ${file.name}...`;
+    terminal.appendChild(notify);
+    terminal.scrollTop = terminal.scrollHeight;
+    
+    const formData = new FormData();
+    formData.append('image', file);
+    formData.append('type', analysisType);
+    
+    fetch('/api/vision/analyze', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        const result = document.createElement('div');
+        result.className = 'terminal-line output';
+        if (data.success) {
+            result.textContent = `[VISION] Analysis: ${JSON.stringify(data.result).slice(0, 500)}...`;
+        } else {
+            result.className = 'terminal-line error';
+            result.textContent = `[VISION ERROR] ${data.error}`;
+        }
+        terminal.appendChild(result);
+        terminal.scrollTop = terminal.scrollHeight;
+    })
+    .catch(err => {
+        const error = document.createElement('div');
+        error.className = 'terminal-line error';
+        error.textContent = `[VISION ERROR] ${err}`;
+        terminal.appendChild(error);
+        terminal.scrollTop = terminal.scrollHeight;
+    });
+    
+    // Clear the input so same file can be selected again
+    input.value = '';
+}
+
+// Live Vision Functions
+let liveViewInterval = null;
+
+function startLiveView() {
+    fetch('/api/vision/live/start', { method: 'POST' })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('liveVideoPlaceholder').style.display = 'none';
+            const imgEl = document.getElementById('liveVideoFrame');
+            imgEl.style.display = 'block';
+            
+            // Start polling for frames
+            liveViewInterval = setInterval(() => {
+                fetch('/api/vision/live/frame')
+                .then(r => r.json())
+                .then(frame => {
+                    if (frame.image) {
+                        imgEl.src = 'data:image/png;base64,' + frame.image;
+                    }
+                })
+                .catch(() => {});
+            }, 2000);
+            
+            addTerminalLine('system', '[NEXUS] 👁️ Live viewing started');
+        } else {
+            addTerminalLine('error', '[NEXUS] Error: ' + data.error);
+        }
+    });
+}
+
+function analyzeLiveFrame() {
+    fetch('/api/vision/live/analyze', { method: 'POST' })
+    .then(r => r.json())
+    .then(data => {
+        if (data.analysis) {
+            const analysisDiv = document.getElementById('liveAnalysis');
+            analysisDiv.textContent = data.analysis.slice(0, 200);
+            addTerminalLine('output', '[VISION] ' + data.analysis.slice(0, 200));
+        } else if (data.error) {
+            addTerminalLine('error', '[VISION] Error: ' + data.error);
+        }
+    })
+    .catch(err => {
+        addTerminalLine('error', '[VISION] Error: ' + err);
+    });
+}
+
+function stopLiveView() {
+    fetch('/api/vision/live/stop', { method: 'POST' })
+    .then(r => r.json())
+    .then(data => {
+        if (liveViewInterval) {
+            clearInterval(liveViewInterval);
+            liveViewInterval = null;
+        }
+        
+        document.getElementById('liveVideoFrame').style.display = 'none';
+        document.getElementById('liveVideoPlaceholder').style.display = 'block';
+        document.getElementById('liveAnalysis').textContent = '';
+        
+        addTerminalLine('system', '[NEXUS] 👁️ Live viewing stopped');
+    });
+}
+
+// Computer Control Functions
+function computerAction(action, x, y, extra) {
+    fetch('/api/computer/action', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            action: action,
+            x: x,
+            y: y,
+            extra: extra
+        })
+    })
+    .then(r => r.json())
+    .then(data => {
+        document.getElementById('computerStatus').textContent = data.message || data.error || 'Done';
+        if (data.success) {
+            addTerminalLine('system', `[COMPUTER] ${action} executed`);
+        } else {
+            addTerminalLine('error', `[COMPUTER] ${data.error}`);
+        }
+    })
+    .catch(err => {
+        document.getElementById('computerStatus').textContent = 'Error: ' + err;
+    });
+}
+
+function doType() {
+    const input = document.getElementById('typeInput');
+    const text = input.value.trim();
+    if (!text) return;
+    
+    computerAction('type', 0, 0, text);
+    input.value = '';
+}
+
+function promptGoal() {
+    const goal = prompt("What do you want the AI to do?\nExample: 'Open Chrome and search for weather'");
+    if (!goal) return;
+    
+    document.getElementById('computerStatus').textContent = 'Executing: ' + goal;
+    addTerminalLine('system', `[COMPUTER] Goal: ${goal}`);
+    
+    fetch('/api/computer/goal', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({goal: goal})
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            addTerminalLine('output', `[COMPUTER] Steps: ${data.steps}`);
+            addTerminalLine('system', `[COMPUTER] Result: ${data.success ? 'SUCCESS' : 'FAILED'}`);
+        } else {
+            addTerminalLine('error', `[COMPUTER] ${data.error}`);
+        }
+        document.getElementById('computerStatus').textContent = data.message || '';
+    })
+    .catch(err => {
+        addTerminalLine('error', `[COMPUTER] Error: ${err}`);
+    });
+}
+
+function addTerminalLine(type, text) {
+    const terminal = document.getElementById('terminal');
+    const line = document.createElement('div');
+    line.className = 'terminal-line ' + type;
+    line.textContent = text;
+    terminal.appendChild(line);
+    terminal.scrollTop = terminal.scrollHeight;
+}
+
+// Git Functions
+function gitStatus() {
+    fetch('/api/git/status')
+    .then(r => r.json())
+    .then(data => {
+        const status = document.getElementById('gitStatus');
+        if (data.branch) {
+            status.textContent = `Branch: ${data.branch} | Files: ${data.files ? data.files.length : 0}`;
+            addTerminalLine('system', `[GIT] Branch: ${data.branch}, ${data.files?.length || 0} changes`);
+        } else {
+            status.textContent = 'Not a git repository';
+        }
+    })
+    .catch(err => {
+        document.getElementById('gitStatus').textContent = 'Error: ' + err;
+    });
+}
+
+function gitCommit() {
+    const message = prompt('Commit message:');
+    if (!message) return;
+    
+    fetch('/api/git/commit', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({message: message})
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            addTerminalLine('system', `[GIT] Committed: ${data.commit}`);
+        } else {
+            addTerminalLine('error', `[GIT] Error: ${data.error}`);
+        }
+        gitStatus();
+    });
+}
+
+function gitLog() {
+    fetch('/api/git/log')
+    .then(r => r.json())
+    .then(data => {
+        const output = document.getElementById('terminalOutput');
+        output.innerHTML = (data || []).slice(0, 5).map(c => 
+            `<div style="color: #00f0ff;">${c.hash} ${c.message}</div>`
+        ).join('');
+    });
+}
+
+// Terminal Functions
+function execTerminal() {
+    const input = document.getElementById('terminalInput');
+    const command = input.value.trim();
+    if (!command) return;
+    
+    fetch('/api/terminal/exec', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({command: command})
+    })
+    .then(r => r.json())
+    .then(data => {
+        const output = document.getElementById('terminalOutput');
+        output.textContent = data.output || data.error || '';
+        addTerminalLine('output', `$ ${command}`);
+        if (data.output) addTerminalLine('output', data.output.slice(0, 200));
+    });
+    
+    input.value = '';
+}
+
+document.getElementById('terminalInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') execTerminal();
+});
+
+// Sandbox Functions
+function runSandbox() {
+    const code = document.getElementById('sandboxCode').value;
+    if (!code) return;
+    
+    fetch('/api/sandbox/exec', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({code: code, language: 'python'})
+    })
+    .then(r => r.json())
+    .then(data => {
+        const output = document.getElementById('sandboxOutput');
+        if (data.success) {
+            output.textContent = data.output || 'No output';
+            output.style.color = '#00ff88';
+        } else {
+            output.textContent = data.error || 'Error';
+            output.style.color = '#ff6600';
+        }
+    });
+}
+
+// Memory Functions
+function analyzeProject() {
+    fetch('/api/memory/analyze', {method: 'POST'})
+    .then(r => r.json())
+    .then(data => {
+        const mem = document.getElementById('projectMemory');
+        if (data.success) {
+            mem.textContent = `Analyzed: ${data.name} (${data.language})`;
+            addTerminalLine('system', `[MEMORY] Project analyzed: ${data.name}`);
+        }
+    });
+    
+    // Also get current memory
+    fetch('/api/memory/project')
+    .then(r => r.json())
+    .then(data => {
+        const mem = document.getElementById('projectMemory');
+        mem.textContent = `Project: ${data.name || 'Unknown'} | Lang: ${data.language || '?'}`;
+    });
+}
+
+// Enter key handler
+document.getElementById('commandInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendCommand();
+    }
+});
+
+// Initialize
+createParticles();
+drawNeural();
+
+// Show welcome notification
+setTimeout(() => {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.innerHTML = `
+        <span class="notification-icon">⚡</span>
+        <span class="notification-text">Welcome to NEXUS Command Center</span>
+    `;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => notification.remove(), 3000);
+}, 1000);
+</script>
+
+</body>
+</html>

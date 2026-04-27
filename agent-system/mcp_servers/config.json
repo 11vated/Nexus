@@ -1,0 +1,24 @@
+{
+  "mcp_servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/workspace"]
+    },
+    "memory": {
+      "command": "npx", 
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "shell": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-shell"]
+    }
+  },
+  "installation": {
+    "required": ["node", "npm"],
+    "install_commands": [
+      "npm install -g @modelcontextprotocol/server-filesystem",
+      "npm install -g @modelcontextprotocol/server-memory", 
+      "npm install -g @modelcontextprotocol/server-shell"
+    ]
+  }
+}

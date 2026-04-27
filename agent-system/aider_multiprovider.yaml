@@ -1,0 +1,17 @@
+# Aider Config - Multi-Provider Support
+# Use with: aider --config aider_multiprovide.yaml
+
+# Default: MiniMax (set your API key)
+# model: openai/minimax-m2.5
+# openai-api-base: https://api.minimax.io/v1
+# openai-api-key: YOUR_MINIMAX_API_KEY
+
+# Alternative: Ollama (local, no API key)
+model: ollama/qwen2.5-coder:7b
+openai-api-base: http://localhost:11434/v1
+openai-api-key: local
+
+# Execution
+auto-commits: true
+no-git: true
+edit-format: diff

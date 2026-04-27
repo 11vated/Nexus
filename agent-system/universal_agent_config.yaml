@@ -1,0 +1,276 @@
+# ============================================================
+# UNIVERSAL AGENT CONFIGURATION
+# Works with Aider, Goose, Claude Code, Cursor, etc.
+# ============================================================
+
+# ============================================================
+# ENVIRONMENT VARIABLES (set these in your system)
+# ============================================================
+# OLLAMA_HOST=http://localhost:11434
+# OPENAI_API_KEY=local
+# 
+# GITHUB_TOKEN=ghp_xxx (for GitHub MCP)
+# DATABASE_URL=postgresql://localhost/db (for Postgres MCP)
+# SLACK_BOT_TOKEN=xoxb-xxx (for Slack MCP)
+# NOTION_API_KEY=secret_xxx (for Notion MCP)
+# LINEAR_API_KEY=lin_xxx (for Linear MCP)
+# OPENAI_API_KEY=sk-xxx (for OpenAI)
+# ANTHROPIC_API_KEY=sk-ant-xxx (for Anthropic)
+# 
+# BRAVE_API_KEY=xxx (for Brave Search - free tier available)
+# SENTRY_AUTH_TOKEN=xxx (for Sentry - free tier)
+# FIGMA_ACCESS_TOKEN=xxx (for Figma)
+# 
+# AZURE_SUBSCRIPTION_ID=xxx
+# AZURE_CLIENT_ID=xxx
+# AZURE_CLIENT_SECRET=xxx
+# AZURE_TENANT_ID=xxx
+# 
+# AWS_ACCESS_KEY_ID=xxx
+# AWS_SECRET_ACCESS_KEY=xxx
+# AWS_REGION=us-east-1
+# 
+# CLOUDFLARE_API_TOKEN=xxx
+# CLOUDFLARE_ACCOUNT_ID=xxx
+
+# ============================================================
+# MCP SERVERS - ALL THE ESSENTIALS
+# ============================================================
+# Copy this to your agent's MCP config
+
+mcp_servers:
+  # --- DEVELOPMENT TOOLS ---
+  
+  # 1. GitHub - Issues, PRs, repos
+  github:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env:
+      GITHUB_TOKEN: "${GITHUB_TOKEN}"
+  
+  # 2. Git - Local version control
+  git:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-git"]
+  
+  # 3. Filesystem - File operations
+  filesystem:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-filesystem", "/Users/11vat/Desktop"]
+  
+  # 4. Playwright - Browser automation
+  playwright:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-playwright"]
+  
+  # 5. Puppeteer - Alternative browser automation
+  puppeteer:
+    command: npx
+    args: ["-y", "@puppeteer/mcp-server"]
+  
+  # --- DATABASES ---
+  
+  # 6. PostgreSQL - Database queries
+  postgres:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-postgres"]
+    env:
+      DATABASE_URL: "${DATABASE_URL}"
+  
+  # 7. SQLite - Local database
+  sqlite:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-sqlite"]
+    args: ["/Users/11vat/Desktop/database.db"]
+  
+  # --- SEARCH & RESEARCH ---
+  
+  # 8. Brave Search - Web research
+  brave-search:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-brave-search"]
+    env:
+      BRAVE_API_KEY: "${BRAVE_API_KEY}"
+  
+  # 9. Fetch - Web content fetching
+  fetch:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-fetch"]
+  
+  # 10. Tavily - AI search
+  tavily:
+    command: npx
+    args: ["-y", "@tavily/mcp-server"]
+    env:
+      TAVILY_API_KEY: "${TAVILY_API_KEY}"
+  
+  # --- COMMUNICATION ---
+  
+  # 11. Slack - Team chat
+  slack:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-slack"]
+    env:
+      SLACK_BOT_TOKEN: "${SLACK_BOT_TOKEN}"
+  
+  # 12. Google Drive - Documents
+  google-drive:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-google-drive"]
+  
+  # --- PRODUCTIVITY ---
+  
+  # 13. Notion - Notes & docs
+  notion:
+    command: npx
+    args: ["-y", "@notionhq/notionmcp"]
+    env:
+      NOTION_API_KEY: "${NOTION_API_KEY}"
+  
+  # 14. Linear - Issue tracking
+  linear:
+    command: npx
+    args: ["-y", "@linear/mcp-server"]
+    env:
+      LINEAR_API_KEY: "${LINEAR_API_KEY}"
+  
+  # 15. Jira - Project management
+  jira:
+    command: npx
+    args: ["-y", "@atlassian/mcp-jira"]
+  
+  # --- MEMORY & CONTEXT ---
+  
+  # 16. Memory - Persistent context
+  memory:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-memory"]
+  
+  # 17. Sequential Thinking - Reasoning
+  sequential-thinking:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+  
+  # --- MONITORING ---
+  
+  # 18. Sentry - Error tracking
+  sentry:
+    command: npx
+    args: ["-y", "@sentryio/mcp-server"]
+    env:
+      SENTRY_AUTH_TOKEN: "${SENTRY_AUTH_TOKEN}"
+  
+  # --- DESIGN & CREATIVE ---
+  
+  # 19. Figma - Design tools
+  figma:
+    command: npx
+    args: ["-y", ["@simonw/mcp-server-figma", "--access-token", "${FIGMA_ACCESS_TOKEN}"]]
+  
+  # --- DEVOPS & INFRASTRUCTURE ---
+  
+  # 20. Docker - Container management
+  docker:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-docker"]
+  
+  # 21. AWS - Cloud services
+  aws-kb-retrieval:
+    command: npx
+    args: ["-y", "@aws/mcp-server-aws-kb-retrieval-server"]
+  
+  # 22. Cloudflare - Edge computing
+  cloudflare:
+    command: npx
+    args: ["-y", "@cloudflare/mcp-server"]
+    env:
+      CLOUDFLARE_API_TOKEN: "${CLOUDFLARE_API_TOKEN}"
+      CLOUDFLARE_ACCOUNT_ID: "${CLOUDFLARE_ACCOUNT_ID}"
+  
+  # --- BACKEND & DATA ---
+  
+  # 23. Supabase - Backend
+  supabase:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-supabase"]
+  
+  # --- CUSTOM AGENT SYSTEM ---
+  
+  # 24. Your Agent System - Full Agent Capabilities
+  agent-system:
+    command: python
+    args: ["C:/Users/11vat/Desktop/Copilot/Aider-Local-llm-agent/agent-system/mcp_agent_server.py"]
+
+# ============================================================
+# SYSTEM PROMPT - EXECUTION FOCUSED
+# ============================================================
+system_prompt: |
+  You are an autonomous AI agent with FULL EXECUTION capability.
+  
+  MISSION: Execute tasks, don't just describe them!
+  
+  When given a task:
+  1. READ files to understand the codebase
+  2. WRITE or EDIT to implement
+  3. RUN commands to execute
+  4. VERIFY the result
+  5. ITERATE until successful
+  
+  AVAILABLE TOOLS:
+  - File operations (read/write/edit/search)
+  - Shell commands (execute anything)
+  - Git operations (GitHub, git)
+  - Database queries (PostgreSQL, SQLite)
+  - Web search and fetching (Brave, Fetch)
+  - Browser automation (Playwright, Puppeteer)
+  - Communication (Slack)
+  - Productivity (Notion, Linear, Jira)
+  - Monitoring (Sentry)
+  - Memory (persistent context)
+  - Reasoning (sequential thinking)
+  - 1008 skills from agent-system
+  
+  Available models:
+  - qwen2.5-coder:14b (Ollama)
+  - Any OpenAI model
+  - Any Anthropic model
+  
+  NEVER say "I would" - just DO it!
+
+# ============================================================
+# FILE ASSOCIATIONS
+# ============================================================
+file_extensions:
+  - .py
+  - .js
+  - .ts
+  - .jsx
+  - .tsx
+  - .html
+  - .css
+  - .scss
+  - .json
+  - .yaml
+  - .yml
+  - .toml
+  - .md
+  - .sql
+  - .sh
+  - .rs
+  - .go
+  - .java
+  - .cpp
+  - .c
+  - .h
+  - .swift
+  - .kt
+  - .rb
+  - .php
+  - .r
+  - .lua
+
+# ============================================================
+# CONTEXT SETTINGS
+# ============================================================
+max_context_tokens: 100000
+map_tokens: 30000

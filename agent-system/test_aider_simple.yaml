@@ -1,0 +1,6 @@
+# Simple Aider Config - Using 7B model for stability
+model: ollama/qwen2.5-coder:7b
+openai-api-base: http://localhost:11434/v1
+openai-api-key: local
+auto-commits: true
+no-git: true

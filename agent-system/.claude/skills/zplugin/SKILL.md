@@ -1,0 +1,14 @@
+---
+name: zplugin
+description: Zplugin - use when working on related tasks
+tools: Write, Read
+model: qwen2.5-coder:14b
+---
+# Zplugin
+
+## When to Use
+Use this skill when working on zplugin.
+
+## Guidelines
+- Use appropriate tools
+- Follow best practices

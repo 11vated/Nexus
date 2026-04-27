@@ -1,0 +1,68 @@
+# Goose Configuration - Make it EXECUTE, not just chat!
+
+# Global settings for ~/.config/goose/config.yaml
+# This file adds execution capabilities
+
+# Enable execution mode (CRITICAL!)
+execution:
+  enabled: true
+  auto_run: true
+  confirm_tools: false  # Don't ask, just run
+
+# Provider - Use local Ollama
+providers:
+  default: ollama
+  ollama:
+    type: openai
+    api_base: http://localhost:11434/v1
+    api_key: "local"  # Ollama doesn't need real key
+    model: qwen2.5-coder:14b
+
+# Extensions - Enable file and shell tools
+extensions:
+  enabled:
+    - filesystem
+    - shell
+    - git
+
+# Agent behavior - FORCE action
+agent:
+  model: ollama/qwen2.5-coder:14b
+  tool_use: true
+  max_iterations: 50
+  auto_execute: true
+  
+  system_prompt: |
+    You are an autonomous coding agent.
+    
+    When given a task, you MUST:
+    1. READ files to understand
+    2. WRITE/EDIT files as needed  
+    3. RUN commands to execute
+    4. VERIFY the result
+    
+    NEVER just chat - EXECUTE the task!
+    
+    Examples:
+    - "create app" → WRITE app.py → RUN python app.py
+    - "run test" → RUN pytest
+    - "install" → RUN pip install
+
+# Tool permissions - Allow all
+tools:
+  allowed:
+    - bash
+    - execute
+    - read_file
+    - write_file
+    - edit_file
+    - create_file
+    - delete_file
+    - search
+    - glob
+    - grep
+
+# Sessions - Remember context
+sessions:
+  auto_save: true
+  persist: true

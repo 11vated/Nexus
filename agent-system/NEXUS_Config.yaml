@@ -1,0 +1,136 @@
+# NEXUS ULTIMATE CONFIG - All Models, All Tools, Full Capabilities
+# ============================================================
+# Works with: OpenCode, VSCode, Aider, Goose, CLI
+# Models: All Ollama models with auto-selection
+# 
+
+# ============================================
+# MODEL SELECTION
+# ============================================
+# Primary model (code generation)
+model: ollama/qwen2.5-coder:14b
+
+# All available models (for switching)
+models:
+  # Code Generation
+  code_best: qwen2.5-coder:14b           # Best overall - 9GB
+  code_fast: qwen2.5-coder:7b            # Fast code - 4.7GB
+  code_meta: codellama                    # Meta's model - 3.8GB
+  
+  # User Requested Models
+  gpt5_nano: gpt-5-nano                 # GPT-5 Nano - 2.5GB
+  minimax: minimax-max-m2.5-free      # MiniMax M2.5 - 8GB
+  bigpickle: bigpickle                 # Big Pickle - 12GB
+  ling_flash: ling-2.6-flash-free       # Ling 2.6 Flash - 3GB
+  hy3: hy3-preview-free                # Hy3 Preview - 6GB
+  nemotron: nemotron-super-3b          # Nemotron 3 - 8GB
+  llama_tiny: bartowski/llama-3.2-1b-instruct-q4_k_m  # Tiny Llama - 1GB
+  
+  # Reasoning / Debugging
+  reason_best: deepseek-r1:7b           # Best reasoning - 4.7GB
+  reason_fast: deepseek-r1:1.5b         # Fast reasoning - 1.1GB
+  
+  # Vision
+  vision: llava                        # Vision - 4.1GB
+  vision_fast: moondream               # Fast vision - 1.7GB
+  
+  # General
+  dolphin: dolphin-mistral              # Friendly - 4.1GB
+
+# Auto-select based on task keywords
+auto_models:
+  # Keywords -> Model mapping
+  build: code_best
+  create: code_best
+  implement: code_best
+  generate: code_best
+  
+  fix: reason_best
+  debug: reason_best
+  error: reason_best
+  bug: reason_best
+  
+  fast: code_fast
+  quick: code_fast
+  simple: code_fast
+  
+  screen: vision
+  image: vision
+  see: vision
+
+# ============================================
+# CONNECTION SETTINGS
+# ============================================
+openai-api-base: http://localhost:11434/v1
+openai-api-key: local
+
+# ============================================
+# EXECUTION SETTINGS (NO RESTRICTIONS)
+# ============================================
+auto-commits: true
+no-git: true
+edit-format: whole
+cache-prompts: true
+no-show-model-warnings: true
+
+# ============================================
+# SYSTEM PROMPT - FRONTIER AUTONOMOUS AGENT
+# ============================================
+system-prompt: |
+  You are NEXUS - an autonomous software engineering agent with:
+
+  ## CAPABILITIES
+  - Full code generation (all languages)
+  - Debugging and error fixing
+  - Test writing (pytest, vitest, jest)
+  - Security scanning
+  - Performance optimization
+  - Documentation generation
+  - Git operations
+  - Terminal command execution
+  - Multi-file project creation
+
+  ## AVAILABLE MODELS
+  - Code: qwen2.5-coder:14b, gpt-5-nano, minimax, bigpickle, hy3
+  - Reasoning: deepseek-r1:7b, nemotron
+  - Fast: qwen2.5-coder:7b, ling_flash, llama_tiny
+  - Vision: llava, moondream
+
+  ## WORKFLOW
+  1. UNDERSTAND - Read requirements, analyze code
+  2. PLAN - File structure, interfaces, edge cases
+  3. IMPLEMENT - Write code, tests, docs
+  4. VERIFY - Run tests, typecheck, security scan
+  5. DELIVER - Clean, documented, production-ready
+
+  ## SUCCESS CRITERIA
+  - All tests pass
+  - Type checking clean (0 errors)
+  - No security vulnerabilities
+  - 80%+ test coverage
+  - Properly documented
+
+  ## TOOLS
+  - Read files, Write files, Edit files
+  - Run commands, Run tests, Search code
+  - Git operations, Terminal access
+
+  Think step-by-step. Verify each step. Never skip error handling.
+
+# ============================================
+# QUICK MODEL SWITCHING COMMANDS
+# ============================================
+# Usage: aider --model <model-name>
+#
+# Examples:
+#   aider --model gpt-5-nano       # Quick edit
+#   aider --model deepseek-r1:7b   # Debug
+#   aider --model bigpickle       # Large project
+#   aider --model llava          # Vision analysis
+
+# ============================================
+# ENVIRONMENT
+# ============================================
+env:
+  OLLAMA_HOST: http://localhost:11434
+  OLLAMA_MODELS: C:/Users/11vat/Desktop/OllamaModels
