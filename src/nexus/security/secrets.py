@@ -4,7 +4,7 @@ import os
 from typing import Optional
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 import hashlib
 
 
@@ -14,7 +14,7 @@ class SecretManager:
     def __init__(self, encryption_key: Optional[str] = None):
         if encryption_key:
             # Derive key from provided secret
-            kdf = PBKDF2(
+            kdf = PBKDF2HMAC(
                 algorithm=hashes.SHA256(),
                 length=32,
                 salt=b"nexus_salt_v1",

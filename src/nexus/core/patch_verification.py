@@ -48,8 +48,8 @@ class MultiPatchGenerator:
     def __init__(
         self,
         model_callback: Callable,
-        base_temperature: float = 0.2,
-        max_temperature: float = 0.8,
+        base_temperature: float = 0.3,
+        max_temperature: float = 0.7,
         num_candidates: int = 8
     ):
         self.model_callback = model_callback
