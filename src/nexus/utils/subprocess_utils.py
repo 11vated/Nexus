@@ -1,4 +1,5 @@
 """Safe subprocess execution utilities."""
+import asyncio
 import os
 import subprocess
 import logging
