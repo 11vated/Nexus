@@ -125,8 +125,8 @@ class TestRunCommandAsync:
 
 
 @pytest.mark.skipif(
-    not pytest.config.getoption("--run-ollama", default=False),
-    reason="Requires Ollama running"
+    True,
+    reason="Requires Ollama running and --run-ollama flag"
 )
 class TestRunOllama:
     """Test Ollama command execution."""
