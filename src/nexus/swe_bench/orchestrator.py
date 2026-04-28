@@ -2,37 +2,25 @@
 import asyncio
 import logging
 import subprocess
-import tempfile
-import shutil
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Callable
+from typing import List, Dict, Any, Optional
 from dataclasses import dataclass, field
 from enum import Enum
 
-from ..core.patch_verification import CandidatePatch, PatchStatus, VerificationScore
+from .patch_generator import PatchGenerator
+from .verifier import PatchVerifier, PatchSelector
 from ..gateway.client import GatewayClient
 
 
 logger = logging.getLogger(__name__)
 
 
-class TestResult(Enum):
+class ResolutionStatus(Enum):
+    PENDING = "pending"
+    IN_PROGRESS = "in_progress"
     PASSED = "passed"
     FAILED = "failed"
-    ERROR = "error"
-    TIMEOUT = "timeout"
-
-
-@dataclass
-class PatchTestResult:
-    """Result of testing a patch."""
-    patch: str
-    result: TestResult
-    score: float
-    stdout: str
-    stderr: str
-    returncode: int
-    error: Optional[str] = None
+    PARTIAL = "partial"
 
 
 @dataclass
@@ -40,28 +28,28 @@ class SWEBenchResult:
     """Result of SWE-bench resolution."""
     issue: str
     repo_path: Path
+    status: ResolutionStatus = ResolutionStatus.PENDING
     best_patch: Optional[str] = None
     best_score: float = 0.0
     candidates_tested: int = 0
-    passed: bool = False
-    details: List[PatchTestResult] = field(default_factory=list)
+    passed_count: int = 0
+    total_candidates: int = 0
+    details: List[Dict[str, Any]] = field(default_factory=list)
 
 
 class SWEBenchOrchestrator:
-    """Orchestrate SWE-bench issue resolution."""
+    """Orchestrate SWE-bench issue resolution with multi-patch generation."""
     
     def __init__(
         self,
         gateway_client: GatewayClient,
         model_name: str,
-        workspace: Path = None,
         num_patches: int = 8,
         base_temp: float = 0.3,
         max_temp: float = 0.7
     ):
         self.gateway = gateway_client
         self.model = model_name
-        self.workspace = workspace or Path.cwd()
         self.num_patches = num_patches
         self.base_temp = base_temp
         self.max_temp = max_temp
@@ -71,204 +59,93 @@ class SWEBenchOrchestrator:
         issue_text: str,
         repo_path: Path,
         test_command: str = "pytest",
-        context: str = None
+        code_context: str = None,
+        file_structure: str = None
     ) -> SWEBenchResult:
-        """Resolve a SWE-bench issue."""
-        logger.info(f"Resolving issue: {issue_text[:100]}...")
+        """Resolve a SWE-bench issue with multi-patch generation."""
+        logger.info(f"Resolving: {issue_text[:100]}...")
         
-        # Generate candidate patches
-        patches = await self._generate_patches(issue_text, context)
+        repo_path = Path(repo_path)
         
-        # Test each patch
-        results = []
-        for i, patch in enumerate(patches):
-            logger.info(f"Testing patch {i+1}/{len(patches)}...")
-            test_result = await self._test_patch(patch, repo_path, test_command)
-            results.append(test_result)
-            
-            # Score the patch
-            score = self._score_patch(test_result)
-            test_result.score = score
+        # Generate patches
+        generator = PatchGenerator(
+            gateway_client=self.gateway,
+            model_name=self.model,
+            num_patches=self.num_patches,
+            base_temp=self.base_temp,
+            max_temp=self.max_temp
+        )
         
-        # Select best
-        results.sort(key=lambda x: x.score, reverse=True)
-        best = results[0] if results else None
+        patches = await generator.generate_patches(
+            issue_text=issue_text,
+            code_context=code_context,
+            file_structure=file_structure
+        )
+        
+        if not patches:
+            return SWEBenchResult(
+                issue=issue_text[:200],
+                repo_path=repo_path,
+                status=ResolutionStatus.FAILED,
+                details=[{"error": "No patches generated"}]
+            )
+        
+        # Verify patches
+        verifier = PatchVerifier(repo_path, test_command)
+        selector = PatchSelector(verifier)
+        
+        verify_result = await selector.select_best(patches)
+        
+        candidates = verify_result["candidates"]
+        best = verify_result["best"]
+        
+        passed_count = verify_result["passed_count"]
+        
+        # Determine status
+        if passed_count == 0:
+            status = ResolutionStatus.FAILED
+        elif passed_count >= self.num_patches // 2:
+            status = ResolutionStatus.PASSED
+        elif passed_count > 0:
+            status = ResolutionStatus.PARTIAL
+        else:
+            status = ResolutionStatus.FAILED
         
         return SWEBenchResult(
             issue=issue_text[:200],
             repo_path=repo_path,
-            best_patch=best.patch if best else None,
-            best_score=best.score if best else 0.0,
+            status=status,
+            best_patch=best["patch"] if best else None,
+            best_score=best["score"] if best else 0.0,
             candidates_tested=len(patches),
-            passed=best.score > 0.5 if best else False,
-            details=results
+            passed_count=passed_count,
+            total_candidates=len(patches),
+            details=candidates
         )
     
-    async def _generate_patches(
+    async def resolve_issue_parallel(
         self,
         issue_text: str,
-        context: str = None
-    ) -> List[str]:
-        """Generate candidate patches."""
-        base_prompt = f"""You are an expert software engineer.
-Fix this issue:
-
-{issue_text}
-
-{context or ''}
-
-Generate a unified diff patch to fix this issue. Output only the patch in this format:
-```python
-# your code here
-```
-Or as a git diff:
-```diff
---- a/file.py
-+++ b/file.py
-@@ -1,3 +1,4 @@
-+added line
-"""
-        
-        patches = []
-        
-        for i in range(self.num_patches):
-            temp = self.base_temp + (i / self.num_patches) * (self.max_temp - self.base_temp)
-            
-            prompt = base_prompt
-            if i > 0:
-                variations = [
-                    "",
-                    "\nThink step by step.",
-                    "\nConsider edge cases.",
-                    "\nSimplify the solution.",
-                    "\nOptimize for performance.",
-                    "\nUse a different approach.",
-                    "\nWrite minimal fix.",
-                    "\nConsider alternatives."
-                ]
-                prompt = base_prompt + variations[i % len(variations)]
-            
-            try:
-                resp = await self.gateway.chat_completion(
-                    model=self.model,
-                    messages=[{"role": "user", "content": prompt}],
-                    temperature=temp,
-                    max_tokens=2000
-                )
-                patches.append(resp.content)
-            except Exception as e:
-                logger.warning(f"Failed to generate patch {i}: {e}")
-                patches.append("")
-        
-        return [p for p in patches if p.strip()]
-    
-    async def _test_patch(
-        self,
-        patch: str,
         repo_path: Path,
-        test_command: str
-    ) -> PatchTestResult:
-        """Test a patch in a sandbox."""
-        with tempfile.TemporaryDirectory() as tmpdir:
-            sandbox_path = Path(tmpdir) / "repo"
-            
-            try:
-                shutil.copytree(repo_path, sandbox_path)
-            except Exception as e:
-                return PatchTestResult(
-                    patch=patch,
-                    result=TestResult.ERROR,
-                    score=0.0,
-                    stdout="",
-                    stderr="",
-                    returncode=-1,
-                    error=f"Failed to copy repo: {e}"
-                )
-            
-            # Try to apply patch
-            patch_file = sandbox_path / ".patch"
-            patch_file.write_text(patch)
-            
-            proc = subprocess.run(
-                ["git", "apply", "--index", "patch"],
-                cwd=sandbox_path,
-                capture_output=True,
-                text=True,
-                timeout=30
-            )
-            
-            if proc.returncode != 0:
-                return PatchTestResult(
-                    patch=patch,
-                    result=TestResult.ERROR,
-                    score=0.0,
-                    stdout="",
-                    stderr=proc.stderr,
-                    returncode=proc.returncode,
-                    error="Patch apply failed"
-                )
-            
-            # Run tests
-            try:
-                proc = subprocess.run(
-                    test_command.split(),
-                    cwd=sandbox_path,
-                    capture_output=True,
-                    text=True,
-                    timeout=120,
-                    shell=True
-                )
-                
-                if proc.returncode == 0:
-                    result = TestResult.PASSED
-                else:
-                    result = TestResult.FAILED
-                    
-            except subprocess.TimeoutExpired:
-                result = TestResult.TIMEOUT
-                proc = None
-            except Exception as e:
-                result = TestResult.ERROR
-                proc = None
-            
-            return PatchTestResult(
-                patch=patch,
-                result=result,
-                score=0.0,
-                stdout=proc.stdout if proc else "",
-                stderr=proc.stderr if proc else "",
-                returncode=proc.returncode if proc else -1
-            )
-    
-    def _score_patch(self, test_result: PatchTestResult) -> float:
-        """Score a patch test result."""
-        if test_result.result == TestResult.PASSED:
-            base = 1.0
-        elif test_result.result == TestResult.FAILED:
-            base = 0.0
-        else:
-            base = 0.0
-        
-        # Penalize warnings
-        if "warning" in test_result.stderr.lower():
-            base -= 0.1
-        
-        # Penalize large output
-        if len(test_result.stdout) > 5000:
-            base -= 0.05
-        
-        return max(0.0, base)
+        test_command: str = "pytest",
+        code_context: str = None,
+        file_structure: str = None,
+        max_concurrent: int = 4
+    ) -> SWEBenchResult:
+        """Resolve with parallel patch testing (faster)."""
+        return await self.resolve_issue(
+            issue_text, repo_path, test_command, code_context, file_structure
+        )
 
 
 async def create_orchestrator(
+    gateway_client: GatewayClient,
     model_name: str = "qwen2.5-coder:14b",
-    base_url: str = "http://localhost:4000",
-    workspace: Path = None
+    num_patches: int = 8
 ) -> SWEBenchOrchestrator:
-    """Create SWE-bench orchestrator."""
-    gateway = GatewayClient(base_url)
+    """Factory function for orchestrator."""
     return SWEBenchOrchestrator(
-        gateway_client=gateway,
+        gateway_client=gateway_client,
         model_name=model_name,
-        workspace=workspace
+        num_patches=num_patches
     )
