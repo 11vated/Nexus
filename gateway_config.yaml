@@ -38,6 +38,13 @@ model_list:
   #   litellm_params:
   #     model: gpt-4o-mini
   #     api_key: ${OPENAI_API_KEY}
+
+  # MiniMax models (local via llama.cpp or remote)
+  - model_name: minimax-m2-local
+    litellm_params:
+      model: openai/minimax-m2
+      api_base: http://localhost:8080/v1
+      api_key: dummy
   #
   # - model_name: claude-3.5-sonnet
   #   litellm_params:
