@@ -108,6 +108,44 @@ class RAGMiddleware:
         logger.info(f"Indexed {indexed} files")
         return indexed
     
+    def index_codebase_batch(self, paths: list, batch_size: int = 50) -> int:
+        """Index files in batches for better performance."""
+        total_indexed = 0
+        
+        for i in range(0, len(paths), batch_size):
+            batch = paths[i:i+batch_size]
+            docs, metas, ids = [], [], []
+            
+            for file_path in batch:
+                try:
+                    content = file_path.read_text(errors="ignore")
+                    if len(content) > 100 and len(content) < 50000:
+                        docs.append(content[:5000])
+                        doc_id = str(file_path.relative_to(self.workspace))
+                        ids.append(doc_id)
+                        metas.append({
+                            "file": str(file_path),
+                            "size": len(content),
+                            "last_modified": file_path.stat().st_mtime,
+                            "extension": file_path.suffix
+                        })
+                except Exception:
+                    continue
+            
+            if docs and self.collection:
+                self.collection.upsert(
+                    documents=docs,
+                    metadatas=metas,
+                    ids=ids
+                )
+                total_indexed += len(docs)
+            
+            if i % 200 == 0:
+                logger.info(f"Indexed {i + len(batch)} files...")
+        
+        logger.info(f"Batch indexed {total_indexed} files")
+        return total_indexed
+    
     def retrieve(self, query: str, top_k: int = 5) -> List[RetrievedContext]:
         """Retrieve top-k relevant context."""
         if not self.collection:
