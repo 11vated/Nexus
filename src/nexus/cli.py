@@ -235,6 +235,47 @@ def config_set(key, value):
     console.print(f"To set {key}={value}, add to .env file:")
 
 
+@cli.command()
+@click.argument("issue_file", type=click.Path(exists=True))
+@click.option("--repo", "-r", type=click.Path(exists=True), help="Repository path")
+@click.option("--test-cmd", "-t", default="pytest", help="Test command")
+@click.option("--model", "-m", default="qwen2.5-coder:14b", help="Model to use")
+@click.option("--patches", "-p", default=8, help="Number of patches to generate")
+@click.option("--gateway", "-g", default="http://localhost:4000", help="Gateway URL")
+def swebench(issue_file, repo, test_cmd, model, patches, gateway):
+    """Run SWE-bench resolution on an issue."""
+    asyncio.run(_swebench_async(issue_file, repo, test_cmd, model, patches, gateway))
+
+
+async def _swebench_async(issue_file, repo, test_cmd, model, num_patches, gateway_url):
+    """Async SWE-bench runner."""
+    from nexus.swe_bench.orchestrator import SWEBenchOrchestrator
+    from nexus.gateway.client import GatewayClient
+
+    issue_text = Path(issue_file).read_text()
+    repo_path = Path(repo) if repo else Path.cwd()
+
+    console.print(f"[cyan]Running SWE-bench with {num_patches} patches...[/cyan]")
+
+    async with GatewayClient(base_url=gateway_url) as gateway:
+        orch = SWEBenchOrchestrator(
+            gateway_client=gateway,
+            model_name=model,
+            workspace=repo_path.parent,
+            num_patches=num_patches
+        )
+
+        result = await orch.resolve_issue(issue_text, repo_path, test_cmd)
+
+        console.print(f"\n[bold]Results:[/bold]")
+        console.print(f"Patches tested: {result.candidates_tested}")
+        console.print(f"Best score: {result.best_score:.2f}")
+        console.print(f"Passed: {'[green]Yes[/green]' if result.passed else '[red]No[/red]'}")
+
+        if result.best_patch:
+            console.print(f"\n[bold green]Best Patch:[/bold green]\n{result.best_patch[:500]}")
+
+
 def main():
     """Main entry point."""
     cli()
