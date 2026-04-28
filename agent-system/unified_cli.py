@@ -218,15 +218,26 @@ class WorkstationCLI:
     
     def run_aider(self, model: Optional[str] = None):
         """Launch Aider"""
+        import shlex
         model = model or self.current_model
+        
+        # Whitelist validation
+        allowed_models = {"qwen2.5-coder:14b", "qwen2.5-coder:7b", "codellama", "deepseek-r1:7b"}
+        if model not in allowed_models:
+            print(f"Model {model} not allowed. Using default.")
+            model = "qwen2.5-coder:14b"
+        
         print(f"Launching Aider with {model}...")
         try:
             os.chdir(self.workspace)
-            # Activate venv and run aider
+            # Activate venv and run aider - secure version without shell=True
+            venv_python = self.workspace / "venv_aider" / "Scripts" / "python.exe"
+            if not venv_python.exists():
+                venv_python = self.workspace / "venv_aider" / "bin" / "python"
+            
             subprocess.run([
-                "cmd", "/c", 
-                f"venv_aider\\Scripts\\activate && aider --model qwen2.5-coder:14b"
-            ], shell=True)
+                str(venv_python), "-m", "aider", "--model", model
+            ], shell=False, timeout=None)
         except Exception as e:
             print(f"Error launching Aider: {e}")
     
@@ -278,7 +289,10 @@ class WorkstationCLI:
                         lines = len(f.read_text(errors="ignore").splitlines())
                         stats["lines"] += lines
                         stats["largest_files"].append((str(f), lines))
-                    except: pass
+                    except (IOError, OSError) as e:
+                        pass  # Skip files we can't read
+                except (IOError, OSError) as e:
+                    pass  # Skip files we can't access
                 except: pass
         
         # Sort largest files
