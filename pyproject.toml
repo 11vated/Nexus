@@ -28,6 +28,9 @@ dependencies = [
     "pydantic>=2.0",
     "pydantic-settings>=2.0",
     "python-dotenv>=1.0",
+    "click>=8.0",
+    "tenacity>=8.0",
+    "pybreaker>=0.7",
 ]
 
 [project.optional-dependencies]
