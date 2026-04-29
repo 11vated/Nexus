@@ -363,3 +363,54 @@ class TestSessionCommands:
         result = run_cmd("/load", session, console)
         # Either lists sessions or says none
         assert isinstance(result, str)
+
+
+# ===================================================================
+# Cognitive commands
+# ===================================================================
+
+class TestCognitiveCommands:
+
+    def test_cognitive_show_mode(self, session, console):
+        result = run_cmd("/cognitive", session, console)
+        assert "passive" in result.lower()
+
+    def test_cognitive_set_mode(self, session, console):
+        result = run_cmd("/cognitive guided", session, console)
+        assert "guided" in result.lower()
+
+    def test_cognitive_invalid_mode(self, session, console):
+        result = run_cmd("/cognitive invalid", session, console)
+        assert "unknown" in result.lower() or "Unknown" in result
+
+    def test_cog_alias(self, session, console):
+        result = run_cmd("/cog", session, console)
+        assert "passive" in result.lower() or "cognitive" in result.lower()
+
+    def test_trace(self, session, console):
+        result = run_cmd("/trace", session, console)
+        assert isinstance(result, str)
+
+    def test_knowledge(self, session, console):
+        result = run_cmd("/knowledge", session, console)
+        assert "KnowledgeStore" in result
+
+    def test_memory(self, session, console):
+        result = run_cmd("/memory", session, console)
+        assert "MemoryMesh" in result
+
+    def test_learn(self, session, console):
+        result = run_cmd("/learn We use FastAPI for the backend", session, console)
+        assert "Learned" in result or "Cognitive" in result
+
+    def test_learn_no_args(self, session, console):
+        result = run_cmd("/learn", session, console)
+        assert "Usage" in result
+
+    def test_remember(self, session, console):
+        result = run_cmd("/remember User wants type hints", session, console)
+        assert "Remembered" in result or "Cognitive" in result
+
+    def test_remember_no_args(self, session, console):
+        result = run_cmd("/remember", session, console)
+        assert "Usage" in result

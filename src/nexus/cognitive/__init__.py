@@ -19,6 +19,7 @@ from .knowledge import KnowledgeStore, KnowledgeEntry, KnowledgeLayer, MembraneR
 from .verification import DesignVerifier, DesignConstraint, ConstraintSeverity, VerificationReport
 from .clarification import AmbiguityDetector, ClarificationDialog, ClarificationQuestion, AmbiguityType
 from .memory import MemoryMesh, MemoryBank, MemoryEntry, MemoryType, MemoryScope
+from .integration import CognitiveLayer, CognitiveMode, CognitiveEvent
 
 __all__ = [
     "CognitiveLoop",
@@ -44,4 +45,7 @@ __all__ = [
     "MemoryEntry",
     "MemoryType",
     "MemoryScope",
+    "CognitiveLayer",
+    "CognitiveMode",
+    "CognitiveEvent",
 ]

@@ -295,6 +295,14 @@ async def _handle_command(cmd: str, session: ChatSession, console: Console) -> O
             "│  /hooks         List registered hooks              │\n"
             "│  /watch         Show watcher status               │\n"
             "│                                                   │\n"
+            "│  🧬 Cognitive                                     │\n"
+            "│  /cognitive [m] Show or set cognitive mode        │\n"
+            "│  /trace         Show reasoning trace              │\n"
+            "│  /knowledge     Show knowledge store              │\n"
+            "│  /memory        Show memory mesh                  │\n"
+            "│  /learn <text>  Teach Nexus explicitly            │\n"
+            "│  /remember <x>  Store a memory explicitly         │\n"
+            "│                                                   │\n"
             "│  /quit          Exit chat                         │\n"
             "╰───────────────────────────────────────────────────╯"
         )
@@ -393,6 +401,38 @@ async def _handle_command(cmd: str, session: ChatSession, console: Console) -> O
         if "routing" in s:
             lines.append(f"Routing: {s['routing'].get('total_routed', 0)} routed")
         return "\n".join(lines)
+
+    # -- Cognitive layer ----------------------------------------------------
+
+    if command == "/cognitive" or command == "/cog":
+        if not arg1:
+            mode = session.get_cognitive_mode()
+            return f"Cognitive mode: {mode}\nUsage: /cognitive <off|passive|guided|autonomous>"
+        result = session.set_cognitive_mode(arg1)
+        return result
+
+    if command == "/trace":
+        return session.get_reasoning_trace()
+
+    if command == "/knowledge":
+        return session.get_knowledge_summary()
+
+    if command == "/memory":
+        return session.get_memory_summary()
+
+    if command == "/learn":
+        if not arg1:
+            return "Usage: /learn <content>"
+        content = f"{arg1} {arg2}".strip()
+        entry_id = session.cognitive_learn(content)
+        return f"📚 Learned: {content[:60]}... (id: {entry_id[:8]})" if entry_id else "Cognitive layer not available."
+
+    if command == "/remember":
+        if not arg1:
+            return "Usage: /remember <content>"
+        content = f"{arg1} {arg2}".strip()
+        mem_id = session.cognitive_remember(content)
+        return f"🧠 Remembered: {content[:60]}... (id: {mem_id[:8]})" if mem_id else "Cognitive layer not available."
 
     # -- Session persistence -----------------------------------------------
 
