@@ -16,6 +16,8 @@ partnership requires transparency.
 from .loop import CognitiveLoop, CognitiveState, SharedState
 from .trace import ReasoningTrace, TraceNode, TraceNodeType
 from .knowledge import KnowledgeStore, KnowledgeEntry, KnowledgeLayer, MembraneRule
+from .verification import DesignVerifier, DesignConstraint, ConstraintSeverity, VerificationReport
+from .clarification import AmbiguityDetector, ClarificationDialog, ClarificationQuestion, AmbiguityType
 
 __all__ = [
     "CognitiveLoop",
@@ -28,4 +30,12 @@ __all__ = [
     "KnowledgeEntry",
     "KnowledgeLayer",
     "MembraneRule",
+    "DesignVerifier",
+    "DesignConstraint",
+    "ConstraintSeverity",
+    "VerificationReport",
+    "AmbiguityDetector",
+    "ClarificationDialog",
+    "ClarificationQuestion",
+    "AmbiguityType",
 ]
