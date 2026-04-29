@@ -241,6 +241,55 @@ async def _run_agent(
                     console.print(f"  Result: {result_text}")
 
 
+# ---------------------------------------------------------------------------
+#  nexus chat  —  interactive collaborative coding (the main experience)
+# ---------------------------------------------------------------------------
+
+@cli.command()
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+@click.option("--model", "-m", default=None, help="Ollama model to use (e.g. qwen2.5-coder:14b)")
+@click.option("--no-rules", is_flag=True, help="Don't load .nexus/rules.md")
+def chat(workspace, model, no_rules):
+    """Start an interactive coding session (collaborative chat).
+
+    \b
+    This is the primary way to use Nexus. You'll have a conversation
+    with the AI, which can read/write files, run commands, search your
+    codebase, and build features — all collaboratively.
+
+    \b
+    Examples:
+        nexus chat
+        nexus chat --workspace ./my-project
+        nexus chat --model codellama:13b
+
+    \b
+    Slash commands inside chat:
+        /help      Show available commands
+        /plan <x>  Ask for a plan without executing
+        /tools     List available tools
+        /clear     Clear conversation history
+        /stats     Show session stats
+        /quit      Exit
+    """
+    import asyncio
+    from nexus.tui.chat_ui import run_chat
+    from nexus.agent.models import AgentConfig
+
+    agent_config = AgentConfig(
+        workspace_path=str(Path(workspace).resolve()),
+        ollama_url=config.ollama_url,
+    )
+    if model:
+        agent_config.coding_model = model
+
+    asyncio.run(run_chat(
+        workspace=workspace,
+        model=model,
+        config=agent_config,
+    ))
+
+
 @cli.group()
 def model():
     """Model management commands."""

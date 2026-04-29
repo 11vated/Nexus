@@ -204,6 +204,52 @@ class OllamaClient:
             pass
         return []
 
+    async def stream_chat(
+        self,
+        messages: List[Dict[str, str]],
+        model: Optional[str] = None,
+    ) -> AsyncIterator[str]:
+        """Stream a chat completion token by token.
+
+        Like chat(), but yields tokens as they arrive rather than
+        waiting for the complete response.  Used by ChatSession for
+        live terminal display.
+
+        Args:
+            messages: List of {role, content} message dicts.
+            model: Model name override.
+
+        Yields:
+            Individual text tokens.
+        """
+        model = model or self.config.coding_model
+
+        payload = {
+            "model": model,
+            "messages": messages,
+            "stream": True,
+            "options": {
+                "temperature": self.config.temperature,
+            },
+        }
+
+        session = await self._get_session()
+        url = f"{self.base_url}/api/chat"
+
+        async with session.post(url, json=payload) as resp:
+            async for line in resp.content:
+                if not line:
+                    continue
+                try:
+                    data = json.loads(line)
+                    token = data.get("message", {}).get("content", "")
+                    if token:
+                        yield token
+                    if data.get("done", False):
+                        break
+                except json.JSONDecodeError:
+                    continue
+
     async def is_available(self) -> bool:
         """Check if Ollama is running and responsive."""
         try:
