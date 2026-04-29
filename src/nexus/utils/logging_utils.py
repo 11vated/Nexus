@@ -70,12 +70,16 @@ class LogContext:
         return self
     
     def __exit__(self, exc_type, exc_val, exc_tb):
+        ctx_str = " ".join(f"{k}={v}" for k, v in self.context.items())
         if exc_type:
             self.logger.error(
-                "Operation failed",
+                f"Operation failed [{ctx_str}] error={exc_val}",
                 extra={**self.context, "error": str(exc_val)},
                 exc_info=True
             )
         else:
-            self.logger.info("Operation completed", extra=self.context)
+            self.logger.info(
+                f"Operation completed [{ctx_str}]",
+                extra=self.context
+            )
         return False

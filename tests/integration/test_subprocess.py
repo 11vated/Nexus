@@ -34,7 +34,7 @@ def get_exit_cmd(code):
     """Get platform-appropriate exit command."""
     if platform.system() == "Windows":
         return ["cmd", "/c", f"exit {code}"]
-    return ["exit", str(code)]
+    return ["bash", "-c", f"exit {code}"]
 
 
 def get_sleep_cmd(seconds):
