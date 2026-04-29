@@ -253,9 +253,14 @@ def chat(workspace, model, no_rules):
     """Start an interactive coding session (collaborative chat).
 
     \b
-    This is the primary way to use Nexus. You'll have a conversation
-    with the AI, which can read/write files, run commands, search your
-    codebase, and build features — all collaboratively.
+    This is the primary way to use Nexus — an intelligent coding
+    partner that adapts to what you're doing:
+
+    \b
+    🧠 Multi-model routing  — automatically picks the best model
+    🔄 Adaptive stances     — shifts between architect/debugger/reviewer
+    🗺  Project intelligence — understands your codebase structure
+    💾 Session persistence  — save and resume conversations
 
     \b
     Examples:
@@ -265,12 +270,17 @@ def chat(workspace, model, no_rules):
 
     \b
     Slash commands inside chat:
-        /help      Show available commands
-        /plan <x>  Ask for a plan without executing
-        /tools     List available tools
-        /clear     Clear conversation history
-        /stats     Show session stats
-        /quit      Exit
+        /help        Show available commands
+        /plan <x>    Ask for a plan without executing
+        /tools       List available tools
+        /stance [s]  Set mode (architect, debugger, reviewer, etc.)
+        /project     Show project intelligence
+        /route       Show model routing history
+        /save [name] Save current session
+        /load        Load a saved session
+        /clear       Clear conversation history
+        /stats       Show session stats (with routing & stance info)
+        /quit        Exit (auto-saves session)
     """
     import asyncio
     from nexus.tui.chat_ui import run_chat
