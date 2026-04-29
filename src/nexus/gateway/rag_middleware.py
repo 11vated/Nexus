@@ -1,17 +1,19 @@
 """RAG Middleware for unified gateway."""
-import chromadb
 import logging
 import subprocess
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, TYPE_CHECKING
 from dataclasses import dataclass
 from datetime import datetime
 
 
 logger = logging.getLogger(__name__)
 
+# Lazy import — chromadb is optional
+chromadb = None  # type: ignore[assignment]
 
 try:
+    import chromadb  # type: ignore[no-redef]
     from chromadb.utils import embedding_functions
     CHROMADB_AVAILABLE = True
 except ImportError:
@@ -95,7 +97,7 @@ class RAGMiddleware:
                             ids=[doc_id],
                             documents=[content[:5000]],
                             metadatas=[{
-                                "file": doc_path,
+                                "file": doc_id,
                                 "size": len(content),
                                 "last_modified": file_path.stat().st_mtime,
                                 "extension": file_path.suffix

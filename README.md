@@ -1,153 +1,246 @@
-# 🚀 Ultimate AI Agent Workstation
+# 🧠 Nexus — Autonomous AI Coding Agent
 
-The most advanced, sophisticated, and intelligent AI coding agent setup using free open-source tools. This workstation combines multiple frontier-level AI agents with local LLM inference, advanced prompting, and fine-tuning capabilities.
+Nexus is a local-first autonomous coding agent that plans, writes, tests, and debugs code using Ollama models. No cloud APIs, no subscriptions — just your machine and open-source LLMs.
 
-## 🎯 Mission
+```
+nexus run "Build a Flask API with /health endpoint and tests"
+```
 
-Create the absolute best AI agent the world has seen - a truly intelligent, sophisticated, and capable autonomous coding system that surpasses frontier models through:
+Nexus will plan the approach, write the code, run the tests, and fix any failures — autonomously.
 
-- **Local LLM Inference**: Ollama with Qwen2.5-Coder 14B
-- **Advanced Prompting**: ReAct/Reflexion architectures
-- **Multi-Agent Orchestration**: Aider, OpenCode, Goose integration
-- **Fine-Tuning**: LoRA/QLoRA for domain specialization
-- **Autonomous Workflows**: Self-verifying, self-improving agents
+## ✨ Features
+
+- **Plan → Act → Observe → Reflect** — structured agent loop with self-correction
+- **Local LLMs via Ollama** — works with Qwen2.5-Coder, DeepSeek-R1, or any Ollama model
+- **8 built-in tools** — shell, file I/O, code runner, test runner, search, git
+- **Memory** — short-term (within session) + long-term (across sessions via ChromaDB or JSON)
+- **TUI Dashboard** — full-screen Rich terminal UI showing live agent state
+- **SWE-bench ready** — multi-patch generation and verification pipeline
+- **Zero cost** — runs entirely on your hardware
+
+## 🚀 Quick Start
+
+### 1. Install
+
+```bash
+# Clone
+git clone https://github.com/11vated/Nexus.git
+cd Nexus
+
+# Install (editable)
+pip install -e ".[dev]"
+
+# Or with all extras (ChromaDB, etc.)
+pip install -e ".[all]"
+```
+
+### 2. Start Ollama
+
+```bash
+ollama serve
+ollama pull qwen2.5-coder:14b
+ollama pull deepseek-r1:7b
+```
+
+### 3. Run
+
+```bash
+# One-shot goal
+nexus run "Create a Python CLI that converts CSV to JSON"
+
+# Interactive TUI
+nexus tui
+
+# First-time setup check
+nexus quickstart
+```
+
+## 📖 Commands
+
+| Command | Description |
+|---------|-------------|
+| `nexus run "goal"` | Run the agent on a goal (with live progress) |
+| `nexus tui` | Launch the interactive TUI dashboard |
+| `nexus quickstart` | Check Ollama, models, and workspace setup |
+| `nexus agent tools` | List all registered tools |
+| `nexus agent config` | Show agent configuration |
+| `nexus agent check` | Pre-flight: verify Ollama is reachable |
+| `nexus bench "issue"` | Run SWE-bench style issue resolution |
+| `nexus models` | List available Ollama models |
+| `nexus pull <model>` | Pull an Ollama model |
+
+### Flags
+
+```
+--workspace, -w    Target project directory (default: .)
+--model, -m        Override planning model
+--coding-model, -c Override coding model
+--max-iterations   Loop iteration limit (default: 25)
+--no-reflect       Disable reflection step
+--verbose, -v      Show full tool output
+--json-output      Machine-readable JSON result
+```
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Ollama Server │    │   Agent System  │    │  Fine-Tuning    │
-│                 │    │                 │    │                 │
-│ • Qwen2.5-Coder │    │ • Aider Ultimate│    │ • LoRA Training │
-│ • Local Models  │    │ • OpenCode      │    │ • QLoRA         │
-│ • GGUF Format   │    │ • Goose Desktop │    │ • PEFT          │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         └───────────────────────┼───────────────────────┘
-                                 │
-                    ┌─────────────────┐
-                    │  Workstation    │
-                    │  Orchestrator   │
-                    └─────────────────┘
+                    ┌──────────────────────────────┐
+                    │         CLI / TUI             │
+                    │   nexus run | nexus tui       │
+                    └──────────┬───────────────────┘
+                               │
+                    ┌──────────▼───────────────────┐
+                    │       Agent Loop              │
+                    │  Plan → Act → Observe → Reflect│
+                    └──┬──────┬──────┬──────┬──────┘
+                       │      │      │      │
+              ┌────────▼┐ ┌──▼────┐ ┌▼─────┐ ┌▼────────┐
+              │ Planner  │ │Execut.│ │Reflec│ │ Context  │
+              │ (LLM)   │ │(Tools)│ │(LLM) │ │ Manager  │
+              └────┬─────┘ └──┬───┘ └──────┘ └──────────┘
+                   │          │
+         ┌─────────▼──┐  ┌───▼──────────────────────┐
+         │   Ollama    │  │      Tool Registry        │
+         │  LLM Client │  │  shell · files · search   │
+         │             │  │  code_run · test · git     │
+         └─────────────┘  └──────────────────────────┘
+                               │
+                    ┌──────────▼───────────────────┐
+                    │         Memory                │
+                    │  Short-term  │  Long-term     │
+                    │  (session)   │  (ChromaDB/JSON)│
+                    └──────────────────────────────┘
 ```
 
-## 🚀 Quick Start
+### Agent Loop
 
-1. **Launch Workstation**:
-   ```bash
-   ./WORKSTATION.bat
-   ```
+1. **Plan** — LLM creates a step-by-step execution plan from the goal
+2. **Act** — Executor dispatches the next tool call (shell, file write, etc.)
+3. **Observe** — Results are captured and added to context
+4. **Reflect** — LLM assesses quality, decides to continue/retry/stop
 
-2. **Choose Your Agent**:
-   - [3] Aider ULTIMATE - Frontier autonomous coding
-   - [5] OpenCode - Advanced code generation
-   - [4] Goose Desktop - Multi-tool agent
+Circuit breaker: 3 consecutive failures → automatic stop.
 
-3. **Fine-Tune for Excellence**:
-   - [6] Fine-Tune Custom Model - Domain specialization
+### Tools
 
-4. **OpenCode Local Config**:
-   - A template OpenCode config is available at `opencode.json`
-   - The launcher will automatically copy it to `%USERPROFILE%\.config\opencode\opencode.json` if needed
+| Tool | Description |
+|------|-------------|
+| `shell` | Run shell commands (with blocked dangerous commands) |
+| `file_read` | Read file contents |
+| `file_write` | Write/create files (auto-creates directories) |
+| `file_list` | List directory contents |
+| `code_run` | Execute Python/Node/Bash code in temp files |
+| `test_run` | Run pytest/npm test with result parsing |
+| `search` | Search codebase (ripgrep preferred, grep fallback) |
+| `git` | Git operations (allowlisted safe commands) |
+
+### Memory
+
+- **Short-term**: Rolling window of goals, steps, and results within the current session
+- **Long-term**: Persistent storage across sessions (ChromaDB when available, JSON fallback)
+- At session start, Nexus recalls relevant past sessions to inform planning
+- After completion, a session summary is stored for future reference
+
+## ⚙️ Configuration
+
+Nexus reads from environment variables and `.env`:
+
+```bash
+# .env
+NEXUS_OLLAMA_URL=http://localhost:11434
+NEXUS_DEFAULT_MODEL=qwen2.5-coder:14b
+NEXUS_WORKSPACE_ROOT=./workspace
+```
+
+Agent defaults (overridable via CLI flags):
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `planning_model` | `deepseek-r1:7b` | Model for planning and reasoning |
+| `coding_model` | `qwen2.5-coder:14b` | Model for code generation |
+| `max_iterations` | `25` | Maximum agent loop iterations |
+| `quality_threshold` | `0.7` | Minimum quality score (0-1) |
+| `reflection_enabled` | `true` | Enable/disable reflection step |
+| `memory_enabled` | `true` | Enable/disable long-term memory |
+
+## 🐳 Docker
+
+```bash
+# Build
+docker build -t nexus .
+
+# Run (with Ollama on host)
+docker run -it --network host nexus run "Build a hello world Flask app"
+
+# Or with a workspace mount
+docker run -it --network host -v $(pwd)/my-project:/workspace nexus run "Fix the tests" -w /workspace
+```
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+pytest
+
+# With coverage
+pytest --cov=nexus --cov-report=html
+
+# Specific module
+pytest tests/unit/test_agent/
+```
 
 ## 📁 Project Structure
 
 ```
-├── agent-system/          # Core agent configurations
-│   ├── aider_ultimate.yaml # Frontier Aider config
-│   ├── goose-init.yaml    # Goose integration
-│   └── core/              # Agent brain components
-├── opencode.json          # OpenCode configuration template
-├── fine-tuning/           # Model fine-tuning setup
-│   ├── train_lora.py      # LoRA training script
-│   ├── convert_to_gguf.py # Ollama conversion
-│   └── requirements.txt   # Training dependencies
-├── mcp_servers/           # Model Context Protocol
-├── skills/               # Agent capabilities
-├── workflows/            # Autonomous workflows
-└── workspace/            # Development sandbox
+src/nexus/
+├── agent/              # Core agent loop
+│   ├── loop.py         # Plan→Act→Observe→Reflect cycle
+│   ├── planner.py      # LLM-based planning
+│   ├── executor.py     # Tool dispatch with fuzzy matching
+│   ├── reflector.py    # Quality assessment and self-correction
+│   ├── context.py      # Context window management
+│   ├── llm.py          # Ollama async client
+│   └── models.py       # Agent dataclasses (State, Task, Step, Config)
+├── tools/              # Tool implementations
+│   ├── registry.py     # BaseTool ABC + ToolRegistry
+│   ├── shell.py        # Shell command execution
+│   ├── file_ops.py     # File read/write/list
+│   ├── code_runner.py  # Code execution (Python/Node/Bash)
+│   ├── test_runner.py  # Test runner (pytest/npm)
+│   ├── search.py       # Codebase search (rg/grep)
+│   └── git.py          # Git operations
+├── memory/             # Memory systems
+│   ├── short_term.py   # Session-scoped rolling window
+│   ├── long_term.py    # Persistent ChromaDB/JSON store
+│   └── context_store.py # Role/category indexed retrieval
+├── tui/                # Terminal UI
+│   └── dashboard.py    # Full-screen Rich dashboard
+├── gateway/            # Ollama gateway with middleware
+├── security/           # Input sanitization, sandboxing
+├── swe_bench/          # SWE-bench integration
+├── config/             # Settings (pydantic-settings)
+├── cli.py              # Click CLI entry point
+└── __main__.py         # python -m nexus support
 ```
 
-## 🧠 Agent Capabilities
+## 🗺️ Roadmap
 
-### Aider ULTIMATE
-- **ReAct Workflow**: Think → Plan → Implement → Verify → Deliver
-- **Self-Reflection**: Continuous improvement through feedback loops
-- **Multi-File Operations**: Coordinated code changes
-- **Error Recovery**: Autonomous debugging and fixes
-
-### OpenCode
-- **Advanced Code Generation**: Context-aware completions
-- **Multi-Language Support**: Python, TypeScript, Go, etc.
-- **Real-Time Collaboration**: Live coding assistance
-
-### Goose Desktop
-- **Multi-Tool Integration**: Shell, file operations, web access
-- **Workflow Orchestration**: Complex task automation
-- **Memory Persistence**: Long-term learning
-
-## 🔧 Fine-Tuning
-
-Train custom models for specialized domains:
-
-```bash
-# Setup environment
-cd fine-tuning
-pip install -r requirements.txt
-
-# Train LoRA adapter
-python train_lora.py
-
-# Convert for Ollama
-python convert_to_gguf.py --base-model /path/to/model --adapter /path/to/adapter --output output.gguf
-```
-
-## 📊 Performance Metrics
-
-- **Code Quality**: 95%+ accuracy on complex tasks
-- **Autonomy**: Self-directed problem solving
-- **Speed**: Local inference (no API latency)
-- **Cost**: $0 (free open-source tools)
-
-## 🎯 Advanced Features
-
-- **Reflexion Loops**: Self-critique and improvement
-- **Chain-of-Thought**: Structured reasoning
-- **Tool Integration**: MCP servers, shell tools, file ops
-- **Memory Systems**: Vector search, persistent learning
-
-## 🚀 Launch Commands
-
-```bash
-# Ultimate Workstation
-./WORKSTATION.bat
-
-# Direct Agent Launch
-./agent-system/aider.bat          # Aider with ultimate config
-./agent-system/AGENTS.md          # Agent documentation
-```
-
-## 📈 Roadmap
-
+- [x] Agent loop (Plan → Act → Observe → Reflect)
+- [x] 8 built-in tools with security boundaries
+- [x] Short-term + long-term memory
+- [x] CLI with live progress display
+- [x] Interactive TUI dashboard
+- [x] SWE-bench multi-patch pipeline
+- [ ] MCP (Model Context Protocol) tool server
 - [ ] Multi-agent collaboration
-- [ ] Advanced fine-tuning datasets
-- [ ] Custom model architectures
-- [ ] Real-time performance monitoring
-- [ ] Automated prompt optimization
-
-## 🤝 Contributing
-
-This is the pursuit of AI excellence. Contributions welcome for:
-
-- Advanced prompting techniques
-- New agent integrations
-- Fine-tuning improvements
-- Performance optimizations
+- [ ] Fine-tuning pipeline integration
+- [ ] Plugin system for custom tools
+- [ ] Web UI
 
 ## 📄 License
 
-MIT - Free for all to build the best AI agents possible.
+MIT
 
 ---
 
-*"The best AI agent isn't built by one person, but by the collective pursuit of excellence."*
+*Built for developers who want a real coding agent — not a chatbot.*

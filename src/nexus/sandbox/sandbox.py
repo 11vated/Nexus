@@ -1,5 +1,6 @@
 """Execution sandbox for safe code running."""
 import subprocess
+import sys
 import tempfile
 import shutil
 import os
