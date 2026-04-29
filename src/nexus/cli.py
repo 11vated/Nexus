@@ -261,6 +261,10 @@ def chat(workspace, model, no_rules):
     🔄 Adaptive stances     — shifts between architect/debugger/reviewer
     🗺  Project intelligence — understands your codebase structure
     💾 Session persistence  — save and resume conversations
+    📋 Live diff preview    — see changes before they're written
+    🌿 Conversation branching — fork/compare/merge conversations
+    🔒 Safety & permissions — granular tool safety with audit trail
+    🪝 Hooks & watchers     — react to events automatically
 
     \b
     Examples:
@@ -270,17 +274,40 @@ def chat(workspace, model, no_rules):
 
     \b
     Slash commands inside chat:
-        /help        Show available commands
-        /plan <x>    Ask for a plan without executing
-        /tools       List available tools
-        /stance [s]  Set mode (architect, debugger, reviewer, etc.)
-        /project     Show project intelligence
-        /route       Show model routing history
-        /save [name] Save current session
-        /load        Load a saved session
-        /clear       Clear conversation history
-        /stats       Show session stats (with routing & stance info)
-        /quit        Exit (auto-saves session)
+        /help            Show available commands
+        /plan <x>        Ask for a plan without executing
+        /tools           List available tools
+        /clear           Clear conversation history
+
+    \b
+    Intelligence:
+        /stance [name]   Set mode (architect, debugger, reviewer, etc.)
+        /project         Show project intelligence
+        /route           Show model routing history
+        /stats           Show session stats (routing, diffs, audit)
+        /save [name]     Save current session
+        /load            Load a saved session
+
+    \b
+    Diffs & Branching:
+        /diff [mode]     Show pending diffs (unified|side|inline|summary)
+        /accept [path]   Accept pending diff(s)
+        /reject [path]   Reject pending diff(s)
+        /undo            Undo last applied change
+        /branch <name>   Create a new conversation branch
+        /branches        List all branches
+        /switch <name>   Switch to a branch
+        /compare <a> <b> Compare two branches
+        /merge <src>     Merge a branch into current
+        /tree            Show branch tree visualization
+
+    \b
+    Safety:
+        /trust [level]   Show or set trust level (read|write|execute|destructive)
+        /audit [n]       Show tool execution audit log
+        /hooks           List registered hooks
+        /watch           Show file watcher status
+        /quit            Exit (auto-saves session)
     """
     import asyncio
     from nexus.tui.chat_ui import run_chat

@@ -24,6 +24,19 @@ What makes THIS different from any other chat wrapper:
 4. **Session Persistence** — save and resume conversations with full
    context. Your sessions are local JSON files, not cloud data.
 
+5. **Live Diff Preview** — every file modification generates a diff
+   that's shown before (or alongside) the change. Accept, reject,
+   or undo at the hunk level.
+
+6. **Conversation Branching** — fork conversations like git branches
+   to explore multiple approaches. Compare, switch, merge back.
+
+7. **Safety & Permissions** — granular control over what tools can do.
+   Dangerous ops need confirmation. Full audit trail of every action.
+
+8. **Hooks & Watchers** — extensible pre/post hooks around tool calls.
+   File watchers that react to project changes automatically.
+
 Usage:
     session = ChatSession(workspace="/path/to/project")
     session.load_project_rules()   # reads .nexus/rules.md
@@ -57,15 +70,19 @@ logger = logging.getLogger(__name__)
 
 class EventType(Enum):
     """Types of events produced during a chat turn."""
-    TOKEN = "token"              # Streaming text token
-    TOOL_CALL = "tool_call"      # LLM wants to call a tool
-    TOOL_RESULT = "tool_result"  # Result from tool execution
-    PLAN = "plan"                # LLM proposed a multi-step plan
-    THINKING = "thinking"        # LLM reasoning / scratchpad
-    ROUTING = "routing"          # Model routing decision (new!)
-    STANCE_CHANGE = "stance"     # Stance change notification (new!)
-    ERROR = "error"              # Something went wrong
-    DONE = "done"                # Turn complete
+    TOKEN = "token"                  # Streaming text token
+    TOOL_CALL = "tool_call"          # LLM wants to call a tool
+    TOOL_RESULT = "tool_result"      # Result from tool execution
+    PLAN = "plan"                    # LLM proposed a multi-step plan
+    THINKING = "thinking"            # LLM reasoning / scratchpad
+    ROUTING = "routing"              # Model routing decision
+    STANCE_CHANGE = "stance"         # Stance change notification
+    DIFF_PREVIEW = "diff_preview"    # Diff generated for file write
+    PERMISSION = "permission"        # Permission check result
+    HOOK = "hook"                    # Hook fired (pre/post)
+    BRANCH = "branch"                # Branch operation
+    ERROR = "error"                  # Something went wrong
+    DONE = "done"                    # Turn complete
 
 
 @dataclass
@@ -114,6 +131,8 @@ Behavioral rules:
 
 {project_rules}
 
+{branch_context}
+
 Current workspace: {workspace}
 """
 
@@ -133,6 +152,13 @@ class ChatSession:
     - StanceManager: adapts behavior (architect, debugger, reviewer, etc.)
     - ProjectMap:   deep project understanding for auto-context
     - SessionStore: save/resume sessions
+
+    Interactive features (auto-enabled):
+    - DiffEngine:        live diff preview for file writes
+    - ConversationTree:  git-like conversation branching
+    - PermissionManager: safety gates around tool execution
+    - HookEngine:        extensible pre/post tool hooks
+    - WatcherEngine:     background file monitoring
     """
 
     def __init__(
@@ -152,15 +178,29 @@ class ChatSession:
         self._session_start = time.time()
 
         # Intelligence layer — what makes Nexus unique
-        self._router = None       # ModelRouter
-        self._stances = None      # StanceManager
-        self._project_map = None  # ProjectMap
-        self._session_store = None  # SessionStore
+        self._router = None           # ModelRouter
+        self._stances = None          # StanceManager
+        self._project_map = None      # ProjectMap
+        self._session_store = None    # SessionStore
         self._intelligence_enabled = True
         self._session_id: Optional[str] = None
 
+        # Interactive layer — collaborative power tools
+        self._diff_engine = None      # DiffEngine
+        self._diff_renderer = None    # DiffRenderer
+        self._branch_tree = None      # ConversationTree
+        self._permissions = None      # PermissionManager
+        self._hooks = None            # HookEngine
+        self._watcher = None          # WatcherEngine
+        self._interactive_enabled = True
+
+        # Diff preview config
+        self._diff_auto_apply = True  # Apply diffs automatically (show diff for info)
+        self._diff_mode = "unified"   # Default render mode
+
         self._setup_tools()
         self._setup_intelligence()
+        self._setup_interactive()
 
     # -- setup ---------------------------------------------------------------
 
@@ -203,6 +243,34 @@ class ChatSession:
             logger.warning("Intelligence layer not available: %s", exc)
             self._intelligence_enabled = False
 
+    def _setup_interactive(self) -> None:
+        """Initialize the interactive layer.
+
+        Diff preview, conversation branching, safety permissions,
+        hooks, and file watchers — the collaborative power tools.
+        """
+        try:
+            from nexus.diff.engine import DiffEngine
+            from nexus.diff.renderer import DiffRenderer
+            from nexus.intelligence.branching import ConversationTree
+            from nexus.safety.permissions import PermissionManager, PermissionLevel
+            from nexus.hooks.engine import HookEngine, WatcherEngine
+
+            self._diff_engine = DiffEngine(self.workspace)
+            self._diff_renderer = DiffRenderer()
+            self._branch_tree = ConversationTree(self.workspace)
+            self._permissions = PermissionManager(
+                workspace=self.workspace,
+                trust_level=PermissionLevel.WRITE,
+            )
+            self._hooks = HookEngine()
+            self._watcher = WatcherEngine(self.workspace)
+
+            logger.info("Interactive layer initialized (diff, branching, safety, hooks, watchers)")
+        except ImportError as exc:
+            logger.warning("Interactive layer not available: %s", exc)
+            self._interactive_enabled = False
+
     def _get_tool_descriptions(self) -> str:
         """Format tool descriptions for the system prompt."""
         lines = []
@@ -221,7 +289,7 @@ class ChatSession:
         return self.project_rules
 
     def _build_system_prompt(self) -> str:
-        """Build the system prompt with intelligence context."""
+        """Build the system prompt with intelligence + interactive context."""
         # Stance prompt addon
         stance_prompt = ""
         if self._stances:
@@ -245,11 +313,20 @@ class ChatSession:
                 f"{self.project_rules}\n"
             )
 
+        # Branch context
+        branch_context = ""
+        if self._branch_tree and self._branch_tree.branch_count > 1:
+            branch_context = (
+                f"Conversation branch: {self._branch_tree.current_branch} "
+                f"({self._branch_tree.branch_count} total branches)"
+            )
+
         return CHAT_SYSTEM_PROMPT.format(
             tool_descriptions=self._get_tool_descriptions(),
             stance_prompt=stance_prompt,
             project_context=project_context,
             project_rules=rules_section,
+            branch_context=branch_context,
             workspace=self.workspace,
         )
 
@@ -306,6 +383,9 @@ class ChatSession:
             metadata["stance"] = self._stances.current.value
         if self._router:
             metadata["routing_stats"] = self._router.stats()
+        if self._branch_tree:
+            metadata["branch"] = self._branch_tree.current_branch
+            metadata["branch_count"] = self._branch_tree.branch_count
 
         project_ctx = {}
         if self._project_map and self._project_map._scanned:
@@ -318,6 +398,21 @@ class ChatSession:
             title=title,
             session_id=self._session_id,
         )
+
+        # Also save the branch tree
+        if self._branch_tree:
+            try:
+                self._branch_tree.save()
+            except Exception as exc:
+                logger.warning("Failed to save branch tree: %s", exc)
+
+        # Save audit log
+        if self._permissions:
+            try:
+                self._permissions.save_audit()
+            except Exception as exc:
+                logger.warning("Failed to save audit log: %s", exc)
+
         return self._session_id
 
     def load_session(self, session_id: str) -> bool:
@@ -343,6 +438,10 @@ class ChatSession:
         # Restore model if saved
         if snapshot.metadata.get("model"):
             self.model = snapshot.metadata["model"]
+
+        # Load branch tree
+        if self._branch_tree:
+            self._branch_tree.load()
 
         logger.info(
             "Loaded session %s (%d messages)",
@@ -400,6 +499,309 @@ class ChatSession:
 
         return decision.model
 
+    # ========================================================================
+    # Conversation Branching — git for conversations
+    # ========================================================================
+
+    def create_branch(self, name: str, description: str = "", switch: bool = True) -> str:
+        """Create a new conversation branch from the current point.
+
+        Args:
+            name: Branch name.
+            description: Optional description.
+            switch: Whether to switch to the new branch (default True).
+
+        Returns a description string of what happened.
+        """
+        if not self._branch_tree:
+            return "Branching not available."
+
+        try:
+            branch = self._branch_tree.create_branch(name, description=description, switch=switch)
+            return (
+                f"Created branch '{name}' from '{branch.parent_branch}' "
+                f"at message {branch.fork_point}"
+            )
+        except ValueError as exc:
+            return f"Error: {exc}"
+
+    def switch_branch(self, name: str) -> str:
+        """Switch to a different conversation branch.
+
+        Returns a description of the switch.
+        """
+        if not self._branch_tree:
+            return "Branching not available."
+
+        try:
+            branch = self._branch_tree.switch_branch(name)
+            # Update history to match the branch
+            messages = self._branch_tree.get_history_dicts(name)
+            self.history = messages
+            return (
+                f"Switched to branch '{name}' "
+                f"({len(messages)} messages)"
+            )
+        except ValueError as exc:
+            return f"Error: {exc}"
+
+    def delete_branch(self, name: str) -> str:
+        """Delete a conversation branch."""
+        if not self._branch_tree:
+            return "Branching not available."
+
+        try:
+            self._branch_tree.delete_branch(name)
+            return f"Deleted branch '{name}'"
+        except ValueError as exc:
+            return f"Error: {exc}"
+
+    def list_branches(self) -> List[Dict[str, Any]]:
+        """List all conversation branches."""
+        if not self._branch_tree:
+            return []
+        return self._branch_tree.list_branches()
+
+    def compare_branches(self, branch_a: str, branch_b: str) -> Dict[str, Any]:
+        """Compare two conversation branches."""
+        if not self._branch_tree:
+            return {"error": "Branching not available"}
+
+        try:
+            comp = self._branch_tree.compare(branch_a, branch_b)
+            return {
+                "branch_a": comp.branch_a,
+                "branch_b": comp.branch_b,
+                "fork_point": comp.fork_point,
+                "shared_messages": comp.shared_messages,
+                "unique_a": comp.unique_a,
+                "unique_b": comp.unique_b,
+                "a_summary": comp.a_summary,
+                "b_summary": comp.b_summary,
+                "a_tool_calls": comp.a_tool_calls,
+                "b_tool_calls": comp.b_tool_calls,
+            }
+        except ValueError as exc:
+            return {"error": str(exc)}
+
+    def merge_branch(self, source: str, strategy: str = "append") -> Dict[str, Any]:
+        """Merge a branch into the current branch."""
+        if not self._branch_tree:
+            return {"error": "Branching not available"}
+
+        try:
+            count = self._branch_tree.merge(source, strategy=strategy)
+            # Refresh history from the merged branch
+            messages = self._branch_tree.get_history_dicts()
+            self.history = messages
+            return {
+                "merged": count,
+                "source": source,
+                "target": self._branch_tree.current_branch,
+                "strategy": strategy,
+            }
+        except ValueError as exc:
+            return {"error": str(exc)}
+
+    def get_branch_tree(self) -> str:
+        """Get a visual tree of all branches."""
+        if not self._branch_tree:
+            return "Branching not available."
+        return self._branch_tree.tree_display()
+
+    @property
+    def current_branch(self) -> str:
+        """Name of the current conversation branch."""
+        if self._branch_tree:
+            return self._branch_tree.current_branch
+        return "main"
+
+    # ========================================================================
+    # Diff Engine — live diff preview
+    # ========================================================================
+
+    def get_pending_diffs(self) -> List[Any]:
+        """Get all pending (unapplied) diffs."""
+        if not self._diff_engine:
+            return []
+        return self._diff_engine.pending_diffs
+
+    def accept_diff(self, path: Optional[str] = None) -> Dict[str, Any]:
+        """Accept and apply a pending diff (or all pending diffs).
+
+        Args:
+            path: Specific file path, or None to accept all.
+
+        Returns:
+            Application result dict.
+        """
+        if not self._diff_engine:
+            return {"error": "Diff engine not available"}
+
+        pending = self._diff_engine.pending_diffs
+        if not pending:
+            return {"message": "No pending diffs"}
+
+        if path:
+            target = next((d for d in pending if d.path == path), None)
+            if not target:
+                return {"error": f"No pending diff for '{path}'"}
+            target.accept_all()
+            return self._diff_engine.apply(target)
+        else:
+            # Accept all
+            results: Dict[str, Any] = {"applied": [], "skipped": [], "errors": []}
+            for diff in list(pending):
+                diff.accept_all()
+                sub = self._diff_engine.apply(diff)
+                results["applied"].extend(sub.get("applied", []))
+                results["skipped"].extend(sub.get("skipped", []))
+                results["errors"].extend(sub.get("errors", []))
+            return results
+
+    def reject_diff(self, path: Optional[str] = None) -> Dict[str, Any]:
+        """Reject a pending diff (or all pending diffs).
+
+        Args:
+            path: Specific file path, or None to reject all.
+
+        Returns:
+            Summary of rejected diffs.
+        """
+        if not self._diff_engine:
+            return {"error": "Diff engine not available"}
+
+        pending = self._diff_engine.pending_diffs
+        if not pending:
+            return {"message": "No pending diffs"}
+
+        rejected = []
+        if path:
+            target = next((d for d in pending if d.path == path), None)
+            if not target:
+                return {"error": f"No pending diff for '{path}'"}
+            self._diff_engine.reject(target)
+            rejected.append(target.path)
+        else:
+            for diff in list(pending):
+                self._diff_engine.reject(diff)
+                rejected.append(diff.path)
+
+        return {"rejected": rejected, "count": len(rejected)}
+
+    def undo_last_change(self) -> Dict[str, Any]:
+        """Undo the most recently applied file change."""
+        if not self._diff_engine:
+            return {"error": "Diff engine not available"}
+
+        result = self._diff_engine.undo_last()
+        if result is None:
+            return {"message": "Nothing to undo"}
+        return result
+
+    def get_diff_stats(self) -> Dict[str, Any]:
+        """Get diff engine statistics."""
+        if not self._diff_engine:
+            return {}
+        return {
+            "pending": self._diff_engine.pending_count,
+            "history": self._diff_engine.history_count,
+            "auto_apply": self._diff_auto_apply,
+            "mode": self._diff_mode,
+        }
+
+    # ========================================================================
+    # Safety & Permissions
+    # ========================================================================
+
+    def get_audit_log(self, limit: int = 20) -> List[Dict[str, Any]]:
+        """Get the tool execution audit log."""
+        if not self._permissions:
+            return []
+        return [e.to_dict() for e in self._permissions.audit_log(limit=limit)]
+
+    def get_audit_summary(self) -> Dict[str, Any]:
+        """Get a summary of the audit log."""
+        if not self._permissions:
+            return {}
+        return self._permissions.audit_summary()
+
+    def set_trust_level(self, level_name: str) -> str:
+        """Set the trust level for auto-approving tool calls.
+
+        Args:
+            level_name: One of "read", "write", "execute", "destructive"
+
+        Returns:
+            Confirmation string.
+        """
+        if not self._permissions:
+            return "Permission manager not available."
+
+        from nexus.safety.permissions import PermissionLevel
+
+        level_map = {
+            "read": PermissionLevel.READ,
+            "write": PermissionLevel.WRITE,
+            "execute": PermissionLevel.EXECUTE,
+            "destructive": PermissionLevel.DESTRUCTIVE,
+        }
+
+        level = level_map.get(level_name.lower().strip())
+        if not level:
+            return f"Unknown level '{level_name}'. Use: read, write, execute, destructive"
+
+        self._permissions.set_trust_level(level)
+        return f"Trust level set to {level.name}"
+
+    def get_trust_level(self) -> str:
+        """Get the current trust level."""
+        if not self._permissions:
+            return "unknown"
+        return self._permissions.trust_level.name
+
+    # ========================================================================
+    # Hooks & Watchers
+    # ========================================================================
+
+    def get_hooks(self) -> List[Dict[str, Any]]:
+        """List all registered hooks."""
+        if not self._hooks:
+            return []
+        return self._hooks.list_hooks()
+
+    def get_hook_history(self) -> List[Dict[str, Any]]:
+        """Get recent hook execution history."""
+        if not self._hooks:
+            return []
+        return [
+            {
+                "name": hr.hook_name,
+                "phase": hr.phase.value,
+                "success": hr.success,
+                "message": hr.message,
+                "blocked": hr.blocked,
+                "duration_ms": hr.duration_ms,
+            }
+            for hr in self._hooks.history[-20:]
+        ]
+
+    def get_watcher_status(self) -> Dict[str, Any]:
+        """Get file watcher status."""
+        if not self._watcher:
+            return {}
+        return {
+            "watchers": self._watcher.list_watchers(),
+            "recent_events": [
+                {
+                    "type": e.event_type.value,
+                    "path": e.path,
+                    "timestamp": e.timestamp,
+                }
+                for e in self._watcher.recent_events[-10:]
+            ],
+        }
+
     # -- core chat loop ------------------------------------------------------
 
     async def send(self, user_message: str) -> AsyncIterator[ChatEvent]:
@@ -409,7 +811,13 @@ class ChatSession:
         1. ModelRouter picks the best model for this message
         2. StanceManager adapts behavior
         3. ProjectMap provides auto-context in the system prompt
-        4. Tool calls are executed inline
+        4. Tool calls are executed inline with safety checks
+
+        Interactive features:
+        5. PermissionManager gates tool execution
+        6. HookEngine fires pre/post around tools
+        7. DiffEngine generates previews for file writes
+        8. ConversationTree tracks messages on branches
 
         Args:
             user_message: The user's message text.
@@ -418,6 +826,10 @@ class ChatSession:
             ChatEvent objects for each stage of the response.
         """
         self.history.append({"role": "user", "content": user_message})
+
+        # Track message on branch tree
+        if self._branch_tree:
+            self._branch_tree.add_message("user", user_message)
 
         # === Intelligence: Route to best model ===
         routed_model = self._route_message(user_message)
@@ -495,6 +907,11 @@ class ChatSession:
                         content=response_text,
                     )
                 self.history.append({"role": "assistant", "content": response_text})
+
+                # Track on branch tree
+                if self._branch_tree:
+                    self._branch_tree.add_message("assistant", response_text)
+
                 yield ChatEvent(type=EventType.DONE)
                 return
 
@@ -506,7 +923,7 @@ class ChatSession:
                     content=text_before_tools.strip(),
                 )
 
-            # Execute each tool call
+            # Execute each tool call with safety layer
             tool_results = []
             for tc in tool_calls:
                 tool_name = tc["tool"]
@@ -519,7 +936,141 @@ class ChatSession:
                     data={"tool": tool_name, "args": tool_args, "index": self._tool_call_count},
                 )
 
-                result = await self._execute_tool(tool_name, tool_args)
+                # === Safety: Permission check ===
+                # Only run permission checks for known tools — unknown tools
+                # fall through to _execute_tool which returns a clear error.
+                permission_blocked = False
+                tool_is_known = tool_name in self._tools
+                if self._permissions and tool_is_known:
+                    blocked_reason = self._permissions.is_blocked(tool_name, tool_args)
+                    if blocked_reason:
+                        result = f"⛔ {blocked_reason}"
+                        permission_blocked = True
+                        yield ChatEvent(
+                            type=EventType.PERMISSION,
+                            content=f"Blocked: {tool_name}",
+                            data={"tool": tool_name, "status": "blocked", "reason": blocked_reason},
+                        )
+                    elif not self._permissions.check(tool_name, tool_args):
+                        result = (
+                            f"⚠ Permission denied: '{tool_name}' requires higher trust level "
+                            f"(current: {self._permissions.trust_level.name})"
+                        )
+                        permission_blocked = True
+                        yield ChatEvent(
+                            type=EventType.PERMISSION,
+                            content=f"Denied: {tool_name}",
+                            data={
+                                "tool": tool_name,
+                                "status": "denied",
+                                "trust_level": self._permissions.trust_level.name,
+                            },
+                        )
+
+                if not permission_blocked:
+                    # === Hooks: Pre-execution ===
+                    hook_blocked = False
+                    if self._hooks:
+                        pre_results = await self._hooks.fire_pre(tool_name, tool_args)
+                        for hr in pre_results:
+                            if hr.blocked:
+                                result = f"🪝 Blocked by hook '{hr.hook_name}': {hr.message}"
+                                hook_blocked = True
+                                yield ChatEvent(
+                                    type=EventType.HOOK,
+                                    content=f"PRE hook blocked: {hr.hook_name}",
+                                    data={
+                                        "hook": hr.hook_name,
+                                        "phase": "pre",
+                                        "blocked": True,
+                                        "message": hr.message,
+                                    },
+                                )
+                                break
+                            elif hr.modified_args:
+                                tool_args = hr.modified_args
+                                yield ChatEvent(
+                                    type=EventType.HOOK,
+                                    content=f"PRE hook modified args: {hr.hook_name}",
+                                    data={
+                                        "hook": hr.hook_name,
+                                        "phase": "pre",
+                                        "modified": True,
+                                    },
+                                )
+
+                    if not hook_blocked:
+                        # === Diff preview for file writes ===
+                        diff_generated = False
+                        if (
+                            self._diff_engine
+                            and tool_name == "file_write"
+                            and "path" in tool_args
+                            and "content" in tool_args
+                        ):
+                            try:
+                                diff = self._diff_engine.diff(
+                                    tool_args["path"],
+                                    tool_args["content"],
+                                )
+                                if not diff.is_empty:
+                                    diff_generated = True
+                                    yield ChatEvent(
+                                        type=EventType.DIFF_PREVIEW,
+                                        content=diff.unified,
+                                        data={
+                                            "path": diff.path,
+                                            "type": diff.diff_type.value,
+                                            "stats": diff.stats,
+                                            "hunks": len(diff.hunks),
+                                        },
+                                    )
+                                    # Auto-apply if configured
+                                    if self._diff_auto_apply:
+                                        diff.accept_all()
+                                        self._diff_engine.apply(diff)
+                            except Exception as exc:
+                                logger.warning("Diff generation failed: %s", exc)
+
+                        # Execute the tool
+                        start_time = time.time()
+                        if diff_generated and self._diff_auto_apply:
+                            # file_write was already applied via diff engine
+                            result = f"✅ File written via diff engine: {tool_args.get('path', '?')}"
+                        else:
+                            result = await self._execute_tool(tool_name, tool_args)
+                        duration_ms = (time.time() - start_time) * 1000
+
+                        # === Hooks: Post-execution ===
+                        if self._hooks:
+                            post_results = await self._hooks.fire_post(
+                                tool_name,
+                                tool_args,
+                                result=str(result)[:500],
+                                success=not str(result).startswith("Error"),
+                            )
+                            for hr in post_results:
+                                if hr.message:
+                                    yield ChatEvent(
+                                        type=EventType.HOOK,
+                                        content=f"POST hook: {hr.hook_name}",
+                                        data={
+                                            "hook": hr.hook_name,
+                                            "phase": "post",
+                                            "message": hr.message,
+                                        },
+                                    )
+
+                        # === Audit: Log execution ===
+                        if self._permissions:
+                            self._permissions.log_execution(
+                                tool_name,
+                                tool_args,
+                                result=str(result)[:200],
+                                success=not str(result).startswith("Error"),
+                                duration_ms=duration_ms,
+                            )
+
                 tool_results.append({
                     "tool": tool_name,
                     "args": tool_args,
@@ -534,6 +1085,8 @@ class ChatSession:
 
             # Add assistant message and tool results to history
             self.history.append({"role": "assistant", "content": response_text})
+            if self._branch_tree:
+                self._branch_tree.add_message("assistant", response_text)
 
             # Format tool results for the next LLM turn
             results_text = "\n".join(
@@ -561,9 +1114,13 @@ class ChatSession:
         Tool calls are detected after the full response is received,
         then executed, and the conversation continues.
 
-        Also uses intelligence layer (routing, stances, project context).
+        Also uses intelligence layer (routing, stances, project context)
+        and interactive layer (permissions, hooks, diffs).
         """
         self.history.append({"role": "user", "content": user_message})
+
+        if self._branch_tree:
+            self._branch_tree.add_message("user", user_message)
 
         # === Intelligence: Route to best model ===
         routed_model = self._route_message(user_message)
@@ -645,10 +1202,12 @@ class ChatSession:
 
             if not tool_calls:
                 self.history.append({"role": "assistant", "content": full_response})
+                if self._branch_tree:
+                    self._branch_tree.add_message("assistant", full_response)
                 yield ChatEvent(type=EventType.DONE)
                 return
 
-            # Execute tool calls
+            # Execute tool calls with safety layer
             tool_results = []
             for tc in tool_calls:
                 tool_name = tc["tool"]
@@ -661,7 +1220,83 @@ class ChatSession:
                     data={"tool": tool_name, "args": tool_args},
                 )
 
-                result = await self._execute_tool(tool_name, tool_args)
+                # Permission check (only for known tools)
+                permission_ok = True
+                tool_is_known = tool_name in self._tools
+                if self._permissions and tool_is_known:
+                    blocked = self._permissions.is_blocked(tool_name, tool_args)
+                    if blocked:
+                        result = f"⛔ {blocked}"
+                        permission_ok = False
+                    elif not self._permissions.check(tool_name, tool_args):
+                        result = f"⚠ Permission denied for '{tool_name}'"
+                        permission_ok = False
+
+                if permission_ok:
+                    # Pre hooks
+                    hook_ok = True
+                    if self._hooks:
+                        pre_results = await self._hooks.fire_pre(tool_name, tool_args)
+                        for hr in pre_results:
+                            if hr.blocked:
+                                result = f"🪝 Blocked by '{hr.hook_name}'"
+                                hook_ok = False
+                                break
+                            if hr.modified_args:
+                                tool_args = hr.modified_args
+
+                    if hook_ok:
+                        # Diff preview for file writes
+                        diff_applied = False
+                        if (
+                            self._diff_engine
+                            and tool_name == "file_write"
+                            and "path" in tool_args
+                            and "content" in tool_args
+                        ):
+                            try:
+                                diff = self._diff_engine.diff(
+                                    tool_args["path"], tool_args["content"]
+                                )
+                                if not diff.is_empty:
+                                    yield ChatEvent(
+                                        type=EventType.DIFF_PREVIEW,
+                                        content=diff.unified,
+                                        data={
+                                            "path": diff.path,
+                                            "stats": diff.stats,
+                                        },
+                                    )
+                                    if self._diff_auto_apply:
+                                        diff.accept_all()
+                                        self._diff_engine.apply(diff)
+                                        diff_applied = True
+                            except Exception:
+                                pass
+
+                        start_time = time.time()
+                        if diff_applied:
+                            result = f"✅ Written via diff: {tool_args.get('path', '?')}"
+                        else:
+                            result = await self._execute_tool(tool_name, tool_args)
+                        duration_ms = (time.time() - start_time) * 1000
+
+                        # Post hooks
+                        if self._hooks:
+                            await self._hooks.fire_post(
+                                tool_name, tool_args,
+                                result=str(result)[:500],
+                                success=not str(result).startswith("Error"),
+                            )
+
+                        # Audit
+                        if self._permissions:
+                            self._permissions.log_execution(
+                                tool_name, tool_args,
+                                result=str(result)[:200],
+                                duration_ms=duration_ms,
+                            )
+
                 tool_results.append({"tool": tool_name, "result": result})
 
                 yield ChatEvent(
@@ -671,6 +1306,9 @@ class ChatSession:
                 )
 
             self.history.append({"role": "assistant", "content": full_response})
+            if self._branch_tree:
+                self._branch_tree.add_message("assistant", full_response)
+
             results_text = "\n".join(
                 f"[Tool: {r['tool']}]\n{r['result']}" for r in tool_results
             )
@@ -791,5 +1429,22 @@ class ChatSession:
                 "type": self._project_map.project_type,
                 "files": len(self._project_map.files),
             }
+
+        # Interactive stats
+        if self._branch_tree:
+            result["branch"] = self._branch_tree.current_branch
+            result["branches"] = self._branch_tree.branch_count
+        if self._diff_engine:
+            result["pending_diffs"] = self._diff_engine.pending_count
+            result["diff_history"] = self._diff_engine.history_count
+        if self._permissions:
+            audit = self._permissions.audit_summary()
+            result["audit"] = {
+                "approved": audit.get("approved", 0),
+                "blocked": audit.get("blocked", 0),
+                "trust_level": audit.get("trust_level", "?"),
+            }
+        if self._hooks:
+            result["hooks"] = len(self._hooks.list_hooks())
 
         return result
