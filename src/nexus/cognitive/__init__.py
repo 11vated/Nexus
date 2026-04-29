@@ -15,6 +15,7 @@ partnership requires transparency.
 """
 from .loop import CognitiveLoop, CognitiveState, SharedState
 from .trace import ReasoningTrace, TraceNode, TraceNodeType
+from .knowledge import KnowledgeStore, KnowledgeEntry, KnowledgeLayer, MembraneRule
 
 __all__ = [
     "CognitiveLoop",
@@ -23,4 +24,8 @@ __all__ = [
     "ReasoningTrace",
     "TraceNode",
     "TraceNodeType",
+    "KnowledgeStore",
+    "KnowledgeEntry",
+    "KnowledgeLayer",
+    "MembraneRule",
 ]
