@@ -81,6 +81,11 @@ class EventType(Enum):
     PERMISSION = "permission"        # Permission check result
     HOOK = "hook"                    # Hook fired (pre/post)
     BRANCH = "branch"                # Branch operation
+    COGNITIVE = "cognitive"          # Cognitive layer event
+    AMBIGUITY = "ambiguity"          # Ambiguity detected in user message
+    VERIFICATION = "verification"    # Design verification result
+    KNOWLEDGE = "knowledge"          # Knowledge retrieval/update
+    MEMORY = "memory"                # Memory recall
     ERROR = "error"                  # Something went wrong
     DONE = "done"                    # Turn complete
 
@@ -194,6 +199,10 @@ class ChatSession:
         self._watcher = None          # WatcherEngine
         self._interactive_enabled = True
 
+        # Cognitive layer — deep intelligence & partnership
+        self._cognitive = None        # CognitiveLayer
+        self._cognitive_enabled = True
+
         # Diff preview config
         self._diff_auto_apply = True  # Apply diffs automatically (show diff for info)
         self._diff_mode = "unified"   # Default render mode
@@ -201,6 +210,7 @@ class ChatSession:
         self._setup_tools()
         self._setup_intelligence()
         self._setup_interactive()
+        self._setup_cognitive()
 
     # -- setup ---------------------------------------------------------------
 
@@ -271,6 +281,21 @@ class ChatSession:
             logger.warning("Interactive layer not available: %s", exc)
             self._interactive_enabled = False
 
+    def _setup_cognitive(self) -> None:
+        """Initialize the cognitive layer.
+
+        Meta-cognitive reasoning, knowledge architecture, design verification,
+        ambiguity detection, multi-memory mesh — the thinking partner brain.
+        """
+        try:
+            from nexus.cognitive.integration import CognitiveLayer
+
+            self._cognitive = CognitiveLayer(workspace=self.workspace)
+            logger.info("Cognitive layer initialized (loop, trace, knowledge, memory, verification)")
+        except ImportError as exc:
+            logger.warning("Cognitive layer not available: %s", exc)
+            self._cognitive_enabled = False
+
     def _get_tool_descriptions(self) -> str:
         """Format tool descriptions for the system prompt."""
         lines = []
@@ -321,7 +346,18 @@ class ChatSession:
                 f"({self._branch_tree.branch_count} total branches)"
             )
 
-        return CHAT_SYSTEM_PROMPT.format(
+        # Cognitive context (reasoning trace, knowledge, memory)
+        cognitive_context = ""
+        if self._cognitive:
+            # Use last user message for context augmentation
+            last_user_msg = ""
+            for msg in reversed(self.history):
+                if msg["role"] == "user":
+                    last_user_msg = msg["content"]
+                    break
+            cognitive_context = self._cognitive.get_context_augmentation(last_user_msg)
+
+        prompt = CHAT_SYSTEM_PROMPT.format(
             tool_descriptions=self._get_tool_descriptions(),
             stance_prompt=stance_prompt,
             project_context=project_context,
@@ -329,6 +365,11 @@ class ChatSession:
             branch_context=branch_context,
             workspace=self.workspace,
         )
+
+        if cognitive_context:
+            prompt += f"\n{cognitive_context}"
+
+        return prompt
 
     # -- intelligence controls -----------------------------------------------
 
@@ -802,6 +843,58 @@ class ChatSession:
             ],
         }
 
+    # ========================================================================
+    # Cognitive Layer
+    # ========================================================================
+
+    def set_cognitive_mode(self, mode: str) -> str:
+        """Set cognitive mode (off/passive/guided/autonomous)."""
+        if not self._cognitive:
+            return "Cognitive layer not available."
+        return self._cognitive.set_mode(mode)
+
+    def get_cognitive_mode(self) -> str:
+        """Get the current cognitive mode."""
+        if not self._cognitive:
+            return "off"
+        return self._cognitive.mode.value
+
+    def cognitive_learn(self, content: str, **kwargs) -> str:
+        """Teach Nexus something explicitly."""
+        if not self._cognitive:
+            return ""
+        return self._cognitive.learn(content, **kwargs)
+
+    def cognitive_remember(self, content: str, **kwargs) -> str:
+        """Store a memory explicitly."""
+        if not self._cognitive:
+            return ""
+        return self._cognitive.remember(content, **kwargs)
+
+    def get_cognitive_stats(self) -> Dict[str, Any]:
+        """Get cognitive layer statistics."""
+        if not self._cognitive:
+            return {}
+        return self._cognitive.stats()
+
+    def get_reasoning_trace(self) -> str:
+        """Get the reasoning trace summary."""
+        if not self._cognitive:
+            return "Cognitive layer not available."
+        return self._cognitive.get_trace_summary()
+
+    def get_knowledge_summary(self) -> str:
+        """Get the knowledge store summary."""
+        if not self._cognitive:
+            return "Cognitive layer not available."
+        return self._cognitive.get_knowledge_summary()
+
+    def get_memory_summary(self) -> str:
+        """Get the memory mesh summary."""
+        if not self._cognitive:
+            return "Cognitive layer not available."
+        return self._cognitive.get_memory_summary()
+
     # -- core chat loop ------------------------------------------------------
 
     async def send(self, user_message: str) -> AsyncIterator[ChatEvent]:
@@ -830,6 +923,35 @@ class ChatSession:
         # Track message on branch tree
         if self._branch_tree:
             self._branch_tree.add_message("user", user_message)
+
+        # === Cognitive: Analyze user message ===
+        if self._cognitive:
+            cog_events = self._cognitive.analyze_message(user_message)
+            for ce in cog_events:
+                if ce.event == "ambiguity_detected":
+                    yield ChatEvent(
+                        type=EventType.AMBIGUITY,
+                        content=f"⚠ {ce.data.get('question_count', 0)} potential ambiguities detected",
+                        data=ce.data,
+                    )
+                elif ce.event == "knowledge_retrieved":
+                    yield ChatEvent(
+                        type=EventType.KNOWLEDGE,
+                        content=f"📚 {ce.data.get('count', 0)} relevant knowledge entries found",
+                        data=ce.data,
+                    )
+                elif ce.event == "memory_recalled":
+                    yield ChatEvent(
+                        type=EventType.MEMORY,
+                        content=f"🧠 {ce.data.get('count', 0)} related memories recalled",
+                        data=ce.data,
+                    )
+                elif ce.event == "goal_set":
+                    yield ChatEvent(
+                        type=EventType.COGNITIVE,
+                        content=f"🎯 Goal set: {ce.data.get('goal', '')[:80]}",
+                        data=ce.data,
+                    )
 
         # === Intelligence: Route to best model ===
         routed_model = self._route_message(user_message)
@@ -912,6 +1034,10 @@ class ChatSession:
                 if self._branch_tree:
                     self._branch_tree.add_message("assistant", response_text)
 
+                # === Cognitive: Analyze AI response ===
+                if self._cognitive:
+                    self._cognitive.analyze_response(response_text)
+
                 yield ChatEvent(type=EventType.DONE)
                 return
 
@@ -968,6 +1094,17 @@ class ChatSession:
                         )
 
                 if not permission_blocked:
+                    # === Cognitive: Pre-execution verification ===
+                    if self._cognitive:
+                        cog_pre = self._cognitive.before_tool_call(tool_name, tool_args)
+                        for ce in cog_pre:
+                            if ce.event == "verification_warning":
+                                yield ChatEvent(
+                                    type=EventType.VERIFICATION,
+                                    content=f"⚡ Design check: {ce.data.get('summary', '')}",
+                                    data=ce.data,
+                                )
+
                     # === Hooks: Pre-execution ===
                     hook_blocked = False
                     if self._hooks:
@@ -1071,6 +1208,13 @@ class ChatSession:
                                 duration_ms=duration_ms,
                             )
 
+                        # === Cognitive: Post-execution learning ===
+                        if self._cognitive:
+                            self._cognitive.after_tool_call(
+                                tool_name, tool_args, str(result)[:1000],
+                                success=not str(result).startswith("Error"),
+                            )
+
                 tool_results.append({
                     "tool": tool_name,
                     "args": tool_args,
@@ -1121,6 +1265,35 @@ class ChatSession:
 
         if self._branch_tree:
             self._branch_tree.add_message("user", user_message)
+
+        # === Cognitive: Analyze user message ===
+        if self._cognitive:
+            cog_events = self._cognitive.analyze_message(user_message)
+            for ce in cog_events:
+                if ce.event == "ambiguity_detected":
+                    yield ChatEvent(
+                        type=EventType.AMBIGUITY,
+                        content=f"⚠ {ce.data.get('question_count', 0)} potential ambiguities detected",
+                        data=ce.data,
+                    )
+                elif ce.event == "knowledge_retrieved":
+                    yield ChatEvent(
+                        type=EventType.KNOWLEDGE,
+                        content=f"📚 {ce.data.get('count', 0)} relevant knowledge entries found",
+                        data=ce.data,
+                    )
+                elif ce.event == "memory_recalled":
+                    yield ChatEvent(
+                        type=EventType.MEMORY,
+                        content=f"🧠 {ce.data.get('count', 0)} related memories recalled",
+                        data=ce.data,
+                    )
+                elif ce.event == "goal_set":
+                    yield ChatEvent(
+                        type=EventType.COGNITIVE,
+                        content=f"🎯 Goal set: {ce.data.get('goal', '')[:80]}",
+                        data=ce.data,
+                    )
 
         # === Intelligence: Route to best model ===
         routed_model = self._route_message(user_message)
@@ -1446,5 +1619,9 @@ class ChatSession:
             }
         if self._hooks:
             result["hooks"] = len(self._hooks.list_hooks())
+
+        # Cognitive stats
+        if self._cognitive:
+            result["cognitive"] = self._cognitive.stats()
 
         return result

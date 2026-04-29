@@ -701,3 +701,61 @@ class TestSessionPersistence:
 
         save_path = session._permissions.save_audit()
         assert Path(save_path).exists()
+
+
+# ===================================================================
+# Cognitive layer integration tests
+# ===================================================================
+
+class TestCognitiveIntegration:
+    """Tests that ChatSession correctly wires the cognitive layer."""
+
+    def test_cognitive_layer_initialized(self, session):
+        assert session._cognitive is not None
+        assert session._cognitive_enabled is True
+
+    def test_get_cognitive_mode_default(self, session):
+        mode = session.get_cognitive_mode()
+        assert mode == "passive"
+
+    def test_set_cognitive_mode(self, session):
+        result = session.set_cognitive_mode("guided")
+        assert "guided" in result
+        assert session.get_cognitive_mode() == "guided"
+
+    def test_set_cognitive_mode_invalid(self, session):
+        result = session.set_cognitive_mode("invalid")
+        assert "Unknown" in result
+
+    def test_cognitive_learn(self, session):
+        entry_id = session.cognitive_learn("We use PostgreSQL for the DB", tags=["database"])
+        assert entry_id != ""
+
+    def test_cognitive_remember(self, session):
+        mem_id = session.cognitive_remember("User prefers type hints everywhere", tags=["style"])
+        assert mem_id != ""
+
+    def test_get_reasoning_trace(self, session):
+        result = session.get_reasoning_trace()
+        assert isinstance(result, str)
+
+    def test_get_knowledge_summary(self, session):
+        result = session.get_knowledge_summary()
+        assert isinstance(result, str)
+        assert "KnowledgeStore" in result
+
+    def test_get_memory_summary(self, session):
+        result = session.get_memory_summary()
+        assert isinstance(result, str)
+
+    def test_stats_includes_cognitive(self, session):
+        stats = session.stats()
+        assert "cognitive" in stats
+        assert "mode" in stats["cognitive"]
+        assert stats["cognitive"]["mode"] == "passive"
+
+    def test_cognitive_stats(self, session):
+        stats = session.get_cognitive_stats()
+        assert "mode" in stats
+        assert "messages_analyzed" in stats
+        assert "trace_nodes" in stats
