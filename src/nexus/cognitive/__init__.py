@@ -18,6 +18,7 @@ from .trace import ReasoningTrace, TraceNode, TraceNodeType
 from .knowledge import KnowledgeStore, KnowledgeEntry, KnowledgeLayer, MembraneRule
 from .verification import DesignVerifier, DesignConstraint, ConstraintSeverity, VerificationReport
 from .clarification import AmbiguityDetector, ClarificationDialog, ClarificationQuestion, AmbiguityType
+from .memory import MemoryMesh, MemoryBank, MemoryEntry, MemoryType, MemoryScope
 
 __all__ = [
     "CognitiveLoop",
@@ -38,4 +39,9 @@ __all__ = [
     "ClarificationDialog",
     "ClarificationQuestion",
     "AmbiguityType",
+    "MemoryMesh",
+    "MemoryBank",
+    "MemoryEntry",
+    "MemoryType",
+    "MemoryScope",
 ]
