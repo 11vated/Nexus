@@ -1,1 +1,4 @@
-IiIiQWxsb3cgcnVubmluZyBOZXh1cyBhcyBhIG1vZHVsZTogcHl0aG9uIC1tIG5leHVzLiIiIgpmcm9tIG5leHVzLmNsaSBpbXBvcnQgbWFpbgoKbWFpbigpCg==
+"""Allow running Nexus as a module: python -m nexus."""
+from nexus.cli import main
+
+main()

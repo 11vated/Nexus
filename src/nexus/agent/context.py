@@ -1,1 +1,157 @@
-IiIiQ29udGV4dCBtYW5hZ2VtZW50IGZvciB0aGUgTmV4dXMgYWdlbnQuCgpNYWludGFpbnMgdGhlIGFnZW50J3Mgd29ya2luZyBjb250ZXh0OiB3aGF0IGl0IGtub3dzLCB3aGF0IGl0J3MgZG9uZSwKYW5kIHdoYXQncyByZWxldmFudCBmb3IgdGhlIGN1cnJlbnQgc3RlcC4gTWFuYWdlcyB0aGUgY29udGV4dCB3aW5kb3cKdG8gc3RheSB3aXRoaW4gTExNIHRva2VuIGxpbWl0cy4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgbG9nZ2luZwpmcm9tIGNvbGxlY3Rpb25zIGltcG9ydCBkZXF1ZQpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MsIGZpZWxkCmZyb20gdHlwaW5nIGltcG9ydCBBbnksIERpY3QsIExpc3QsIE9wdGlvbmFsCgpmcm9tIG5leHVzLmFnZW50Lm1vZGVscyBpbXBvcnQgU3RlcAoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoX19uYW1lX18pCgojIEFwcHJveGltYXRlIHRva2VuIGxpbWl0cyAoY2hhcmFjdGVycyDiiYggdG9rZW5zIMOXIDQpCkRFRkFVTFRfTUFYX0NPTlRFWFRfQ0hBUlMgPSAxMjAwMCAgIyB+MzAwMCB0b2tlbnMsIGxlYXZpbmcgcm9vbSBmb3Igc3lzdGVtIHByb21wdAoKCkBkYXRhY2xhc3MKY2xhc3MgQ29udGV4dEVudHJ5OgogICAgIiIiQSBwaWVjZSBvZiBjb250ZXh0IGtub3dsZWRnZS4iIiIKICAgIGNvbnRlbnQ6IHN0cgogICAgc291cmNlOiBzdHIgICMgZS5nLiwgInN0ZXBfcmVzdWx0IiwgImZpbGVfY29udGVudCIsICJ1c2VyX2lucHV0IgogICAgcHJpb3JpdHk6IGludCA9IDEgICMgSGlnaGVyID0gbW9yZSBpbXBvcnRhbnQsIGtlcHQgbG9uZ2VyCiAgICBjaGFyX2NvdW50OiBpbnQgPSAwCgogICAgZGVmIF9fcG9zdF9pbml0X18oc2VsZikgLT4gTm9uZToKICAgICAgICBzZWxmLmNoYXJfY291bnQgPSBsZW4oc2VsZi5jb250ZW50KQoKCmNsYXNzIENvbnRleHRNYW5hZ2VyOgogICAgIiIiTWFuYWdlcyB0aGUgYWdlbnQncyB3b3JraW5nIGNvbnRleHQgd2luZG93LgoKICAgIENvbWJpbmVzIG11bHRpcGxlIHNvdXJjZXMgb2YgY29udGV4dCAoZ29hbCwgc3RlcHMsIGZpbGUgY29udGVudHMsCiAgICBtZW1vcmllcykgaW50byBhIGNvaGVyZW50IHByb21wdCBjb250ZXh0IHRoYXQgZml0cyB3aXRoaW4gdG9rZW4gbGltaXRzLgogICAgIiIiCgogICAgZGVmIF9faW5pdF9fKHNlbGYsIG1heF9jaGFyczogaW50ID0gREVGQVVMVF9NQVhfQ09OVEVYVF9DSEFSUyk6CiAgICAgICAgc2VsZi5tYXhfY2hhcnMgPSBtYXhfY2hhcnMKICAgICAgICBzZWxmLl9nb2FsOiBzdHIgPSAiIgogICAgICAgIHNlbGYuX3dvcmtzcGFjZV9pbmZvOiBzdHIgPSAiIgogICAgICAgIHNlbGYuX2VudHJpZXM6IGRlcXVlW0NvbnRleHRFbnRyeV0gPSBkZXF1ZShtYXhsZW49MTAwKQogICAgICAgIHNlbGYuX3Bpbm5lZDogTGlzdFtDb250ZXh0RW50cnldID0gW10gICMgQWx3YXlzIGluY2x1ZGVkCgogICAgQHByb3BlcnR5CiAgICBkZWYgZ29hbChzZWxmKSAtPiBzdHI6CiAgICAgICAgcmV0dXJuIHNlbGYuX2dvYWwKCiAgICBAZ29hbC5zZXR0ZXIKICAgIGRlZiBnb2FsKHNlbGYsIHZhbHVlOiBzdHIpIC0+IE5vbmU6CiAgICAgICAgc2VsZi5fZ29hbCA9IHZhbHVlCgogICAgQHByb3BlcnR5CiAgICBkZWYgd29ya3NwYWNlX2luZm8oc2VsZikgLT4gc3RyOgogICAgICAgIHJldHVybiBzZWxmLl93b3Jrc3BhY2VfaW5mbwoKICAgIEB3b3Jrc3BhY2VfaW5mby5zZXR0ZXIKICAgIGRlZiB3b3Jrc3BhY2VfaW5mbyhzZWxmLCB2YWx1ZTogc3RyKSAtPiBOb25lOgogICAgICAgIHNlbGYuX3dvcmtzcGFjZV9pbmZvID0gdmFsdWUKCiAgICBkZWYgYWRkKHNlbGYsIGNvbnRlbnQ6IHN0ciwgc291cmNlOiBzdHIsIHByaW9yaXR5OiBpbnQgPSAxKSAtPiBOb25lOgogICAgICAgICIiIkFkZCBhIGNvbnRleHQgZW50cnkuIiIiCiAgICAgICAgc2VsZi5fZW50cmllcy5hcHBlbmQoQ29udGV4dEVudHJ5KGNvbnRlbnQ9Y29udGVudCwgc291cmNlPXNvdXJjZSwgcHJpb3JpdHk9cHJpb3JpdHkpKQoKICAgIGRlZiBwaW4oc2VsZiwgY29udGVudDogc3RyLCBzb3VyY2U6IHN0cikgLT4gTm9uZToKICAgICAgICAiIiJQaW4gYSBjb250ZXh0IGVudHJ5IChhbHdheXMgaW5jbHVkZWQgaW4gY29udGV4dCkuIiIiCiAgICAgICAgc2VsZi5fcGlubmVkLmFwcGVuZChDb250ZXh0RW50cnkoY29udGVudD1jb250ZW50LCBzb3VyY2U9c291cmNlLCBwcmlvcml0eT0xMCkpCgogICAgZGVmIGFkZF9zdGVwKHNlbGYsIHN0ZXA6IFN0ZXApIC0+IE5vbmU6CiAgICAgICAgIiIiQWRkIGEgY29tcGxldGVkIHN0ZXAgdG8gY29udGV4dC4iIiIKICAgICAgICBzZWxmLmFkZChzdGVwLnRvX2NvbnRleHQoKSwgc291cmNlPSJzdGVwX3Jlc3VsdCIsIHByaW9yaXR5PTIpCgogICAgZGVmIGFkZF9maWxlX2NvbnRlbnQoc2VsZiwgcGF0aDogc3RyLCBjb250ZW50OiBzdHIpIC0+IE5vbmU6CiAgICAgICAgIiIiQWRkIGZpbGUgY29udGVudCB0byBjb250ZXh0ICh0cnVuY2F0ZWQgaWYgbmVlZGVkKS4iIiIKICAgICAgICB0cnVuY2F0ZWQgPSBjb250ZW50WzoyMDAwXQogICAgICAgIGlmIGxlbihjb250ZW50KSA+IDIwMDA6CiAgICAgICAgICAgIHRydW5jYXRlZCArPSBmIlxuLi4uIFt7bGVuKGNvbnRlbnQpIC0gMjAwMH0gY2hhcnMgdHJ1bmNhdGVkXSIKICAgICAgICBzZWxmLmFkZCgKICAgICAgICAgICAgZiJGaWxlOiB7cGF0aH1cbmBgYFxue3RydW5jYXRlZH1cbmBgYCIsCiAgICAgICAgICAgIHNvdXJjZT0iZmlsZV9jb250ZW50IiwKICAgICAgICAgICAgcHJpb3JpdHk9MSwKICAgICAgICApCgogICAgZGVmIGJ1aWxkX3Byb21wdF9jb250ZXh0KHNlbGYpIC0+IHN0cjoKICAgICAgICAiIiJCdWlsZCB0aGUgZnVsbCBjb250ZXh0IHN0cmluZyBmb3IgTExNIHByb21wdHMuCgogICAgICAgIEFzc2VtYmxlcyBjb250ZXh0IGluIHByaW9yaXR5IG9yZGVyIHdpdGhpbiB0b2tlbiBidWRnZXQ6CiAgICAgICAgMS4gR29hbCAoYWx3YXlzKQogICAgICAgIDIuIFBpbm5lZCBlbnRyaWVzIChhbHdheXMpCiAgICAgICAgMy4gUmVjZW50IHN0ZXBzIChoaWdoIHByaW9yaXR5KQogICAgICAgIDQuIE90aGVyIGVudHJpZXMgYnkgcHJpb3JpdHkKICAgICAgICAiIiIKICAgICAgICBwYXJ0czogTGlzdFtzdHJdID0gW10KICAgICAgICBidWRnZXQgPSBzZWxmLm1heF9jaGFycwoKICAgICAgICAjIDEuIEdvYWwKICAgICAgICBpZiBzZWxmLl9nb2FsOgogICAgICAgICAgICBnb2FsX3RleHQgPSBmIkdvYWw6IHtzZWxmLl9nb2FsfSIKICAgICAgICAgICAgcGFydHMuYXBwZW5kKGdvYWxfdGV4dCkKICAgICAgICAgICAgYnVkZ2V0IC09IGxlbihnb2FsX3RleHQpCgogICAgICAgICMgMi4gV29ya3NwYWNlIGluZm8KICAgICAgICBpZiBzZWxmLl93b3Jrc3BhY2VfaW5mbyBhbmQgYnVkZ2V0ID4gNTAwOgogICAgICAgICAgICB3c190ZXh0ID0gZiJXb3Jrc3BhY2U6IHtzZWxmLl93b3Jrc3BhY2VfaW5mb30iCiAgICAgICAgICAgIHBhcnRzLmFwcGVuZCh3c190ZXh0KQogICAgICAgICAgICBidWRnZXQgLT0gbGVuKHdzX3RleHQpCgogICAgICAgICMgMy4gUGlubmVkIGVudHJpZXMKICAgICAgICBmb3IgZW50cnkgaW4gc2VsZi5fcGlubmVkOgogICAgICAgICAgICBpZiBidWRnZXQgPD0gMDoKICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgIHBhcnRzLmFwcGVuZChlbnRyeS5jb250ZW50KQogICAgICAgICAgICBidWRnZXQgLT0gZW50cnkuY2hhcl9jb3VudAoKICAgICAgICAjIDQuIFJlbWFpbmluZyBlbnRyaWVzIGJ5IHByaW9yaXR5IChtb3N0IHJlY2VudCBmaXJzdCB3aXRoaW4gcHJpb3JpdHkpCiAgICAgICAgc29ydGVkX2VudHJpZXMgPSBzb3J0ZWQoCiAgICAgICAgICAgIHNlbGYuX2VudHJpZXMsCiAgICAgICAgICAgIGtleT1sYW1iZGEgZTogKGUucHJpb3JpdHksIDApLCAgIyBIaWdoZXIgcHJpb3JpdHkgZmlyc3QKICAgICAgICAgICAgcmV2ZXJzZT1UcnVlLAogICAgICAgICkKCiAgICAgICAgZm9yIGVudHJ5IGluIHNvcnRlZF9lbnRyaWVzOgogICAgICAgICAgICBpZiBidWRnZXQgPD0gMDoKICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgIGlmIGVudHJ5LmNoYXJfY291bnQgPD0gYnVkZ2V0OgogICAgICAgICAgICAgICAgcGFydHMuYXBwZW5kKGVudHJ5LmNvbnRlbnQpCiAgICAgICAgICAgICAgICBidWRnZXQgLT0gZW50cnkuY2hhcl9jb3VudAoKICAgICAgICByZXR1cm4gIlxuXG4iLmpvaW4ocGFydHMpCgogICAgZGVmIGdldF9yZWNlbnRfc3RlcHMoc2VsZiwgbjogaW50ID0gNSkgLT4gTGlzdFtzdHJdOgogICAgICAgICIiIkdldCB0aGUgTiBtb3N0IHJlY2VudCBzdGVwIHN1bW1hcmllcy4iIiIKICAgICAgICBzdGVwX2VudHJpZXMgPSBbCiAgICAgICAgICAgIGUgZm9yIGUgaW4gc2VsZi5fZW50cmllcyBpZiBlLnNvdXJjZSA9PSAic3RlcF9yZXN1bHQiCiAgICAgICAgXQogICAgICAgIHJldHVybiBbZS5jb250ZW50IGZvciBlIGluIGxpc3Qoc3RlcF9lbnRyaWVzKVstbjpdXQoKICAgIGRlZiBjbGVhcihzZWxmKSAtPiBOb25lOgogICAgICAgICIiIkNsZWFyIGFsbCBub24tcGlubmVkIGNvbnRleHQuIiIiCiAgICAgICAgc2VsZi5fZW50cmllcy5jbGVhcigpCiAgICAgICAgc2VsZi5fZ29hbCA9ICIiCiAgICAgICAgc2VsZi5fd29ya3NwYWNlX2luZm8gPSAiIgoKICAgIGRlZiBzdW1tYXJ5KHNlbGYpIC0+IERpY3Rbc3RyLCBBbnldOgogICAgICAgICIiIkdldCBjb250ZXh0IG1hbmFnZXIgc3RhdHMuIiIiCiAgICAgICAgdG90YWxfY2hhcnMgPSBzdW0oZS5jaGFyX2NvdW50IGZvciBlIGluIHNlbGYuX2VudHJpZXMpCiAgICAgICAgcmV0dXJuIHsKICAgICAgICAgICAgImVudHJpZXMiOiBsZW4oc2VsZi5fZW50cmllcyksCiAgICAgICAgICAgICJwaW5uZWQiOiBsZW4oc2VsZi5fcGlubmVkKSwKICAgICAgICAgICAgInRvdGFsX2NoYXJzIjogdG90YWxfY2hhcnMsCiAgICAgICAgICAgICJidWRnZXRfcmVtYWluaW5nIjogc2VsZi5tYXhfY2hhcnMgLSB0b3RhbF9jaGFycywKICAgICAgICAgICAgImhhc19nb2FsIjogYm9vbChzZWxmLl9nb2FsKSwKICAgICAgICB9Cg==
+"""Context management for the Nexus agent.
+
+Maintains the agent's working context: what it knows, what it's done,
+and what's relevant for the current step. Manages the context window
+to stay within LLM token limits.
+"""
+
+from __future__ import annotations
+
+import logging
+from collections import deque
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional
+
+from nexus.agent.models import Step
+
+logger = logging.getLogger(__name__)
+
+# Approximate token limits (characters ≈ tokens × 4)
+DEFAULT_MAX_CONTEXT_CHARS = 12000  # ~3000 tokens, leaving room for system prompt
+
+
+@dataclass
+class ContextEntry:
+    """A piece of context knowledge."""
+    content: str
+    source: str  # e.g., "step_result", "file_content", "user_input"
+    priority: int = 1  # Higher = more important, kept longer
+    char_count: int = 0
+
+    def __post_init__(self) -> None:
+        self.char_count = len(self.content)
+
+
+class ContextManager:
+    """Manages the agent's working context window.
+
+    Combines multiple sources of context (goal, steps, file contents,
+    memories) into a coherent prompt context that fits within token limits.
+    """
+
+    def __init__(self, max_chars: int = DEFAULT_MAX_CONTEXT_CHARS):
+        self.max_chars = max_chars
+        self._goal: str = ""
+        self._workspace_info: str = ""
+        self._entries: deque[ContextEntry] = deque(maxlen=100)
+        self._pinned: List[ContextEntry] = []  # Always included
+
+    @property
+    def goal(self) -> str:
+        return self._goal
+
+    @goal.setter
+    def goal(self, value: str) -> None:
+        self._goal = value
+
+    @property
+    def workspace_info(self) -> str:
+        return self._workspace_info
+
+    @workspace_info.setter
+    def workspace_info(self, value: str) -> None:
+        self._workspace_info = value
+
+    def add(self, content: str, source: str, priority: int = 1) -> None:
+        """Add a context entry."""
+        self._entries.append(ContextEntry(content=content, source=source, priority=priority))
+
+    def pin(self, content: str, source: str) -> None:
+        """Pin a context entry (always included in context)."""
+        self._pinned.append(ContextEntry(content=content, source=source, priority=10))
+
+    def add_step(self, step: Step) -> None:
+        """Add a completed step to context."""
+        self.add(step.to_context(), source="step_result", priority=2)
+
+    def add_file_content(self, path: str, content: str) -> None:
+        """Add file content to context (truncated if needed)."""
+        truncated = content[:2000]
+        if len(content) > 2000:
+            truncated += f"\n... [{len(content) - 2000} chars truncated]"
+        self.add(
+            f"File: {path}\n```\n{truncated}\n```",
+            source="file_content",
+            priority=1,
+        )
+
+    def build_prompt_context(self) -> str:
+        """Build the full context string for LLM prompts.
+
+        Assembles context in priority order within token budget:
+        1. Goal (always)
+        2. Pinned entries (always)
+        3. Recent steps (high priority)
+        4. Other entries by priority
+        """
+        parts: List[str] = []
+        budget = self.max_chars
+
+        # 1. Goal
+        if self._goal:
+            goal_text = f"Goal: {self._goal}"
+            parts.append(goal_text)
+            budget -= len(goal_text)
+
+        # 2. Workspace info
+        if self._workspace_info and budget > 500:
+            ws_text = f"Workspace: {self._workspace_info}"
+            parts.append(ws_text)
+            budget -= len(ws_text)
+
+        # 3. Pinned entries
+        for entry in self._pinned:
+            if budget <= 0:
+                break
+            parts.append(entry.content)
+            budget -= entry.char_count
+
+        # 4. Remaining entries by priority (most recent first within priority)
+        sorted_entries = sorted(
+            self._entries,
+            key=lambda e: (e.priority, 0),  # Higher priority first
+            reverse=True,
+        )
+
+        for entry in sorted_entries:
+            if budget <= 0:
+                break
+            if entry.char_count <= budget:
+                parts.append(entry.content)
+                budget -= entry.char_count
+
+        return "\n\n".join(parts)
+
+    def get_recent_steps(self, n: int = 5) -> List[str]:
+        """Get the N most recent step summaries."""
+        step_entries = [
+            e for e in self._entries if e.source == "step_result"
+        ]
+        return [e.content for e in list(step_entries)[-n:]]
+
+    def clear(self) -> None:
+        """Clear all non-pinned context."""
+        self._entries.clear()
+        self._goal = ""
+        self._workspace_info = ""
+
+    def summary(self) -> Dict[str, Any]:
+        """Get context manager stats."""
+        total_chars = sum(e.char_count for e in self._entries)
+        return {
+            "entries": len(self._entries),
+            "pinned": len(self._pinned),
+            "total_chars": total_chars,
+            "budget_remaining": self.max_chars - total_chars,
+            "has_goal": bool(self._goal),
+        }

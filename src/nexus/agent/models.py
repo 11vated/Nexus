@@ -1,1 +1,149 @@
-IiIiRGF0YSBtb2RlbHMgZm9yIHRoZSBOZXh1cyBhZ2VudCBzeXN0ZW0uIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgdGltZQppbXBvcnQgdXVpZApmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MsIGZpZWxkCmZyb20gZW51bSBpbXBvcnQgRW51bQpmcm9tIHR5cGluZyBpbXBvcnQgQW55LCBEaWN0LCBMaXN0LCBPcHRpb25hbAoKCmNsYXNzIEFnZW50U3RhdGUoRW51bSk6CiAgICAiIiJDdXJyZW50IHN0YXRlIG9mIHRoZSBhZ2VudCBsb29wLiIiIgogICAgSURMRSA9ICJpZGxlIgogICAgUExBTk5JTkcgPSAicGxhbm5pbmciCiAgICBBQ1RJTkcgPSAiYWN0aW5nIgogICAgT0JTRVJWSU5HID0gIm9ic2VydmluZyIKICAgIFJFRkxFQ1RJTkcgPSAicmVmbGVjdGluZyIKICAgIENPUlJFQ1RJTkcgPSAiY29ycmVjdGluZyIKICAgIERPTkUgPSAiZG9uZSIKICAgIEVSUk9SID0gImVycm9yIgoKCmNsYXNzIEFnZW50Um9sZShFbnVtKToKICAgICIiIlJvbGVzIGluIHRoZSBtdWx0aS1hZ2VudCBoaWVyYXJjaHkuIiIiCiAgICBQTEFOTkVSID0gInBsYW5uZXIiCiAgICBERVZFTE9QRVIgPSAiZGV2ZWxvcGVyIgogICAgUkVWSUVXRVIgPSAicmV2aWV3ZXIiCiAgICBURVNURVIgPSAidGVzdGVyIgogICAgQVJDSElURUNUID0gImFyY2hpdGVjdCIKCgpjbGFzcyBUYXNrU3RhdHVzKEVudW0pOgogICAgIiIiU3RhdHVzIG9mIGEgdGFzayBpbiB0aGUgZXhlY3V0aW9uIHBpcGVsaW5lLiIiIgogICAgUEVORElORyA9ICJwZW5kaW5nIgogICAgSU5fUFJPR1JFU1MgPSAiaW5fcHJvZ3Jlc3MiCiAgICBWQUxJREFUSU5HID0gInZhbGlkYXRpbmciCiAgICBET05FID0gImRvbmUiCiAgICBGQUlMRUQgPSAiZmFpbGVkIgoKCmNsYXNzIFF1YWxpdHlMZXZlbChFbnVtKToKICAgICIiIlF1YWxpdHkgYXNzZXNzbWVudCBsZXZlbHMgZm9yIGdlbmVyYXRlZCBvdXRwdXQuIiIiCiAgICBSRUpFQ1RFRCA9IDAKICAgIFBPT1IgPSAxCiAgICBGQUlSID0gMgogICAgR09PRCA9IDMKICAgIEVYQ0VMTEVOVCA9IDQKCgpAZGF0YWNsYXNzCmNsYXNzIFRhc2s6CiAgICAiIiJBIHRhc2sgdG8gYmUgZXhlY3V0ZWQgYnkgdGhlIGFnZW50LiIiIgogICAgZGVzY3JpcHRpb246IHN0cgogICAgaWQ6IHN0ciA9IGZpZWxkKGRlZmF1bHRfZmFjdG9yeT1sYW1iZGE6IHN0cih1dWlkLnV1aWQ0KCkpWzo4XSkKICAgIHJvbGU6IEFnZW50Um9sZSA9IEFnZW50Um9sZS5ERVZFTE9QRVIKICAgIHN0YXR1czogVGFza1N0YXR1cyA9IFRhc2tTdGF0dXMuUEVORElORwogICAgcmVzdWx0OiBPcHRpb25hbFtzdHJdID0gTm9uZQogICAgZXJyb3I6IE9wdGlvbmFsW3N0cl0gPSBOb25lCiAgICBhdHRlbXB0czogaW50ID0gMAogICAgbWF4X2F0dGVtcHRzOiBpbnQgPSAzCiAgICBjcmVhdGVkX2F0OiBmbG9hdCA9IGZpZWxkKGRlZmF1bHRfZmFjdG9yeT10aW1lLnRpbWUpCgogICAgZGVmIG1hcmtfaW5fcHJvZ3Jlc3Moc2VsZikgLT4gTm9uZToKICAgICAgICBzZWxmLnN0YXR1cyA9IFRhc2tTdGF0dXMuSU5fUFJPR1JFU1MKICAgICAgICBzZWxmLmF0dGVtcHRzICs9IDEKCiAgICBkZWYgbWFya19kb25lKHNlbGYsIHJlc3VsdDogc3RyKSAtPiBOb25lOgogICAgICAgIHNlbGYuc3RhdHVzID0gVGFza1N0YXR1cy5ET05FCiAgICAgICAgc2VsZi5yZXN1bHQgPSByZXN1bHQKCiAgICBkZWYgbWFya19mYWlsZWQoc2VsZiwgZXJyb3I6IHN0cikgLT4gTm9uZToKICAgICAgICBzZWxmLnN0YXR1cyA9IFRhc2tTdGF0dXMuRkFJTEVECiAgICAgICAgc2VsZi5lcnJvciA9IGVycm9yCgogICAgQHByb3BlcnR5CiAgICBkZWYgY2FuX3JldHJ5KHNlbGYpIC0+IGJvb2w6CiAgICAgICAgcmV0dXJuIHNlbGYuYXR0ZW1wdHMgPCBzZWxmLm1heF9hdHRlbXB0cwoKCkBkYXRhY2xhc3MKY2xhc3MgU3RlcDoKICAgICIiIkEgc2luZ2xlIHN0ZXAgaW4gdGhlIGFnZW50J3MgZXhlY3V0aW9uIHRyYWNlLiIiIgogICAgaWQ6IHN0ciA9IGZpZWxkKGRlZmF1bHRfZmFjdG9yeT1sYW1iZGE6IHN0cih1dWlkLnV1aWQ0KCkpWzo4XSkKICAgIGFjdGlvbjogc3RyID0gIiIKICAgIHRvb2xfbmFtZTogc3RyID0gIiIKICAgIHRvb2xfYXJnczogRGljdFtzdHIsIEFueV0gPSBmaWVsZChkZWZhdWx0X2ZhY3Rvcnk9ZGljdCkKICAgIHJlc3VsdDogc3RyID0gIiIKICAgIHN1Y2Nlc3M6IGJvb2wgPSBGYWxzZQogICAgcXVhbGl0eV9zY29yZTogZmxvYXQgPSAwLjAKICAgIHJlZmxlY3Rpb246IHN0ciA9ICIiCiAgICB0aW1lc3RhbXA6IGZsb2F0ID0gZmllbGQoZGVmYXVsdF9mYWN0b3J5PXRpbWUudGltZSkKICAgIGR1cmF0aW9uX21zOiBmbG9hdCA9IDAuMAoKICAgIGRlZiB0b19jb250ZXh0KHNlbGYpIC0+IHN0cjoKICAgICAgICAiIiJGb3JtYXQgc3RlcCBmb3IgaW5jbHVzaW9uIGluIExMTSBjb250ZXh0LiIiIgogICAgICAgIHN0YXR1cyA9ICLinJMiIGlmIHNlbGYuc3VjY2VzcyBlbHNlICLinJciCiAgICAgICAgcGFydHMgPSBbZiJbe3N0YXR1c31dIHtzZWxmLmFjdGlvbn0iXQogICAgICAgIGlmIHNlbGYudG9vbF9uYW1lOgogICAgICAgICAgICBwYXJ0cy5hcHBlbmQoZiIgIFRvb2w6IHtzZWxmLnRvb2xfbmFtZX0oe3NlbGYudG9vbF9hcmdzfSkiKQogICAgICAgIGlmIHNlbGYucmVzdWx0OgogICAgICAgICAgICAjIFRydW5jYXRlIGxvbmcgcmVzdWx0cyBmb3IgY29udGV4dCB3aW5kb3cKICAgICAgICAgICAgcmVzdWx0X3ByZXZpZXcgPSBzZWxmLnJlc3VsdFs6NTAwXQogICAgICAgICAgICBpZiBsZW4oc2VsZi5yZXN1bHQpID4gNTAwOgogICAgICAgICAgICAgICAgcmVzdWx0X3ByZXZpZXcgKz0gIi4uLiBbdHJ1bmNhdGVkXSIKICAgICAgICAgICAgcGFydHMuYXBwZW5kKGYiICBSZXN1bHQ6IHtyZXN1bHRfcHJldmlld30iKQogICAgICAgIGlmIHNlbGYucmVmbGVjdGlvbjoKICAgICAgICAgICAgcGFydHMuYXBwZW5kKGYiICBSZWZsZWN0aW9uOiB7c2VsZi5yZWZsZWN0aW9ufSIpCiAgICAgICAgcmV0dXJuICJcbiIuam9pbihwYXJ0cykKCgpAZGF0YWNsYXNzCmNsYXNzIFRvb2xDYWxsOgogICAgIiIiQSBwYXJzZWQgdG9vbCBjYWxsIGZyb20gTExNIG91dHB1dC4iIiIKICAgIG5hbWU6IHN0cgogICAgYXJndW1lbnRzOiBEaWN0W3N0ciwgQW55XQogICAgcmF3OiBzdHIgPSAiIgoKCkBkYXRhY2xhc3MKY2xhc3MgQWdlbnRDb25maWc6CiAgICAiIiJDb25maWd1cmF0aW9uIGZvciB0aGUgYWdlbnQgbG9vcC4iIiIKICAgICMgTW9kZWwgc2VsZWN0aW9uCiAgICBwbGFubmluZ19tb2RlbDogc3RyID0gImRlZXBzZWVrLXIxOjdiIgogICAgY29kaW5nX21vZGVsOiBzdHIgPSAicXdlbjIuNS1jb2RlcjoxNGIiCiAgICByZXZpZXdfbW9kZWw6IHN0ciA9ICJkZWVwc2Vlay1yMTo3YiIKICAgIGZhc3RfbW9kZWw6IHN0ciA9ICJxd2VuMi41LWNvZGVyOjdiIgoKICAgICMgTG9vcCBjb250cm9sCiAgICBtYXhfaXRlcmF0aW9uczogaW50ID0gMjUKICAgIG1heF9yZXRyaWVzOiBpbnQgPSAzCiAgICBxdWFsaXR5X3RocmVzaG9sZDogZmxvYXQgPSAzLjUKCiAgICAjIFRpbWVvdXRzCiAgICBsbG1fdGltZW91dDogaW50ID0gMTIwCiAgICB0b29sX3RpbWVvdXQ6IGludCA9IDYwCgogICAgIyBPbGxhbWEgc2V0dGluZ3MKICAgIG9sbGFtYV91cmw6IHN0ciA9ICJodHRwOi8vbG9jYWxob3N0OjExNDM0IgogICAgdGVtcGVyYXR1cmU6IGZsb2F0ID0gMC4zCiAgICBtYXhfdG9rZW5zOiBpbnQgPSA0MDk2CgogICAgIyBXb3Jrc3BhY2UKICAgIHdvcmtzcGFjZV9wYXRoOiBzdHIgPSAiLiIKCiAgICAjIEZlYXR1cmVzCiAgICByZWZsZWN0aW9uX2VuYWJsZWQ6IGJvb2wgPSBUcnVlCiAgICBtZW1vcnlfZW5hYmxlZDogYm9vbCA9IFRydWUKICAgIHNhbmRib3hfZW5hYmxlZDogYm9vbCA9IEZhbHNlCg==
+"""Data models for the Nexus agent system."""
+
+from __future__ import annotations
+
+import time
+import uuid
+from dataclasses import dataclass, field
+from enum import Enum
+from typing import Any, Dict, List, Optional
+
+
+class AgentState(Enum):
+    """Current state of the agent loop."""
+    IDLE = "idle"
+    PLANNING = "planning"
+    ACTING = "acting"
+    OBSERVING = "observing"
+    REFLECTING = "reflecting"
+    CORRECTING = "correcting"
+    DONE = "done"
+    ERROR = "error"
+
+
+class AgentRole(Enum):
+    """Roles in the multi-agent hierarchy."""
+    PLANNER = "planner"
+    DEVELOPER = "developer"
+    REVIEWER = "reviewer"
+    TESTER = "tester"
+    ARCHITECT = "architect"
+
+
+class TaskStatus(Enum):
+    """Status of a task in the execution pipeline."""
+    PENDING = "pending"
+    IN_PROGRESS = "in_progress"
+    VALIDATING = "validating"
+    DONE = "done"
+    FAILED = "failed"
+
+
+class QualityLevel(Enum):
+    """Quality assessment levels for generated output."""
+    REJECTED = 0
+    POOR = 1
+    FAIR = 2
+    GOOD = 3
+    EXCELLENT = 4
+
+
+@dataclass
+class Task:
+    """A task to be executed by the agent."""
+    description: str
+    id: str = field(default_factory=lambda: str(uuid.uuid4())[:8])
+    role: AgentRole = AgentRole.DEVELOPER
+    status: TaskStatus = TaskStatus.PENDING
+    result: Optional[str] = None
+    error: Optional[str] = None
+    attempts: int = 0
+    max_attempts: int = 3
+    created_at: float = field(default_factory=time.time)
+
+    def mark_in_progress(self) -> None:
+        self.status = TaskStatus.IN_PROGRESS
+        self.attempts += 1
+
+    def mark_done(self, result: str) -> None:
+        self.status = TaskStatus.DONE
+        self.result = result
+
+    def mark_failed(self, error: str) -> None:
+        self.status = TaskStatus.FAILED
+        self.error = error
+
+    @property
+    def can_retry(self) -> bool:
+        return self.attempts < self.max_attempts
+
+
+@dataclass
+class Step:
+    """A single step in the agent's execution trace."""
+    id: str = field(default_factory=lambda: str(uuid.uuid4())[:8])
+    action: str = ""
+    tool_name: str = ""
+    tool_args: Dict[str, Any] = field(default_factory=dict)
+    result: str = ""
+    success: bool = False
+    quality_score: float = 0.0
+    reflection: str = ""
+    timestamp: float = field(default_factory=time.time)
+    duration_ms: float = 0.0
+
+    def to_context(self) -> str:
+        """Format step for inclusion in LLM context."""
+        status = "✓" if self.success else "✗"
+        parts = [f"[{status}] {self.action}"]
+        if self.tool_name:
+            parts.append(f"  Tool: {self.tool_name}({self.tool_args})")
+        if self.result:
+            # Truncate long results for context window
+            result_preview = self.result[:500]
+            if len(self.result) > 500:
+                result_preview += "... [truncated]"
+            parts.append(f"  Result: {result_preview}")
+        if self.reflection:
+            parts.append(f"  Reflection: {self.reflection}")
+        return "\n".join(parts)
+
+
+@dataclass
+class ToolCall:
+    """A parsed tool call from LLM output."""
+    name: str
+    arguments: Dict[str, Any]
+    raw: str = ""
+
+
+@dataclass
+class AgentConfig:
+    """Configuration for the agent loop."""
+    # Model selection
+    planning_model: str = "deepseek-r1:7b"
+    coding_model: str = "qwen2.5-coder:14b"
+    review_model: str = "deepseek-r1:7b"
+    fast_model: str = "qwen2.5-coder:7b"
+
+    # Loop control
+    max_iterations: int = 25
+    max_retries: int = 3
+    quality_threshold: float = 3.5
+
+    # Timeouts
+    llm_timeout: int = 120
+    tool_timeout: int = 60
+
+    # Ollama settings
+    ollama_url: str = "http://localhost:11434"
+    temperature: float = 0.3
+    max_tokens: int = 4096
+
+    # Workspace
+    workspace_path: str = "."
+
+    # Features
+    reflection_enabled: bool = True
+    memory_enabled: bool = True
+    sandbox_enabled: bool = False

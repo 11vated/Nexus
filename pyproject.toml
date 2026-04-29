@@ -1,1 +1,112 @@
-W2J1aWxkLXN5c3RlbV0KcmVxdWlyZXMgPSBbInNldHVwdG9vbHM+PTYxLjAiLCAid2hlZWwiXQpidWlsZC1iYWNrZW5kID0gInNldHVwdG9vbHMuYnVpbGRfbWV0YSIKCltwcm9qZWN0XQpuYW1lID0gIm5leHVzIgp2ZXJzaW9uID0gIjAuMS4wIgpkZXNjcmlwdGlvbiA9ICJVbHRpbWF0ZSBBSSBBZ2VudCBXb3Jrc3RhdGlvbiAtIExvY2FsIG11bHRpLWFnZW50IGNvZGluZyBzeXN0ZW0iCnJlYWRtZSA9ICJSRUFETUUubWQiCnJlcXVpcmVzLXB5dGhvbiA9ICI+PTMuMTAiCmxpY2Vuc2UgPSB7dGV4dCA9ICJNSVQifQphdXRob3JzID0gWwogICAge25hbWUgPSAiMTF2YXRlZCIsIGVtYWlsID0gIjExdmF0ZWRAbmV4dXMuZGV2In0KXQprZXl3b3JkcyA9IFsiYWkiLCAiYWdlbnQiLCAiY29kaW5nIiwgIm9sbGFtYSIsICJhaWRlciJdCmNsYXNzaWZpZXJzID0gWwogICAgIkRldmVsb3BtZW50IFN0YXR1cyA6OiAzIC0gQWxwaGEiLAogICAgIkludGVuZGVkIEF1ZGllbmNlIDo6IERldmVsb3BlcnMiLAogICAgIkxpY2Vuc2UgOjogT1NJIEFwcHJvdmVkIDo6IE1JVCBMaWNlbnNlIiwKICAgICJQcm9ncmFtbWluZyBMYW5ndWFnZSA6OiBQeXRob24gOjogMy4xMCIsCiAgICAiUHJvZ3JhbW1pbmcgTGFuZ3VhZ2UgOjogUHl0aG9uIDo6IDMuMTEiLAogICAgIlByb2dyYW1taW5nIExhbmd1YWdlIDo6IFB5dGhvbiA6OiAzLjEyIiwKXQoKZGVwZW5kZW5jaWVzID0gWwogICAgInB5eWFtbD49Ni4wIiwKICAgICJyaWNoPj0xMy4wIiwKICAgICJweWRhbnRpYz49Mi4wIiwKICAgICJweWRhbnRpYy1zZXR0aW5ncz49Mi4wIiwKICAgICJweXRob24tZG90ZW52Pj0xLjAiLAogICAgImNsaWNrPj04LjAiLAogICAgInRlbmFjaXR5Pj04LjAiLAogICAgInB5YnJlYWtlcj49MC43IiwKICAgICJjcnlwdG9ncmFwaHk+PTQxLjAiLAogICAgInByb21ldGhldXMtY2xpZW50Pj0wLjE5LjAiLAogICAgImZhc3RhcGk+PTAuMTA0LjAiLAogICAgInV2aWNvcm4+PTAuMjQuMCIsCiAgICAiYWlvaHR0cD49My45LjAiLApdCgpbcHJvamVjdC5vcHRpb25hbC1kZXBlbmRlbmNpZXNdCmRldiA9IFsKICAgICJweXRlc3Q+PTguMCIsCiAgICAicHl0ZXN0LWNvdj49NS4wIiwKICAgICJweXRlc3QtYXN5bmNpbz49MC4yMyIsCiAgICAicHl0ZXN0LW1vY2s+PTMuMTIiLAogICAgInB5dGVzdC10aW1lb3V0Pj0yLjIiLAogICAgInJ1ZmY+PTAuMS4wIiwKICAgICJteXB5Pj0xLjAiLAogICAgImJhbmRpdD49MS43IiwKICAgICJzYWZldHk+PTMuMCIsCiAgICAicmVzcG9uc2VzPj0wLjI1IiwKICAgICJmcmVlemVndW4+PTEuNCIsCiAgICAidGVuYWNpdHk+PTguMCIsCiAgICAicHlicmVha2VyPj0wLjciLApdCmRvY3MgPSBbCiAgICAibWtkb2NzPj0xLjUiLAogICAgIm1rZG9jcy1tYXRlcmlhbD49OS4wIiwKICAgICJta2RvY3N0cmluZ3NbcHl0aG9uXT49MC4yMSIsCl0KYWxsID0gWwogICAgIm5leHVzW2Rldixkb2NzXSIsCiAgICAiY2hyb21hZGI+PTAuNC4wIiwKICAgICJkdWNrZHVja2dvLXNlYXJjaD49Ny4wIiwKXQoKW3Byb2plY3Quc2NyaXB0c10KbmV4dXMgPSAibmV4dXMuY2xpOm1haW4iCgpbdG9vbC5zZXR1cHRvb2xzLnBhY2thZ2VzLmZpbmRdCndoZXJlID0gWyJzcmMiXQoKW3Rvb2wuc2V0dXB0b29scy5wYWNrYWdlLWRhdGFdCm5leHVzID0gWyJweS50eXBlZCJdCgpbdG9vbC5weXRlc3QuaW5pX29wdGlvbnNdCm1pbnZlcnNpb24gPSAiOC4wIgphZGRvcHRzID0gIi1yYSAtcSAtLXN0cmljdC1tYXJrZXJzIgp0ZXN0cGF0aHMgPSBbInRlc3RzIl0KcHl0aG9ucGF0aCA9IFsic3JjIl0KYXN5bmNpb19tb2RlID0gImF1dG8iCgpbdG9vbC5ydWZmXQpsaW5lLWxlbmd0aCA9IDEwMAp0YXJnZXQtdmVyc2lvbiA9ICJweTMxMCIKc2VsZWN0ID0gWyJFIiwgIkYiLCAiVyIsICJJIiwgIk4iLCAiVVAiLCAiQiIsICJDNCIsICJTSU0iXQppZ25vcmUgPSBbIkU1MDEiXQoKW3Rvb2wucnVmZi5wZXItZmlsZS1pZ25vcmVzXQoiX19pbml0X18ucHkiID0gWyJGNDAxIl0KClt0b29sLm15cHldCnB5dGhvbl92ZXJzaW9uID0gIjMuMTAiCndhcm5fcmV0dXJuX2FueSA9IHRydWUKd2Fybl91bnVzZWRfY29uZmlncyA9IHRydWUKZGlzYWxsb3dfdW50eXBlZF9kZWZzID0gZmFsc2UKaWdub3JlX21pc3NpbmdfaW1wb3J0cyA9IHRydWUKClt0b29sLmNvdmVyYWdlLnJ1bl0Kc291cmNlID0gWyJuZXh1cyJdCm9taXQgPSBbInRlc3RzLyoiLCAiKiovX19weWNhY2hlX18vKiJdCgpbdG9vbC5jb3ZlcmFnZS5yZXBvcnRdCmV4Y2x1ZGVfbGluZXMgPSBbCiAgICAicHJhZ21hOiBubyBjb3ZlciIsCiAgICAiZGVmIF9fcmVwcl9fIiwKICAgICJyYWlzZSBBc3NlcnRpb25FcnJvciIsCiAgICAicmFpc2UgTm90SW1wbGVtZW50ZWRFcnJvciIsCiAgICAiaWYgX19uYW1lX18gPT0gLl9fbWFpbl9fLjoiLAogICAgImlmIFRZUEVfQ0hFQ0tJTkc6IiwKXQ==
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexus"
+version = "0.1.0"
+description = "Ultimate AI Agent Workstation - Local multi-agent coding system"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "11vated", email = "11vated@nexus.dev"}
+]
+keywords = ["ai", "agent", "coding", "ollama", "aider"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "python-dotenv>=1.0",
+    "click>=8.0",
+    "tenacity>=8.0",
+    "pybreaker>=0.7",
+    "cryptography>=41.0",
+    "prometheus-client>=0.19.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "aiohttp>=3.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "pytest-asyncio>=0.23",
+    "pytest-mock>=3.12",
+    "pytest-timeout>=2.2",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+    "bandit>=1.7",
+    "safety>=3.0",
+    "responses>=0.25",
+    "freezegun>=1.4",
+    "tenacity>=8.0",
+    "pybreaker>=0.7",
+]
+docs = [
+    "mkdocs>=1.5",
+    "mkdocs-material>=9.0",
+    "mkdocstrings[python]>=0.21",
+]
+all = [
+    "nexus[dev,docs]",
+    "chromadb>=0.4.0",
+    "duckduckgo-search>=7.0",
+]
+
+[project.scripts]
+nexus = "nexus.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nexus = ["py.typed"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["nexus"]
+omit = ["tests/*", "**/__pycache__/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]

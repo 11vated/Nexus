@@ -1,1 +1,246 @@
-IyDwn6egIE5leHVzIOKAlCBBdXRvbm9tb3VzIEFJIENvZGluZyBBZ2VudAoKTmV4dXMgaXMgYSBsb2NhbC1maXJzdCBhdXRvbm9tb3VzIGNvZGluZyBhZ2VudCB0aGF0IHBsYW5zLCB3cml0ZXMsIHRlc3RzLCBhbmQgZGVidWdzIGNvZGUgdXNpbmcgT2xsYW1hIG1vZGVscy4gTm8gY2xvdWQgQVBJcywgbm8gc3Vic2NyaXB0aW9ucyDigJQganVzdCB5b3VyIG1hY2hpbmUgYW5kIG9wZW4tc291cmNlIExMTXMuCgpgYGAKbmV4dXMgcnVuICJCdWlsZCBhIEZsYXNrIEFQSSB3aXRoIC9oZWFsdGggZW5kcG9pbnQgYW5kIHRlc3RzIgpgYGAKCk5leHVzIHdpbGwgcGxhbiB0aGUgYXBwcm9hY2gsIHdyaXRlIHRoZSBjb2RlLCBydW4gdGhlIHRlc3RzLCBhbmQgZml4IGFueSBmYWlsdXJlcyDigJQgYXV0b25vbW91c2x5LgoKIyMg4pyoIEZlYXR1cmVzCgotICoqUGxhbiDihpIgQWN0IOKGkiBPYnNlcnZlIOKGkiBSZWZsZWN0Kiog4oCUIHN0cnVjdHVyZWQgYWdlbnQgbG9vcCB3aXRoIHNlbGYtY29ycmVjdGlvbgotICoqTG9jYWwgTExNcyB2aWEgT2xsYW1hKiog4oCUIHdvcmtzIHdpdGggUXdlbjIuNS1Db2RlciwgRGVlcFNlZWstUjEsIG9yIGFueSBPbGxhbWEgbW9kZWwKLSAqKjggYnVpbHQtaW4gdG9vbHMqKiDigJQgc2hlbGwsIGZpbGUgSS9PLCBjb2RlIHJ1bm5lciwgdGVzdCBydW5uZXIsIHNlYXJjaCwgZ2l0Ci0gKipNZW1vcnkqKiDigJQgc2hvcnQtdGVybSAod2l0aGluIHNlc3Npb24pICsgbG9uZy10ZXJtIChhY3Jvc3Mgc2Vzc2lvbnMgdmlhIENocm9tYURCIG9yIEpTT04pCi0gKipUVUkgRGFzaGJvYXJkKiog4oCUIGZ1bGwtc2NyZWVuIFJpY2ggdGVybWluYWwgVUkgc2hvd2luZyBsaXZlIGFnZW50IHN0YXRlCi0gKipTV0UtYmVuY2ggcmVhZHkqKiDigJQgbXVsdGktcGF0Y2ggZ2VuZXJhdGlvbiBhbmQgdmVyaWZpY2F0aW9uIHBpcGVsaW5lCi0gKipaZXJvIGNvc3QqKiDigJQgcnVucyBlbnRpcmVseSBvbiB5b3VyIGhhcmR3YXJlCgojIyDwn5qAIFF1aWNrIFN0YXJ0CgojIyMgMS4gSW5zdGFsbAoKYGBgYmFzaAojIENsb25lCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vMTF2YXRlZC9OZXh1cy5naXQKY2QgTmV4dXMKCiMgSW5zdGFsbCAoZWRpdGFibGUpCnBpcCBpbnN0YWxsIC1lICIuW2Rldl0iCgojIE9yIHdpdGggYWxsIGV4dHJhcyAoQ2hyb21hREIsIGV0Yy4pCnBpcCBpbnN0YWxsIC1lICIuW2FsbF0iCmBgYAoKIyMjIDIuIFN0YXJ0IE9sbGFtYQoKYGBgYmFzaApvbGxhbWEgc2VydmUKb2xsYW1hIHB1bGwgcXdlbjIuNS1jb2RlcjoxNGIKb2xsYW1hIHB1bGwgZGVlcHNlZWstcjE6N2IKYGBgCgojIyMgMy4gUnVuCgpgYGBiYXNoCiMgT25lLXNob3QgZ29hbApuZXh1cyBydW4gIkNyZWF0ZSBhIFB5dGhvbiBDTEkgdGhhdCBjb252ZXJ0cyBDU1YgdG8gSlNPTiIKCiMgSW50ZXJhY3RpdmUgVFVJCm5leHVzIHR1aQoKIyBGaXJzdC10aW1lIHNldHVwIGNoZWNrCm5leHVzIHF1aWNrc3RhcnQKYGBgCgojIyDwn5OWIENvbW1hbmRzCgp8IENvbW1hbmQgfCBEZXNjcmlwdGlvbiB8CnwtLS0tLS0tLS18LS0tLS0tLS0tLS0tLXwKfCBgbmV4dXMgcnVuICJnb2FsImAgfCBSdW4gdGhlIGFnZW50IG9uIGEgZ29hbCAod2l0aCBsaXZlIHByb2dyZXNzKSB8CnwgYG5leHVzIHR1aWAgfCBMYXVuY2ggdGhlIGludGVyYWN0aXZlIFRVSSBkYXNoYm9hcmQgfAp8IGBuZXh1cyBxdWlja3N0YXJ0YCB8IENoZWNrIE9sbGFtYSwgbW9kZWxzLCBhbmQgd29ya3NwYWNlIHNldHVwIHwKfCBgbmV4dXMgYWdlbnQgdG9vbHNgIHwgTGlzdCBhbGwgcmVnaXN0ZXJlZCB0b29scyB8CnwgYG5leHVzIGFnZW50IGNvbmZpZ2AgfCBTaG93IGFnZW50IGNvbmZpZ3VyYXRpb24gfAp8IGBuZXh1cyBhZ2VudCBjaGVja2AgfCBQcmUtZmxpZ2h0OiB2ZXJpZnkgT2xsYW1hIGlzIHJlYWNoYWJsZSB8CnwgYG5leHVzIGJlbmNoICJpc3N1ZSJgIHwgUnVuIFNXRS1iZW5jaCBzdHlsZSBpc3N1ZSByZXNvbHV0aW9uIHwKfCBgbmV4dXMgbW9kZWxzYCB8IExpc3QgYXZhaWxhYmxlIE9sbGFtYSBtb2RlbHMgfAp8IGBuZXh1cyBwdWxsIDxtb2RlbD5gIHwgUHVsbCBhbiBPbGxhbWEgbW9kZWwgfAoKIyMjIEZsYWdzCgpgYGAKLS13b3Jrc3BhY2UsIC13ICAgIFRhcmdldCBwcm9qZWN0IGRpcmVjdG9yeSAoZGVmYXVsdDogLikKLS1tb2RlbCwgLW0gICAgICAgIE92ZXJyaWRlIHBsYW5uaW5nIG1vZGVsCi0tY29kaW5nLW1vZGVsLCAtYyBPdmVycmlkZSBjb2RpbmcgbW9kZWwKLS1tYXgtaXRlcmF0aW9ucyAgIExvb3AgaXRlcmF0aW9uIGxpbWl0IChkZWZhdWx0OiAyNSkKLS1uby1yZWZsZWN0ICAgICAgIERpc2FibGUgcmVmbGVjdGlvbiBzdGVwCi0tdmVyYm9zZSwgLXYgICAgICBTaG93IGZ1bGwgdG9vbCBvdXRwdXQKLS1qc29uLW91dHB1dCAgICAgIE1hY2hpbmUtcmVhZGFibGUgSlNPTiByZXN1bHQKYGBgCgojIyDwn4+X77iPIEFyY2hpdGVjdHVyZQoKYGBgCiAgICAgICAgICAgICAgICAgICAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCiAgICAgICAgICAgICAgICAgICAg4pSCICAgICAgICAgQ0xJIC8gVFVJICAgICAgICAgICAgIOKUggogICAgICAgICAgICAgICAgICAgIOKUgiAgIG5leHVzIHJ1biB8IG5leHVzIHR1aSAgICAgICDilIIKICAgICAgICAgICAgICAgICAgICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilKzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggogICAgICAgICAgICAgICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWvOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkAogICAgICAgICAgICAgICAgICAgIOKUgiAgICAgICBBZ2VudCBMb29wICAgICAgICAgICAgICDilIIKICAgICAgICAgICAgICAgICAgICDilIIgIFBsYW4g4oaSIEFjdCDihpIgT2JzZXJ2ZSDihpIgUmVmbGVjdOKUggogICAgICAgICAgICAgICAgICAgIOKUlOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKUmAogICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICAgIOKUgiAgICAgIOKUgiAgICAgIOKUggogICAgICAgICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWvOKUkCDilIzilIDilIDilrzilIDilIDilIDilIDilJAg4pSM4pa84pSA4pSA4pSA4pSA4pSA4pSQIOKUjOKWvOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkAogICAgICAgICAgICAgIOKUgiBQbGFubmVyICDilIIg4pSCRXhlY3V0LuKUgiDilIJSZWZsZWPilIIg4pSCIENvbnRleHQgIOKUggogICAgICAgICAgICAgIOKUgiAoTExNKSAgIOKUgiDilIIoVG9vbHMp4pSCIOKUgihMTE0pIOKUgiDilIIgTWFuYWdlciAg4pSCCiAgICAgICAgICAgICAg4pSU4pSA4pSA4pSA4pSA4pSs4pSA4pSA4pSA4pSA4pSA4pSYIOKUlOKUgOKUgOKUrOKUgOKUgOKUgOKUmCDilJTilIDilIDilIDilIDilIDilIDilJgg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCiAgICAgICAgICAgICAgICAgICDilIIgICAgICAgICAg4pSCCiAgICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWvOKUgOKUgOKUkCAg4pSM4pSA4pSA4pSA4pa84pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCiAgICAgICAgIOKUgiAgIE9sbGFtYSAgICDilIIgIOKUgiAgICAgIFRvb2wgUmVnaXN0cnkgICAgICAgIOKUggogICAgICAgICDilIIgIExMTSBDbGllbnQg4pSCICDilIIgIHNoZWxsIMK3IGZpbGVzIMK3IHNlYXJjaCAgIOKUggogICAgICAgICDilIIgICAgICAgICAgICAg4pSCICDilIIgIGNvZGVfcnVuIMK3IHRlc3QgwrcgZ2l0ICAgICDilIIKICAgICAgICAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggogICAgICAgICAgICAgICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKWvOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkAogICAgICAgICAgICAgICAgICAgIOKUgiAgICAgICAgIE1lbW9yeSAgICAgICAgICAgICAgICDilIIKICAgICAgICAgICAgICAgICAgICDilIIgIFNob3J0LXRlcm0gIOKUgiAgTG9uZy10ZXJtICAgICDilIIKICAgICAgICAgICAgICAgICAgICDilIIgIChzZXNzaW9uKSAgIOKUgiAgKENocm9tYURCL0pTT04p4pSCCiAgICAgICAgICAgICAgICAgICAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCmBgYAoKIyMjIEFnZW50IExvb3AKCjEuICoqUGxhbioqIOKAlCBMTE0gY3JlYXRlcyBhIHN0ZXAtYnktc3RlcCBleGVjdXRpb24gcGxhbiBmcm9tIHRoZSBnb2FsCjIuICoqQWN0Kiog4oCUIEV4ZWN1dG9yIGRpc3BhdGNoZXMgdGhlIG5leHQgdG9vbCBjYWxsIChzaGVsbCwgZmlsZSB3cml0ZSwgZXRjLikKMy4gKipPYnNlcnZlKiog4oCUIFJlc3VsdHMgYXJlIGNhcHR1cmVkIGFuZCBhZGRlZCB0byBjb250ZXh0CjQuICoqUmVmbGVjdCoqIOKAlCBMTE0gYXNzZXNzZXMgcXVhbGl0eSwgZGVjaWRlcyB0byBjb250aW51ZS9yZXRyeS9zdG9wCgpDaXJjdWl0IGJyZWFrZXI6IDMgY29uc2VjdXRpdmUgZmFpbHVyZXMg4oaSIGF1dG9tYXRpYyBzdG9wLgoKIyMjIFRvb2xzCgp8IFRvb2wgfCBEZXNjcmlwdGlvbiB8CnwtLS0tLS18LS0tLS0tLS0tLS0tLXwKfCBgc2hlbGxgIHwgUnVuIHNoZWxsIGNvbW1hbmRzICh3aXRoIGJsb2NrZWQgZGFuZ2Vyb3VzIGNvbW1hbmRzKSB8CnwgYGZpbGVfcmVhZGAgfCBSZWFkIGZpbGUgY29udGVudHMgfAp8IGBmaWxlX3dyaXRlYCB8IFdyaXRlL2NyZWF0ZSBmaWxlcyAoYXV0by1jcmVhdGVzIGRpcmVjdG9yaWVzKSB8CnwgYGZpbGVfbGlzdGAgfCBMaXN0IGRpcmVjdG9yeSBjb250ZW50cyB8CnwgYGNvZGVfcnVuYCB8IEV4ZWN1dGUgUHl0aG9uL05vZGUvQmFzaCBjb2RlIGluIHRlbXAgZmlsZXMgfAp8IGB0ZXN0X3J1bmAgfCBSdW4gcHl0ZXN0L25wbSB0ZXN0IHdpdGggcmVzdWx0IHBhcnNpbmcgfAp8IGBzZWFyY2hgIHwgU2VhcmNoIGNvZGViYXNlIChyaXBncmVwIHByZWZlcnJlZCwgZ3JlcCBmYWxsYmFjaykgfAp8IGBnaXRgIHwgR2l0IG9wZXJhdGlvbnMgKGFsbG93bGlzdGVkIHNhZmUgY29tbWFuZHMpIHwKCiMjIyBNZW1vcnkKCi0gKipTaG9ydC10ZXJtKio6IFJvbGxpbmcgd2luZG93IG9mIGdvYWxzLCBzdGVwcywgYW5kIHJlc3VsdHMgd2l0aGluIHRoZSBjdXJyZW50IHNlc3Npb24KLSAqKkxvbmctdGVybSoqOiBQZXJzaXN0ZW50IHN0b3JhZ2UgYWNyb3NzIHNlc3Npb25zIChDaHJvbWFEQiB3aGVuIGF2YWlsYWJsZSwgSlNPTiBmYWxsYmFjaykKLSBBdCBzZXNzaW9uIHN0YXJ0LCBOZXh1cyByZWNhbGxzIHJlbGV2YW50IHBhc3Qgc2Vzc2lvbnMgdG8gaW5mb3JtIHBsYW5uaW5nCi0gQWZ0ZXIgY29tcGxldGlvbiwgYSBzZXNzaW9uIHN1bW1hcnkgaXMgc3RvcmVkIGZvciBmdXR1cmUgcmVmZXJlbmNlCgojIyDimpnvuI8gQ29uZmlndXJhdGlvbgoKTmV4dXMgcmVhZHMgZnJvbSBlbnZpcm9ubWVudCB2YXJpYWJsZXMgYW5kIGAuZW52YDoKCmBgYGJhc2gKIyAuZW52Ck5FWFVTX09MTEFNQV9VUkw9aHR0cDovL2xvY2FsaG9zdDoxMTQzNApORVhVU19ERUZBVUxUX01PREVMPXF3ZW4yLjUtY29kZXI6MTRiCk5FWFVTX1dPUktTUEFDRV9ST09UPS4vd29ya3NwYWNlCmBgYAoKQWdlbnQgZGVmYXVsdHMgKG92ZXJyaWRhYmxlIHZpYSBDTEkgZmxhZ3MpOgoKfCBTZXR0aW5nIHwgRGVmYXVsdCB8IERlc2NyaXB0aW9uIHwKfC0tLS0tLS0tLXwtLS0tLS0tLS18LS0tLS0tLS0tLS0tLXwKfCBgcGxhbm5pbmdfbW9kZWxgIHwgYGRlZXBzZWVrLXIxOjdiYCB8IE1vZGVsIGZvciBwbGFubmluZyBhbmQgcmVhc29uaW5nIHwKfCBgY29kaW5nX21vZGVsYCB8IGBxd2VuMi41LWNvZGVyOjE0YmAgfCBNb2RlbCBmb3IgY29kZSBnZW5lcmF0aW9uIHwKfCBgbWF4X2l0ZXJhdGlvbnNgIHwgYDI1YCB8IE1heGltdW0gYWdlbnQgbG9vcCBpdGVyYXRpb25zIHwKfCBgcXVhbGl0eV90aHJlc2hvbGRgIHwgYDAuN2AgfCBNaW5pbXVtIHF1YWxpdHkgc2NvcmUgKDAtMSkgfAp8IGByZWZsZWN0aW9uX2VuYWJsZWRgIHwgYHRydWVgIHwgRW5hYmxlL2Rpc2FibGUgcmVmbGVjdGlvbiBzdGVwIHwKfCBgbWVtb3J5X2VuYWJsZWRgIHwgYHRydWVgIHwgRW5hYmxlL2Rpc2FibGUgbG9uZy10ZXJtIG1lbW9yeSB8CgojIyDwn5CzIERvY2tlcgoKYGBgYmFzaAojIEJ1aWxkCmRvY2tlciBidWlsZCAtdCBuZXh1cyAuCgojIFJ1biAod2l0aCBPbGxhbWEgb24gaG9zdCkKZG9ja2VyIHJ1biAtaXQgLS1uZXR3b3JrIGhvc3QgbmV4dXMgcnVuICJCdWlsZCBhIGhlbGxvIHdvcmxkIEZsYXNrIGFwcCIKCiMgT3Igd2l0aCBhIHdvcmtzcGFjZSBtb3VudApkb2NrZXIgcnVuIC1pdCAtLW5ldHdvcmsgaG9zdCAtdiAkKHB3ZCkvbXktcHJvamVjdDovd29ya3NwYWNlIG5leHVzIHJ1biAiRml4IHRoZSB0ZXN0cyIgLXcgL3dvcmtzcGFjZQpgYGAKCiMjIPCfp6ogVGVzdGluZwoKYGBgYmFzaAojIFJ1biBhbGwgdGVzdHMKcHl0ZXN0CgojIFdpdGggY292ZXJhZ2UKcHl0ZXN0IC0tY292PW5leHVzIC0tY292LXJlcG9ydD1odG1sCgojIFNwZWNpZmljIG1vZHVsZQpweXRlc3QgdGVzdHMvdW5pdC90ZXN0X2FnZW50LwpgYGAKCiMjIPCfk4EgUHJvamVjdCBTdHJ1Y3R1cmUKCmBgYApzcmMvbmV4dXMvCuKUnOKUgOKUgCBhZ2VudC8gICAgICAgICAgICAgICMgQ29yZSBhZ2VudCBsb29wCuKUgiAgIOKUnOKUgOKUgCBsb29wLnB5ICAgICAgICAgIyBQbGFu4oaSQWN04oaST2JzZXJ2ZeKGklJlZmxlY3QgY3ljbGUK4pSCICAg4pSc4pSA4pSAIHBsYW5uZXIucHkgICAgICAjIExMTS1iYXNlZCBwbGFubmluZwrilIIgICDilJzilIDilIAgZXhlY3V0b3IucHkgICAgICMgVG9vbCBkaXNwYXRjaCB3aXRoIGZ1enp5IG1hdGNoaW5nCuKUgiAgIOKUnOKUgOKUgCByZWZsZWN0b3IucHkgICAgIyBRdWFsaXR5IGFzc2Vzc21lbnQgYW5kIHNlbGYtY29ycmVjdGlvbgrilIIgICDilJzilIDilIAgY29udGV4dC5weSAgICAgICMgQ29udGV4dCB3aW5kb3cgbWFuYWdlbWVudArilIIgICDilJzilIDilIAgbGxtLnB5ICAgICAgICAgICMgT2xsYW1hIGFzeW5jIGNsaWVudArilIIgICDilJTilIDilIAgbW9kZWxzLnB5ICAgICAgICMgQWdlbnQgZGF0YWNsYXNzZXMgKFN0YXRlLCBUYXNrLCBTdGVwLCBDb25maWcpCuKUnOKUgOKUgCB0b29scy8gICAgICAgICAgICAgICMgVG9vbCBpbXBsZW1lbnRhdGlvbnMK4pSCICAg4pSc4pSA4pSAIHJlZ2lzdHJ5LnB5ICAgICAjIEJhc2VUb29sIEFCQyArIFRvb2xSZWdpc3RyeQrilIIgICDilJzilIDilIAgc2hlbGwucHkgICAgICAgICMgU2hlbGwgY29tbWFuZCBleGVjdXRpb24K4pSCICAg4pSc4pSA4pSAIGZpbGVfb3BzLnB5ICAgICAjIEZpbGUgcmVhZC93cml0ZS9saXN0CuKUgiAgIOKUnOKUgOKUgCBjb2RlX3J1bm5lci5weSAgIyBDb2RlIGV4ZWN1dGlvbiAoUHl0aG9uL05vZGUvQmFzaCkK4pSCICAg4pSc4pSA4pSAIHRlc3RfcnVubmVyLnB5ICAjIFRlc3QgcnVubmVyIChweXRlc3QvbnBtKQrilIIgICDilJzilIDilIAgc2VhcmNoLnB5ICAgICAgICMgQ29kZWJhc2Ugc2VhcmNoIChyZy9ncmVwKQrilIIgICDilJTilIDilIAgZ2l0LnB5ICAgICAgICAgICMgR2l0IG9wZXJhdGlvbnMK4pSc4pSA4pSAIG1lbW9yeS8gICAgICAgICAgICAgIyBNZW1vcnkgc3lzdGVtcwrilIIgICDilJzilIDilIAgc2hvcnRfdGVybS5weSAgICMgU2Vzc2lvbi1zY29wZWQgcm9sbGluZyB3aW5kb3cK4pSCICAg4pSc4pSA4pSAIGxvbmdfdGVybS5weSAgICAjIFBlcnNpc3RlbnQgQ2hyb21hREIvSlNPTiBzdG9yZQrilIIgICDilJTilIDilIAgY29udGV4dF9zdG9yZS5weSAjIFJvbGUvY2F0ZWdvcnkgaW5kZXhlZCByZXRyaWV2YWwK4pSc4pSA4pSAIHR1aS8gICAgICAgICAgICAgICAgIyBUZXJtaW5hbCBVSQrilIIgICDilJTilIDilIAgZGFzaGJvYXJkLnB5ICAgICMgRnVsbC1zY3JlZW4gUmljaCBkYXNoYm9hcmQK4pSc4pSA4pSAIGdhdGV3YXkvICAgICAgICAgICAgIyBPbGxhbWEgZ2F0ZXdheSB3aXRoIG1pZGRsZXdhcmUK4pSc4pSA4pSAIHNlY3VyaXR5LyAgICAgICAgICAgIyBJbnB1dCBzYW5pdGl6YXRpb24sIHNhbmRib3hpbmcK4pSc4pSA4pSAIHN3ZV9iZW5jaC8gICAgICAgICAgIyBTV0UtYmVuY2ggaW50ZWdyYXRpb24K4pSc4pSA4pSAIGNvbmZpZy8gICAgICAgICAgICAgIyBTZXR0aW5ncyAocHlkYW50aWMtc2V0dGluZ3MpCuKUnOKUgOKUgCBjbGkucHkgICAgICAgICAgICAgICMgQ2xpY2sgQ0xJIGVudHJ5IHBvaW50CuKUlOKUgOKUgCBfX21haW5fXy5weSAgICAgICAgICMgcHl0aG9uIC1tIG5leHVzIHN1cHBvcnQKYGBgCgojIyDwn5e677iPIFJvYWRtYXAKCi0gW3hdIEFnZW50IGxvb3AgKFBsYW4g4oaSIEFjdCDihpIgT2JzZXJ2ZSDihpIgUmVmbGVjdCkKLSBbeF0gOCBidWlsdC1pbiB0b29scyB3aXRoIHNlY3VyaXR5IGJvdW5kYXJpZXMKLSBbeF0gU2hvcnQtdGVybSArIGxvbmctdGVybSBtZW1vcnkKLSBbeF0gQ0xJIHdpdGggbGl2ZSBwcm9ncmVzcyBkaXNwbGF5Ci0gW3hdIEludGVyYWN0aXZlIFRVSSBkYXNoYm9hcmQKLSBbeF0gU1dFLWJlbmNoIG11bHRpLXBhdGNoIHBpcGVsaW5lCi0gWyBdIE1DUCAoTW9kZWwgQ29udGV4dCBQcm90b2NvbCkgdG9vbCBzZXJ2ZXIKLSBbIF0gTXVsdGktYWdlbnQgY29sbGFib3JhdGlvbgotIFsgXSBGaW5lLXR1bmluZyBwaXBlbGluZSBpbnRlZ3JhdGlvbgotIFsgXSBQbHVnaW4gc3lzdGVtIGZvciBjdXN0b20gdG9vbHMKLSBbIF0gV2ViIFVJCgojIyDwn5OEIExpY2Vuc2UKCk1JVAoKLS0tCgoqQnVpbHQgZm9yIGRldmVsb3BlcnMgd2hvIHdhbnQgYSByZWFsIGNvZGluZyBhZ2VudCDigJQgbm90IGEgY2hhdGJvdC4qCg==
+# 🧠 Nexus — Autonomous AI Coding Agent
+
+Nexus is a local-first autonomous coding agent that plans, writes, tests, and debugs code using Ollama models. No cloud APIs, no subscriptions — just your machine and open-source LLMs.
+
+```
+nexus run "Build a Flask API with /health endpoint and tests"
+```
+
+Nexus will plan the approach, write the code, run the tests, and fix any failures — autonomously.
+
+## ✨ Features
+
+- **Plan → Act → Observe → Reflect** — structured agent loop with self-correction
+- **Local LLMs via Ollama** — works with Qwen2.5-Coder, DeepSeek-R1, or any Ollama model
+- **8 built-in tools** — shell, file I/O, code runner, test runner, search, git
+- **Memory** — short-term (within session) + long-term (across sessions via ChromaDB or JSON)
+- **TUI Dashboard** — full-screen Rich terminal UI showing live agent state
+- **SWE-bench ready** — multi-patch generation and verification pipeline
+- **Zero cost** — runs entirely on your hardware
+
+## 🚀 Quick Start
+
+### 1. Install
+
+```bash
+# Clone
+git clone https://github.com/11vated/Nexus.git
+cd Nexus
+
+# Install (editable)
+pip install -e ".[dev]"
+
+# Or with all extras (ChromaDB, etc.)
+pip install -e ".[all]"
+```
+
+### 2. Start Ollama
+
+```bash
+ollama serve
+ollama pull qwen2.5-coder:14b
+ollama pull deepseek-r1:7b
+```
+
+### 3. Run
+
+```bash
+# One-shot goal
+nexus run "Create a Python CLI that converts CSV to JSON"
+
+# Interactive TUI
+nexus tui
+
+# First-time setup check
+nexus quickstart
+```
+
+## 📖 Commands
+
+| Command | Description |
+|---------|-------------|
+| `nexus run "goal"` | Run the agent on a goal (with live progress) |
+| `nexus tui` | Launch the interactive TUI dashboard |
+| `nexus quickstart` | Check Ollama, models, and workspace setup |
+| `nexus agent tools` | List all registered tools |
+| `nexus agent config` | Show agent configuration |
+| `nexus agent check` | Pre-flight: verify Ollama is reachable |
+| `nexus bench "issue"` | Run SWE-bench style issue resolution |
+| `nexus models` | List available Ollama models |
+| `nexus pull <model>` | Pull an Ollama model |
+
+### Flags
+
+```
+--workspace, -w    Target project directory (default: .)
+--model, -m        Override planning model
+--coding-model, -c Override coding model
+--max-iterations   Loop iteration limit (default: 25)
+--no-reflect       Disable reflection step
+--verbose, -v      Show full tool output
+--json-output      Machine-readable JSON result
+```
+
+## 🏗️ Architecture
+
+```
+                    ┌──────────────────────────────┐
+                    │         CLI / TUI             │
+                    │   nexus run | nexus tui       │
+                    └──────────┬───────────────────┘
+                               │
+                    ┌──────────▼───────────────────┐
+                    │       Agent Loop              │
+                    │  Plan → Act → Observe → Reflect│
+                    └──┬──────┬──────┬──────┬──────┘
+                       │      │      │      │
+              ┌────────▼┐ ┌──▼────┐ ┌▼─────┐ ┌▼────────┐
+              │ Planner  │ │Execut.│ │Reflec│ │ Context  │
+              │ (LLM)   │ │(Tools)│ │(LLM) │ │ Manager  │
+              └────┬─────┘ └──┬───┘ └──────┘ └──────────┘
+                   │          │
+         ┌─────────▼──┐  ┌───▼──────────────────────┐
+         │   Ollama    │  │      Tool Registry        │
+         │  LLM Client │  │  shell · files · search   │
+         │             │  │  code_run · test · git     │
+         └─────────────┘  └──────────────────────────┘
+                               │
+                    ┌──────────▼───────────────────┐
+                    │         Memory                │
+                    │  Short-term  │  Long-term     │
+                    │  (session)   │  (ChromaDB/JSON)│
+                    └──────────────────────────────┘
+```
+
+### Agent Loop
+
+1. **Plan** — LLM creates a step-by-step execution plan from the goal
+2. **Act** — Executor dispatches the next tool call (shell, file write, etc.)
+3. **Observe** — Results are captured and added to context
+4. **Reflect** — LLM assesses quality, decides to continue/retry/stop
+
+Circuit breaker: 3 consecutive failures → automatic stop.
+
+### Tools
+
+| Tool | Description |
+|------|-------------|
+| `shell` | Run shell commands (with blocked dangerous commands) |
+| `file_read` | Read file contents |
+| `file_write` | Write/create files (auto-creates directories) |
+| `file_list` | List directory contents |
+| `code_run` | Execute Python/Node/Bash code in temp files |
+| `test_run` | Run pytest/npm test with result parsing |
+| `search` | Search codebase (ripgrep preferred, grep fallback) |
+| `git` | Git operations (allowlisted safe commands) |
+
+### Memory
+
+- **Short-term**: Rolling window of goals, steps, and results within the current session
+- **Long-term**: Persistent storage across sessions (ChromaDB when available, JSON fallback)
+- At session start, Nexus recalls relevant past sessions to inform planning
+- After completion, a session summary is stored for future reference
+
+## ⚙️ Configuration
+
+Nexus reads from environment variables and `.env`:
+
+```bash
+# .env
+NEXUS_OLLAMA_URL=http://localhost:11434
+NEXUS_DEFAULT_MODEL=qwen2.5-coder:14b
+NEXUS_WORKSPACE_ROOT=./workspace
+```
+
+Agent defaults (overridable via CLI flags):
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `planning_model` | `deepseek-r1:7b` | Model for planning and reasoning |
+| `coding_model` | `qwen2.5-coder:14b` | Model for code generation |
+| `max_iterations` | `25` | Maximum agent loop iterations |
+| `quality_threshold` | `0.7` | Minimum quality score (0-1) |
+| `reflection_enabled` | `true` | Enable/disable reflection step |
+| `memory_enabled` | `true` | Enable/disable long-term memory |
+
+## 🐳 Docker
+
+```bash
+# Build
+docker build -t nexus .
+
+# Run (with Ollama on host)
+docker run -it --network host nexus run "Build a hello world Flask app"
+
+# Or with a workspace mount
+docker run -it --network host -v $(pwd)/my-project:/workspace nexus run "Fix the tests" -w /workspace
+```
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+pytest
+
+# With coverage
+pytest --cov=nexus --cov-report=html
+
+# Specific module
+pytest tests/unit/test_agent/
+```
+
+## 📁 Project Structure
+
+```
+src/nexus/
+├── agent/              # Core agent loop
+│   ├── loop.py         # Plan→Act→Observe→Reflect cycle
+│   ├── planner.py      # LLM-based planning
+│   ├── executor.py     # Tool dispatch with fuzzy matching
+│   ├── reflector.py    # Quality assessment and self-correction
+│   ├── context.py      # Context window management
+│   ├── llm.py          # Ollama async client
+│   └── models.py       # Agent dataclasses (State, Task, Step, Config)
+├── tools/              # Tool implementations
+│   ├── registry.py     # BaseTool ABC + ToolRegistry
+│   ├── shell.py        # Shell command execution
+│   ├── file_ops.py     # File read/write/list
+│   ├── code_runner.py  # Code execution (Python/Node/Bash)
+│   ├── test_runner.py  # Test runner (pytest/npm)
+│   ├── search.py       # Codebase search (rg/grep)
+│   └── git.py          # Git operations
+├── memory/             # Memory systems
+│   ├── short_term.py   # Session-scoped rolling window
+│   ├── long_term.py    # Persistent ChromaDB/JSON store
+│   └── context_store.py # Role/category indexed retrieval
+├── tui/                # Terminal UI
+│   └── dashboard.py    # Full-screen Rich dashboard
+├── gateway/            # Ollama gateway with middleware
+├── security/           # Input sanitization, sandboxing
+├── swe_bench/          # SWE-bench integration
+├── config/             # Settings (pydantic-settings)
+├── cli.py              # Click CLI entry point
+└── __main__.py         # python -m nexus support
+```
+
+## 🗺️ Roadmap
+
+- [x] Agent loop (Plan → Act → Observe → Reflect)
+- [x] 8 built-in tools with security boundaries
+- [x] Short-term + long-term memory
+- [x] CLI with live progress display
+- [x] Interactive TUI dashboard
+- [x] SWE-bench multi-patch pipeline
+- [ ] MCP (Model Context Protocol) tool server
+- [ ] Multi-agent collaboration
+- [ ] Fine-tuning pipeline integration
+- [ ] Plugin system for custom tools
+- [ ] Web UI
+
+## 📄 License
+
+MIT
+
+---
+
+*Built for developers who want a real coding agent — not a chatbot.*

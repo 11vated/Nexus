@@ -1,1 +1,15 @@
-IiIiQ29yZSBhZ2VudCBzeXN0ZW0gZm9yIE5leHVzLiIiIgojIENvcmUgZXhwb3J0cwojIE5vdGU6IEFnZW50IG9yY2hlc3RyYXRpb24gbW9kdWxlcyBhcmUgYmVpbmcgY29uc29saWRhdGVkIGludG8gc3JjL25leHVzL2FnZW50LwojIFRoZXNlIHdpbGwgYmUgcmUtZXhwb3J0ZWQgb25jZSB0aGUgY29uc29saWRhdGlvbiBpcyBjb21wbGV0ZS4KZnJvbSBuZXh1cy5jb3JlLmNhY2hlIGltcG9ydCBSZXNwb25zZUNhY2hlCmZyb20gbmV4dXMuY29yZS52ZXJpZmljYXRpb24gaW1wb3J0IENvZGVWZXJpZmllciwgSXRlcmF0aXZlQWdlbnQKCl9fYWxsX18gPSBbCiAgICAiUHJvZm91bmRTeXN0ZW0iLAogICAgIkF1dG9ub21vdXNPcmNoZXN0cmF0b3IiLAogICAgIk9sbGFtYU1vZGVsIiwKICAgICJBZ2VudFJvbGUiLAogICAgIlRhc2tTdGF0dXMiLAogICAgIlRhc2siLApdCg==
+"""Core agent system for Nexus."""
+# Core exports
+# Note: Agent orchestration modules are being consolidated into src/nexus/agent/
+# These will be re-exported once the consolidation is complete.
+from nexus.core.cache import ResponseCache
+from nexus.core.verification import CodeVerifier, IterativeAgent
+
+__all__ = [
+    "ProfoundSystem",
+    "AutonomousOrchestrator",
+    "OllamaModel",
+    "AgentRole",
+    "TaskStatus",
+    "Task",
+]

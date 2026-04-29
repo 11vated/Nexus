@@ -1,1 +1,176 @@
-IiIiQ29udGV4dCBzdG9yZSDigJQgdGFzay1zcGVjaWZpYyBrbm93bGVkZ2UgYWNjdW11bGF0aW9uLgoKRGVyaXZlZCBmcm9tIHRoZSBDb250ZXh0U3RvcmUgcGF0dGVybiBpbiBhZ2VudC1zeXN0ZW0vcHJvZm91bmRfc3lzdGVtLnB5LgpBY2N1bXVsYXRlcyBrbm93bGVkZ2UgZHVyaW5nIGEgdGFzayBhbmQgcHJvdmlkZXMgcmVsZXZhbnQgY29udGV4dApmb3IgZWFjaCBzdGVwIGJhc2VkIG9uIHJvbGUgYW5kIHJlY2VuY3kuCiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IHRpbWUKZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgZGVmYXVsdGRpY3QKZnJvbSBkYXRhY2xhc3NlcyBpbXBvcnQgZGF0YWNsYXNzLCBmaWVsZApmcm9tIHR5cGluZyBpbXBvcnQgQW55LCBEaWN0LCBMaXN0LCBPcHRpb25hbAoKCkBkYXRhY2xhc3MKY2xhc3MgQ29udGV4dEVudHJ5OgogICAgIiIiQSBwaWVjZSBvZiBhY2N1bXVsYXRlZCBjb250ZXh0LiIiIgogICAgY29udGVudDogc3RyCiAgICByb2xlOiBzdHIgICMgV2hpY2ggYWdlbnQgcm9sZSBwcm9kdWNlZCB0aGlzCiAgICBjYXRlZ29yeTogc3RyICAjIGUuZy4sICJwbGFuIiwgImNvZGUiLCAidGVzdF9yZXN1bHQiLCAicmVmbGVjdGlvbiIKICAgIHRpbWVzdGFtcDogZmxvYXQgPSBmaWVsZChkZWZhdWx0X2ZhY3Rvcnk9dGltZS50aW1lKQogICAgcmVsZXZhbmNlX3RhZ3M6IExpc3Rbc3RyXSA9IGZpZWxkKGRlZmF1bHRfZmFjdG9yeT1saXN0KQoKICAgIEBwcm9wZXJ0eQogICAgZGVmIGFnZV9zZWNvbmRzKHNlbGYpIC0+IGZsb2F0OgogICAgICAgIHJldHVybiB0aW1lLnRpbWUoKSAtIHNlbGYudGltZXN0YW1wCgoKY2xhc3MgQ29udGV4dFN0b3JlOgogICAgIiIiVGFzay1zcGVjaWZpYyBjb250ZXh0IGFjY3VtdWxhdGlvbi4KCiAgICBUcmFja3Mga25vd2xlZGdlIGdhdGhlcmVkIGR1cmluZyBhIHRhc2sgZXhlY3V0aW9uIHNlc3Npb24uCiAgICBQcm92aWRlcyBmaWx0ZXJlZCByZXRyaWV2YWwgYnkgcm9sZSwgY2F0ZWdvcnksIG9yIHJlbGV2YW5jZS4KICAgICIiIgoKICAgIGRlZiBfX2luaXRfXyhzZWxmLCBtYXhfZW50cmllczogaW50ID0gMjAwKToKICAgICAgICBzZWxmLl9lbnRyaWVzOiBMaXN0W0NvbnRleHRFbnRyeV0gPSBbXQogICAgICAgIHNlbGYuX2J5X2NhdGVnb3J5OiBEaWN0W3N0ciwgTGlzdFtDb250ZXh0RW50cnldXSA9IGRlZmF1bHRkaWN0KGxpc3QpCiAgICAgICAgc2VsZi5fYnlfcm9sZTogRGljdFtzdHIsIExpc3RbQ29udGV4dEVudHJ5XV0gPSBkZWZhdWx0ZGljdChsaXN0KQogICAgICAgIHNlbGYubWF4X2VudHJpZXMgPSBtYXhfZW50cmllcwoKICAgIGRlZiBhZGQoCiAgICAgICAgc2VsZiwKICAgICAgICBjb250ZW50OiBzdHIsCiAgICAgICAgcm9sZTogc3RyID0gImFnZW50IiwKICAgICAgICBjYXRlZ29yeTogc3RyID0gImdlbmVyYWwiLAogICAgICAgIHRhZ3M6IE9wdGlvbmFsW0xpc3Rbc3RyXV0gPSBOb25lLAogICAgKSAtPiBOb25lOgogICAgICAgICIiIkFkZCBhIGNvbnRleHQgZW50cnkuCgogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIGNvbnRlbnQ6IFRoZSBjb250ZXh0IGNvbnRlbnQuCiAgICAgICAgICAgIHJvbGU6IFdoaWNoIHJvbGUgcHJvZHVjZWQgdGhpcyAocGxhbm5lciwgZGV2ZWxvcGVyLCBldGMpLgogICAgICAgICAgICBjYXRlZ29yeTogQ2F0ZWdvcnkgKHBsYW4sIGNvZGUsIHRlc3RfcmVzdWx0LCBldGMpLgogICAgICAgICAgICB0YWdzOiBPcHRpb25hbCByZWxldmFuY2UgdGFncyBmb3IgcmV0cmlldmFsLgogICAgICAgICIiIgogICAgICAgIGVudHJ5ID0gQ29udGV4dEVudHJ5KAogICAgICAgICAgICBjb250ZW50PWNvbnRlbnQsCiAgICAgICAgICAgIHJvbGU9cm9sZSwKICAgICAgICAgICAgY2F0ZWdvcnk9Y2F0ZWdvcnksCiAgICAgICAgICAgIHJlbGV2YW5jZV90YWdzPXRhZ3Mgb3IgW10sCiAgICAgICAgKQogICAgICAgIHNlbGYuX2VudHJpZXMuYXBwZW5kKGVudHJ5KQogICAgICAgIHNlbGYuX2J5X2NhdGVnb3J5W2NhdGVnb3J5XS5hcHBlbmQoZW50cnkpCiAgICAgICAgc2VsZi5fYnlfcm9sZVtyb2xlXS5hcHBlbmQoZW50cnkpCgogICAgICAgICMgRXZpY3Qgb2xkIGVudHJpZXMgaWYgb3ZlciBsaW1pdAogICAgICAgIGlmIGxlbihzZWxmLl9lbnRyaWVzKSA+IHNlbGYubWF4X2VudHJpZXM6CiAgICAgICAgICAgIHNlbGYuX2V2aWN0KCkKCiAgICBkZWYgX2V2aWN0KHNlbGYpIC0+IE5vbmU6CiAgICAgICAgIiIiUmVtb3ZlIG9sZGVzdCwgbG93ZXN0LXByaW9yaXR5IGVudHJpZXMuIiIiCiAgICAgICAgIyBLZWVwIHRoZSBuZXdlc3QgbWF4X2VudHJpZXMKICAgICAgICBzZWxmLl9lbnRyaWVzID0gc2VsZi5fZW50cmllc1stc2VsZi5tYXhfZW50cmllczpdCiAgICAgICAgIyBSZWJ1aWxkIGluZGljZXMKICAgICAgICBzZWxmLl9ieV9jYXRlZ29yeS5jbGVhcigpCiAgICAgICAgc2VsZi5fYnlfcm9sZS5jbGVhcigpCiAgICAgICAgZm9yIGVudHJ5IGluIHNlbGYuX2VudHJpZXM6CiAgICAgICAgICAgIHNlbGYuX2J5X2NhdGVnb3J5W2VudHJ5LmNhdGVnb3J5XS5hcHBlbmQoZW50cnkpCiAgICAgICAgICAgIHNlbGYuX2J5X3JvbGVbZW50cnkucm9sZV0uYXBwZW5kKGVudHJ5KQoKICAgIGRlZiBnZXRfYnlfY2F0ZWdvcnkoc2VsZiwgY2F0ZWdvcnk6IHN0ciwgbGltaXQ6IGludCA9IDEwKSAtPiBMaXN0W0NvbnRleHRFbnRyeV06CiAgICAgICAgIiIiR2V0IGVudHJpZXMgYnkgY2F0ZWdvcnksIG1vc3QgcmVjZW50IGZpcnN0LiIiIgogICAgICAgIGVudHJpZXMgPSBzZWxmLl9ieV9jYXRlZ29yeS5nZXQoY2F0ZWdvcnksIFtdKQogICAgICAgIHJldHVybiBsaXN0KHJldmVyc2VkKGVudHJpZXNbLWxpbWl0Ol0pKQoKICAgIGRlZiBnZXRfYnlfcm9sZShzZWxmLCByb2xlOiBzdHIsIGxpbWl0OiBpbnQgPSAxMCkgLT4gTGlzdFtDb250ZXh0RW50cnldOgogICAgICAgICIiIkdldCBlbnRyaWVzIGJ5IHJvbGUsIG1vc3QgcmVjZW50IGZpcnN0LiIiIgogICAgICAgIGVudHJpZXMgPSBzZWxmLl9ieV9yb2xlLmdldChyb2xlLCBbXSkKICAgICAgICByZXR1cm4gbGlzdChyZXZlcnNlZChlbnRyaWVzWy1saW1pdDpdKSkKCiAgICBkZWYgZ2V0X3JlbGV2YW50KAogICAgICAgIHNlbGYsCiAgICAgICAgcXVlcnk6IHN0ciwKICAgICAgICBsaW1pdDogaW50ID0gMTAsCiAgICAgICAgbWF4X2FnZV9zZWNvbmRzOiBPcHRpb25hbFtmbG9hdF0gPSBOb25lLAogICAgKSAtPiBMaXN0W0NvbnRleHRFbnRyeV06CiAgICAgICAgIiIiR2V0IGVudHJpZXMgcmVsZXZhbnQgdG8gYSBxdWVyeS4KCiAgICAgICAgVXNlcyBrZXl3b3JkIG1hdGNoaW5nIG9uIGNvbnRlbnQgYW5kIHRhZ3MuCiAgICAgICAgT3B0aW9uYWxseSBmaWx0ZXJzIGJ5IGFnZS4KICAgICAgICAiIiIKICAgICAgICBxdWVyeV93b3JkcyA9IHNldChxdWVyeS5sb3dlcigpLnNwbGl0KCkpCgogICAgICAgIHNjb3JlZDogTGlzdFt0dXBsZVtmbG9hdCwgQ29udGV4dEVudHJ5XV0gPSBbXQogICAgICAgIGZvciBlbnRyeSBpbiBzZWxmLl9lbnRyaWVzOgogICAgICAgICAgICBpZiBtYXhfYWdlX3NlY29uZHMgYW5kIGVudHJ5LmFnZV9zZWNvbmRzID4gbWF4X2FnZV9zZWNvbmRzOgogICAgICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgICAgICMgU2NvcmUgYnkga2V5d29yZCBvdmVybGFwCiAgICAgICAgICAgIGNvbnRlbnRfd29yZHMgPSBzZXQoZW50cnkuY29udGVudC5sb3dlcigpLnNwbGl0KCkpCiAgICAgICAgICAgIHRhZ193b3JkcyA9IHNldCh0Lmxvd2VyKCkgZm9yIHQgaW4gZW50cnkucmVsZXZhbmNlX3RhZ3MpCiAgICAgICAgICAgIGFsbF93b3JkcyA9IGNvbnRlbnRfd29yZHMgfCB0YWdfd29yZHMKCiAgICAgICAgICAgIG92ZXJsYXAgPSBsZW4ocXVlcnlfd29yZHMgJiBhbGxfd29yZHMpCiAgICAgICAgICAgIGlmIG92ZXJsYXAgPiAwOgogICAgICAgICAgICAgICAgIyBCb29zdCByZWNlbnQgZW50cmllcwogICAgICAgICAgICAgICAgcmVjZW5jeV9mYWN0b3IgPSAxLjAgLyAoMS4wICsgZW50cnkuYWdlX3NlY29uZHMgLyAzMDApCiAgICAgICAgICAgICAgICBzY29yZSA9IG92ZXJsYXAgKiAoMS4wICsgcmVjZW5jeV9mYWN0b3IpCiAgICAgICAgICAgICAgICBzY29yZWQuYXBwZW5kKChzY29yZSwgZW50cnkpKQoKICAgICAgICBzY29yZWQuc29ydChrZXk9bGFtYmRhIHg6IHhbMF0sIHJldmVyc2U9VHJ1ZSkKICAgICAgICByZXR1cm4gW2VudHJ5IGZvciBfLCBlbnRyeSBpbiBzY29yZWRbOmxpbWl0XV0KCiAgICBkZWYgZ2V0X3JlY2VudChzZWxmLCBsaW1pdDogaW50ID0gMTApIC0+IExpc3RbQ29udGV4dEVudHJ5XToKICAgICAgICAiIiJHZXQgdGhlIG1vc3QgcmVjZW50IGVudHJpZXMuIiIiCiAgICAgICAgcmV0dXJuIGxpc3QocmV2ZXJzZWQoc2VsZi5fZW50cmllc1stbGltaXQ6XSkpCgogICAgZGVmIGJ1aWxkX2NvbnRleHRfc3RyaW5nKAogICAgICAgIHNlbGYsCiAgICAgICAgbGltaXQ6IGludCA9IDEwLAogICAgICAgIGNhdGVnb3JpZXM6IE9wdGlvbmFsW0xpc3Rbc3RyXV0gPSBOb25lLAogICAgKSAtPiBzdHI6CiAgICAgICAgIiIiQnVpbGQgYSBjb250ZXh0IHN0cmluZyBmb3IgTExNIHByb21wdHMuCgogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIGxpbWl0OiBNYXhpbXVtIGVudHJpZXMgdG8gaW5jbHVkZS4KICAgICAgICAgICAgY2F0ZWdvcmllczogRmlsdGVyIGJ5IGNhdGVnb3JpZXMgKE5vbmUgPSBhbGwpLgoKICAgICAgICBSZXR1cm5zOgogICAgICAgICAgICBGb3JtYXR0ZWQgY29udGV4dCBzdHJpbmcuCiAgICAgICAgIiIiCiAgICAgICAgZW50cmllcyA9IHNlbGYuX2VudHJpZXNbLWxpbWl0Ol0KICAgICAgICBpZiBjYXRlZ29yaWVzOgogICAgICAgICAgICBlbnRyaWVzID0gW2UgZm9yIGUgaW4gZW50cmllcyBpZiBlLmNhdGVnb3J5IGluIGNhdGVnb3JpZXNdCgogICAgICAgIGlmIG5vdCBlbnRyaWVzOgogICAgICAgICAgICByZXR1cm4gIiIKCiAgICAgICAgcGFydHMgPSBbXQogICAgICAgIGZvciBlbnRyeSBpbiBlbnRyaWVzWy1saW1pdDpdOgogICAgICAgICAgICBwYXJ0cy5hcHBlbmQoZiJbe2VudHJ5LnJvbGV9L3tlbnRyeS5jYXRlZ29yeX1dIHtlbnRyeS5jb250ZW50fSIpCiAgICAgICAgcmV0dXJuICJcbiIuam9pbihwYXJ0cykKCiAgICBkZWYgY2xlYXIoc2VsZikgLT4gTm9uZToKICAgICAgICAiIiJDbGVhciBhbGwgY29udGV4dC4iIiIKICAgICAgICBzZWxmLl9lbnRyaWVzLmNsZWFyKCkKICAgICAgICBzZWxmLl9ieV9jYXRlZ29yeS5jbGVhcigpCiAgICAgICAgc2VsZi5fYnlfcm9sZS5jbGVhcigpCgogICAgQHByb3BlcnR5CiAgICBkZWYgc2l6ZShzZWxmKSAtPiBpbnQ6CiAgICAgICAgcmV0dXJuIGxlbihzZWxmLl9lbnRyaWVzKQoKICAgIEBwcm9wZXJ0eQogICAgZGVmIGNhdGVnb3JpZXMoc2VsZikgLT4gTGlzdFtzdHJdOgogICAgICAgIHJldHVybiBsaXN0KHNlbGYuX2J5X2NhdGVnb3J5LmtleXMoKSkKCiAgICBkZWYgc3VtbWFyeShzZWxmKSAtPiBEaWN0W3N0ciwgQW55XToKICAgICAgICAiIiJHZXQgc3RvcmUgc3RhdGlzdGljcy4iIiIKICAgICAgICByZXR1cm4gewogICAgICAgICAgICAidG90YWxfZW50cmllcyI6IGxlbihzZWxmLl9lbnRyaWVzKSwKICAgICAgICAgICAgImNhdGVnb3JpZXMiOiB7azogbGVuKHYpIGZvciBrLCB2IGluIHNlbGYuX2J5X2NhdGVnb3J5Lml0ZW1zKCl9LAogICAgICAgICAgICAicm9sZXMiOiB7azogbGVuKHYpIGZvciBrLCB2IGluIHNlbGYuX2J5X3JvbGUuaXRlbXMoKX0sCiAgICAgICAgfQo=
+"""Context store — task-specific knowledge accumulation.
+
+Derived from the ContextStore pattern in agent-system/profound_system.py.
+Accumulates knowledge during a task and provides relevant context
+for each step based on role and recency.
+"""
+
+from __future__ import annotations
+
+import time
+from collections import defaultdict
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional
+
+
+@dataclass
+class ContextEntry:
+    """A piece of accumulated context."""
+    content: str
+    role: str  # Which agent role produced this
+    category: str  # e.g., "plan", "code", "test_result", "reflection"
+    timestamp: float = field(default_factory=time.time)
+    relevance_tags: List[str] = field(default_factory=list)
+
+    @property
+    def age_seconds(self) -> float:
+        return time.time() - self.timestamp
+
+
+class ContextStore:
+    """Task-specific context accumulation.
+
+    Tracks knowledge gathered during a task execution session.
+    Provides filtered retrieval by role, category, or relevance.
+    """
+
+    def __init__(self, max_entries: int = 200):
+        self._entries: List[ContextEntry] = []
+        self._by_category: Dict[str, List[ContextEntry]] = defaultdict(list)
+        self._by_role: Dict[str, List[ContextEntry]] = defaultdict(list)
+        self.max_entries = max_entries
+
+    def add(
+        self,
+        content: str,
+        role: str = "agent",
+        category: str = "general",
+        tags: Optional[List[str]] = None,
+    ) -> None:
+        """Add a context entry.
+
+        Args:
+            content: The context content.
+            role: Which role produced this (planner, developer, etc).
+            category: Category (plan, code, test_result, etc).
+            tags: Optional relevance tags for retrieval.
+        """
+        entry = ContextEntry(
+            content=content,
+            role=role,
+            category=category,
+            relevance_tags=tags or [],
+        )
+        self._entries.append(entry)
+        self._by_category[category].append(entry)
+        self._by_role[role].append(entry)
+
+        # Evict old entries if over limit
+        if len(self._entries) > self.max_entries:
+            self._evict()
+
+    def _evict(self) -> None:
+        """Remove oldest, lowest-priority entries."""
+        # Keep the newest max_entries
+        self._entries = self._entries[-self.max_entries:]
+        # Rebuild indices
+        self._by_category.clear()
+        self._by_role.clear()
+        for entry in self._entries:
+            self._by_category[entry.category].append(entry)
+            self._by_role[entry.role].append(entry)
+
+    def get_by_category(self, category: str, limit: int = 10) -> List[ContextEntry]:
+        """Get entries by category, most recent first."""
+        entries = self._by_category.get(category, [])
+        return list(reversed(entries[-limit:]))
+
+    def get_by_role(self, role: str, limit: int = 10) -> List[ContextEntry]:
+        """Get entries by role, most recent first."""
+        entries = self._by_role.get(role, [])
+        return list(reversed(entries[-limit:]))
+
+    def get_relevant(
+        self,
+        query: str,
+        limit: int = 10,
+        max_age_seconds: Optional[float] = None,
+    ) -> List[ContextEntry]:
+        """Get entries relevant to a query.
+
+        Uses keyword matching on content and tags.
+        Optionally filters by age.
+        """
+        query_words = set(query.lower().split())
+
+        scored: List[tuple[float, ContextEntry]] = []
+        for entry in self._entries:
+            if max_age_seconds and entry.age_seconds > max_age_seconds:
+                continue
+
+            # Score by keyword overlap
+            content_words = set(entry.content.lower().split())
+            tag_words = set(t.lower() for t in entry.relevance_tags)
+            all_words = content_words | tag_words
+
+            overlap = len(query_words & all_words)
+            if overlap > 0:
+                # Boost recent entries
+                recency_factor = 1.0 / (1.0 + entry.age_seconds / 300)
+                score = overlap * (1.0 + recency_factor)
+                scored.append((score, entry))
+
+        scored.sort(key=lambda x: x[0], reverse=True)
+        return [entry for _, entry in scored[:limit]]
+
+    def get_recent(self, limit: int = 10) -> List[ContextEntry]:
+        """Get the most recent entries."""
+        return list(reversed(self._entries[-limit:]))
+
+    def build_context_string(
+        self,
+        limit: int = 10,
+        categories: Optional[List[str]] = None,
+    ) -> str:
+        """Build a context string for LLM prompts.
+
+        Args:
+            limit: Maximum entries to include.
+            categories: Filter by categories (None = all).
+
+        Returns:
+            Formatted context string.
+        """
+        entries = self._entries[-limit:]
+        if categories:
+            entries = [e for e in entries if e.category in categories]
+
+        if not entries:
+            return ""
+
+        parts = []
+        for entry in entries[-limit:]:
+            parts.append(f"[{entry.role}/{entry.category}] {entry.content}")
+        return "\n".join(parts)
+
+    def clear(self) -> None:
+        """Clear all context."""
+        self._entries.clear()
+        self._by_category.clear()
+        self._by_role.clear()
+
+    @property
+    def size(self) -> int:
+        return len(self._entries)
+
+    @property
+    def categories(self) -> List[str]:
+        return list(self._by_category.keys())
+
+    def summary(self) -> Dict[str, Any]:
+        """Get store statistics."""
+        return {
+            "total_entries": len(self._entries),
+            "categories": {k: len(v) for k, v in self._by_category.items()},
+            "roles": {k: len(v) for k, v in self._by_role.items()},
+        }

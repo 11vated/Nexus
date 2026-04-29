@@ -1,1 +1,13 @@
-LmdpdApfX3B5Y2FjaGVfXwoqLnB5YwoucHl0ZXN0X2NhY2hlCi5teXB5X2NhY2hlCi5ydWZmX2NhY2hlCiouZWdnLWluZm8KZGlzdApidWlsZApsZWdhY3kvCi5uZXh1c19tZW1vcnkvCi5lbnYKbm9kZV9tb2R1bGVzCg==
+.git
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+*.egg-info
+dist
+build
+legacy/
+.nexus_memory/
+.env
+node_modules

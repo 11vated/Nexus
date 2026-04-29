@@ -1,1 +1,218 @@
-IiIiTG9uZy10ZXJtIG1lbW9yeSDigJQgcGVyc2lzdGVudCB2ZWN0b3Igc3RvcmUgZm9yIHNlbWFudGljIHJldHJpZXZhbC4KCldyYXBzIENocm9tYURCICh3aGVuIGF2YWlsYWJsZSkgb3IgZmFsbHMgYmFjayB0byBrZXl3b3JkIHNlYXJjaC4KQnVpbGRzIG9uIHRoZSBleGlzdGluZyByYWdfbWlkZGxld2FyZS5weSBpbmZyYXN0cnVjdHVyZS4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgaGFzaGxpYgppbXBvcnQganNvbgppbXBvcnQgbG9nZ2luZwppbXBvcnQgdGltZQpmcm9tIGRhdGFjbGFzc2VzIGltcG9ydCBkYXRhY2xhc3MsIGZpZWxkCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApmcm9tIHR5cGluZyBpbXBvcnQgQW55LCBEaWN0LCBMaXN0LCBPcHRpb25hbCwgVHVwbGUKCmxvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKF9fbmFtZV9fKQoKCkBkYXRhY2xhc3MKY2xhc3MgTWVtb3J5RG9jdW1lbnQ6CiAgICAiIiJBIGRvY3VtZW50IHN0b3JlZCBpbiBsb25nLXRlcm0gbWVtb3J5LiIiIgogICAgaWQ6IHN0cgogICAgY29udGVudDogc3RyCiAgICBtZXRhZGF0YTogRGljdFtzdHIsIEFueV0gPSBmaWVsZChkZWZhdWx0X2ZhY3Rvcnk9ZGljdCkKICAgIGVtYmVkZGluZzogT3B0aW9uYWxbTGlzdFtmbG9hdF1dID0gTm9uZQogICAgdGltZXN0YW1wOiBmbG9hdCA9IGZpZWxkKGRlZmF1bHRfZmFjdG9yeT10aW1lLnRpbWUpCgoKY2xhc3MgTG9uZ1Rlcm1NZW1vcnk6CiAgICAiIiJQZXJzaXN0ZW50IG1lbW9yeSB3aXRoIHNlbWFudGljIHNlYXJjaC4KCiAgICBVc2VzIENocm9tYURCIGZvciB2ZWN0b3Igc3RvcmFnZSB3aGVuIGF2YWlsYWJsZSwgZmFsbHMgYmFjayB0bwogICAga2V5d29yZC1iYXNlZCBzZWFyY2ggb3RoZXJ3aXNlLiBTdG9yZXMgdGFzayByZXN1bHRzLCBjb2RlIHNuaXBwZXRzLAogICAgYW5kIGxlYXJuZWQgcGF0dGVybnMgZm9yIGZ1dHVyZSByZXRyaWV2YWwuCiAgICAiIiIKCiAgICBkZWYgX19pbml0X18oc2VsZiwgcGVyc2lzdF9kaXI6IHN0ciA9ICIubmV4dXNfbWVtb3J5Iik6CiAgICAgICAgc2VsZi5wZXJzaXN0X2RpciA9IFBhdGgocGVyc2lzdF9kaXIpCiAgICAgICAgc2VsZi5wZXJzaXN0X2Rpci5ta2RpcihwYXJlbnRzPVRydWUsIGV4aXN0X29rPVRydWUpCiAgICAgICAgc2VsZi5fY29sbGVjdGlvbiA9IE5vbmUKICAgICAgICBzZWxmLl9mYWxsYmFja19kb2NzOiBMaXN0W01lbW9yeURvY3VtZW50XSA9IFtdCiAgICAgICAgc2VsZi5fdXNlX2Nocm9tYSA9IEZhbHNlCgogICAgICAgIHNlbGYuX2luaXRfYmFja2VuZCgpCgogICAgZGVmIF9pbml0X2JhY2tlbmQoc2VsZikgLT4gTm9uZToKICAgICAgICAiIiJUcnkgdG8gaW5pdGlhbGl6ZSBDaHJvbWFEQiwgZmFsbCBiYWNrIHRvIEpTT04uIiIiCiAgICAgICAgdHJ5OgogICAgICAgICAgICBpbXBvcnQgY2hyb21hZGIgICMgbm9xYTogRjQwMQogICAgICAgICAgICBjbGllbnQgPSBjaHJvbWFkYi5QZXJzaXN0ZW50Q2xpZW50KHBhdGg9c3RyKHNlbGYucGVyc2lzdF9kaXIgLyAiY2hyb21hIikpCiAgICAgICAgICAgIHNlbGYuX2NvbGxlY3Rpb24gPSBjbGllbnQuZ2V0X29yX2NyZWF0ZV9jb2xsZWN0aW9uKAogICAgICAgICAgICAgICAgbmFtZT0ibmV4dXNfbWVtb3J5IiwKICAgICAgICAgICAgICAgIG1ldGFkYXRhPXsiaG5zdzpzcGFjZSI6ICJjb3NpbmUifSwKICAgICAgICAgICAgKQogICAgICAgICAgICBzZWxmLl91c2VfY2hyb21hID0gVHJ1ZQogICAgICAgICAgICBsb2dnZXIuaW5mbygiTG9uZy10ZXJtIG1lbW9yeTogQ2hyb21hREIgaW5pdGlhbGl6ZWQiKQogICAgICAgIGV4Y2VwdCBJbXBvcnRFcnJvcjoKICAgICAgICAgICAgbG9nZ2VyLmluZm8oIkxvbmctdGVybSBtZW1vcnk6IENocm9tYURCIG5vdCBhdmFpbGFibGUsIHVzaW5nIEpTT04gZmFsbGJhY2siKQogICAgICAgICAgICBzZWxmLl9sb2FkX2ZhbGxiYWNrKCkKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGV4YzoKICAgICAgICAgICAgbG9nZ2VyLndhcm5pbmcoIkNocm9tYURCIGluaXQgZmFpbGVkLCB1c2luZyBmYWxsYmFjazogJXMiLCBleGMpCiAgICAgICAgICAgIHNlbGYuX2xvYWRfZmFsbGJhY2soKQoKICAgIGRlZiBfbG9hZF9mYWxsYmFjayhzZWxmKSAtPiBOb25lOgogICAgICAgICIiIkxvYWQgZmFsbGJhY2sgSlNPTiBzdG9yZS4iIiIKICAgICAgICBwYXRoID0gc2VsZi5wZXJzaXN0X2RpciAvICJtZW1vcnkuanNvbiIKICAgICAgICBpZiBwYXRoLmV4aXN0cygpOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICBkYXRhID0ganNvbi5sb2FkcyhwYXRoLnJlYWRfdGV4dCgpKQogICAgICAgICAgICAgICAgc2VsZi5fZmFsbGJhY2tfZG9jcyA9IFsKICAgICAgICAgICAgICAgICAgICBNZW1vcnlEb2N1bWVudCgqKmRvYykgZm9yIGRvYyBpbiBkYXRhCiAgICAgICAgICAgICAgICBdCiAgICAgICAgICAgIGV4Y2VwdCAoanNvbi5KU09ORGVjb2RlRXJyb3IsIFR5cGVFcnJvcik6CiAgICAgICAgICAgICAgICBzZWxmLl9mYWxsYmFja19kb2NzID0gW10KCiAgICBkZWYgX3NhdmVfZmFsbGJhY2soc2VsZikgLT4gTm9uZToKICAgICAgICAiIiJTYXZlIGZhbGxiYWNrIEpTT04gc3RvcmUuIiIiCiAgICAgICAgcGF0aCA9IHNlbGYucGVyc2lzdF9kaXIgLyAibWVtb3J5Lmpzb24iCiAgICAgICAgZGF0YSA9IFsKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgImlkIjogZG9jLmlkLAogICAgICAgICAgICAgICAgImNvbnRlbnQiOiBkb2MuY29udGVudCwKICAgICAgICAgICAgICAgICJtZXRhZGF0YSI6IGRvYy5tZXRhZGF0YSwKICAgICAgICAgICAgICAgICJ0aW1lc3RhbXAiOiBkb2MudGltZXN0YW1wLAogICAgICAgICAgICB9CiAgICAgICAgICAgIGZvciBkb2MgaW4gc2VsZi5fZmFsbGJhY2tfZG9jcwogICAgICAgIF0KICAgICAgICBwYXRoLndyaXRlX3RleHQoanNvbi5kdW1wcyhkYXRhLCBpbmRlbnQ9MikpCgogICAgZGVmIHN0b3JlKAogICAgICAgIHNlbGYsCiAgICAgICAgY29udGVudDogc3RyLAogICAgICAgIG1ldGFkYXRhOiBPcHRpb25hbFtEaWN0W3N0ciwgQW55XV0gPSBOb25lLAogICAgICAgIGRvY19pZDogT3B0aW9uYWxbc3RyXSA9IE5vbmUsCiAgICApIC0+IHN0cjoKICAgICAgICAiIiJTdG9yZSBhIGRvY3VtZW50IGluIGxvbmctdGVybSBtZW1vcnkuCgogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIGNvbnRlbnQ6IFRoZSB0ZXh0IGNvbnRlbnQgdG8gc3RvcmUuCiAgICAgICAgICAgIG1ldGFkYXRhOiBPcHRpb25hbCBtZXRhZGF0YSAodGFncywgc291cmNlLCBldGMpLgogICAgICAgICAgICBkb2NfaWQ6IE9wdGlvbmFsIGV4cGxpY2l0IElEIChhdXRvLWdlbmVyYXRlZCBpZiBub3QgcHJvdmlkZWQpLgoKICAgICAgICBSZXR1cm5zOgogICAgICAgICAgICBUaGUgZG9jdW1lbnQgSUQuCiAgICAgICAgIiIiCiAgICAgICAgaWYgbm90IGRvY19pZDoKICAgICAgICAgICAgZG9jX2lkID0gaGFzaGxpYi5zaGEyNTYoY29udGVudC5lbmNvZGUoKSkuaGV4ZGlnZXN0KClbOjE2XQoKICAgICAgICBtZXRhZGF0YSA9IG1ldGFkYXRhIG9yIHt9CiAgICAgICAgbWV0YWRhdGFbInN0b3JlZF9hdCJdID0gdGltZS50aW1lKCkKCiAgICAgICAgaWYgc2VsZi5fdXNlX2Nocm9tYSBhbmQgc2VsZi5fY29sbGVjdGlvbjoKICAgICAgICAgICAgc2VsZi5fY29sbGVjdGlvbi51cHNlcnQoCiAgICAgICAgICAgICAgICBpZHM9W2RvY19pZF0sCiAgICAgICAgICAgICAgICBkb2N1bWVudHM9W2NvbnRlbnRdLAogICAgICAgICAgICAgICAgbWV0YWRhdGFzPVttZXRhZGF0YV0sCiAgICAgICAgICAgICkKICAgICAgICBlbHNlOgogICAgICAgICAgICAjIEZhbGxiYWNrOiBhcHBlbmQgdG8gSlNPTiBsaXN0CiAgICAgICAgICAgIGRvYyA9IE1lbW9yeURvY3VtZW50KAogICAgICAgICAgICAgICAgaWQ9ZG9jX2lkLAogICAgICAgICAgICAgICAgY29udGVudD1jb250ZW50LAogICAgICAgICAgICAgICAgbWV0YWRhdGE9bWV0YWRhdGEsCiAgICAgICAgICAgICkKICAgICAgICAgICAgIyBVcGRhdGUgaWYgZXhpc3RzLCBlbHNlIGFwcGVuZAogICAgICAgICAgICBleGlzdGluZyA9IFtpIGZvciBpLCBkIGluIGVudW1lcmF0ZShzZWxmLl9mYWxsYmFja19kb2NzKSBpZiBkLmlkID09IGRvY19pZF0KICAgICAgICAgICAgaWYgZXhpc3Rpbmc6CiAgICAgICAgICAgICAgICBzZWxmLl9mYWxsYmFja19kb2NzW2V4aXN0aW5nWzBdXSA9IGRvYwogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgc2VsZi5fZmFsbGJhY2tfZG9jcy5hcHBlbmQoZG9jKQogICAgICAgICAgICBzZWxmLl9zYXZlX2ZhbGxiYWNrKCkKCiAgICAgICAgbG9nZ2VyLmRlYnVnKCJTdG9yZWQgZG9jdW1lbnQ6ICVzICglZCBjaGFycykiLCBkb2NfaWQsIGxlbihjb250ZW50KSkKICAgICAgICByZXR1cm4gZG9jX2lkCgogICAgZGVmIHNlYXJjaCgKICAgICAgICBzZWxmLAogICAgICAgIHF1ZXJ5OiBzdHIsCiAgICAgICAgbl9yZXN1bHRzOiBpbnQgPSA1LAogICAgICAgIG1ldGFkYXRhX2ZpbHRlcjogT3B0aW9uYWxbRGljdFtzdHIsIEFueV1dID0gTm9uZSwKICAgICkgLT4gTGlzdFtUdXBsZVtzdHIsIHN0ciwgZmxvYXRdXToKICAgICAgICAiIiJTZWFyY2ggZm9yIHJlbGV2YW50IGRvY3VtZW50cy4KCiAgICAgICAgQXJnczoKICAgICAgICAgICAgcXVlcnk6IFNlYXJjaCBxdWVyeS4KICAgICAgICAgICAgbl9yZXN1bHRzOiBNYXhpbXVtIG51bWJlciBvZiByZXN1bHRzLgogICAgICAgICAgICBtZXRhZGF0YV9maWx0ZXI6IE9wdGlvbmFsIG1ldGFkYXRhIGZpbHRlci4KCiAgICAgICAgUmV0dXJuczoKICAgICAgICAgICAgTGlzdCBvZiAoZG9jX2lkLCBjb250ZW50LCByZWxldmFuY2Vfc2NvcmUpIHR1cGxlcy4KICAgICAgICAiIiIKICAgICAgICBpZiBzZWxmLl91c2VfY2hyb21hIGFuZCBzZWxmLl9jb2xsZWN0aW9uOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICBrd2FyZ3M6IERpY3Rbc3RyLCBBbnldID0gewogICAgICAgICAgICAgICAgICAgICJxdWVyeV90ZXh0cyI6IFtxdWVyeV0sCiAgICAgICAgICAgICAgICAgICAgIm5fcmVzdWx0cyI6IG1pbihuX3Jlc3VsdHMsIHNlbGYuX2NvbGxlY3Rpb24uY291bnQoKSBvciAxKSwKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGlmIG1ldGFkYXRhX2ZpbHRlcjoKICAgICAgICAgICAgICAgICAgICBrd2FyZ3NbIndoZXJlIl0gPSBtZXRhZGF0YV9maWx0ZXIKCiAgICAgICAgICAgICAgICByZXN1bHRzID0gc2VsZi5fY29sbGVjdGlvbi5xdWVyeSgqKmt3YXJncykKCiAgICAgICAgICAgICAgICBvdXRwdXQgPSBbXQogICAgICAgICAgICAgICAgaWYgcmVzdWx0cyBhbmQgcmVzdWx0cy5nZXQoImlkcyIpOgogICAgICAgICAgICAgICAgICAgIGZvciBpLCBkb2NfaWQgaW4gZW51bWVyYXRlKHJlc3VsdHNbImlkcyJdWzBdKToKICAgICAgICAgICAgICAgICAgICAgICAgY29udGVudCA9IHJlc3VsdHNbImRvY3VtZW50cyJdWzBdW2ldIGlmIHJlc3VsdHMuZ2V0KCJkb2N1bWVudHMiKSBlbHNlICIiCiAgICAgICAgICAgICAgICAgICAgICAgIGRpc3RhbmNlID0gcmVzdWx0c1siZGlzdGFuY2VzIl1bMF1baV0gaWYgcmVzdWx0cy5nZXQoImRpc3RhbmNlcyIpIGVsc2UgMC4wCiAgICAgICAgICAgICAgICAgICAgICAgIHNjb3JlID0gMS4wIC0gZGlzdGFuY2UgICMgQ29udmVydCBkaXN0YW5jZSB0byBzaW1pbGFyaXR5CiAgICAgICAgICAgICAgICAgICAgICAgIG91dHB1dC5hcHBlbmQoKGRvY19pZCwgY29udGVudCwgc2NvcmUpKQogICAgICAgICAgICAgICAgcmV0dXJuIG91dHB1dAogICAgICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGV4YzoKICAgICAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKCJDaHJvbWFEQiBzZWFyY2ggZmFpbGVkOiAlcyIsIGV4YykKCiAgICAgICAgIyBGYWxsYmFjazoga2V5d29yZCBzZWFyY2gKICAgICAgICByZXR1cm4gc2VsZi5fa2V5d29yZF9zZWFyY2gocXVlcnksIG5fcmVzdWx0cykKCiAgICBkZWYgX2tleXdvcmRfc2VhcmNoKAogICAgICAgIHNlbGYsIHF1ZXJ5OiBzdHIsIG5fcmVzdWx0czogaW50CiAgICApIC0+IExpc3RbVHVwbGVbc3RyLCBzdHIsIGZsb2F0XV06CiAgICAgICAgIiIiU2ltcGxlIGtleXdvcmQtYmFzZWQgc2VhcmNoIGZhbGxiYWNrLiIiIgogICAgICAgIHF1ZXJ5X2xvd2VyID0gcXVlcnkubG93ZXIoKQogICAgICAgIHF1ZXJ5X3dvcmRzID0gc2V0KHF1ZXJ5X2xvd2VyLnNwbGl0KCkpCgogICAgICAgIHNjb3JlZCA9IFtdCiAgICAgICAgZm9yIGRvYyBpbiBzZWxmLl9mYWxsYmFja19kb2NzOgogICAgICAgICAgICBjb250ZW50X2xvd2VyID0gZG9jLmNvbnRlbnQubG93ZXIoKQogICAgICAgICAgICAjIFNjb3JlOiBmcmFjdGlvbiBvZiBxdWVyeSB3b3JkcyBmb3VuZCBpbiBkb2N1bWVudAogICAgICAgICAgICBtYXRjaGVzID0gc3VtKDEgZm9yIHcgaW4gcXVlcnlfd29yZHMgaWYgdyBpbiBjb250ZW50X2xvd2VyKQogICAgICAgICAgICBpZiBtYXRjaGVzID4gMDoKICAgICAgICAgICAgICAgIHNjb3JlID0gbWF0Y2hlcyAvIGxlbihxdWVyeV93b3JkcykgaWYgcXVlcnlfd29yZHMgZWxzZSAwCiAgICAgICAgICAgICAgICBzY29yZWQuYXBwZW5kKChkb2MuaWQsIGRvYy5jb250ZW50LCBzY29yZSkpCgogICAgICAgIHNjb3JlZC5zb3J0KGtleT1sYW1iZGEgeDogeFsyXSwgcmV2ZXJzZT1UcnVlKQogICAgICAgIHJldHVybiBzY29yZWRbOm5fcmVzdWx0c10KCiAgICBkZWYgZGVsZXRlKHNlbGYsIGRvY19pZDogc3RyKSAtPiBib29sOgogICAgICAgICIiIkRlbGV0ZSBhIGRvY3VtZW50IGJ5IElELiIiIgogICAgICAgIGlmIHNlbGYuX3VzZV9jaHJvbWEgYW5kIHNlbGYuX2NvbGxlY3Rpb246CiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIHNlbGYuX2NvbGxlY3Rpb24uZGVsZXRlKGlkcz1bZG9jX2lkXSkKICAgICAgICAgICAgICAgIHJldHVybiBUcnVlCiAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgICAgICByZXR1cm4gRmFsc2UKCiAgICAgICAgYmVmb3JlID0gbGVuKHNlbGYuX2ZhbGxiYWNrX2RvY3MpCiAgICAgICAgc2VsZi5fZmFsbGJhY2tfZG9jcyA9IFtkIGZvciBkIGluIHNlbGYuX2ZhbGxiYWNrX2RvY3MgaWYgZC5pZCAhPSBkb2NfaWRdCiAgICAgICAgaWYgbGVuKHNlbGYuX2ZhbGxiYWNrX2RvY3MpIDwgYmVmb3JlOgogICAgICAgICAgICBzZWxmLl9zYXZlX2ZhbGxiYWNrKCkKICAgICAgICAgICAgcmV0dXJuIFRydWUKICAgICAgICByZXR1cm4gRmFsc2UKCiAgICBAcHJvcGVydHkKICAgIGRlZiBjb3VudChzZWxmKSAtPiBpbnQ6CiAgICAgICAgIiIiTnVtYmVyIG9mIHN0b3JlZCBkb2N1bWVudHMuIiIiCiAgICAgICAgaWYgc2VsZi5fdXNlX2Nocm9tYSBhbmQgc2VsZi5fY29sbGVjdGlvbjoKICAgICAgICAgICAgcmV0dXJuIHNlbGYuX2NvbGxlY3Rpb24uY291bnQoKQogICAgICAgIHJldHVybiBsZW4oc2VsZi5fZmFsbGJhY2tfZG9jcykK
+"""Long-term memory — persistent vector store for semantic retrieval.
+
+Wraps ChromaDB (when available) or falls back to keyword search.
+Builds on the existing rag_middleware.py infrastructure.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import logging
+import time
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class MemoryDocument:
+    """A document stored in long-term memory."""
+    id: str
+    content: str
+    metadata: Dict[str, Any] = field(default_factory=dict)
+    embedding: Optional[List[float]] = None
+    timestamp: float = field(default_factory=time.time)
+
+
+class LongTermMemory:
+    """Persistent memory with semantic search.
+
+    Uses ChromaDB for vector storage when available, falls back to
+    keyword-based search otherwise. Stores task results, code snippets,
+    and learned patterns for future retrieval.
+    """
+
+    def __init__(self, persist_dir: str = ".nexus_memory"):
+        self.persist_dir = Path(persist_dir)
+        self.persist_dir.mkdir(parents=True, exist_ok=True)
+        self._collection = None
+        self._fallback_docs: List[MemoryDocument] = []
+        self._use_chroma = False
+
+        self._init_backend()
+
+    def _init_backend(self) -> None:
+        """Try to initialize ChromaDB, fall back to JSON."""
+        try:
+            import chromadb  # noqa: F401
+            client = chromadb.PersistentClient(path=str(self.persist_dir / "chroma"))
+            self._collection = client.get_or_create_collection(
+                name="nexus_memory",
+                metadata={"hnsw:space": "cosine"},
+            )
+            self._use_chroma = True
+            logger.info("Long-term memory: ChromaDB initialized")
+        except ImportError:
+            logger.info("Long-term memory: ChromaDB not available, using JSON fallback")
+            self._load_fallback()
+        except Exception as exc:
+            logger.warning("ChromaDB init failed, using fallback: %s", exc)
+            self._load_fallback()
+
+    def _load_fallback(self) -> None:
+        """Load fallback JSON store."""
+        path = self.persist_dir / "memory.json"
+        if path.exists():
+            try:
+                data = json.loads(path.read_text())
+                self._fallback_docs = [
+                    MemoryDocument(**doc) for doc in data
+                ]
+            except (json.JSONDecodeError, TypeError):
+                self._fallback_docs = []
+
+    def _save_fallback(self) -> None:
+        """Save fallback JSON store."""
+        path = self.persist_dir / "memory.json"
+        data = [
+            {
+                "id": doc.id,
+                "content": doc.content,
+                "metadata": doc.metadata,
+                "timestamp": doc.timestamp,
+            }
+            for doc in self._fallback_docs
+        ]
+        path.write_text(json.dumps(data, indent=2))
+
+    def store(
+        self,
+        content: str,
+        metadata: Optional[Dict[str, Any]] = None,
+        doc_id: Optional[str] = None,
+    ) -> str:
+        """Store a document in long-term memory.
+
+        Args:
+            content: The text content to store.
+            metadata: Optional metadata (tags, source, etc).
+            doc_id: Optional explicit ID (auto-generated if not provided).
+
+        Returns:
+            The document ID.
+        """
+        if not doc_id:
+            doc_id = hashlib.sha256(content.encode()).hexdigest()[:16]
+
+        metadata = metadata or {}
+        metadata["stored_at"] = time.time()
+
+        if self._use_chroma and self._collection:
+            self._collection.upsert(
+                ids=[doc_id],
+                documents=[content],
+                metadatas=[metadata],
+            )
+        else:
+            # Fallback: append to JSON list
+            doc = MemoryDocument(
+                id=doc_id,
+                content=content,
+                metadata=metadata,
+            )
+            # Update if exists, else append
+            existing = [i for i, d in enumerate(self._fallback_docs) if d.id == doc_id]
+            if existing:
+                self._fallback_docs[existing[0]] = doc
+            else:
+                self._fallback_docs.append(doc)
+            self._save_fallback()
+
+        logger.debug("Stored document: %s (%d chars)", doc_id, len(content))
+        return doc_id
+
+    def search(
+        self,
+        query: str,
+        n_results: int = 5,
+        metadata_filter: Optional[Dict[str, Any]] = None,
+    ) -> List[Tuple[str, str, float]]:
+        """Search for relevant documents.
+
+        Args:
+            query: Search query.
+            n_results: Maximum number of results.
+            metadata_filter: Optional metadata filter.
+
+        Returns:
+            List of (doc_id, content, relevance_score) tuples.
+        """
+        if self._use_chroma and self._collection:
+            try:
+                kwargs: Dict[str, Any] = {
+                    "query_texts": [query],
+                    "n_results": min(n_results, self._collection.count() or 1),
+                }
+                if metadata_filter:
+                    kwargs["where"] = metadata_filter
+
+                results = self._collection.query(**kwargs)
+
+                output = []
+                if results and results.get("ids"):
+                    for i, doc_id in enumerate(results["ids"][0]):
+                        content = results["documents"][0][i] if results.get("documents") else ""
+                        distance = results["distances"][0][i] if results.get("distances") else 0.0
+                        score = 1.0 - distance  # Convert distance to similarity
+                        output.append((doc_id, content, score))
+                return output
+            except Exception as exc:
+                logger.warning("ChromaDB search failed: %s", exc)
+
+        # Fallback: keyword search
+        return self._keyword_search(query, n_results)
+
+    def _keyword_search(
+        self, query: str, n_results: int
+    ) -> List[Tuple[str, str, float]]:
+        """Simple keyword-based search fallback."""
+        query_lower = query.lower()
+        query_words = set(query_lower.split())
+
+        scored = []
+        for doc in self._fallback_docs:
+            content_lower = doc.content.lower()
+            # Score: fraction of query words found in document
+            matches = sum(1 for w in query_words if w in content_lower)
+            if matches > 0:
+                score = matches / len(query_words) if query_words else 0
+                scored.append((doc.id, doc.content, score))
+
+        scored.sort(key=lambda x: x[2], reverse=True)
+        return scored[:n_results]
+
+    def delete(self, doc_id: str) -> bool:
+        """Delete a document by ID."""
+        if self._use_chroma and self._collection:
+            try:
+                self._collection.delete(ids=[doc_id])
+                return True
+            except Exception:
+                return False
+
+        before = len(self._fallback_docs)
+        self._fallback_docs = [d for d in self._fallback_docs if d.id != doc_id]
+        if len(self._fallback_docs) < before:
+            self._save_fallback()
+            return True
+        return False
+
+    @property
+    def count(self) -> int:
+        """Number of stored documents."""
+        if self._use_chroma and self._collection:
+            return self._collection.count()
+        return len(self._fallback_docs)

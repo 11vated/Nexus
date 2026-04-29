@@ -1,1 +1,338 @@
-IiIiVGhlIE5leHVzIGFnZW50IGxvb3Ag4oCUIFBsYW4g4oaSIEFjdCDihpIgT2JzZXJ2ZSDihpIgUmVmbGVjdC4KClRoaXMgaXMgdGhlIG1haW4gZW50cnkgcG9pbnQgZm9yIGF1dG9ub21vdXMgdGFzayBleGVjdXRpb24uCkl0IG9yY2hlc3RyYXRlcyB0aGUgcGxhbm5lciwgZXhlY3V0b3IsIHJlZmxlY3RvciwgYW5kIG1lbW9yeQppbnRvIGEgY29oZXJlbnQgbG9vcCB0aGF0IGNhbiBhY2NvbXBsaXNoIGNvZGluZyB0YXNrcy4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgbG9nZ2luZwppbXBvcnQgb3MKaW1wb3J0IHRpbWUKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmZyb20gdHlwaW5nIGltcG9ydCBBbnksIENhbGxhYmxlLCBEaWN0LCBMaXN0LCBPcHRpb25hbAoKZnJvbSBuZXh1cy5hZ2VudC5jb250ZXh0IGltcG9ydCBDb250ZXh0TWFuYWdlcgpmcm9tIG5leHVzLmFnZW50LmV4ZWN1dG9yIGltcG9ydCBFeGVjdXRvcgpmcm9tIG5leHVzLmFnZW50LmxsbSBpbXBvcnQgT2xsYW1hQ2xpZW50CmZyb20gbmV4dXMuYWdlbnQubW9kZWxzIGltcG9ydCBBZ2VudENvbmZpZywgQWdlbnRTdGF0ZSwgUXVhbGl0eUxldmVsLCBTdGVwCmZyb20gbmV4dXMuYWdlbnQucGxhbm5lciBpbXBvcnQgUGxhbm5lcgpmcm9tIG5leHVzLmFnZW50LnJlZmxlY3RvciBpbXBvcnQgUmVmbGVjdG9yCmZyb20gbmV4dXMubWVtb3J5LnNob3J0X3Rlcm0gaW1wb3J0IFNob3J0VGVybU1lbW9yeQpmcm9tIG5leHVzLm1lbW9yeS5sb25nX3Rlcm0gaW1wb3J0IExvbmdUZXJtTWVtb3J5Cgpsb2dnZXIgPSBsb2dnaW5nLmdldExvZ2dlcihfX25hbWVfXykKCgpjbGFzcyBBZ2VudExvb3A6CiAgICAiIiJUaGUgYXV0b25vbW91cyBhZ2VudCBleGVjdXRpb24gbG9vcC4KCiAgICBJbXBsZW1lbnRzIFBsYW4g4oaSIEFjdCDihpIgT2JzZXJ2ZSDihpIgUmVmbGVjdCBjeWNsZToKICAgIDEuIFBMQU46ICAgIExMTSBjcmVhdGVzL3VwZGF0ZXMgZXhlY3V0aW9uIHBsYW4KICAgIDIuIEFDVDogICAgIEV4ZWN1dGUgdGhlIG5leHQgdG9vbCBjYWxsCiAgICAzLiBPQlNFUlZFOiBDYXB0dXJlIGFuZCBzdG9yZSByZXN1bHRzCiAgICA0LiBSRUZMRUNUOiBBc3Nlc3MgcXVhbGl0eSwgZGVjaWRlIHRvIGNvbnRpbnVlL3JldHJ5L3N0b3AKCiAgICBNZW1vcnkgaW50ZWdyYXRpb246CiAgICAtIFNob3J0LXRlcm06IHRyYWNrcyBjb252ZXJzYXRpb24gd2l0aGluIHRoZSBjdXJyZW50IHNlc3Npb24KICAgIC0gTG9uZy10ZXJtOiAgcGVyc2lzdHMgbGVhcm5pbmdzIGFjcm9zcyBzZXNzaW9ucyAodGFzayBwYXR0ZXJucywgZml4ZXMpCiAgICAtIENvbnRleHQ6ICAgIG1hbmFnZXMgdGhlIExMTSBwcm9tcHQgd2luZG93IGJ1ZGdldAoKICAgIFVzYWdlOgogICAgICAgIGNvbmZpZyA9IEFnZW50Q29uZmlnKHdvcmtzcGFjZV9wYXRoPSIvcGF0aC90by9wcm9qZWN0IikKICAgICAgICBhZ2VudCA9IEFnZW50TG9vcChjb25maWcpCiAgICAgICAgYWdlbnQucmVnaXN0ZXJfZGVmYXVsdF90b29scygpCiAgICAgICAgcmVzdWx0ID0gYXdhaXQgYWdlbnQucnVuKCJCdWlsZCBhIEZsYXNrIEFQSSB3aXRoIC9oZWFsdGggZW5kcG9pbnQiKQogICAgIiIiCgogICAgZGVmIF9faW5pdF9fKHNlbGYsIGNvbmZpZzogT3B0aW9uYWxbQWdlbnRDb25maWddID0gTm9uZSk6CiAgICAgICAgc2VsZi5jb25maWcgPSBjb25maWcgb3IgQWdlbnRDb25maWcoKQogICAgICAgIHNlbGYubGxtID0gT2xsYW1hQ2xpZW50KHNlbGYuY29uZmlnKQogICAgICAgIHNlbGYucGxhbm5lciA9IFBsYW5uZXIoc2VsZi5sbG0sIHNlbGYuY29uZmlnKQogICAgICAgIHNlbGYuZXhlY3V0b3IgPSBFeGVjdXRvcihzZWxmLmNvbmZpZykKICAgICAgICBzZWxmLnJlZmxlY3RvciA9IFJlZmxlY3RvcihzZWxmLmxsbSwgc2VsZi5jb25maWcpCiAgICAgICAgc2VsZi5jb250ZXh0ID0gQ29udGV4dE1hbmFnZXIoKQoKICAgICAgICAjIE1lbW9yeSBzeXN0ZW1zCiAgICAgICAgc2VsZi5zaG9ydF90ZXJtID0gU2hvcnRUZXJtTWVtb3J5KHdpbmRvd19zaXplPTMwKQogICAgICAgIHNlbGYubG9uZ190ZXJtOiBPcHRpb25hbFtMb25nVGVybU1lbW9yeV0gPSBOb25lCiAgICAgICAgaWYgc2VsZi5jb25maWcubWVtb3J5X2VuYWJsZWQ6CiAgICAgICAgICAgIG1lbW9yeV9kaXIgPSBvcy5wYXRoLmpvaW4oc2VsZi5jb25maWcud29ya3NwYWNlX3BhdGgsICIubmV4dXNfbWVtb3J5IikKICAgICAgICAgICAgc2VsZi5sb25nX3Rlcm0gPSBMb25nVGVybU1lbW9yeShwZXJzaXN0X2Rpcj1tZW1vcnlfZGlyKQoKICAgICAgICBzZWxmLnN0YXRlID0gQWdlbnRTdGF0ZS5JRExFCiAgICAgICAgc2VsZi5oaXN0b3J5OiBMaXN0W1N0ZXBdID0gW10KICAgICAgICBzZWxmLl9vbl9zdGVwOiBPcHRpb25hbFtDYWxsYWJsZVtbU3RlcCwgQWdlbnRTdGF0ZV0sIE5vbmVdXSA9IE5vbmUKICAgICAgICBzZWxmLl9vbl9zdGF0ZV9jaGFuZ2U6IE9wdGlvbmFsW0NhbGxhYmxlW1tBZ2VudFN0YXRlXSwgTm9uZV1dID0gTm9uZQoKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICAjIENhbGxiYWNrcyAoZm9yIFRVSSAvIGxpdmUgZGlzcGxheSkKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgogICAgZGVmIG9uX3N0ZXAoc2VsZiwgY2FsbGJhY2s6IENhbGxhYmxlW1tTdGVwLCBBZ2VudFN0YXRlXSwgTm9uZV0pIC0+IE5vbmU6CiAgICAgICAgIiIiUmVnaXN0ZXIgYSBjYWxsYmFjayBmb3Igc3RlcCBjb21wbGV0aW9uIChmb3IgVFVJIHVwZGF0ZXMpLiIiIgogICAgICAgIHNlbGYuX29uX3N0ZXAgPSBjYWxsYmFjawoKICAgIGRlZiBvbl9zdGF0ZV9jaGFuZ2Uoc2VsZiwgY2FsbGJhY2s6IENhbGxhYmxlW1tBZ2VudFN0YXRlXSwgTm9uZV0pIC0+IE5vbmU6CiAgICAgICAgIiIiUmVnaXN0ZXIgYSBjYWxsYmFjayBmb3Igc3RhdGUgY2hhbmdlcyAoZm9yIFRVSSB1cGRhdGVzKS4iIiIKICAgICAgICBzZWxmLl9vbl9zdGF0ZV9jaGFuZ2UgPSBjYWxsYmFjawoKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICAjIFRvb2wgcmVnaXN0cmF0aW9uCiAgICAjIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKICAgIGRlZiByZWdpc3Rlcl90b29sKHNlbGYsIG5hbWU6IHN0ciwgdG9vbDogQW55KSAtPiBOb25lOgogICAgICAgICIiIlJlZ2lzdGVyIGEgdG9vbCB3aXRoIHRoZSBleGVjdXRvci4iIiIKICAgICAgICBzZWxmLmV4ZWN1dG9yLnJlZ2lzdGVyX3Rvb2wobmFtZSwgdG9vbCkKCiAgICBkZWYgcmVnaXN0ZXJfdG9vbHMoc2VsZiwgdG9vbHM6IERpY3Rbc3RyLCBBbnldKSAtPiBOb25lOgogICAgICAgICIiIlJlZ2lzdGVyIG11bHRpcGxlIHRvb2xzLiIiIgogICAgICAgIHNlbGYuZXhlY3V0b3IucmVnaXN0ZXJfdG9vbHModG9vbHMpCgogICAgZGVmIF9zZXRfc3RhdGUoc2VsZiwgc3RhdGU6IEFnZW50U3RhdGUpIC0+IE5vbmU6CiAgICAgICAgc2VsZi5zdGF0ZSA9IHN0YXRlCiAgICAgICAgaWYgc2VsZi5fb25fc3RhdGVfY2hhbmdlOgogICAgICAgICAgICBzZWxmLl9vbl9zdGF0ZV9jaGFuZ2Uoc3RhdGUpCgogICAgIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgICMgTWVtb3J5IGhlbHBlcnMKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgogICAgZGVmIF9yZWNhbGxfcmVsZXZhbnQoc2VsZiwgZ29hbDogc3RyKSAtPiBzdHI6CiAgICAgICAgIiIiU2VhcmNoIGxvbmctdGVybSBtZW1vcnkgZm9yIGFueXRoaW5nIHJlbGV2YW50IHRvIHRoaXMgZ29hbC4iIiIKICAgICAgICBpZiBub3Qgc2VsZi5sb25nX3Rlcm0gb3Igc2VsZi5sb25nX3Rlcm0uY291bnQgPT0gMDoKICAgICAgICAgICAgcmV0dXJuICIiCiAgICAgICAgcmVzdWx0cyA9IHNlbGYubG9uZ190ZXJtLnNlYXJjaChnb2FsLCBuX3Jlc3VsdHM9MykKICAgICAgICBpZiBub3QgcmVzdWx0czoKICAgICAgICAgICAgcmV0dXJuICIiCiAgICAgICAgcGFydHMgPSBbIlJlbGV2YW50IG1lbW9yaWVzIGZyb20gcGFzdCBzZXNzaW9uczoiXQogICAgICAgIGZvciBkb2NfaWQsIGNvbnRlbnQsIHNjb3JlIGluIHJlc3VsdHM6CiAgICAgICAgICAgIGlmIHNjb3JlID4gMC4xNTogICMgT25seSBpbmNsdWRlIHNvbWV3aGF0LXJlbGV2YW50IG1hdGNoZXMKICAgICAgICAgICAgICAgIHBhcnRzLmFwcGVuZChmIiAgW3tzY29yZTouMCV9XSB7Y29udGVudFs6MzAwXX0iKQogICAgICAgIHJldHVybiAiXG4iLmpvaW4ocGFydHMpIGlmIGxlbihwYXJ0cykgPiAxIGVsc2UgIiIKCiAgICBkZWYgX3JlbWVtYmVyX3Nlc3Npb24oc2VsZiwgZ29hbDogc3RyLCByZXN1bHQ6IERpY3Rbc3RyLCBBbnldKSAtPiBOb25lOgogICAgICAgICIiIlN0b3JlIGEgc3VtbWFyeSBvZiB0aGlzIHNlc3Npb24gaW4gbG9uZy10ZXJtIG1lbW9yeS4iIiIKICAgICAgICBpZiBub3Qgc2VsZi5sb25nX3Rlcm06CiAgICAgICAgICAgIHJldHVybgogICAgICAgIHN1Y2Nlc3NmdWxfc3RlcHMgPSBbcyBmb3IgcyBpbiBzZWxmLmhpc3RvcnkgaWYgcy5zdWNjZXNzXQogICAgICAgIGlmIG5vdCBzdWNjZXNzZnVsX3N0ZXBzOgogICAgICAgICAgICByZXR1cm4KICAgICAgICBzdW1tYXJ5X3BhcnRzID0gW2YiR29hbDoge2dvYWx9IiwgZiJSZXN1bHQ6IHsnc3VjY2VzcycgaWYgcmVzdWx0LmdldCgnc3VjY2VzcycpIGVsc2UgJ2ZhaWxlZCd9Il0KICAgICAgICBmb3IgcyBpbiBzdWNjZXNzZnVsX3N0ZXBzWy01Ol06ICAjIExhc3QgNSBzdWNjZXNzZnVsIHN0ZXBzCiAgICAgICAgICAgIHN1bW1hcnlfcGFydHMuYXBwZW5kKGYiICAtIHtzLmFjdGlvbn0gKHtzLnRvb2xfbmFtZX0pIikKICAgICAgICBzdW1tYXJ5ID0gIlxuIi5qb2luKHN1bW1hcnlfcGFydHMpCiAgICAgICAgc2VsZi5sb25nX3Rlcm0uc3RvcmUoCiAgICAgICAgICAgIGNvbnRlbnQ9c3VtbWFyeSwKICAgICAgICAgICAgbWV0YWRhdGE9eyJ0eXBlIjogInNlc3Npb24iLCAiZ29hbCI6IGdvYWxbOjIwMF0sICJzdWNjZXNzIjogcmVzdWx0LmdldCgic3VjY2VzcyIsIEZhbHNlKX0sCiAgICAgICAgKQoKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICAjIER5bmFtaWMgdG9vbCBkZXNjcmlwdGlvbnMgZm9yIHBsYW5uZXIKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgogICAgZGVmIF9nZXRfdG9vbF9kZXNjcmlwdGlvbnMoc2VsZikgLT4gc3RyOgogICAgICAgICIiIkdldCB0b29sIGRlc2NyaXB0aW9ucyBmcm9tIHRoZSBleGVjdXRvciBmb3IgZHluYW1pYyBwbGFubmVyIHByb21wdHMuIiIiCiAgICAgICAgcmV0dXJuIHNlbGYuZXhlY3V0b3IuZ2V0X3Rvb2xfZGVzY3JpcHRpb25zKCkKCiAgICAjIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAgIyBNYWluIGxvb3AKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgogICAgYXN5bmMgZGVmIHJ1bihzZWxmLCBnb2FsOiBzdHIpIC0+IERpY3Rbc3RyLCBBbnldOgogICAgICAgICIiIkV4ZWN1dGUgYSBnb2FsIGF1dG9ub21vdXNseS4KCiAgICAgICAgVGhpcyBpcyB0aGUgbWFpbiBlbnRyeSBwb2ludC4gSXQ6CiAgICAgICAgMS4gUmVjYWxscyByZWxldmFudCBsb25nLXRlcm0gbWVtb3JpZXMKICAgICAgICAyLiBDcmVhdGVzIGFuIGluaXRpYWwgcGxhbiAod2l0aCBkeW5hbWljIHRvb2wgbGlzdCkKICAgICAgICAzLiBFeGVjdXRlcyBzdGVwcyBvbmUgYnkgb25lCiAgICAgICAgNC4gUmVmbGVjdHMgYWZ0ZXIgZWFjaCBzdGVwCiAgICAgICAgNS4gUmVwbGFucyB3aGVuIG5lZWRlZAogICAgICAgIDYuIFN0b3JlcyBzZXNzaW9uIHN1bW1hcnkgZm9yIGZ1dHVyZSByZWNhbGwKCiAgICAgICAgQXJnczoKICAgICAgICAgICAgZ29hbDogSGlnaC1sZXZlbCBnb2FsIGRlc2NyaXB0aW9uLgoKICAgICAgICBSZXR1cm5zOgogICAgICAgICAgICBEaWN0IHdpdGggc3VjY2Vzcywgc3RlcHMsIGZpbmFsX3Jlc3VsdCwgc3RhdHMuCiAgICAgICAgIiIiCiAgICAgICAgc3RhcnRfdGltZSA9IHRpbWUudGltZSgpCiAgICAgICAgc2VsZi5oaXN0b3J5LmNsZWFyKCkKICAgICAgICBzZWxmLmNvbnRleHQuY2xlYXIoKQogICAgICAgIHNlbGYuY29udGV4dC5nb2FsID0gZ29hbAogICAgICAgIHNlbGYuc2hvcnRfdGVybS5jbGVhcigpCgogICAgICAgICMgUmVjb3JkIHRoZSBnb2FsIGluIHNob3J0LXRlcm0gbWVtb3J5CiAgICAgICAgc2VsZi5zaG9ydF90ZXJtLmFkZF91c2VyX21lc3NhZ2UoZ29hbCkKCiAgICAgICAgIyBHYXRoZXIgd29ya3NwYWNlIGluZm8KICAgICAgICB3b3Jrc3BhY2UgPSBQYXRoKHNlbGYuY29uZmlnLndvcmtzcGFjZV9wYXRoKQogICAgICAgIGlmIHdvcmtzcGFjZS5leGlzdHMoKToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgZmlsZXMgPSBsaXN0KHdvcmtzcGFjZS5yZ2xvYigiKiIpKVs6NTBdCiAgICAgICAgICAgICAgICBzZWxmLmNvbnRleHQud29ya3NwYWNlX2luZm8gPSAoCiAgICAgICAgICAgICAgICAgICAgZiJQYXRoOiB7d29ya3NwYWNlfVxuIgogICAgICAgICAgICAgICAgICAgIGYiRmlsZXM6IHtsZW4oZmlsZXMpfSAoc2hvd2luZyBmaXJzdCA1MClcbiIKICAgICAgICAgICAgICAgICAgICArICJcbiIuam9pbihzdHIoZi5yZWxhdGl2ZV90byh3b3Jrc3BhY2UpKSBmb3IgZiBpbiBmaWxlc1s6MjBdKQogICAgICAgICAgICAgICAgKQogICAgICAgICAgICBleGNlcHQgT1NFcnJvcjoKICAgICAgICAgICAgICAgIHNlbGYuY29udGV4dC53b3Jrc3BhY2VfaW5mbyA9IGYiUGF0aDoge3dvcmtzcGFjZX0iCgogICAgICAgICMgUmVjYWxsIHJlbGV2YW50IGxvbmctdGVybSBtZW1vcmllcwogICAgICAgIG1lbW9yaWVzID0gc2VsZi5fcmVjYWxsX3JlbGV2YW50KGdvYWwpCiAgICAgICAgaWYgbWVtb3JpZXM6CiAgICAgICAgICAgIHNlbGYuY29udGV4dC5waW4obWVtb3JpZXMsIHNvdXJjZT0ibG9uZ190ZXJtX21lbW9yeSIpCiAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJSZWNhbGxlZCAlZCByZWxldmFudCBtZW1vcmllcyIsIG1lbW9yaWVzLmNvdW50KCJbIikpCgogICAgICAgIGxvZ2dlci5pbmZvKCJTdGFydGluZyBhZ2VudCBsb29wIGZvciBnb2FsOiAlcyIsIGdvYWxbOjEwMF0pCiAgICAgICAgc2VsZi5fc2V0X3N0YXRlKEFnZW50U3RhdGUuUExBTk5JTkcpCgogICAgICAgICMgUGhhc2UgMTogQ3JlYXRlIGluaXRpYWwgcGxhbiAod2l0aCBkeW5hbWljIHRvb2wgbGlzdCkKICAgICAgICB0b29sX2Rlc2NyaXB0aW9ucyA9IHNlbGYuX2dldF90b29sX2Rlc2NyaXB0aW9ucygpCiAgICAgICAgcGxhbiA9IGF3YWl0IHNlbGYucGxhbm5lci5jcmVhdGVfcGxhbigKICAgICAgICAgICAgZ29hbD1nb2FsLAogICAgICAgICAgICBjb250ZXh0PXNlbGYuY29udGV4dC5idWlsZF9wcm9tcHRfY29udGV4dCgpLAogICAgICAgICAgICB3b3Jrc3BhY2VfaW5mbz1zZWxmLmNvbnRleHQud29ya3NwYWNlX2luZm8sCiAgICAgICAgICAgIHRvb2xfZGVzY3JpcHRpb25zPXRvb2xfZGVzY3JpcHRpb25zLAogICAgICAgICkKCiAgICAgICAgbG9nZ2VyLmluZm8oIkluaXRpYWwgcGxhbjogJWQgc3RlcHMiLCBsZW4ocGxhbikpCiAgICAgICAgc2VsZi5zaG9ydF90ZXJtLmFkZF9hZ2VudF9yZXNwb25zZSgKICAgICAgICAgICAgZiJQbGFuIGNyZWF0ZWQgd2l0aCB7bGVuKHBsYW4pfSBzdGVwcyIKICAgICAgICApCgogICAgICAgICMgUGhhc2UgMjogRXhlY3V0ZSBsb29wCiAgICAgICAgaXRlcmF0aW9uID0gMAogICAgICAgIHBsYW5faW5kZXggPSAwCiAgICAgICAgY29uc2VjdXRpdmVfZmFpbHVyZXMgPSAwCgogICAgICAgIHdoaWxlIGl0ZXJhdGlvbiA8IHNlbGYuY29uZmlnLm1heF9pdGVyYXRpb25zOgogICAgICAgICAgICBpdGVyYXRpb24gKz0gMQoKICAgICAgICAgICAgIyBHZXQgbmV4dCBzdGVwOiBmcm9tIHBsYW4gb3IgZnJvbSByZXBsYW5uaW5nCiAgICAgICAgICAgIGlmIHBsYW5faW5kZXggPCBsZW4ocGxhbik6CiAgICAgICAgICAgICAgICBzdGVwX3BsYW4gPSBwbGFuW3BsYW5faW5kZXhdCiAgICAgICAgICAgICAgICBwbGFuX2luZGV4ICs9IDEKICAgICAgICAgICAgZWxzZToKICAgICAgICAgICAgICAgICMgUGxhbiBleGhhdXN0ZWQg4oCUIGFzayBwbGFubmVyIGZvciBuZXh0IHN0ZXAKICAgICAgICAgICAgICAgIHNlbGYuX3NldF9zdGF0ZShBZ2VudFN0YXRlLlBMQU5OSU5HKQogICAgICAgICAgICAgICAgbGFzdF9zdGVwID0gc2VsZi5oaXN0b3J5Wy0xXSBpZiBzZWxmLmhpc3RvcnkgZWxzZSBOb25lCiAgICAgICAgICAgICAgICBzdGVwX3BsYW4gPSBhd2FpdCBzZWxmLnBsYW5uZXIubmV4dF9zdGVwKAogICAgICAgICAgICAgICAgICAgIGdvYWw9Z29hbCwKICAgICAgICAgICAgICAgICAgICBoaXN0b3J5PXNlbGYuaGlzdG9yeSwKICAgICAgICAgICAgICAgICAgICBsYXN0X3Jlc3VsdD1sYXN0X3N0ZXAucmVzdWx0IGlmIGxhc3Rfc3RlcCBlbHNlICIiLAogICAgICAgICAgICAgICAgICAgIHN1Y2Nlc3M9bGFzdF9zdGVwLnN1Y2Nlc3MgaWYgbGFzdF9zdGVwIGVsc2UgVHJ1ZSwKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIGlmIHN0ZXBfcGxhbiBpcyBOb25lOgogICAgICAgICAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJQbGFubmVyIHNheXMgZ29hbCBpcyBjb21wbGV0ZSBhdCBpdGVyYXRpb24gJWQiLCBpdGVyYXRpb24pCiAgICAgICAgICAgICAgICAgICAgYnJlYWsKCiAgICAgICAgICAgICMgRXhlY3V0ZSB0aGUgc3RlcAogICAgICAgICAgICBzZWxmLl9zZXRfc3RhdGUoQWdlbnRTdGF0ZS5BQ1RJTkcpCiAgICAgICAgICAgIGxvZ2dlci5pbmZvKAogICAgICAgICAgICAgICAgIlN0ZXAgJWQvJWQ6ICVzIiwKICAgICAgICAgICAgICAgIGl0ZXJhdGlvbiwKICAgICAgICAgICAgICAgIHNlbGYuY29uZmlnLm1heF9pdGVyYXRpb25zLAogICAgICAgICAgICAgICAgc3RlcF9wbGFuLmdldCgiYWN0aW9uIiwgInVua25vd24iKVs6ODBdLAogICAgICAgICAgICApCgogICAgICAgICAgICBzdGVwID0gYXdhaXQgc2VsZi5leGVjdXRvci5leGVjdXRlX3N0ZXAoc3RlcF9wbGFuKQogICAgICAgICAgICBzZWxmLmhpc3RvcnkuYXBwZW5kKHN0ZXApCiAgICAgICAgICAgIHNlbGYuY29udGV4dC5hZGRfc3RlcChzdGVwKQoKICAgICAgICAgICAgIyBSZWNvcmQgaW4gc2hvcnQtdGVybSBtZW1vcnkKICAgICAgICAgICAgc2VsZi5zaG9ydF90ZXJtLmFkZF90b29sX3Jlc3VsdCgKICAgICAgICAgICAgICAgIHN0ZXAudG9vbF9uYW1lIG9yICJhY3Rpb24iLAogICAgICAgICAgICAgICAgZiJ7J+KckycgaWYgc3RlcC5zdWNjZXNzIGVsc2UgJ+Kclyd9IHtzdGVwLmFjdGlvbn06IHtzdGVwLnJlc3VsdFs6MjAwXX0iLAogICAgICAgICAgICApCgogICAgICAgICAgICAjIE5vdGlmeSBsaXN0ZW5lcnMKICAgICAgICAgICAgaWYgc2VsZi5fb25fc3RlcDoKICAgICAgICAgICAgICAgIHNlbGYuX29uX3N0ZXAoc3RlcCwgc2VsZi5zdGF0ZSkKCiAgICAgICAgICAgICMgT2JzZXJ2ZQogICAgICAgICAgICBzZWxmLl9zZXRfc3RhdGUoQWdlbnRTdGF0ZS5PQlNFUlZJTkcpCgogICAgICAgICAgICBpZiBub3Qgc3RlcC5zdWNjZXNzOgogICAgICAgICAgICAgICAgY29uc2VjdXRpdmVfZmFpbHVyZXMgKz0gMQogICAgICAgICAgICAgICAgbG9nZ2VyLndhcm5pbmcoCiAgICAgICAgICAgICAgICAgICAgIlN0ZXAgZmFpbGVkIChjb25zZWN1dGl2ZTogJWQpOiAlcyIsCiAgICAgICAgICAgICAgICAgICAgY29uc2VjdXRpdmVfZmFpbHVyZXMsCiAgICAgICAgICAgICAgICAgICAgc3RlcC5yZXN1bHRbOjIwMF0sCiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgIGVsc2U6CiAgICAgICAgICAgICAgICBjb25zZWN1dGl2ZV9mYWlsdXJlcyA9IDAKCiAgICAgICAgICAgICMgQ2lyY3VpdCBicmVha2VyOiB0b28gbWFueSBjb25zZWN1dGl2ZSBmYWlsdXJlcwogICAgICAgICAgICBpZiBjb25zZWN1dGl2ZV9mYWlsdXJlcyA+PSAzOgogICAgICAgICAgICAgICAgbG9nZ2VyLmVycm9yKCIzIGNvbnNlY3V0aXZlIGZhaWx1cmVzIOKAlCBzdG9wcGluZyIpCiAgICAgICAgICAgICAgICBzZWxmLl9zZXRfc3RhdGUoQWdlbnRTdGF0ZS5FUlJPUikKICAgICAgICAgICAgICAgIGJyZWFrCgogICAgICAgICAgICAjIFJlZmxlY3QgKGlmIGVuYWJsZWQpCiAgICAgICAgICAgIGlmIHNlbGYuY29uZmlnLnJlZmxlY3Rpb25fZW5hYmxlZDoKICAgICAgICAgICAgICAgIHNlbGYuX3NldF9zdGF0ZShBZ2VudFN0YXRlLlJFRkxFQ1RJTkcpCiAgICAgICAgICAgICAgICByZWZsZWN0aW9uID0gYXdhaXQgc2VsZi5yZWZsZWN0b3IucmVmbGVjdF9vbl9zdGVwKAogICAgICAgICAgICAgICAgICAgIHN0ZXA9c3RlcCwKICAgICAgICAgICAgICAgICAgICBnb2FsPWdvYWwsCiAgICAgICAgICAgICAgICAgICAgaGlzdG9yeT1zZWxmLmhpc3RvcnksCiAgICAgICAgICAgICAgICApCgogICAgICAgICAgICAgICAgaWYgcmVmbGVjdGlvbi5nZXQoImdvYWxfY29tcGxldGUiKToKICAgICAgICAgICAgICAgICAgICBsb2dnZXIuaW5mbygiUmVmbGVjdG9yIGNvbmZpcm1zIGdvYWwgY29tcGxldGUiKQogICAgICAgICAgICAgICAgICAgIGJyZWFrCgogICAgICAgICAgICAgICAgaWYgcmVmbGVjdGlvbi5nZXQoInNob3VsZF9yZXRyeSIpIGFuZCBnZXRhdHRyKHN0ZXAsICJjYW5fcmV0cnkiLCBGYWxzZSk6CiAgICAgICAgICAgICAgICAgICAgc2VsZi5fc2V0X3N0YXRlKEFnZW50U3RhdGUuQ09SUkVDVElORykKICAgICAgICAgICAgICAgICAgICBwbGFuX2luZGV4IC09IDEKICAgICAgICAgICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAjIFdyYXAgdXAKICAgICAgICB0b3RhbF90aW1lID0gdGltZS50aW1lKCkgLSBzdGFydF90aW1lCiAgICAgICAgc3VjY2Vzc2Z1bF9zdGVwcyA9IHN1bSgxIGZvciBzIGluIHNlbGYuaGlzdG9yeSBpZiBzLnN1Y2Nlc3MpCiAgICAgICAgc2VsZi5fc2V0X3N0YXRlKEFnZW50U3RhdGUuRE9ORSkKCiAgICAgICAgYXdhaXQgc2VsZi5sbG0uY2xvc2UoKQoKICAgICAgICByZXN1bHQgPSB7CiAgICAgICAgICAgICJzdWNjZXNzIjogY29uc2VjdXRpdmVfZmFpbHVyZXMgPCAzIGFuZCBzdWNjZXNzZnVsX3N0ZXBzID4gMCwKICAgICAgICAgICAgImdvYWwiOiBnb2FsLAogICAgICAgICAgICAic3RlcHNfdG90YWwiOiBsZW4oc2VsZi5oaXN0b3J5KSwKICAgICAgICAgICAgInN0ZXBzX3N1Y2Nlc3NmdWwiOiBzdWNjZXNzZnVsX3N0ZXBzLAogICAgICAgICAgICAiaXRlcmF0aW9ucyI6IGl0ZXJhdGlvbiwKICAgICAgICAgICAgImR1cmF0aW9uX3NlY29uZHMiOiByb3VuZCh0b3RhbF90aW1lLCAxKSwKICAgICAgICAgICAgImZpbmFsX3N0YXRlIjogc2VsZi5zdGF0ZS52YWx1ZSwKICAgICAgICAgICAgImhpc3RvcnkiOiBbCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgImFjdGlvbiI6IHMuYWN0aW9uLAogICAgICAgICAgICAgICAgICAgICJ0b29sIjogcy50b29sX25hbWUsCiAgICAgICAgICAgICAgICAgICAgInN1Y2Nlc3MiOiBzLnN1Y2Nlc3MsCiAgICAgICAgICAgICAgICAgICAgInF1YWxpdHkiOiBzLnF1YWxpdHlfc2NvcmUsCiAgICAgICAgICAgICAgICAgICAgImR1cmF0aW9uX21zIjogcy5kdXJhdGlvbl9tcywKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGZvciBzIGluIHNlbGYuaGlzdG9yeQogICAgICAgICAgICBdLAogICAgICAgIH0KCiAgICAgICAgIyBTdG9yZSBzZXNzaW9uIGluIGxvbmctdGVybSBtZW1vcnkKICAgICAgICBzZWxmLl9yZW1lbWJlcl9zZXNzaW9uKGdvYWwsIHJlc3VsdCkKCiAgICAgICAgbG9nZ2VyLmluZm8oCiAgICAgICAgICAgICJBZ2VudCBsb29wIGNvbXBsZXRlOiAlZC8lZCBzdGVwcyBzdWNjZWVkZWQgaW4gJS4xZnMiLAogICAgICAgICAgICBzdWNjZXNzZnVsX3N0ZXBzLAogICAgICAgICAgICBsZW4oc2VsZi5oaXN0b3J5KSwKICAgICAgICAgICAgdG90YWxfdGltZSwKICAgICAgICApCgogICAgICAgIHJldHVybiByZXN1bHQKCiAgICBhc3luYyBkZWYgcnVuX2ludGVyYWN0aXZlKHNlbGYsIGdvYWw6IHN0cikgLT4gRGljdFtzdHIsIEFueV06CiAgICAgICAgIiIiUnVuIHdpdGggc3RlcC1ieS1zdGVwIGNvbmZpcm1hdGlvbiAoZm9yIGRlYnVnZ2luZykuCgogICAgICAgIFNhbWUgYXMgcnVuKCkgYnV0IHBhdXNlcyBhZnRlciBlYWNoIHN0ZXAgZm9yIHVzZXIgaW5wdXQuCiAgICAgICAgVXNlZnVsIGR1cmluZyBkZXZlbG9wbWVudCB0byBvYnNlcnZlIGFnZW50IGJlaGF2aW9yLgogICAgICAgICIiIgogICAgICAgICMgVE9ETzogSW1wbGVtZW50IGludGVyYWN0aXZlIHN0ZXBwaW5nIG1vZGUKICAgICAgICAjIEZvciBub3csIGRlbGVnYXRlIHRvIHRoZSBzdGFuZGFyZCBsb29wCiAgICAgICAgcmV0dXJuIGF3YWl0IHNlbGYucnVuKGdvYWwpCg==
+"""The Nexus agent loop — Plan → Act → Observe → Reflect.
+
+This is the main entry point for autonomous task execution.
+It orchestrates the planner, executor, reflector, and memory
+into a coherent loop that can accomplish coding tasks.
+"""
+
+from __future__ import annotations
+
+import logging
+import os
+import time
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Optional
+
+from nexus.agent.context import ContextManager
+from nexus.agent.executor import Executor
+from nexus.agent.llm import OllamaClient
+from nexus.agent.models import AgentConfig, AgentState, QualityLevel, Step
+from nexus.agent.planner import Planner
+from nexus.agent.reflector import Reflector
+from nexus.memory.short_term import ShortTermMemory
+from nexus.memory.long_term import LongTermMemory
+
+logger = logging.getLogger(__name__)
+
+
+class AgentLoop:
+    """The autonomous agent execution loop.
+
+    Implements Plan → Act → Observe → Reflect cycle:
+    1. PLAN:    LLM creates/updates execution plan
+    2. ACT:     Execute the next tool call
+    3. OBSERVE: Capture and store results
+    4. REFLECT: Assess quality, decide to continue/retry/stop
+
+    Memory integration:
+    - Short-term: tracks conversation within the current session
+    - Long-term:  persists learnings across sessions (task patterns, fixes)
+    - Context:    manages the LLM prompt window budget
+
+    Usage:
+        config = AgentConfig(workspace_path="/path/to/project")
+        agent = AgentLoop(config)
+        agent.register_default_tools()
+        result = await agent.run("Build a Flask API with /health endpoint")
+    """
+
+    def __init__(self, config: Optional[AgentConfig] = None):
+        self.config = config or AgentConfig()
+        self.llm = OllamaClient(self.config)
+        self.planner = Planner(self.llm, self.config)
+        self.executor = Executor(self.config)
+        self.reflector = Reflector(self.llm, self.config)
+        self.context = ContextManager()
+
+        # Memory systems
+        self.short_term = ShortTermMemory(window_size=30)
+        self.long_term: Optional[LongTermMemory] = None
+        if self.config.memory_enabled:
+            memory_dir = os.path.join(self.config.workspace_path, ".nexus_memory")
+            self.long_term = LongTermMemory(persist_dir=memory_dir)
+
+        self.state = AgentState.IDLE
+        self.history: List[Step] = []
+        self._on_step: Optional[Callable[[Step, AgentState], None]] = None
+        self._on_state_change: Optional[Callable[[AgentState], None]] = None
+
+    # ------------------------------------------------------------------
+    # Callbacks (for TUI / live display)
+    # ------------------------------------------------------------------
+
+    def on_step(self, callback: Callable[[Step, AgentState], None]) -> None:
+        """Register a callback for step completion (for TUI updates)."""
+        self._on_step = callback
+
+    def on_state_change(self, callback: Callable[[AgentState], None]) -> None:
+        """Register a callback for state changes (for TUI updates)."""
+        self._on_state_change = callback
+
+    # ------------------------------------------------------------------
+    # Tool registration
+    # ------------------------------------------------------------------
+
+    def register_tool(self, name: str, tool: Any) -> None:
+        """Register a tool with the executor."""
+        self.executor.register_tool(name, tool)
+
+    def register_tools(self, tools: Dict[str, Any]) -> None:
+        """Register multiple tools."""
+        self.executor.register_tools(tools)
+
+    def _set_state(self, state: AgentState) -> None:
+        self.state = state
+        if self._on_state_change:
+            self._on_state_change(state)
+
+    # ------------------------------------------------------------------
+    # Memory helpers
+    # ------------------------------------------------------------------
+
+    def _recall_relevant(self, goal: str) -> str:
+        """Search long-term memory for anything relevant to this goal."""
+        if not self.long_term or self.long_term.count == 0:
+            return ""
+        results = self.long_term.search(goal, n_results=3)
+        if not results:
+            return ""
+        parts = ["Relevant memories from past sessions:"]
+        for doc_id, content, score in results:
+            if score > 0.15:  # Only include somewhat-relevant matches
+                parts.append(f"  [{score:.0%}] {content[:300]}")
+        return "\n".join(parts) if len(parts) > 1 else ""
+
+    def _remember_session(self, goal: str, result: Dict[str, Any]) -> None:
+        """Store a summary of this session in long-term memory."""
+        if not self.long_term:
+            return
+        successful_steps = [s for s in self.history if s.success]
+        if not successful_steps:
+            return
+        summary_parts = [f"Goal: {goal}", f"Result: {'success' if result.get('success') else 'failed'}"]
+        for s in successful_steps[-5:]:  # Last 5 successful steps
+            summary_parts.append(f"  - {s.action} ({s.tool_name})")
+        summary = "\n".join(summary_parts)
+        self.long_term.store(
+            content=summary,
+            metadata={"type": "session", "goal": goal[:200], "success": result.get("success", False)},
+        )
+
+    # ------------------------------------------------------------------
+    # Dynamic tool descriptions for planner
+    # ------------------------------------------------------------------
+
+    def _get_tool_descriptions(self) -> str:
+        """Get tool descriptions from the executor for dynamic planner prompts."""
+        return self.executor.get_tool_descriptions()
+
+    # ------------------------------------------------------------------
+    # Main loop
+    # ------------------------------------------------------------------
+
+    async def run(self, goal: str) -> Dict[str, Any]:
+        """Execute a goal autonomously.
+
+        This is the main entry point. It:
+        1. Recalls relevant long-term memories
+        2. Creates an initial plan (with dynamic tool list)
+        3. Executes steps one by one
+        4. Reflects after each step
+        5. Replans when needed
+        6. Stores session summary for future recall
+
+        Args:
+            goal: High-level goal description.
+
+        Returns:
+            Dict with success, steps, final_result, stats.
+        """
+        start_time = time.time()
+        self.history.clear()
+        self.context.clear()
+        self.context.goal = goal
+        self.short_term.clear()
+
+        # Record the goal in short-term memory
+        self.short_term.add_user_message(goal)
+
+        # Gather workspace info
+        workspace = Path(self.config.workspace_path)
+        if workspace.exists():
+            try:
+                files = list(workspace.rglob("*"))[:50]
+                self.context.workspace_info = (
+                    f"Path: {workspace}\n"
+                    f"Files: {len(files)} (showing first 50)\n"
+                    + "\n".join(str(f.relative_to(workspace)) for f in files[:20])
+                )
+            except OSError:
+                self.context.workspace_info = f"Path: {workspace}"
+
+        # Recall relevant long-term memories
+        memories = self._recall_relevant(goal)
+        if memories:
+            self.context.pin(memories, source="long_term_memory")
+            logger.info("Recalled %d relevant memories", memories.count("["))
+
+        logger.info("Starting agent loop for goal: %s", goal[:100])
+        self._set_state(AgentState.PLANNING)
+
+        # Phase 1: Create initial plan (with dynamic tool list)
+        tool_descriptions = self._get_tool_descriptions()
+        plan = await self.planner.create_plan(
+            goal=goal,
+            context=self.context.build_prompt_context(),
+            workspace_info=self.context.workspace_info,
+            tool_descriptions=tool_descriptions,
+        )
+
+        logger.info("Initial plan: %d steps", len(plan))
+        self.short_term.add_agent_response(
+            f"Plan created with {len(plan)} steps"
+        )
+
+        # Phase 2: Execute loop
+        iteration = 0
+        plan_index = 0
+        consecutive_failures = 0
+
+        while iteration < self.config.max_iterations:
+            iteration += 1
+
+            # Get next step: from plan or from replanning
+            if plan_index < len(plan):
+                step_plan = plan[plan_index]
+                plan_index += 1
+            else:
+                # Plan exhausted — ask planner for next step
+                self._set_state(AgentState.PLANNING)
+                last_step = self.history[-1] if self.history else None
+                step_plan = await self.planner.next_step(
+                    goal=goal,
+                    history=self.history,
+                    last_result=last_step.result if last_step else "",
+                    success=last_step.success if last_step else True,
+                )
+                if step_plan is None:
+                    logger.info("Planner says goal is complete at iteration %d", iteration)
+                    break
+
+            # Execute the step
+            self._set_state(AgentState.ACTING)
+            logger.info(
+                "Step %d/%d: %s",
+                iteration,
+                self.config.max_iterations,
+                step_plan.get("action", "unknown")[:80],
+            )
+
+            step = await self.executor.execute_step(step_plan)
+            self.history.append(step)
+            self.context.add_step(step)
+
+            # Record in short-term memory
+            self.short_term.add_tool_result(
+                step.tool_name or "action",
+                f"{'✓' if step.success else '✗'} {step.action}: {step.result[:200]}",
+            )
+
+            # Notify listeners
+            if self._on_step:
+                self._on_step(step, self.state)
+
+            # Observe
+            self._set_state(AgentState.OBSERVING)
+
+            if not step.success:
+                consecutive_failures += 1
+                logger.warning(
+                    "Step failed (consecutive: %d): %s",
+                    consecutive_failures,
+                    step.result[:200],
+                )
+            else:
+                consecutive_failures = 0
+
+            # Circuit breaker: too many consecutive failures
+            if consecutive_failures >= 3:
+                logger.error("3 consecutive failures — stopping")
+                self._set_state(AgentState.ERROR)
+                break
+
+            # Reflect (if enabled)
+            if self.config.reflection_enabled:
+                self._set_state(AgentState.REFLECTING)
+                reflection = await self.reflector.reflect_on_step(
+                    step=step,
+                    goal=goal,
+                    history=self.history,
+                )
+
+                if reflection.get("goal_complete"):
+                    logger.info("Reflector confirms goal complete")
+                    break
+
+                if reflection.get("should_retry") and getattr(step, "can_retry", False):
+                    self._set_state(AgentState.CORRECTING)
+                    plan_index -= 1
+                    continue
+
+        # Wrap up
+        total_time = time.time() - start_time
+        successful_steps = sum(1 for s in self.history if s.success)
+        self._set_state(AgentState.DONE)
+
+        await self.llm.close()
+
+        result = {
+            "success": consecutive_failures < 3 and successful_steps > 0,
+            "goal": goal,
+            "steps_total": len(self.history),
+            "steps_successful": successful_steps,
+            "iterations": iteration,
+            "duration_seconds": round(total_time, 1),
+            "final_state": self.state.value,
+            "history": [
+                {
+                    "action": s.action,
+                    "tool": s.tool_name,
+                    "success": s.success,
+                    "quality": s.quality_score,
+                    "duration_ms": s.duration_ms,
+                }
+                for s in self.history
+            ],
+        }
+
+        # Store session in long-term memory
+        self._remember_session(goal, result)
+
+        logger.info(
+            "Agent loop complete: %d/%d steps succeeded in %.1fs",
+            successful_steps,
+            len(self.history),
+            total_time,
+        )
+
+        return result
+
+    async def run_interactive(self, goal: str) -> Dict[str, Any]:
+        """Run with step-by-step confirmation (for debugging).
+
+        Same as run() but pauses after each step for user input.
+        Useful during development to observe agent behavior.
+        """
+        # TODO: Implement interactive stepping mode
+        # For now, delegate to the standard loop
+        return await self.run(goal)

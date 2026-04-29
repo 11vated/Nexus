@@ -1,1 +1,124 @@
-IiIiU2hvcnQtdGVybSBtZW1vcnkg4oCUIGNvbnZlcnNhdGlvbiB3aW5kb3cgYW5kIHJlY2VudCBjb250ZXh0LgoKTWFuYWdlcyB0aGUgaW1tZWRpYXRlIHdvcmtpbmcgbWVtb3J5IG9mIHRoZSBhZ2VudDogcmVjZW50IG1lc3NhZ2VzLApzdGVwIHJlc3VsdHMsIGFuZCBvYnNlcnZhdGlvbnMgd2l0aGluIHRoZSBjdXJyZW50IHNlc3Npb24uCiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGpzb24KaW1wb3J0IHRpbWUKZnJvbSBjb2xsZWN0aW9ucyBpbXBvcnQgZGVxdWUKZnJvbSBkYXRhY2xhc3NlcyBpbXBvcnQgYXNkaWN0LCBkYXRhY2xhc3MsIGZpZWxkCmZyb20gdHlwaW5nIGltcG9ydCBBbnksIERpY3QsIExpc3QsIE9wdGlvbmFsCgoKQGRhdGFjbGFzcwpjbGFzcyBNZW1vcnlFbnRyeToKICAgICIiIkEgc2luZ2xlIG1lbW9yeSBlbnRyeS4iIiIKICAgIGNvbnRlbnQ6IHN0cgogICAgcm9sZTogc3RyICAjICJ1c2VyIiwgImFnZW50IiwgInRvb2wiLCAic3lzdGVtIgogICAgdGltZXN0YW1wOiBmbG9hdCA9IGZpZWxkKGRlZmF1bHRfZmFjdG9yeT10aW1lLnRpbWUpCiAgICBtZXRhZGF0YTogRGljdFtzdHIsIEFueV0gPSBmaWVsZChkZWZhdWx0X2ZhY3Rvcnk9ZGljdCkKCiAgICBkZWYgdG9fbWVzc2FnZShzZWxmKSAtPiBEaWN0W3N0ciwgc3RyXToKICAgICAgICAiIiJDb252ZXJ0IHRvIExMTSBtZXNzYWdlIGZvcm1hdC4iIiIKICAgICAgICByb2xlX21hcCA9IHsKICAgICAgICAgICAgInVzZXIiOiAidXNlciIsCiAgICAgICAgICAgICJhZ2VudCI6ICJhc3Npc3RhbnQiLAogICAgICAgICAgICAidG9vbCI6ICJ1c2VyIiwgICMgVG9vbCByZXN1bHRzIGFwcGVhciBhcyB1c2VyIGNvbnRleHQKICAgICAgICAgICAgInN5c3RlbSI6ICJzeXN0ZW0iLAogICAgICAgIH0KICAgICAgICByZXR1cm4gewogICAgICAgICAgICAicm9sZSI6IHJvbGVfbWFwLmdldChzZWxmLnJvbGUsICJ1c2VyIiksCiAgICAgICAgICAgICJjb250ZW50Ijogc2VsZi5jb250ZW50LAogICAgICAgIH0KCgpjbGFzcyBTaG9ydFRlcm1NZW1vcnk6CiAgICAiIiJSb2xsaW5nIHdpbmRvdyBvZiByZWNlbnQgaW50ZXJhY3Rpb25zLgoKICAgIEtlZXBzIHRoZSBsYXN0IE4gZW50cmllcyBhbmQgcHJvdmlkZXMgbWV0aG9kcyB0byBjb252ZXJ0CiAgICB0aGVtIGludG8gTExNIG1lc3NhZ2UgZm9ybWF0IGZvciBjaGF0IGNvbXBsZXRpb25zLgogICAgIiIiCgogICAgZGVmIF9faW5pdF9fKHNlbGYsIHdpbmRvd19zaXplOiBpbnQgPSAyMCk6CiAgICAgICAgc2VsZi5fZW50cmllczogZGVxdWVbTWVtb3J5RW50cnldID0gZGVxdWUobWF4bGVuPXdpbmRvd19zaXplKQogICAgICAgIHNlbGYud2luZG93X3NpemUgPSB3aW5kb3dfc2l6ZQoKICAgIGRlZiBhZGQoCiAgICAgICAgc2VsZiwKICAgICAgICBjb250ZW50OiBzdHIsCiAgICAgICAgcm9sZTogc3RyID0gImFnZW50IiwKICAgICAgICBtZXRhZGF0YTogT3B0aW9uYWxbRGljdFtzdHIsIEFueV1dID0gTm9uZSwKICAgICkgLT4gTm9uZToKICAgICAgICAiIiJBZGQgYW4gZW50cnkgdG8gc2hvcnQtdGVybSBtZW1vcnkuIiIiCiAgICAgICAgc2VsZi5fZW50cmllcy5hcHBlbmQoCiAgICAgICAgICAgIE1lbW9yeUVudHJ5KAogICAgICAgICAgICAgICAgY29udGVudD1jb250ZW50LAogICAgICAgICAgICAgICAgcm9sZT1yb2xlLAogICAgICAgICAgICAgICAgbWV0YWRhdGE9bWV0YWRhdGEgb3Ige30sCiAgICAgICAgICAgICkKICAgICAgICApCgogICAgZGVmIGFkZF91c2VyX21lc3NhZ2Uoc2VsZiwgY29udGVudDogc3RyKSAtPiBOb25lOgogICAgICAgICIiIkFkZCBhIHVzZXIgbWVzc2FnZS4iIiIKICAgICAgICBzZWxmLmFkZChjb250ZW50LCByb2xlPSJ1c2VyIikKCiAgICBkZWYgYWRkX2FnZW50X3Jlc3BvbnNlKHNlbGYsIGNvbnRlbnQ6IHN0cikgLT4gTm9uZToKICAgICAgICAiIiJBZGQgYW4gYWdlbnQgcmVzcG9uc2UuIiIiCiAgICAgICAgc2VsZi5hZGQoY29udGVudCwgcm9sZT0iYWdlbnQiKQoKICAgIGRlZiBhZGRfdG9vbF9yZXN1bHQoc2VsZiwgdG9vbF9uYW1lOiBzdHIsIHJlc3VsdDogc3RyKSAtPiBOb25lOgogICAgICAgICIiIkFkZCBhIHRvb2wgZXhlY3V0aW9uIHJlc3VsdC4iIiIKICAgICAgICBzZWxmLmFkZCgKICAgICAgICAgICAgZiJbVG9vbDoge3Rvb2xfbmFtZX1dXG57cmVzdWx0fSIsCiAgICAgICAgICAgIHJvbGU9InRvb2wiLAogICAgICAgICAgICBtZXRhZGF0YT17InRvb2wiOiB0b29sX25hbWV9LAogICAgICAgICkKCiAgICBkZWYgdG9fbWVzc2FnZXMoc2VsZikgLT4gTGlzdFtEaWN0W3N0ciwgc3RyXV06CiAgICAgICAgIiIiQ29udmVydCBtZW1vcnkgdG8gTExNIG1lc3NhZ2UgZm9ybWF0LiIiIgogICAgICAgIHJldHVybiBbZW50cnkudG9fbWVzc2FnZSgpIGZvciBlbnRyeSBpbiBzZWxmLl9lbnRyaWVzXQoKICAgIGRlZiB0b19jb250ZXh0X3N0cmluZyhzZWxmKSAtPiBzdHI6CiAgICAgICAgIiIiQ29udmVydCBtZW1vcnkgdG8gYSBzaW5nbGUgY29udGV4dCBzdHJpbmcuIiIiCiAgICAgICAgcGFydHMgPSBbXQogICAgICAgIGZvciBlbnRyeSBpbiBzZWxmLl9lbnRyaWVzOgogICAgICAgICAgICBwcmVmaXggPSB7InVzZXIiOiAiVXNlciIsICJhZ2VudCI6ICJBZ2VudCIsICJ0b29sIjogIlRvb2wiLCAic3lzdGVtIjogIlN5c3RlbSJ9CiAgICAgICAgICAgIHBhcnRzLmFwcGVuZChmIlt7cHJlZml4LmdldChlbnRyeS5yb2xlLCBlbnRyeS5yb2xlKX1dOiB7ZW50cnkuY29udGVudH0iKQogICAgICAgIHJldHVybiAiXG5cbiIuam9pbihwYXJ0cykKCiAgICBkZWYgZ2V0X3JlY2VudChzZWxmLCBuOiBpbnQgPSA1KSAtPiBMaXN0W01lbW9yeUVudHJ5XToKICAgICAgICAiIiJHZXQgdGhlIE4gbW9zdCByZWNlbnQgZW50cmllcy4iIiIKICAgICAgICBlbnRyaWVzID0gbGlzdChzZWxmLl9lbnRyaWVzKQogICAgICAgIHJldHVybiBlbnRyaWVzWy1uOl0KCiAgICBkZWYgY2xlYXIoc2VsZikgLT4gTm9uZToKICAgICAgICAiIiJDbGVhciBhbGwgZW50cmllcy4iIiIKICAgICAgICBzZWxmLl9lbnRyaWVzLmNsZWFyKCkKCiAgICBkZWYgc2F2ZShzZWxmLCBwYXRoOiBzdHIpIC0+IE5vbmU6CiAgICAgICAgIiIiU2F2ZSBtZW1vcnkgdG8gYSBKU09OIGZpbGUuIiIiCiAgICAgICAgZGF0YSA9IFthc2RpY3QoZW50cnkpIGZvciBlbnRyeSBpbiBzZWxmLl9lbnRyaWVzXQogICAgICAgIHdpdGggb3BlbihwYXRoLCAidyIpIGFzIGY6CiAgICAgICAgICAgIGpzb24uZHVtcChkYXRhLCBmLCBpbmRlbnQ9MikKCiAgICBkZWYgbG9hZChzZWxmLCBwYXRoOiBzdHIpIC0+IE5vbmU6CiAgICAgICAgIiIiTG9hZCBtZW1vcnkgZnJvbSBhIEpTT04gZmlsZS4iIiIKICAgICAgICB0cnk6CiAgICAgICAgICAgIHdpdGggb3BlbihwYXRoKSBhcyBmOgogICAgICAgICAgICAgICAgZGF0YSA9IGpzb24ubG9hZChmKQogICAgICAgICAgICBzZWxmLl9lbnRyaWVzLmNsZWFyKCkKICAgICAgICAgICAgZm9yIGl0ZW0gaW4gZGF0YToKICAgICAgICAgICAgICAgIHNlbGYuX2VudHJpZXMuYXBwZW5kKE1lbW9yeUVudHJ5KCoqaXRlbSkpCiAgICAgICAgZXhjZXB0IChGaWxlTm90Rm91bmRFcnJvciwganNvbi5KU09ORGVjb2RlRXJyb3IpOgogICAgICAgICAgICBwYXNzCgogICAgQHByb3BlcnR5CiAgICBkZWYgc2l6ZShzZWxmKSAtPiBpbnQ6CiAgICAgICAgcmV0dXJuIGxlbihzZWxmLl9lbnRyaWVzKQoKICAgIEBwcm9wZXJ0eQogICAgZGVmIHRvdGFsX2NoYXJzKHNlbGYpIC0+IGludDoKICAgICAgICByZXR1cm4gc3VtKGxlbihlLmNvbnRlbnQpIGZvciBlIGluIHNlbGYuX2VudHJpZXMpCg==
+"""Short-term memory — conversation window and recent context.
+
+Manages the immediate working memory of the agent: recent messages,
+step results, and observations within the current session.
+"""
+
+from __future__ import annotations
+
+import json
+import time
+from collections import deque
+from dataclasses import asdict, dataclass, field
+from typing import Any, Dict, List, Optional
+
+
+@dataclass
+class MemoryEntry:
+    """A single memory entry."""
+    content: str
+    role: str  # "user", "agent", "tool", "system"
+    timestamp: float = field(default_factory=time.time)
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
+    def to_message(self) -> Dict[str, str]:
+        """Convert to LLM message format."""
+        role_map = {
+            "user": "user",
+            "agent": "assistant",
+            "tool": "user",  # Tool results appear as user context
+            "system": "system",
+        }
+        return {
+            "role": role_map.get(self.role, "user"),
+            "content": self.content,
+        }
+
+
+class ShortTermMemory:
+    """Rolling window of recent interactions.
+
+    Keeps the last N entries and provides methods to convert
+    them into LLM message format for chat completions.
+    """
+
+    def __init__(self, window_size: int = 20):
+        self._entries: deque[MemoryEntry] = deque(maxlen=window_size)
+        self.window_size = window_size
+
+    def add(
+        self,
+        content: str,
+        role: str = "agent",
+        metadata: Optional[Dict[str, Any]] = None,
+    ) -> None:
+        """Add an entry to short-term memory."""
+        self._entries.append(
+            MemoryEntry(
+                content=content,
+                role=role,
+                metadata=metadata or {},
+            )
+        )
+
+    def add_user_message(self, content: str) -> None:
+        """Add a user message."""
+        self.add(content, role="user")
+
+    def add_agent_response(self, content: str) -> None:
+        """Add an agent response."""
+        self.add(content, role="agent")
+
+    def add_tool_result(self, tool_name: str, result: str) -> None:
+        """Add a tool execution result."""
+        self.add(
+            f"[Tool: {tool_name}]\n{result}",
+            role="tool",
+            metadata={"tool": tool_name},
+        )
+
+    def to_messages(self) -> List[Dict[str, str]]:
+        """Convert memory to LLM message format."""
+        return [entry.to_message() for entry in self._entries]
+
+    def to_context_string(self) -> str:
+        """Convert memory to a single context string."""
+        parts = []
+        for entry in self._entries:
+            prefix = {"user": "User", "agent": "Agent", "tool": "Tool", "system": "System"}
+            parts.append(f"[{prefix.get(entry.role, entry.role)}]: {entry.content}")
+        return "\n\n".join(parts)
+
+    def get_recent(self, n: int = 5) -> List[MemoryEntry]:
+        """Get the N most recent entries."""
+        entries = list(self._entries)
+        return entries[-n:]
+
+    def clear(self) -> None:
+        """Clear all entries."""
+        self._entries.clear()
+
+    def save(self, path: str) -> None:
+        """Save memory to a JSON file."""
+        data = [asdict(entry) for entry in self._entries]
+        with open(path, "w") as f:
+            json.dump(data, f, indent=2)
+
+    def load(self, path: str) -> None:
+        """Load memory from a JSON file."""
+        try:
+            with open(path) as f:
+                data = json.load(f)
+            self._entries.clear()
+            for item in data:
+                self._entries.append(MemoryEntry(**item))
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+
+    @property
+    def size(self) -> int:
+        return len(self._entries)
+
+    @property
+    def total_chars(self) -> int:
+        return sum(len(e.content) for e in self._entries)

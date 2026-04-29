@@ -1,1 +1,282 @@
-IiIiTUNQIFNlcnZlciDigJQgZXhwb3NlIE5leHVzIHRvb2xzIHZpYSB0aGUgTW9kZWwgQ29udGV4dCBQcm90b2NvbC4KClN1cHBvcnRzIHR3byB0cmFuc3BvcnQgbW9kZXM6CjEuIHN0ZGlvOiAgSlNPTi1SUEMgb3ZlciBzdGRpbi9zdGRvdXQgKGZvciBDbGF1ZGUgRGVza3RvcCwgQ3Vyc29yLCBldGMuKQoyLiBodHRwOiAgIEpTT04tUlBDIG92ZXIgSFRUUCAoZm9yIG5ldHdvcmsgY2xpZW50cykKCk1DUCBzcGVjOiBodHRwczovL21vZGVsY29udGV4dHByb3RvY29sLmlvLwoKVXNhZ2U6CiAgICBuZXh1cyBtY3Agc2VydmUgICAgICAgICAgICAgICAgICAgIyBzdGRpbyBtb2RlIChkZWZhdWx0KQogICAgbmV4dXMgbWNwIHNlcnZlIC0tdHJhbnNwb3J0IGh0dHAgICMgSFRUUCBtb2RlIG9uIHBvcnQgMzEwMAoiIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBhc3luY2lvCmltcG9ydCBqc29uCmltcG9ydCBsb2dnaW5nCmltcG9ydCBzeXMKZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmZyb20gdHlwaW5nIGltcG9ydCBBbnksIERpY3QsIExpc3QsIE9wdGlvbmFsCgpmcm9tIG5leHVzLnRvb2xzIGltcG9ydCBjcmVhdGVfZGVmYXVsdF90b29scwpmcm9tIG5leHVzLnRvb2xzLnJlZ2lzdHJ5IGltcG9ydCBCYXNlVG9vbAoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoX19uYW1lX18pCgojIE1DUCBQcm90b2NvbCB2ZXJzaW9uCk1DUF9WRVJTSU9OID0gIjIwMjQtMTEtMDUiCgojIEpTT04tUlBDIGhlbHBlcnMKSlNPTlJQQ19WRVJTSU9OID0gIjIuMCIKCgpkZWYgX2pzb25ycGNfcmVzcG9uc2UoaWQ6IEFueSwgcmVzdWx0OiBBbnkpIC0+IGRpY3Q6CiAgICByZXR1cm4geyJqc29ucnBjIjogSlNPTlJQQ19WRVJTSU9OLCAiaWQiOiBpZCwgInJlc3VsdCI6IHJlc3VsdH0KCgpkZWYgX2pzb25ycGNfZXJyb3IoaWQ6IEFueSwgY29kZTogaW50LCBtZXNzYWdlOiBzdHIpIC0+IGRpY3Q6CiAgICByZXR1cm4geyJqc29ucnBjIjogSlNPTlJQQ19WRVJTSU9OLCAiaWQiOiBpZCwgImVycm9yIjogeyJjb2RlIjogY29kZSwgIm1lc3NhZ2UiOiBtZXNzYWdlfX0KCgpjbGFzcyBOZXh1c01DUFNlcnZlcjoKICAgICIiIk1DUCBzZXJ2ZXIgdGhhdCBleHBvc2VzIE5leHVzIHRvb2xzLgoKICAgIEltcGxlbWVudHMgdGhlIE1DUCBwcm90b2NvbDoKICAgIC0gaW5pdGlhbGl6ZSAvIGluaXRpYWxpemVkIGhhbmRzaGFrZQogICAgLSB0b29scy9saXN0IOKAlCByZXR1cm5zIGF2YWlsYWJsZSB0b29scyB3aXRoIHNjaGVtYXMKICAgIC0gdG9vbHMvY2FsbCDigJQgZXhlY3V0ZXMgYSB0b29sIGFuZCByZXR1cm5zIHRoZSByZXN1bHQKICAgICIiIgoKICAgIGRlZiBfX2luaXRfXyhzZWxmLCB3b3Jrc3BhY2U6IHN0ciA9ICIuIik6CiAgICAgICAgc2VsZi53b3Jrc3BhY2UgPSBzdHIoUGF0aCh3b3Jrc3BhY2UpLnJlc29sdmUoKSkKICAgICAgICBzZWxmLnRvb2xzOiBEaWN0W3N0ciwgQmFzZVRvb2xdID0gY3JlYXRlX2RlZmF1bHRfdG9vbHMod29ya3NwYWNlPXNlbGYud29ya3NwYWNlKQogICAgICAgIHNlbGYuaW5pdGlhbGl6ZWQgPSBGYWxzZQogICAgICAgIHNlbGYuc2VydmVyX2luZm8gPSB7CiAgICAgICAgICAgICJuYW1lIjogIm5leHVzIiwKICAgICAgICAgICAgInZlcnNpb24iOiAiMC4xLjAiLAogICAgICAgIH0KICAgICAgICBzZWxmLmNhcGFiaWxpdGllcyA9IHsKICAgICAgICAgICAgInRvb2xzIjoge30sCiAgICAgICAgfQoKICAgICMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiAgICAjIFByb3RvY29sIGhhbmRsZXJzCiAgICAjIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKICAgIGFzeW5jIGRlZiBoYW5kbGVfcmVxdWVzdChzZWxmLCByZXF1ZXN0OiBkaWN0KSAtPiBPcHRpb25hbFtkaWN0XToKICAgICAgICAiIiJSb3V0ZSBhIEpTT04tUlBDIHJlcXVlc3QgdG8gdGhlIGFwcHJvcHJpYXRlIGhhbmRsZXIuIiIiCiAgICAgICAgbWV0aG9kID0gcmVxdWVzdC5nZXQoIm1ldGhvZCIsICIiKQogICAgICAgIHBhcmFtcyA9IHJlcXVlc3QuZ2V0KCJwYXJhbXMiLCB7fSkKICAgICAgICByZXFfaWQgPSByZXF1ZXN0LmdldCgiaWQiKQoKICAgICAgICBsb2dnZXIuZGVidWcoIk1DUCByZXF1ZXN0OiAlcyAoaWQ9JXMpIiwgbWV0aG9kLCByZXFfaWQpCgogICAgICAgICMgTm90aWZpY2F0aW9ucyAobm8gaWQpIOKAlCBkb24ndCBzZW5kIGEgcmVzcG9uc2UKICAgICAgICBpZiByZXFfaWQgaXMgTm9uZToKICAgICAgICAgICAgaWYgbWV0aG9kID09ICJub3RpZmljYXRpb25zL2luaXRpYWxpemVkIjoKICAgICAgICAgICAgICAgIHNlbGYuaW5pdGlhbGl6ZWQgPSBUcnVlCiAgICAgICAgICAgICAgICBsb2dnZXIuaW5mbygiTUNQIGNsaWVudCBpbml0aWFsaXplZCIpCiAgICAgICAgICAgIGVsaWYgbWV0aG9kID09ICJub3RpZmljYXRpb25zL2NhbmNlbGxlZCI6CiAgICAgICAgICAgICAgICBsb2dnZXIuaW5mbygiUmVxdWVzdCBjYW5jZWxsZWQ6ICVzIiwgcGFyYW1zLmdldCgicmVxdWVzdElkIikpCiAgICAgICAgICAgIHJldHVybiBOb25lCgogICAgICAgICMgTWV0aG9kcyB0aGF0IHJlcXVpcmUgYSByZXNwb25zZQogICAgICAgIGhhbmRsZXJfbWFwID0gewogICAgICAgICAgICAiaW5pdGlhbGl6ZSI6IHNlbGYuX2hhbmRsZV9pbml0aWFsaXplLAogICAgICAgICAgICAidG9vbHMvbGlzdCI6IHNlbGYuX2hhbmRsZV90b29sc19saXN0LAogICAgICAgICAgICAidG9vbHMvY2FsbCI6IHNlbGYuX2hhbmRsZV90b29sc19jYWxsLAogICAgICAgICAgICAicGluZyI6IHNlbGYuX2hhbmRsZV9waW5nLAogICAgICAgIH0KCiAgICAgICAgaGFuZGxlciA9IGhhbmRsZXJfbWFwLmdldChtZXRob2QpCiAgICAgICAgaWYgaGFuZGxlcjoKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgcmVzdWx0ID0gYXdhaXQgaGFuZGxlcihwYXJhbXMpCiAgICAgICAgICAgICAgICByZXR1cm4gX2pzb25ycGNfcmVzcG9uc2UocmVxX2lkLCByZXN1bHQpCiAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgICAgIGxvZ2dlci5lcnJvcigiRXJyb3IgaGFuZGxpbmcgJXM6ICVzIiwgbWV0aG9kLCBlKQogICAgICAgICAgICAgICAgcmV0dXJuIF9qc29ucnBjX2Vycm9yKHJlcV9pZCwgLTMyNjAzLCBzdHIoZSkpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgcmV0dXJuIF9qc29ucnBjX2Vycm9yKHJlcV9pZCwgLTMyNjAxLCBmIk1ldGhvZCBub3QgZm91bmQ6IHttZXRob2R9IikKCiAgICBhc3luYyBkZWYgX2hhbmRsZV9pbml0aWFsaXplKHNlbGYsIHBhcmFtczogZGljdCkgLT4gZGljdDoKICAgICAgICAiIiJIYW5kbGUgdGhlIGluaXRpYWxpemUgaGFuZHNoYWtlLiIiIgogICAgICAgIGNsaWVudF9pbmZvID0gcGFyYW1zLmdldCgiY2xpZW50SW5mbyIsIHt9KQogICAgICAgIGxvZ2dlci5pbmZvKAogICAgICAgICAgICAiTUNQIGluaXRpYWxpemUgZnJvbSAlcyAlcyIsCiAgICAgICAgICAgIGNsaWVudF9pbmZvLmdldCgibmFtZSIsICJ1bmtub3duIiksCiAgICAgICAgICAgIGNsaWVudF9pbmZvLmdldCgidmVyc2lvbiIsICIiKSwKICAgICAgICApCiAgICAgICAgcmV0dXJuIHsKICAgICAgICAgICAgInByb3RvY29sVmVyc2lvbiI6IE1DUF9WRVJTSU9OLAogICAgICAgICAgICAiY2FwYWJpbGl0aWVzIjogc2VsZi5jYXBhYmlsaXRpZXMsCiAgICAgICAgICAgICJzZXJ2ZXJJbmZvIjogc2VsZi5zZXJ2ZXJfaW5mbywKICAgICAgICB9CgogICAgYXN5bmMgZGVmIF9oYW5kbGVfdG9vbHNfbGlzdChzZWxmLCBwYXJhbXM6IGRpY3QpIC0+IGRpY3Q6CiAgICAgICAgIiIiUmV0dXJuIGF2YWlsYWJsZSB0b29scyBpbiBNQ1AgZm9ybWF0LiIiIgogICAgICAgIHRvb2xzX2xpc3QgPSBbXQogICAgICAgIHNlZW4gPSBzZXQoKQogICAgICAgIGZvciBuYW1lLCB0b29sIGluIHNlbGYudG9vbHMuaXRlbXMoKToKICAgICAgICAgICAgaWYgaWQodG9vbCkgaW4gc2VlbjoKICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgIHNlZW4uYWRkKGlkKHRvb2wpKQoKICAgICAgICAgICAgIyBCdWlsZCBKU09OIFNjaGVtYSBmcm9tIHRvb2wncyBzY2hlbWEgZGljdAogICAgICAgICAgICBwcm9wZXJ0aWVzID0ge30KICAgICAgICAgICAgcmVxdWlyZWQgPSBbXQogICAgICAgICAgICBmb3IgcGFyYW1fbmFtZSwgcGFyYW1fZGVzYyBpbiB0b29sLnNjaGVtYS5pdGVtcygpOgogICAgICAgICAgICAgICAgcHJvcGVydGllc1twYXJhbV9uYW1lXSA9IHsKICAgICAgICAgICAgICAgICAgICAidHlwZSI6ICJzdHJpbmciLAogICAgICAgICAgICAgICAgICAgICJkZXNjcmlwdGlvbiI6IHBhcmFtX2Rlc2MsCiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICByZXF1aXJlZC5hcHBlbmQocGFyYW1fbmFtZSkKCiAgICAgICAgICAgIHRvb2xzX2xpc3QuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJuYW1lIjogdG9vbC5uYW1lLAogICAgICAgICAgICAgICAgImRlc2NyaXB0aW9uIjogdG9vbC5kZXNjcmlwdGlvbiwKICAgICAgICAgICAgICAgICJpbnB1dFNjaGVtYSI6IHsKICAgICAgICAgICAgICAgICAgICAidHlwZSI6ICJvYmplY3QiLAogICAgICAgICAgICAgICAgICAgICJwcm9wZXJ0aWVzIjogcHJvcGVydGllcywKICAgICAgICAgICAgICAgICAgICAicmVxdWlyZWQiOiByZXF1aXJlZCwKICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgIH0pCgogICAgICAgIHJldHVybiB7InRvb2xzIjogdG9vbHNfbGlzdH0KCiAgICBhc3luYyBkZWYgX2hhbmRsZV90b29sc19jYWxsKHNlbGYsIHBhcmFtczogZGljdCkgLT4gZGljdDoKICAgICAgICAiIiJFeGVjdXRlIGEgdG9vbCBhbmQgcmV0dXJuIHRoZSByZXN1bHQuIiIiCiAgICAgICAgdG9vbF9uYW1lID0gcGFyYW1zLmdldCgibmFtZSIsICIiKQogICAgICAgIGFyZ3VtZW50cyA9IHBhcmFtcy5nZXQoImFyZ3VtZW50cyIsIHt9KQoKICAgICAgICB0b29sID0gc2VsZi50b29scy5nZXQodG9vbF9uYW1lKQogICAgICAgIGlmIG5vdCB0b29sOgogICAgICAgICAgICByZXR1cm4gewogICAgICAgICAgICAgICAgImNvbnRlbnQiOiBbeyJ0eXBlIjogInRleHQiLCAidGV4dCI6IGYiVW5rbm93biB0b29sOiB7dG9vbF9uYW1lfSJ9XSwKICAgICAgICAgICAgICAgICJpc0Vycm9yIjogVHJ1ZSwKICAgICAgICAgICAgfQoKICAgICAgICB0cnk6CiAgICAgICAgICAgIHJlc3VsdCA9IGF3YWl0IHRvb2wuZXhlY3V0ZSgqKmFyZ3VtZW50cykKICAgICAgICAgICAgcmV0dXJuIHsKICAgICAgICAgICAgICAgICJjb250ZW50IjogW3sidHlwZSI6ICJ0ZXh0IiwgInRleHQiOiByZXN1bHR9XSwKICAgICAgICAgICAgICAgICJpc0Vycm9yIjogRmFsc2UsCiAgICAgICAgICAgIH0KICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgICAgIGxvZ2dlci5lcnJvcigiVG9vbCAlcyBmYWlsZWQ6ICVzIiwgdG9vbF9uYW1lLCBlKQogICAgICAgICAgICByZXR1cm4gewogICAgICAgICAgICAgICAgImNvbnRlbnQiOiBbeyJ0eXBlIjogInRleHQiLCAidGV4dCI6IGYiRXJyb3I6IHtlfSJ9XSwKICAgICAgICAgICAgICAgICJpc0Vycm9yIjogVHJ1ZSwKICAgICAgICAgICAgfQoKICAgIGFzeW5jIGRlZiBfaGFuZGxlX3Bpbmcoc2VsZiwgcGFyYW1zOiBkaWN0KSAtPiBkaWN0OgogICAgICAgICIiIlJlc3BvbmQgdG8gcGluZy4iIiIKICAgICAgICByZXR1cm4ge30KCiAgICAjIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAgIyBUcmFuc3BvcnQ6IHN0ZGlvCiAgICAjIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKICAgIGFzeW5jIGRlZiBzZXJ2ZV9zdGRpbyhzZWxmKSAtPiBOb25lOgogICAgICAgICIiIlJ1biB0aGUgTUNQIHNlcnZlciBvdmVyIHN0ZGluL3N0ZG91dC4KCiAgICAgICAgVGhpcyBpcyB0aGUgc3RhbmRhcmQgdHJhbnNwb3J0IGZvciBDbGF1ZGUgRGVza3RvcCwgQ3Vyc29yLCBldGMuCiAgICAgICAgRWFjaCBsaW5lIG9uIHN0ZGluIGlzIGEgSlNPTi1SUEMgbWVzc2FnZSwgZWFjaCByZXNwb25zZSBpcwogICAgICAgIHdyaXR0ZW4gYXMgYSBsaW5lIHRvIHN0ZG91dC4KICAgICAgICAiIiIKICAgICAgICBsb2dnZXIuaW5mbygiTmV4dXMgTUNQIHNlcnZlciBzdGFydGluZyAoc3RkaW8gbW9kZSkiKQogICAgICAgIGxvZ2dlci5pbmZvKCJXb3Jrc3BhY2U6ICVzIiwgc2VsZi53b3Jrc3BhY2UpCiAgICAgICAgbG9nZ2VyLmluZm8oIlRvb2xzOiAlcyIsICIsICIuam9pbih0IGZvciB0IGluIHNlbGYudG9vbHMgaWYgdCA9PSBzZWxmLnRvb2xzW3RdLm5hbWUpKQoKICAgICAgICByZWFkZXIgPSBhc3luY2lvLlN0cmVhbVJlYWRlcigpCiAgICAgICAgcHJvdG9jb2wgPSBhc3luY2lvLlN0cmVhbVJlYWRlclByb3RvY29sKHJlYWRlcikKICAgICAgICBhd2FpdCBhc3luY2lvLmdldF9ldmVudF9sb29wKCkuY29ubmVjdF9yZWFkX3BpcGUobGFtYmRhOiBwcm90b2NvbCwgc3lzLnN0ZGluKQoKICAgICAgICB3cml0ZXJfdHJhbnNwb3J0LCB3cml0ZXJfcHJvdG9jb2wgPSBhd2FpdCBhc3luY2lvLmdldF9ldmVudF9sb29wKCkuY29ubmVjdF93cml0ZV9waXBlKAogICAgICAgICAgICBhc3luY2lvLnN0cmVhbXMuRmxvd0NvbnRyb2xNaXhpbiwgc3lzLnN0ZG91dAogICAgICAgICkKICAgICAgICB3cml0ZXIgPSBhc3luY2lvLlN0cmVhbVdyaXRlcih3cml0ZXJfdHJhbnNwb3J0LCB3cml0ZXJfcHJvdG9jb2wsIHJlYWRlciwgYXN5bmNpby5nZXRfZXZlbnRfbG9vcCgpKQoKICAgICAgICB3aGlsZSBUcnVlOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICBsaW5lID0gYXdhaXQgcmVhZGVyLnJlYWRsaW5lKCkKICAgICAgICAgICAgICAgIGlmIG5vdCBsaW5lOgogICAgICAgICAgICAgICAgICAgIGJyZWFrCgogICAgICAgICAgICAgICAgbGluZSA9IGxpbmUuZGVjb2RlKCJ1dGYtOCIpLnN0cmlwKCkKICAgICAgICAgICAgICAgIGlmIG5vdCBsaW5lOgogICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICAgICAgICAgcmVxdWVzdCA9IGpzb24ubG9hZHMobGluZSkKICAgICAgICAgICAgICAgIHJlc3BvbnNlID0gYXdhaXQgc2VsZi5oYW5kbGVfcmVxdWVzdChyZXF1ZXN0KQoKICAgICAgICAgICAgICAgIGlmIHJlc3BvbnNlIGlzIG5vdCBOb25lOgogICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IGpzb24uZHVtcHMocmVzcG9uc2UpICsgIlxuIgogICAgICAgICAgICAgICAgICAgIHdyaXRlci53cml0ZShvdXRwdXQuZW5jb2RlKCJ1dGYtOCIpKQogICAgICAgICAgICAgICAgICAgIGF3YWl0IHdyaXRlci5kcmFpbigpCgogICAgICAgICAgICBleGNlcHQganNvbi5KU09ORGVjb2RlRXJyb3IgYXMgZToKICAgICAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKCJJbnZhbGlkIEpTT046ICVzIiwgZSkKICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICAgICAgbG9nZ2VyLmVycm9yKCJTdGRpbyBlcnJvcjogJXMiLCBlKQogICAgICAgICAgICAgICAgYnJlYWsKCiAgICAgICAgbG9nZ2VyLmluZm8oIk1DUCBzZXJ2ZXIgc2h1dHRpbmcgZG93biIpCgogICAgIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgICMgVHJhbnNwb3J0OiBIVFRQCiAgICAjIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKICAgIGFzeW5jIGRlZiBzZXJ2ZV9odHRwKHNlbGYsIGhvc3Q6IHN0ciA9ICIxMjcuMC4wLjEiLCBwb3J0OiBpbnQgPSAzMTAwKSAtPiBOb25lOgogICAgICAgICIiIlJ1biB0aGUgTUNQIHNlcnZlciBvdmVyIEhUVFAuCgogICAgICAgIFNpbXBsZSBIVFRQIHRyYW5zcG9ydCDigJQgUE9TVCBKU09OLVJQQyB0byAvLgogICAgICAgICIiIgogICAgICAgIHRyeToKICAgICAgICAgICAgZnJvbSBhaW9odHRwIGltcG9ydCB3ZWIKICAgICAgICBleGNlcHQgSW1wb3J0RXJyb3I6CiAgICAgICAgICAgIGxvZ2dlci5lcnJvcigiYWlvaHR0cCByZXF1aXJlZCBmb3IgSFRUUCB0cmFuc3BvcnQuIEluc3RhbGwgd2l0aDogcGlwIGluc3RhbGwgYWlvaHR0cCIpCiAgICAgICAgICAgIHJldHVybgoKICAgICAgICBhc3luYyBkZWYgaGFuZGxlX3Bvc3QocmVxdWVzdDogd2ViLlJlcXVlc3QpIC0+IHdlYi5SZXNwb25zZToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgYm9keSA9IGF3YWl0IHJlcXVlc3QuanNvbigpCiAgICAgICAgICAgICAgICByZXNwb25zZSA9IGF3YWl0IHNlbGYuaGFuZGxlX3JlcXVlc3QoYm9keSkKICAgICAgICAgICAgICAgIGlmIHJlc3BvbnNlIGlzIG5vdCBOb25lOgogICAgICAgICAgICAgICAgICAgIHJldHVybiB3ZWIuanNvbl9yZXNwb25zZShyZXNwb25zZSkKICAgICAgICAgICAgICAgIHJldHVybiB3ZWIuUmVzcG9uc2Uoc3RhdHVzPTIwNCkKICAgICAgICAgICAgZXhjZXB0IGpzb24uSlNPTkRlY29kZUVycm9yOgogICAgICAgICAgICAgICAgcmV0dXJuIHdlYi5qc29uX3Jlc3BvbnNlKAogICAgICAgICAgICAgICAgICAgIF9qc29ucnBjX2Vycm9yKE5vbmUsIC0zMjcwMCwgIlBhcnNlIGVycm9yIiksCiAgICAgICAgICAgICAgICAgICAgc3RhdHVzPTQwMCwKICAgICAgICAgICAgICAgICkKCiAgICAgICAgYXN5bmMgZGVmIGhhbmRsZV9nZXQocmVxdWVzdDogd2ViLlJlcXVlc3QpIC0+IHdlYi5SZXNwb25zZToKICAgICAgICAgICAgdG9vbHMgPSBhd2FpdCBzZWxmLl9oYW5kbGVfdG9vbHNfbGlzdCh7fSkKICAgICAgICAgICAgcmV0dXJuIHdlYi5qc29uX3Jlc3BvbnNlKHsKICAgICAgICAgICAgICAgICJzZXJ2ZXIiOiBzZWxmLnNlcnZlcl9pbmZvLAogICAgICAgICAgICAgICAgInRvb2xzIjogbGVuKHRvb2xzWyJ0b29scyJdKSwKICAgICAgICAgICAgICAgICJ3b3Jrc3BhY2UiOiBzZWxmLndvcmtzcGFjZSwKICAgICAgICAgICAgfSkKCiAgICAgICAgYXBwID0gd2ViLkFwcGxpY2F0aW9uKCkKICAgICAgICBhcHAucm91dGVyLmFkZF9wb3N0KCIvIiwgaGFuZGxlX3Bvc3QpCiAgICAgICAgYXBwLnJvdXRlci5hZGRfZ2V0KCIvIiwgaGFuZGxlX2dldCkKCiAgICAgICAgbG9nZ2VyLmluZm8oIk5leHVzIE1DUCBzZXJ2ZXIgc3RhcnRpbmcgKEhUVFAgbW9kZSkgYXQgJXM6JWQiLCBob3N0LCBwb3J0KQogICAgICAgIHJ1bm5lciA9IHdlYi5BcHBSdW5uZXIoYXBwKQogICAgICAgIGF3YWl0IHJ1bm5lci5zZXR1cCgpCiAgICAgICAgc2l0ZSA9IHdlYi5UQ1BTaXRlKHJ1bm5lciwgaG9zdCwgcG9ydCkKICAgICAgICBhd2FpdCBzaXRlLnN0YXJ0KCkKCiAgICAgICAgcHJpbnQoZiJOZXh1cyBNQ1Agc2VydmVyIHJ1bm5pbmcgYXQgaHR0cDovL3tob3N0fTp7cG9ydH0iKQogICAgICAgIHByaW50KCJQcmVzcyBDdHJsK0MgdG8gc3RvcCIpCgogICAgICAgIHRyeToKICAgICAgICAgICAgYXdhaXQgYXN5bmNpby5FdmVudCgpLndhaXQoKQogICAgICAgIGV4Y2VwdCBLZXlib2FyZEludGVycnVwdDoKICAgICAgICAgICAgcGFzcwogICAgICAgIGZpbmFsbHk6CiAgICAgICAgICAgIGF3YWl0IHJ1bm5lci5jbGVhbnVwKCkK
+"""MCP Server — expose Nexus tools via the Model Context Protocol.
+
+Supports two transport modes:
+1. stdio:  JSON-RPC over stdin/stdout (for Claude Desktop, Cursor, etc.)
+2. http:   JSON-RPC over HTTP (for network clients)
+
+MCP spec: https://modelcontextprotocol.io/
+
+Usage:
+    nexus mcp serve                   # stdio mode (default)
+    nexus mcp serve --transport http  # HTTP mode on port 3100
+"""
+
+from __future__ import annotations
+
+import asyncio
+import json
+import logging
+import sys
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+from nexus.tools import create_default_tools
+from nexus.tools.registry import BaseTool
+
+logger = logging.getLogger(__name__)
+
+# MCP Protocol version
+MCP_VERSION = "2024-11-05"
+
+# JSON-RPC helpers
+JSONRPC_VERSION = "2.0"
+
+
+def _jsonrpc_response(id: Any, result: Any) -> dict:
+    return {"jsonrpc": JSONRPC_VERSION, "id": id, "result": result}
+
+
+def _jsonrpc_error(id: Any, code: int, message: str) -> dict:
+    return {"jsonrpc": JSONRPC_VERSION, "id": id, "error": {"code": code, "message": message}}
+
+
+class NexusMCPServer:
+    """MCP server that exposes Nexus tools.
+
+    Implements the MCP protocol:
+    - initialize / initialized handshake
+    - tools/list — returns available tools with schemas
+    - tools/call — executes a tool and returns the result
+    """
+
+    def __init__(self, workspace: str = "."):
+        self.workspace = str(Path(workspace).resolve())
+        self.tools: Dict[str, BaseTool] = create_default_tools(workspace=self.workspace)
+        self.initialized = False
+        self.server_info = {
+            "name": "nexus",
+            "version": "0.1.0",
+        }
+        self.capabilities = {
+            "tools": {},
+        }
+
+    # ------------------------------------------------------------------
+    # Protocol handlers
+    # ------------------------------------------------------------------
+
+    async def handle_request(self, request: dict) -> Optional[dict]:
+        """Route a JSON-RPC request to the appropriate handler."""
+        method = request.get("method", "")
+        params = request.get("params", {})
+        req_id = request.get("id")
+
+        logger.debug("MCP request: %s (id=%s)", method, req_id)
+
+        # Notifications (no id) — don't send a response
+        if req_id is None:
+            if method == "notifications/initialized":
+                self.initialized = True
+                logger.info("MCP client initialized")
+            elif method == "notifications/cancelled":
+                logger.info("Request cancelled: %s", params.get("requestId"))
+            return None
+
+        # Methods that require a response
+        handler_map = {
+            "initialize": self._handle_initialize,
+            "tools/list": self._handle_tools_list,
+            "tools/call": self._handle_tools_call,
+            "ping": self._handle_ping,
+        }
+
+        handler = handler_map.get(method)
+        if handler:
+            try:
+                result = await handler(params)
+                return _jsonrpc_response(req_id, result)
+            except Exception as e:
+                logger.error("Error handling %s: %s", method, e)
+                return _jsonrpc_error(req_id, -32603, str(e))
+        else:
+            return _jsonrpc_error(req_id, -32601, f"Method not found: {method}")
+
+    async def _handle_initialize(self, params: dict) -> dict:
+        """Handle the initialize handshake."""
+        client_info = params.get("clientInfo", {})
+        logger.info(
+            "MCP initialize from %s %s",
+            client_info.get("name", "unknown"),
+            client_info.get("version", ""),
+        )
+        return {
+            "protocolVersion": MCP_VERSION,
+            "capabilities": self.capabilities,
+            "serverInfo": self.server_info,
+        }
+
+    async def _handle_tools_list(self, params: dict) -> dict:
+        """Return available tools in MCP format."""
+        tools_list = []
+        seen = set()
+        for name, tool in self.tools.items():
+            if id(tool) in seen:
+                continue
+            seen.add(id(tool))
+
+            # Build JSON Schema from tool's schema dict
+            properties = {}
+            required = []
+            for param_name, param_desc in tool.schema.items():
+                properties[param_name] = {
+                    "type": "string",
+                    "description": param_desc,
+                }
+                required.append(param_name)
+
+            tools_list.append({
+                "name": tool.name,
+                "description": tool.description,
+                "inputSchema": {
+                    "type": "object",
+                    "properties": properties,
+                    "required": required,
+                },
+            })
+
+        return {"tools": tools_list}
+
+    async def _handle_tools_call(self, params: dict) -> dict:
+        """Execute a tool and return the result."""
+        tool_name = params.get("name", "")
+        arguments = params.get("arguments", {})
+
+        tool = self.tools.get(tool_name)
+        if not tool:
+            return {
+                "content": [{"type": "text", "text": f"Unknown tool: {tool_name}"}],
+                "isError": True,
+            }
+
+        try:
+            result = await tool.execute(**arguments)
+            return {
+                "content": [{"type": "text", "text": result}],
+                "isError": False,
+            }
+        except Exception as e:
+            logger.error("Tool %s failed: %s", tool_name, e)
+            return {
+                "content": [{"type": "text", "text": f"Error: {e}"}],
+                "isError": True,
+            }
+
+    async def _handle_ping(self, params: dict) -> dict:
+        """Respond to ping."""
+        return {}
+
+    # ------------------------------------------------------------------
+    # Transport: stdio
+    # ------------------------------------------------------------------
+
+    async def serve_stdio(self) -> None:
+        """Run the MCP server over stdin/stdout.
+
+        This is the standard transport for Claude Desktop, Cursor, etc.
+        Each line on stdin is a JSON-RPC message, each response is
+        written as a line to stdout.
+        """
+        logger.info("Nexus MCP server starting (stdio mode)")
+        logger.info("Workspace: %s", self.workspace)
+        logger.info("Tools: %s", ", ".join(t for t in self.tools if t == self.tools[t].name))
+
+        reader = asyncio.StreamReader()
+        protocol = asyncio.StreamReaderProtocol(reader)
+        await asyncio.get_event_loop().connect_read_pipe(lambda: protocol, sys.stdin)
+
+        writer_transport, writer_protocol = await asyncio.get_event_loop().connect_write_pipe(
+            asyncio.streams.FlowControlMixin, sys.stdout
+        )
+        writer = asyncio.StreamWriter(writer_transport, writer_protocol, reader, asyncio.get_event_loop())
+
+        while True:
+            try:
+                line = await reader.readline()
+                if not line:
+                    break
+
+                line = line.decode("utf-8").strip()
+                if not line:
+                    continue
+
+                request = json.loads(line)
+                response = await self.handle_request(request)
+
+                if response is not None:
+                    output = json.dumps(response) + "\n"
+                    writer.write(output.encode("utf-8"))
+                    await writer.drain()
+
+            except json.JSONDecodeError as e:
+                logger.warning("Invalid JSON: %s", e)
+            except Exception as e:
+                logger.error("Stdio error: %s", e)
+                break
+
+        logger.info("MCP server shutting down")
+
+    # ------------------------------------------------------------------
+    # Transport: HTTP
+    # ------------------------------------------------------------------
+
+    async def serve_http(self, host: str = "127.0.0.1", port: int = 3100) -> None:
+        """Run the MCP server over HTTP.
+
+        Simple HTTP transport — POST JSON-RPC to /.
+        """
+        try:
+            from aiohttp import web
+        except ImportError:
+            logger.error("aiohttp required for HTTP transport. Install with: pip install aiohttp")
+            return
+
+        async def handle_post(request: web.Request) -> web.Response:
+            try:
+                body = await request.json()
+                response = await self.handle_request(body)
+                if response is not None:
+                    return web.json_response(response)
+                return web.Response(status=204)
+            except json.JSONDecodeError:
+                return web.json_response(
+                    _jsonrpc_error(None, -32700, "Parse error"),
+                    status=400,
+                )
+
+        async def handle_get(request: web.Request) -> web.Response:
+            tools = await self._handle_tools_list({})
+            return web.json_response({
+                "server": self.server_info,
+                "tools": len(tools["tools"]),
+                "workspace": self.workspace,
+            })
+
+        app = web.Application()
+        app.router.add_post("/", handle_post)
+        app.router.add_get("/", handle_get)
+
+        logger.info("Nexus MCP server starting (HTTP mode) at %s:%d", host, port)
+        runner = web.AppRunner(app)
+        await runner.setup()
+        site = web.TCPSite(runner, host, port)
+        await site.start()
+
+        print(f"Nexus MCP server running at http://{host}:{port}")
+        print("Press Ctrl+C to stop")
+
+        try:
+            await asyncio.Event().wait()
+        except KeyboardInterrupt:
+            pass
+        finally:
+            await runner.cleanup()

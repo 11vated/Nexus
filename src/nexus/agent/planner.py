@@ -1,1 +1,272 @@
-IiIiTExNLWJhc2VkIHBsYW5uaW5nIGZvciB0aGUgTmV4dXMgYWdlbnQuCgpSZXBsYWNlcyB0aGUga2V5d29yZC1tYXRjaGluZyBwbGFubmVyIHdpdGggYWN0dWFsIExMTSByZWFzb25pbmcuClRoZSBwbGFubmVyIHRha2VzIGEgZ29hbCBhbmQgY3VycmVudCBjb250ZXh0LCBhbmQgcHJvZHVjZXMgYSBzdHJ1Y3R1cmVkCmxpc3Qgb2YgdGFza3MgZm9yIHRoZSBleGVjdXRvci4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgbG9nZ2luZwpmcm9tIHR5cGluZyBpbXBvcnQgQW55LCBEaWN0LCBMaXN0LCBPcHRpb25hbAoKZnJvbSBuZXh1cy5hZ2VudC5sbG0gaW1wb3J0IE9sbGFtYUNsaWVudCwgZXh0cmFjdF9qc29uCmZyb20gbmV4dXMuYWdlbnQubW9kZWxzIGltcG9ydCBBZ2VudENvbmZpZywgQWdlbnRSb2xlLCBTdGVwLCBUYXNrCgpsb2dnZXIgPSBsb2dnaW5nLmdldExvZ2dlcihfX25hbWVfXykKClNZU1RFTV9QUk9NUFRfVEVNUExBVEUgPSAiIiJcCllvdSBhcmUgTmV4dXMsIGFuIGF1dG9ub21vdXMgY29kaW5nIGFnZW50IHRoYXQgcGxhbnMgYW5kIGV4ZWN1dGVzIHNvZnR3YXJlIHRhc2tzLgoKWW91IHJlY2VpdmUgYSBnb2FsIGFuZCBtdXN0IGJyZWFrIGl0IGludG8gY29uY3JldGUsIGFjdGlvbmFibGUgc3RlcHMuCkVhY2ggc3RlcCBzaG91bGQgYmUgc29tZXRoaW5nIHlvdSBjYW4gZXhlY3V0ZSB3aXRoIHlvdXIgYXZhaWxhYmxlIHRvb2xzLgoKQXZhaWxhYmxlIHRvb2xzOgp7dG9vbF9kZXNjcmlwdGlvbnN9CgpSdWxlczoKMS4gQnJlYWsgY29tcGxleCBnb2FscyBpbnRvIHNtYWxsLCB0ZXN0YWJsZSBzdGVwcwoyLiBBbHdheXMgdmVyaWZ5IHlvdXIgd29yayAocnVuIGNvZGUsIGNoZWNrIG91dHB1dCwgcnVuIHRlc3RzKQozLiBJZiBzb21ldGhpbmcgZmFpbHMsIGRpYWdub3NlIGFuZCBmaXggcmF0aGVyIHRoYW4gbW92aW5nIG9uCjQuIFByZWZlciBzaW1wbGUsIHdvcmtpbmcgY29kZSBvdmVyIGNsZXZlciwgY29tcGxleCBjb2RlCjUuIENyZWF0ZSB0ZXN0cyB3aGVuIGJ1aWxkaW5nIG5ldyBmdW5jdGlvbmFsaXR5CgpSZXNwb25kIHdpdGggYSBKU09OIGFycmF5IG9mIHN0ZXBzLiBFYWNoIHN0ZXAgaGFzOgp7ewogICJhY3Rpb24iOiAiZGVzY3JpcHRpb24gb2Ygd2hhdCB0byBkbyIsCiAgInRvb2wiOiAidG9vbF9uYW1lIiwKICAiYXJncyI6IHt7ImFyZzEiOiAidmFsdWUxIn19LAogICJyZWFzb25pbmciOiAid2h5IHRoaXMgc3RlcCIKfX0KIiIiCgojIEZhbGxiYWNrIGlmIG5vIHRvb2wgZGVzY3JpcHRpb25zIHByb3ZpZGVkCkRFRkFVTFRfVE9PTF9ERVNDUklQVElPTlMgPSAiIiJcCi0gc2hlbGw6IFJ1biBzaGVsbCBjb21tYW5kcyAoaW5zdGFsbCBwYWNrYWdlcywgY2hlY2sgZmlsZXMsIHJ1biBidWlsZHMpCiAgICBjb21tYW5kIChzdHIpOiBUaGUgc2hlbGwgY29tbWFuZCB0byBleGVjdXRlCi0gZmlsZV9yZWFkOiBSZWFkIGEgZmlsZSdzIGNvbnRlbnRzCiAgICBwYXRoIChzdHIpOiBQYXRoIHRvIHRoZSBmaWxlIHRvIHJlYWQKLSBmaWxlX3dyaXRlOiBXcml0ZSBjb250ZW50IHRvIGEgZmlsZSAoY3JlYXRlcyBkaXJlY3RvcmllcyBpZiBuZWVkZWQpCiAgICBwYXRoIChzdHIpOiBQYXRoIHRvIHdyaXRlIHRvCiAgICBjb250ZW50IChzdHIpOiBGaWxlIGNvbnRlbnQKLSBmaWxlX2xpc3Q6IExpc3QgZmlsZXMgaW4gYSBkaXJlY3RvcnkKICAgIHBhdGggKHN0cik6IERpcmVjdG9yeSBwYXRoCi0gY29kZV9ydW46IEV4ZWN1dGUgYSBQeXRob24vSlMvZXRjIHNjcmlwdCBhbmQgY2FwdHVyZSBvdXRwdXQKICAgIGNvZGUgKHN0cik6IENvZGUgdG8gZXhlY3V0ZQogICAgbGFuZ3VhZ2UgKHN0cik6IHB5dGhvbiwgbm9kZSwgb3IgYmFzaAotIHRlc3RfcnVuOiBSdW4gcHl0ZXN0L25wbSB0ZXN0IGFuZCBnZXQgcmVzdWx0cwogICAgY29tbWFuZCAoc3RyKTogVGVzdCBjb21tYW5kIChlLmcuICJweXRlc3QgdGVzdHMvIikKLSBzZWFyY2g6IFNlYXJjaCBjb2RlYmFzZSB3aXRoIGdyZXAvcmlwZ3JlcAogICAgcGF0dGVybiAoc3RyKTogU2VhcmNoIHBhdHRlcm4KICAgIHBhdGggKHN0cik6IERpcmVjdG9yeSB0byBzZWFyY2gKLSBnaXQ6IEdpdCBvcGVyYXRpb25zIChzdGF0dXMsIGRpZmYsIGFkZCwgY29tbWl0KQogICAgY29tbWFuZCAoc3RyKTogR2l0IHN1YmNvbW1hbmQgKHN0YXR1cywgZGlmZiwgYWRkLCBjb21taXQsIGxvZykiIiIKClJFUExBTl9QUk9NUFQgPSAiIiJcClRoZSBwcmV2aW91cyBzdGVwIGhhZCBhbiBpc3N1ZS4gQmFzZWQgb24gdGhlIGV4ZWN1dGlvbiBoaXN0b3J5IGJlbG93LCBcCmRlY2lkZSB3aGF0IHRvIGRvIG5leHQuCgpHb2FsOiB7Z29hbH0KCkV4ZWN1dGlvbiBoaXN0b3J5Ogp7aGlzdG9yeX0KCkxhc3Qgc3RlcCByZXN1bHQ6IHtsYXN0X3Jlc3VsdH0KU3VjY2Vzczoge3N1Y2Nlc3N9CgpXaGF0IHNob3VsZCB0aGUgbmV4dCBzdGVwIGJlPyBSZXNwb25kIHdpdGggYSBzaW5nbGUgc3RlcCBhcyBKU09OOgp7ewogICJhY3Rpb24iOiAiZGVzY3JpcHRpb24iLAogICJ0b29sIjogInRvb2xfbmFtZSIsCiAgImFyZ3MiOiB7e319LAogICJyZWFzb25pbmciOiAid2h5Igp9fQoKSWYgdGhlIGdvYWwgaXMgY29tcGxldGUsIHJlc3BvbmQgd2l0aDoKe3siYWN0aW9uIjogImRvbmUiLCAidG9vbCI6ICJub25lIiwgImFyZ3MiOiB7e319LCAicmVhc29uaW5nIjogImdvYWwgYWNoaWV2ZWQgYmVjYXVzZS4uLiJ9fQoiIiIKCgpjbGFzcyBQbGFubmVyOgogICAgIiIiUGxhbnMgdGFzayBleGVjdXRpb24gdXNpbmcgTExNIHJlYXNvbmluZy4KCiAgICBUaGUgcGxhbm5lciBvcGVyYXRlcyBpbiB0d28gbW9kZXM6CiAgICAxLiBJbml0aWFsIHBsYW5uaW5nOiBCcmVhayBhIGdvYWwgaW50byBhIHNlcXVlbmNlIG9mIHN0ZXBzCiAgICAyLiBBZGFwdGl2ZSByZXBsYW5uaW5nOiBEZWNpZGUgbmV4dCBzdGVwIGJhc2VkIG9uIGV4ZWN1dGlvbiBoaXN0b3J5CiAgICAiIiIKCiAgICBkZWYgX19pbml0X18oCiAgICAgICAgc2VsZiwKICAgICAgICBsbG06IE9sbGFtYUNsaWVudCwKICAgICAgICBjb25maWc6IE9wdGlvbmFsW0FnZW50Q29uZmlnXSA9IE5vbmUsCiAgICApOgogICAgICAgIHNlbGYubGxtID0gbGxtCiAgICAgICAgc2VsZi5jb25maWcgPSBjb25maWcgb3IgQWdlbnRDb25maWcoKQoKICAgIGRlZiBfYnVpbGRfc3lzdGVtX3Byb21wdChzZWxmLCB0b29sX2Rlc2NyaXB0aW9uczogc3RyID0gIiIpIC0+IHN0cjoKICAgICAgICAiIiJCdWlsZCB0aGUgc3lzdGVtIHByb21wdCB3aXRoIGR5bmFtaWMgdG9vbCBkZXNjcmlwdGlvbnMuIiIiCiAgICAgICAgdG9vbHMgPSB0b29sX2Rlc2NyaXB0aW9ucyBvciBERUZBVUxUX1RPT0xfREVTQ1JJUFRJT05TCiAgICAgICAgcmV0dXJuIFNZU1RFTV9QUk9NUFRfVEVNUExBVEUuZm9ybWF0KHRvb2xfZGVzY3JpcHRpb25zPXRvb2xzKQoKICAgIGFzeW5jIGRlZiBjcmVhdGVfcGxhbigKICAgICAgICBzZWxmLAogICAgICAgIGdvYWw6IHN0ciwKICAgICAgICBjb250ZXh0OiBzdHIgPSAiIiwKICAgICAgICB3b3Jrc3BhY2VfaW5mbzogc3RyID0gIiIsCiAgICAgICAgdG9vbF9kZXNjcmlwdGlvbnM6IHN0ciA9ICIiLAogICAgKSAtPiBMaXN0W0RpY3Rbc3RyLCBBbnldXToKICAgICAgICAiIiJDcmVhdGUgYW4gaW5pdGlhbCBleGVjdXRpb24gcGxhbiBmb3IgYSBnb2FsLgoKICAgICAgICBBcmdzOgogICAgICAgICAgICBnb2FsOiBUaGUgaGlnaC1sZXZlbCBnb2FsIHRvIGFjY29tcGxpc2guCiAgICAgICAgICAgIGNvbnRleHQ6IEFkZGl0aW9uYWwgY29udGV4dCAoZmlsZSBjb250ZW50cywgcHJpb3Igd29yaywgZXRjKS4KICAgICAgICAgICAgd29ya3NwYWNlX2luZm86IERlc2NyaXB0aW9uIG9mIGN1cnJlbnQgd29ya3NwYWNlIHN0YXRlLgogICAgICAgICAgICB0b29sX2Rlc2NyaXB0aW9uczogRm9ybWF0dGVkIHRvb2wgZGVzY3JpcHRpb25zIGZyb20gdGhlIHJlZ2lzdHJ5LgoKICAgICAgICBSZXR1cm5zOgogICAgICAgICAgICBMaXN0IG9mIHN0ZXAgZGljdHMgd2l0aCBhY3Rpb24sIHRvb2wsIGFyZ3MsIHJlYXNvbmluZy4KICAgICAgICAiIiIKICAgICAgICBwcm9tcHQgPSBmIkdvYWw6IHtnb2FsfVxuIgogICAgICAgIGlmIHdvcmtzcGFjZV9pbmZvOgogICAgICAgICAgICBwcm9tcHQgKz0gZiJcbldvcmtzcGFjZTpcbnt3b3Jrc3BhY2VfaW5mb31cbiIKICAgICAgICBpZiBjb250ZXh0OgogICAgICAgICAgICBwcm9tcHQgKz0gZiJcbkNvbnRleHQ6XG57Y29udGV4dH1cbiIKICAgICAgICBwcm9tcHQgKz0gKAogICAgICAgICAgICAiXG5DcmVhdGUgYSBzdGVwLWJ5LXN0ZXAgcGxhbiB0byBhY2NvbXBsaXNoIHRoaXMgZ29hbC4gIgogICAgICAgICAgICAiUmVzcG9uZCB3aXRoIGEgSlNPTiBhcnJheSBvZiBzdGVwcy4iCiAgICAgICAgKQoKICAgICAgICBzeXN0ZW1fcHJvbXB0ID0gc2VsZi5fYnVpbGRfc3lzdGVtX3Byb21wdCh0b29sX2Rlc2NyaXB0aW9ucykKCiAgICAgICAgcmVzcG9uc2UgPSBhd2FpdCBzZWxmLmxsbS5nZW5lcmF0ZSgKICAgICAgICAgICAgcHJvbXB0PXByb21wdCwKICAgICAgICAgICAgbW9kZWw9c2VsZi5jb25maWcucGxhbm5pbmdfbW9kZWwsCiAgICAgICAgICAgIHN5c3RlbT1zeXN0ZW1fcHJvbXB0LAogICAgICAgICAgICB0ZW1wZXJhdHVyZT0wLjMsCiAgICAgICAgKQoKICAgICAgICBwbGFuID0gZXh0cmFjdF9qc29uKHJlc3BvbnNlKQogICAgICAgIGlmIGlzaW5zdGFuY2UocGxhbiwgbGlzdCk6CiAgICAgICAgICAgIGxvZ2dlci5pbmZvKCJDcmVhdGVkIHBsYW4gd2l0aCAlZCBzdGVwcyIsIGxlbihwbGFuKSkKICAgICAgICAgICAgcmV0dXJuIHBsYW4KCiAgICAgICAgIyBJZiB3ZSBnb3QgYSBzaW5nbGUgc3RlcCBkaWN0LCB3cmFwIGl0CiAgICAgICAgaWYgaXNpbnN0YW5jZShwbGFuLCBkaWN0KToKICAgICAgICAgICAgcmV0dXJuIFtwbGFuXQoKICAgICAgICAjIEZhbGxiYWNrOiBjb3VsZG4ndCBwYXJzZSBwbGFuLCBjcmVhdGUgYSBzaW5nbGUgZXhwbG9yYXRvcnkgc3RlcAogICAgICAgIGxvZ2dlci53YXJuaW5nKCJDb3VsZCBub3QgcGFyc2UgcGxhbiBmcm9tIExMTSByZXNwb25zZSwgdXNpbmcgZmFsbGJhY2siKQogICAgICAgIHJldHVybiBbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJhY3Rpb24iOiBmIkV4cGxvcmUgYW5kIHdvcmsgb246IHtnb2FsfSIsCiAgICAgICAgICAgICAgICAidG9vbCI6ICJzaGVsbCIsCiAgICAgICAgICAgICAgICAiYXJncyI6IHsiY29tbWFuZCI6ICJscyAtbGEifSwKICAgICAgICAgICAgICAgICJyZWFzb25pbmciOiAiU3RhcnRpbmcgYnkgZXhwbG9yaW5nIHRoZSB3b3Jrc3BhY2UiLAogICAgICAgICAgICB9CiAgICAgICAgXQoKICAgIGFzeW5jIGRlZiBuZXh0X3N0ZXAoCiAgICAgICAgc2VsZiwKICAgICAgICBnb2FsOiBzdHIsCiAgICAgICAgaGlzdG9yeTogTGlzdFtTdGVwXSwKICAgICAgICBsYXN0X3Jlc3VsdDogc3RyID0gIiIsCiAgICAgICAgc3VjY2VzczogYm9vbCA9IFRydWUsCiAgICApIC0+IE9wdGlvbmFsW0RpY3Rbc3RyLCBBbnldXToKICAgICAgICAiIiJEZWNpZGUgdGhlIG5leHQgc3RlcCBiYXNlZCBvbiBleGVjdXRpb24gaGlzdG9yeS4KCiAgICAgICAgVGhpcyBpcyBjYWxsZWQgYWZ0ZXIgZWFjaCBzdGVwIGV4ZWN1dGlvbiB0byBhZGFwdGl2ZWx5IHBsYW4uCgogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIGdvYWw6IFRoZSBvcmlnaW5hbCBnb2FsLgogICAgICAgICAgICBoaXN0b3J5OiBFeGVjdXRpb24gaGlzdG9yeSAoY29tcGxldGVkIHN0ZXBzKS4KICAgICAgICAgICAgbGFzdF9yZXN1bHQ6IE91dHB1dCBmcm9tIHRoZSBsYXN0IGV4ZWN1dGVkIHN0ZXAuCiAgICAgICAgICAgIHN1Y2Nlc3M6IFdoZXRoZXIgdGhlIGxhc3Qgc3RlcCBzdWNjZWVkZWQuCgogICAgICAgIFJldHVybnM6CiAgICAgICAgICAgIE5leHQgc3RlcCBkaWN0LCBvciBOb25lIGlmIHRoZSBnb2FsIGlzIGNvbXBsZXRlLgogICAgICAgICIiIgogICAgICAgIGhpc3Rvcnlfc3RyID0gIlxuIi5qb2luKAogICAgICAgICAgICBzdGVwLnRvX2NvbnRleHQoKSBmb3Igc3RlcCBpbiBoaXN0b3J5Wy0xMDpdICAjIExhc3QgMTAgc3RlcHMgZm9yIGNvbnRleHQKICAgICAgICApCgogICAgICAgIHByb21wdCA9IFJFUExBTl9QUk9NUFQuZm9ybWF0KAogICAgICAgICAgICBnb2FsPWdvYWwsCiAgICAgICAgICAgIGhpc3Rvcnk9aGlzdG9yeV9zdHIsCiAgICAgICAgICAgIGxhc3RfcmVzdWx0PWxhc3RfcmVzdWx0WzoxMDAwXSwKICAgICAgICAgICAgc3VjY2Vzcz1zdWNjZXNzLAogICAgICAgICkKCiAgICAgICAgcmVzcG9uc2UgPSBhd2FpdCBzZWxmLmxsbS5nZW5lcmF0ZSgKICAgICAgICAgICAgcHJvbXB0PXByb21wdCwKICAgICAgICAgICAgbW9kZWw9c2VsZi5jb25maWcucGxhbm5pbmdfbW9kZWwsCiAgICAgICAgICAgIHN5c3RlbT1TWVNURU1fUFJPTVBULAogICAgICAgICAgICB0ZW1wZXJhdHVyZT0wLjIsICAjIExvd2VyIHRlbXAgZm9yIG1vcmUgZm9jdXNlZCByZXBsYW5uaW5nCiAgICAgICAgKQoKICAgICAgICBzdGVwID0gZXh0cmFjdF9qc29uKHJlc3BvbnNlKQogICAgICAgIGlmIGlzaW5zdGFuY2Uoc3RlcCwgZGljdCk6CiAgICAgICAgICAgIGlmIHN0ZXAuZ2V0KCJhY3Rpb24iKSA9PSAiZG9uZSIgb3Igc3RlcC5nZXQoInRvb2wiKSA9PSAibm9uZSI6CiAgICAgICAgICAgICAgICBsb2dnZXIuaW5mbygiUGxhbm5lciBkZXRlcm1pbmVkIGdvYWwgaXMgY29tcGxldGUiKQogICAgICAgICAgICAgICAgcmV0dXJuIE5vbmUKICAgICAgICAgICAgcmV0dXJuIHN0ZXAKCiAgICAgICAgcmV0dXJuIE5vbmUKCiAgICBhc3luYyBkZWYgZGVjb21wb3NlX3RvX3Rhc2tzKAogICAgICAgIHNlbGYsCiAgICAgICAgZ29hbDogc3RyLAogICAgICAgIGNvbnRleHQ6IHN0ciA9ICIiLAogICAgKSAtPiBMaXN0W1Rhc2tdOgogICAgICAgICIiIkRlY29tcG9zZSBhIGdvYWwgaW50byBUYXNrIG9iamVjdHMgd2l0aCBhc3NpZ25lZCByb2xlcy4KCiAgICAgICAgSGlnaGVyLWxldmVsIHRoYW4gY3JlYXRlX3BsYW4g4oCUIHByb2R1Y2VzIFRhc2sgb2JqZWN0cyBmb3IKICAgICAgICBtdWx0aS1hZ2VudCBvcmNoZXN0cmF0aW9uLgogICAgICAgICIiIgogICAgICAgIHByb21wdCA9IGYiIiJCcmVhayB0aGlzIGdvYWwgaW50byB0YXNrcyBhbmQgYXNzaWduIGVhY2ggdG8gYSByb2xlLgoKR29hbDoge2dvYWx9CntmIkNvbnRleHQ6IHtjb250ZXh0fSIgaWYgY29udGV4dCBlbHNlICIifQoKUm9sZXM6IGFyY2hpdGVjdCAoZGVzaWduKSwgZGV2ZWxvcGVyIChpbXBsZW1lbnQpLCByZXZpZXdlciAoY2hlY2sgcXVhbGl0eSksIHRlc3RlciAodmVyaWZ5KQoKUmVzcG9uZCB3aXRoIGEgSlNPTiBhcnJheToKWwogIHt7ImRlc2NyaXB0aW9uIjogInRhc2sgZGVzY3JpcHRpb24iLCAicm9sZSI6ICJkZXZlbG9wZXIifX0sCiAgLi4uCl0KIiIiCiAgICAgICAgcmVzcG9uc2UgPSBhd2FpdCBzZWxmLmxsbS5nZW5lcmF0ZSgKICAgICAgICAgICAgcHJvbXB0PXByb21wdCwKICAgICAgICAgICAgbW9kZWw9c2VsZi5jb25maWcucGxhbm5pbmdfbW9kZWwsCiAgICAgICAgICAgIHRlbXBlcmF0dXJlPTAuMywKICAgICAgICApCgogICAgICAgIHBhcnNlZCA9IGV4dHJhY3RfanNvbihyZXNwb25zZSkKICAgICAgICBpZiBub3QgaXNpbnN0YW5jZShwYXJzZWQsIGxpc3QpOgogICAgICAgICAgICAjIEZhbGxiYWNrOiBzaW5nbGUgZGV2ZWxvcGVyIHRhc2sKICAgICAgICAgICAgcmV0dXJuIFtUYXNrKGRlc2NyaXB0aW9uPWdvYWwsIHJvbGU9QWdlbnRSb2xlLkRFVkVMT1BFUildCgogICAgICAgIHJvbGVfbWFwID0gewogICAgICAgICAgICAiYXJjaGl0ZWN0IjogQWdlbnRSb2xlLkFSQ0hJVEVDVCwKICAgICAgICAgICAgImRldmVsb3BlciI6IEFnZW50Um9sZS5ERVZFTE9QRVIsCiAgICAgICAgICAgICJyZXZpZXdlciI6IEFnZW50Um9sZS5SRVZJRVdFUiwKICAgICAgICAgICAgInRlc3RlciI6IEFnZW50Um9sZS5URVNURVIsCiAgICAgICAgICAgICJwbGFubmVyIjogQWdlbnRSb2xlLlBMQU5ORVIsCiAgICAgICAgfQoKICAgICAgICB0YXNrcyA9IFtdCiAgICAgICAgZm9yIGl0ZW0gaW4gcGFyc2VkOgogICAgICAgICAgICBpZiBub3QgaXNpbnN0YW5jZShpdGVtLCBkaWN0KToKICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgIGRlc2MgPSBpdGVtLmdldCgiZGVzY3JpcHRpb24iLCAiIikKICAgICAgICAgICAgaWYgbm90IGRlc2M6CiAgICAgICAgICAgICAgICBjb250aW51ZQogICAgICAgICAgICByb2xlX3N0ciA9IGl0ZW0uZ2V0KCJyb2xlIiwgImRldmVsb3BlciIpLmxvd2VyKCkKICAgICAgICAgICAgdGFza3MuYXBwZW5kKAogICAgICAgICAgICAgICAgVGFzaygKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbj1kZXNjLAogICAgICAgICAgICAgICAgICAgIHJvbGU9cm9sZV9tYXAuZ2V0KHJvbGVfc3RyLCBBZ2VudFJvbGUuREVWRUxPUEVSKSwKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgKQoKICAgICAgICByZXR1cm4gdGFza3MgaWYgdGFza3MgZWxzZSBbVGFzayhkZXNjcmlwdGlvbj1nb2FsLCByb2xlPUFnZW50Um9sZS5ERVZFTE9QRVIpXQo=
+"""LLM-based planning for the Nexus agent.
+
+Replaces the keyword-matching planner with actual LLM reasoning.
+The planner takes a goal and current context, and produces a structured
+list of tasks for the executor.
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Any, Dict, List, Optional
+
+from nexus.agent.llm import OllamaClient, extract_json
+from nexus.agent.models import AgentConfig, AgentRole, Step, Task
+
+logger = logging.getLogger(__name__)
+
+SYSTEM_PROMPT_TEMPLATE = """\
+You are Nexus, an autonomous coding agent that plans and executes software tasks.
+
+You receive a goal and must break it into concrete, actionable steps.
+Each step should be something you can execute with your available tools.
+
+Available tools:
+{tool_descriptions}
+
+Rules:
+1. Break complex goals into small, testable steps
+2. Always verify your work (run code, check output, run tests)
+3. If something fails, diagnose and fix rather than moving on
+4. Prefer simple, working code over clever, complex code
+5. Create tests when building new functionality
+
+Respond with a JSON array of steps. Each step has:
+{{
+  "action": "description of what to do",
+  "tool": "tool_name",
+  "args": {{"arg1": "value1"}},
+  "reasoning": "why this step"
+}}
+"""
+
+# Fallback if no tool descriptions provided
+DEFAULT_TOOL_DESCRIPTIONS = """\
+- shell: Run shell commands (install packages, check files, run builds)
+    command (str): The shell command to execute
+- file_read: Read a file's contents
+    path (str): Path to the file to read
+- file_write: Write content to a file (creates directories if needed)
+    path (str): Path to write to
+    content (str): File content
+- file_list: List files in a directory
+    path (str): Directory path
+- code_run: Execute a Python/JS/etc script and capture output
+    code (str): Code to execute
+    language (str): python, node, or bash
+- test_run: Run pytest/npm test and get results
+    command (str): Test command (e.g. "pytest tests/")
+- search: Search codebase with grep/ripgrep
+    pattern (str): Search pattern
+    path (str): Directory to search
+- git: Git operations (status, diff, add, commit)
+    command (str): Git subcommand (status, diff, add, commit, log)"""
+
+REPLAN_PROMPT = """\
+The previous step had an issue. Based on the execution history below, \
+decide what to do next.
+
+Goal: {goal}
+
+Execution history:
+{history}
+
+Last step result: {last_result}
+Success: {success}
+
+What should the next step be? Respond with a single step as JSON:
+{{
+  "action": "description",
+  "tool": "tool_name",
+  "args": {{}},
+  "reasoning": "why"
+}}
+
+If the goal is complete, respond with:
+{{"action": "done", "tool": "none", "args": {{}}, "reasoning": "goal achieved because..."}}
+"""
+
+
+class Planner:
+    """Plans task execution using LLM reasoning.
+
+    The planner operates in two modes:
+    1. Initial planning: Break a goal into a sequence of steps
+    2. Adaptive replanning: Decide next step based on execution history
+    """
+
+    def __init__(
+        self,
+        llm: OllamaClient,
+        config: Optional[AgentConfig] = None,
+    ):
+        self.llm = llm
+        self.config = config or AgentConfig()
+
+    def _build_system_prompt(self, tool_descriptions: str = "") -> str:
+        """Build the system prompt with dynamic tool descriptions."""
+        tools = tool_descriptions or DEFAULT_TOOL_DESCRIPTIONS
+        return SYSTEM_PROMPT_TEMPLATE.format(tool_descriptions=tools)
+
+    async def create_plan(
+        self,
+        goal: str,
+        context: str = "",
+        workspace_info: str = "",
+        tool_descriptions: str = "",
+    ) -> List[Dict[str, Any]]:
+        """Create an initial execution plan for a goal.
+
+        Args:
+            goal: The high-level goal to accomplish.
+            context: Additional context (file contents, prior work, etc).
+            workspace_info: Description of current workspace state.
+            tool_descriptions: Formatted tool descriptions from the registry.
+
+        Returns:
+            List of step dicts with action, tool, args, reasoning.
+        """
+        prompt = f"Goal: {goal}\n"
+        if workspace_info:
+            prompt += f"\nWorkspace:\n{workspace_info}\n"
+        if context:
+            prompt += f"\nContext:\n{context}\n"
+        prompt += (
+            "\nCreate a step-by-step plan to accomplish this goal. "
+            "Respond with a JSON array of steps."
+        )
+
+        system_prompt = self._build_system_prompt(tool_descriptions)
+
+        response = await self.llm.generate(
+            prompt=prompt,
+            model=self.config.planning_model,
+            system=system_prompt,
+            temperature=0.3,
+        )
+
+        plan = extract_json(response)
+        if isinstance(plan, list):
+            logger.info("Created plan with %d steps", len(plan))
+            return plan
+
+        # If we got a single step dict, wrap it
+        if isinstance(plan, dict):
+            return [plan]
+
+        # Fallback: couldn't parse plan, create a single exploratory step
+        logger.warning("Could not parse plan from LLM response, using fallback")
+        return [
+            {
+                "action": f"Explore and work on: {goal}",
+                "tool": "shell",
+                "args": {"command": "ls -la"},
+                "reasoning": "Starting by exploring the workspace",
+            }
+        ]
+
+    async def next_step(
+        self,
+        goal: str,
+        history: List[Step],
+        last_result: str = "",
+        success: bool = True,
+    ) -> Optional[Dict[str, Any]]:
+        """Decide the next step based on execution history.
+
+        This is called after each step execution to adaptively plan.
+
+        Args:
+            goal: The original goal.
+            history: Execution history (completed steps).
+            last_result: Output from the last executed step.
+            success: Whether the last step succeeded.
+
+        Returns:
+            Next step dict, or None if the goal is complete.
+        """
+        history_str = "\n".join(
+            step.to_context() for step in history[-10:]  # Last 10 steps for context
+        )
+
+        prompt = REPLAN_PROMPT.format(
+            goal=goal,
+            history=history_str,
+            last_result=last_result[:1000],
+            success=success,
+        )
+
+        response = await self.llm.generate(
+            prompt=prompt,
+            model=self.config.planning_model,
+            system=SYSTEM_PROMPT,
+            temperature=0.2,  # Lower temp for more focused replanning
+        )
+
+        step = extract_json(response)
+        if isinstance(step, dict):
+            if step.get("action") == "done" or step.get("tool") == "none":
+                logger.info("Planner determined goal is complete")
+                return None
+            return step
+
+        return None
+
+    async def decompose_to_tasks(
+        self,
+        goal: str,
+        context: str = "",
+    ) -> List[Task]:
+        """Decompose a goal into Task objects with assigned roles.
+
+        Higher-level than create_plan — produces Task objects for
+        multi-agent orchestration.
+        """
+        prompt = f"""Break this goal into tasks and assign each to a role.
+
+Goal: {goal}
+{f"Context: {context}" if context else ""}
+
+Roles: architect (design), developer (implement), reviewer (check quality), tester (verify)
+
+Respond with a JSON array:
+[
+  {{"description": "task description", "role": "developer"}},
+  ...
+]
+"""
+        response = await self.llm.generate(
+            prompt=prompt,
+            model=self.config.planning_model,
+            temperature=0.3,
+        )
+
+        parsed = extract_json(response)
+        if not isinstance(parsed, list):
+            # Fallback: single developer task
+            return [Task(description=goal, role=AgentRole.DEVELOPER)]
+
+        role_map = {
+            "architect": AgentRole.ARCHITECT,
+            "developer": AgentRole.DEVELOPER,
+            "reviewer": AgentRole.REVIEWER,
+            "tester": AgentRole.TESTER,
+            "planner": AgentRole.PLANNER,
+        }
+
+        tasks = []
+        for item in parsed:
+            if not isinstance(item, dict):
+                continue
+            desc = item.get("description", "")
+            if not desc:
+                continue
+            role_str = item.get("role", "developer").lower()
+            tasks.append(
+                Task(
+                    description=desc,
+                    role=role_map.get(role_str, AgentRole.DEVELOPER),
+                )
+            )
+
+        return tasks if tasks else [Task(description=goal, role=AgentRole.DEVELOPER)]

@@ -1,1 +1,9 @@
-IiIiTmV4dXMgTUNQIChNb2RlbCBDb250ZXh0IFByb3RvY29sKSDigJQgZXhwb3NlIHRvb2xzIGFzIGFuIE1DUCBzZXJ2ZXIuCgpUaGlzIGFsbG93cyBleHRlcm5hbCBNQ1AgY2xpZW50cyAoQ2xhdWRlLCBDdXJzb3IsIGV0Yy4pIHRvIGNhbGwKTmV4dXMgdG9vbHMgb3ZlciBzdGRpbi9zdGRvdXQgb3IgSFRUUC4KIiIiCgpmcm9tIG5leHVzLm1jcC5zZXJ2ZXIgaW1wb3J0IE5leHVzTUNQU2VydmVyCgpfX2FsbF9fID0gWyJOZXh1c01DUFNlcnZlciJdCg==
+"""Nexus MCP (Model Context Protocol) — expose tools as an MCP server.
+
+This allows external MCP clients (Claude, Cursor, etc.) to call
+Nexus tools over stdin/stdout or HTTP.
+"""
+
+from nexus.mcp.server import NexusMCPServer
+
+__all__ = ["NexusMCPServer"]

@@ -1,1 +1,30 @@
-RlJPTSBweXRob246My4xMi1zbGltCgojIFN5c3RlbSBkZXBzIGZvciB0b29scyAoZ2l0LCByaXBncmVwLCBub2RlIGZvciBjb2RlX3J1bm5lcikKUlVOIGFwdC1nZXQgdXBkYXRlICYmIGFwdC1nZXQgaW5zdGFsbCAteSAtLW5vLWluc3RhbGwtcmVjb21tZW5kcyBcCiAgICBnaXQgXAogICAgcmlwZ3JlcCBcCiAgICBjdXJsIFwKICAgICYmIHJtIC1yZiAvdmFyL2xpYi9hcHQvbGlzdHMvKgoKIyBPcHRpb25hbDogTm9kZS5qcyBmb3IgY29kZV9ydW5uZXIgdG9vbApSVU4gY3VybCAtZnNTTCBodHRwczovL2RlYi5ub2Rlc291cmNlLmNvbS9zZXR1cF8yMC54IHwgYmFzaCAtIFwKICAgICYmIGFwdC1nZXQgaW5zdGFsbCAteSBub2RlanMgXAogICAgJiYgcm0gLXJmIC92YXIvbGliL2FwdC9saXN0cy8qCgpXT1JLRElSIC9hcHAKCiMgSW5zdGFsbCBOZXh1cwpDT1BZIHB5cHJvamVjdC50b21sIFJFQURNRS5tZCAuLwpDT1BZIHNyYy8gc3JjLwpSVU4gcGlwIGluc3RhbGwgLS1uby1jYWNoZS1kaXIgLWUgIi5bYWxsXSIgMj4vZGV2L251bGwgfHwgcGlwIGluc3RhbGwgLS1uby1jYWNoZS1kaXIgLWUgLgoKIyBEZWZhdWx0IHdvcmtzcGFjZQpSVU4gbWtkaXIgLXAgL3dvcmtzcGFjZQpXT1JLRElSIC93b3Jrc3BhY2UKCiMgT2xsYW1hIFVSTCBkZWZhdWx0IChob3N0IG5ldHdvcmsgbW9kZSBleHBlY3RlZCkKRU5WIE5FWFVTX09MTEFNQV9VUkw9aHR0cDovL2xvY2FsaG9zdDoxMTQzNAoKRU5UUllQT0lOVCBbIm5leHVzIl0KQ01EIFsiLS1oZWxwIl0K
+FROM python:3.12-slim
+
+# System deps for tools (git, ripgrep, node for code_runner)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    ripgrep \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Optional: Node.js for code_runner tool
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Install Nexus
+COPY pyproject.toml README.md ./
+COPY src/ src/
+RUN pip install --no-cache-dir -e ".[all]" 2>/dev/null || pip install --no-cache-dir -e .
+
+# Default workspace
+RUN mkdir -p /workspace
+WORKDIR /workspace
+
+# Ollama URL default (host network mode expected)
+ENV NEXUS_OLLAMA_URL=http://localhost:11434
+
+ENTRYPOINT ["nexus"]
+CMD ["--help"]

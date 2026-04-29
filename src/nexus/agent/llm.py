@@ -1,1 +1,266 @@
-IiIiTExNIGNsaWVudCBmb3IgT2xsYW1hIGludGVyYWN0aW9uLiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGpzb24KaW1wb3J0IGxvZ2dpbmcKaW1wb3J0IHRpbWUKZnJvbSB0eXBpbmcgaW1wb3J0IEFueSwgQXN5bmNJdGVyYXRvciwgRGljdCwgTGlzdCwgT3B0aW9uYWwKCmltcG9ydCBhaW9odHRwCgpmcm9tIG5leHVzLmFnZW50Lm1vZGVscyBpbXBvcnQgQWdlbnRDb25maWcKCmxvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKF9fbmFtZV9fKQoKCmNsYXNzIE9sbGFtYUNsaWVudDoKICAgICIiIkFzeW5jIGNsaWVudCBmb3IgT2xsYW1hIEFQSS4KCiAgICBXcmFwcyBPbGxhbWEncyBSRVNUIEFQSSB3aXRoIHJldHJ5IGxvZ2ljLCBzdHJlYW1pbmcgc3VwcG9ydCwKICAgIGFuZCBzdHJ1Y3R1cmVkIEpTT04gZXh0cmFjdGlvbiBmcm9tIHJlc3BvbnNlcy4KICAgICIiIgoKICAgIGRlZiBfX2luaXRfXyhzZWxmLCBjb25maWc6IE9wdGlvbmFsW0FnZW50Q29uZmlnXSA9IE5vbmUpOgogICAgICAgIHNlbGYuY29uZmlnID0gY29uZmlnIG9yIEFnZW50Q29uZmlnKCkKICAgICAgICBzZWxmLmJhc2VfdXJsID0gc2VsZi5jb25maWcub2xsYW1hX3VybAogICAgICAgIHNlbGYuX3Nlc3Npb246IE9wdGlvbmFsW2Fpb2h0dHAuQ2xpZW50U2Vzc2lvbl0gPSBOb25lCgogICAgYXN5bmMgZGVmIF9nZXRfc2Vzc2lvbihzZWxmKSAtPiBhaW9odHRwLkNsaWVudFNlc3Npb246CiAgICAgICAgaWYgc2VsZi5fc2Vzc2lvbiBpcyBOb25lIG9yIHNlbGYuX3Nlc3Npb24uY2xvc2VkOgogICAgICAgICAgICB0aW1lb3V0ID0gYWlvaHR0cC5DbGllbnRUaW1lb3V0KHRvdGFsPXNlbGYuY29uZmlnLmxsbV90aW1lb3V0KQogICAgICAgICAgICBzZWxmLl9zZXNzaW9uID0gYWlvaHR0cC5DbGllbnRTZXNzaW9uKHRpbWVvdXQ9dGltZW91dCkKICAgICAgICByZXR1cm4gc2VsZi5fc2Vzc2lvbgoKICAgIGFzeW5jIGRlZiBjbG9zZShzZWxmKSAtPiBOb25lOgogICAgICAgIGlmIHNlbGYuX3Nlc3Npb24gYW5kIG5vdCBzZWxmLl9zZXNzaW9uLmNsb3NlZDoKICAgICAgICAgICAgYXdhaXQgc2VsZi5fc2Vzc2lvbi5jbG9zZSgpCgogICAgYXN5bmMgZGVmIGdlbmVyYXRlKAogICAgICAgIHNlbGYsCiAgICAgICAgcHJvbXB0OiBzdHIsCiAgICAgICAgbW9kZWw6IE9wdGlvbmFsW3N0cl0gPSBOb25lLAogICAgICAgIHN5c3RlbTogT3B0aW9uYWxbc3RyXSA9IE5vbmUsCiAgICAgICAgdGVtcGVyYXR1cmU6IE9wdGlvbmFsW2Zsb2F0XSA9IE5vbmUsCiAgICAgICAgbWF4X3Rva2VuczogT3B0aW9uYWxbaW50XSA9IE5vbmUsCiAgICApIC0+IHN0cjoKICAgICAgICAiIiJHZW5lcmF0ZSBhIGNvbXBsZXRpb24gZnJvbSBPbGxhbWEuCgogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIHByb21wdDogVGhlIHVzZXIgcHJvbXB0LgogICAgICAgICAgICBtb2RlbDogTW9kZWwgbmFtZSAoZGVmYXVsdHMgdG8gY29kaW5nX21vZGVsIGZyb20gY29uZmlnKS4KICAgICAgICAgICAgc3lzdGVtOiBPcHRpb25hbCBzeXN0ZW0gcHJvbXB0LgogICAgICAgICAgICB0ZW1wZXJhdHVyZTogU2FtcGxpbmcgdGVtcGVyYXR1cmUgb3ZlcnJpZGUuCiAgICAgICAgICAgIG1heF90b2tlbnM6IE1heCB0b2tlbnMgb3ZlcnJpZGUuCgogICAgICAgIFJldHVybnM6CiAgICAgICAgICAgIFRoZSBnZW5lcmF0ZWQgdGV4dCByZXNwb25zZS4KICAgICAgICAiIiIKICAgICAgICBtb2RlbCA9IG1vZGVsIG9yIHNlbGYuY29uZmlnLmNvZGluZ19tb2RlbAogICAgICAgIHRlbXBlcmF0dXJlID0gdGVtcGVyYXR1cmUgaWYgdGVtcGVyYXR1cmUgaXMgbm90IE5vbmUgZWxzZSBzZWxmLmNvbmZpZy50ZW1wZXJhdHVyZQogICAgICAgIG1heF90b2tlbnMgPSBtYXhfdG9rZW5zIG9yIHNlbGYuY29uZmlnLm1heF90b2tlbnMKCiAgICAgICAgcGF5bG9hZDogRGljdFtzdHIsIEFueV0gPSB7CiAgICAgICAgICAgICJtb2RlbCI6IG1vZGVsLAogICAgICAgICAgICAicHJvbXB0IjogcHJvbXB0LAogICAgICAgICAgICAic3RyZWFtIjogRmFsc2UsCiAgICAgICAgICAgICJvcHRpb25zIjogewogICAgICAgICAgICAgICAgInRlbXBlcmF0dXJlIjogdGVtcGVyYXR1cmUsCiAgICAgICAgICAgICAgICAibnVtX3ByZWRpY3QiOiBtYXhfdG9rZW5zLAogICAgICAgICAgICB9LAogICAgICAgIH0KICAgICAgICBpZiBzeXN0ZW06CiAgICAgICAgICAgIHBheWxvYWRbInN5c3RlbSJdID0gc3lzdGVtCgogICAgICAgIHNlc3Npb24gPSBhd2FpdCBzZWxmLl9nZXRfc2Vzc2lvbigpCiAgICAgICAgdXJsID0gZiJ7c2VsZi5iYXNlX3VybH0vYXBpL2dlbmVyYXRlIgoKICAgICAgICBmb3IgYXR0ZW1wdCBpbiByYW5nZShzZWxmLmNvbmZpZy5tYXhfcmV0cmllcyk6CiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIGFzeW5jIHdpdGggc2Vzc2lvbi5wb3N0KHVybCwganNvbj1wYXlsb2FkKSBhcyByZXNwOgogICAgICAgICAgICAgICAgICAgIGlmIHJlc3Auc3RhdHVzICE9IDIwMDoKICAgICAgICAgICAgICAgICAgICAgICAgYm9keSA9IGF3YWl0IHJlc3AudGV4dCgpCiAgICAgICAgICAgICAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIk9sbGFtYSByZXR1cm5lZCAlcyBvbiBhdHRlbXB0ICVkOiAlcyIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXNwLnN0YXR1cywgYXR0ZW1wdCArIDEsIGJvZHlbOjIwMF0sCiAgICAgICAgICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgICAgICAgICAgaWYgYXR0ZW1wdCA8IHNlbGYuY29uZmlnLm1heF9yZXRyaWVzIC0gMToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgICAgICAgICAgICAgIHJhaXNlIE9sbGFtYUVycm9yKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZiJPbGxhbWEgcmV0dXJuZWQge3Jlc3Auc3RhdHVzfToge2JvZHlbOjIwMF19IgogICAgICAgICAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICAgICAgZGF0YSA9IGF3YWl0IHJlc3AuanNvbigpCiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIGRhdGEuZ2V0KCJyZXNwb25zZSIsICIiKQogICAgICAgICAgICBleGNlcHQgYWlvaHR0cC5DbGllbnRFcnJvciBhcyBleGM6CiAgICAgICAgICAgICAgICBsb2dnZXIud2FybmluZygKICAgICAgICAgICAgICAgICAgICAiT2xsYW1hIGNvbm5lY3Rpb24gZXJyb3Igb24gYXR0ZW1wdCAlZDogJXMiLAogICAgICAgICAgICAgICAgICAgIGF0dGVtcHQgKyAxLCBleGMsCiAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICBpZiBhdHRlbXB0IDwgc2VsZi5jb25maWcubWF4X3JldHJpZXMgLSAxOgogICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgICAgICByYWlzZSBPbGxhbWFFcnJvcihmIkZhaWxlZCB0byBjb25uZWN0IHRvIE9sbGFtYToge2V4Y30iKSBmcm9tIGV4YwoKICAgICAgICByZXR1cm4gIiIgICMgdW5yZWFjaGFibGUgYnV0IHNhdGlzZmllcyB0eXBlIGNoZWNrZXIKCiAgICBhc3luYyBkZWYgY2hhdCgKICAgICAgICBzZWxmLAogICAgICAgIG1lc3NhZ2VzOiBMaXN0W0RpY3Rbc3RyLCBzdHJdXSwKICAgICAgICBtb2RlbDogT3B0aW9uYWxbc3RyXSA9IE5vbmUsCiAgICAgICAgdGVtcGVyYXR1cmU6IE9wdGlvbmFsW2Zsb2F0XSA9IE5vbmUsCiAgICApIC0+IHN0cjoKICAgICAgICAiIiJDaGF0IGNvbXBsZXRpb24gd2l0aCBtZXNzYWdlIGhpc3RvcnkuCgogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIG1lc3NhZ2VzOiBMaXN0IG9mIHtyb2xlLCBjb250ZW50fSBtZXNzYWdlIGRpY3RzLgogICAgICAgICAgICBtb2RlbDogTW9kZWwgbmFtZSBvdmVycmlkZS4KICAgICAgICAgICAgdGVtcGVyYXR1cmU6IFRlbXBlcmF0dXJlIG92ZXJyaWRlLgoKICAgICAgICBSZXR1cm5zOgogICAgICAgICAgICBUaGUgYXNzaXN0YW50J3MgcmVzcG9uc2UgdGV4dC4KICAgICAgICAiIiIKICAgICAgICBtb2RlbCA9IG1vZGVsIG9yIHNlbGYuY29uZmlnLmNvZGluZ19tb2RlbAogICAgICAgIHRlbXBlcmF0dXJlID0gdGVtcGVyYXR1cmUgaWYgdGVtcGVyYXR1cmUgaXMgbm90IE5vbmUgZWxzZSBzZWxmLmNvbmZpZy50ZW1wZXJhdHVyZQoKICAgICAgICBwYXlsb2FkID0gewogICAgICAgICAgICAibW9kZWwiOiBtb2RlbCwKICAgICAgICAgICAgIm1lc3NhZ2VzIjogbWVzc2FnZXMsCiAgICAgICAgICAgICJzdHJlYW0iOiBGYWxzZSwKICAgICAgICAgICAgIm9wdGlvbnMiOiB7CiAgICAgICAgICAgICAgICAidGVtcGVyYXR1cmUiOiB0ZW1wZXJhdHVyZSwKICAgICAgICAgICAgfSwKICAgICAgICB9CgogICAgICAgIHNlc3Npb24gPSBhd2FpdCBzZWxmLl9nZXRfc2Vzc2lvbigpCiAgICAgICAgdXJsID0gZiJ7c2VsZi5iYXNlX3VybH0vYXBpL2NoYXQiCgogICAgICAgIGZvciBhdHRlbXB0IGluIHJhbmdlKHNlbGYuY29uZmlnLm1heF9yZXRyaWVzKToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgYXN5bmMgd2l0aCBzZXNzaW9uLnBvc3QodXJsLCBqc29uPXBheWxvYWQpIGFzIHJlc3A6CiAgICAgICAgICAgICAgICAgICAgaWYgcmVzcC5zdGF0dXMgIT0gMjAwOgogICAgICAgICAgICAgICAgICAgICAgICBib2R5ID0gYXdhaXQgcmVzcC50ZXh0KCkKICAgICAgICAgICAgICAgICAgICAgICAgaWYgYXR0ZW1wdCA8IHNlbGYuY29uZmlnLm1heF9yZXRyaWVzIC0gMToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgICAgICAgICAgICAgICAgIHJhaXNlIE9sbGFtYUVycm9yKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgZiJPbGxhbWEgY2hhdCByZXR1cm5lZCB7cmVzcC5zdGF0dXN9OiB7Ym9keVs6MjAwXX0iCiAgICAgICAgICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgICAgICBkYXRhID0gYXdhaXQgcmVzcC5qc29uKCkKICAgICAgICAgICAgICAgICAgICByZXR1cm4gZGF0YS5nZXQoIm1lc3NhZ2UiLCB7fSkuZ2V0KCJjb250ZW50IiwgIiIpCiAgICAgICAgICAgIGV4Y2VwdCBhaW9odHRwLkNsaWVudEVycm9yIGFzIGV4YzoKICAgICAgICAgICAgICAgIGlmIGF0dGVtcHQgPCBzZWxmLmNvbmZpZy5tYXhfcmV0cmllcyAtIDE6CiAgICAgICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgICAgIHJhaXNlIE9sbGFtYUVycm9yKGYiRmFpbGVkIHRvIGNvbm5lY3QgdG8gT2xsYW1hOiB7ZXhjfSIpIGZyb20gZXhjCgogICAgICAgIHJldHVybiAiIgoKICAgIGFzeW5jIGRlZiBzdHJlYW1fZ2VuZXJhdGUoCiAgICAgICAgc2VsZiwKICAgICAgICBwcm9tcHQ6IHN0ciwKICAgICAgICBtb2RlbDogT3B0aW9uYWxbc3RyXSA9IE5vbmUsCiAgICAgICAgc3lzdGVtOiBPcHRpb25hbFtzdHJdID0gTm9uZSwKICAgICkgLT4gQXN5bmNJdGVyYXRvcltzdHJdOgogICAgICAgICIiIlN0cmVhbSBhIGdlbmVyYXRpb24gdG9rZW4gYnkgdG9rZW4uCgogICAgICAgIFlpZWxkcyBpbmRpdmlkdWFsIHRva2VucyBhcyB0aGV5IGFycml2ZSBmcm9tIE9sbGFtYS4KICAgICAgICAiIiIKICAgICAgICBtb2RlbCA9IG1vZGVsIG9yIHNlbGYuY29uZmlnLmNvZGluZ19tb2RlbAoKICAgICAgICBwYXlsb2FkOiBEaWN0W3N0ciwgQW55XSA9IHsKICAgICAgICAgICAgIm1vZGVsIjogbW9kZWwsCiAgICAgICAgICAgICJwcm9tcHQiOiBwcm9tcHQsCiAgICAgICAgICAgICJzdHJlYW0iOiBUcnVlLAogICAgICAgICAgICAib3B0aW9ucyI6IHsKICAgICAgICAgICAgICAgICJ0ZW1wZXJhdHVyZSI6IHNlbGYuY29uZmlnLnRlbXBlcmF0dXJlLAogICAgICAgICAgICB9LAogICAgICAgIH0KICAgICAgICBpZiBzeXN0ZW06CiAgICAgICAgICAgIHBheWxvYWRbInN5c3RlbSJdID0gc3lzdGVtCgogICAgICAgIHNlc3Npb24gPSBhd2FpdCBzZWxmLl9nZXRfc2Vzc2lvbigpCiAgICAgICAgdXJsID0gZiJ7c2VsZi5iYXNlX3VybH0vYXBpL2dlbmVyYXRlIgoKICAgICAgICBhc3luYyB3aXRoIHNlc3Npb24ucG9zdCh1cmwsIGpzb249cGF5bG9hZCkgYXMgcmVzcDoKICAgICAgICAgICAgYXN5bmMgZm9yIGxpbmUgaW4gcmVzcC5jb250ZW50OgogICAgICAgICAgICAgICAgaWYgbm90IGxpbmU6CiAgICAgICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICBkYXRhID0ganNvbi5sb2FkcyhsaW5lKQogICAgICAgICAgICAgICAgICAgIHRva2VuID0gZGF0YS5nZXQoInJlc3BvbnNlIiwgIiIpCiAgICAgICAgICAgICAgICAgICAgaWYgdG9rZW46CiAgICAgICAgICAgICAgICAgICAgICAgIHlpZWxkIHRva2VuCiAgICAgICAgICAgICAgICAgICAgaWYgZGF0YS5nZXQoImRvbmUiLCBGYWxzZSk6CiAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICBleGNlcHQganNvbi5KU09ORGVjb2RlRXJyb3I6CiAgICAgICAgICAgICAgICAgICAgY29udGludWUKCiAgICBhc3luYyBkZWYgbGlzdF9tb2RlbHMoc2VsZikgLT4gTGlzdFtEaWN0W3N0ciwgQW55XV06CiAgICAgICAgIiIiTGlzdCBsb2NhbGx5IGF2YWlsYWJsZSBPbGxhbWEgbW9kZWxzLiIiIgogICAgICAgIHNlc3Npb24gPSBhd2FpdCBzZWxmLl9nZXRfc2Vzc2lvbigpCiAgICAgICAgdHJ5OgogICAgICAgICAgICBhc3luYyB3aXRoIHNlc3Npb24uZ2V0KGYie3NlbGYuYmFzZV91cmx9L2FwaS90YWdzIikgYXMgcmVzcDoKICAgICAgICAgICAgICAgIGlmIHJlc3Auc3RhdHVzID09IDIwMDoKICAgICAgICAgICAgICAgICAgICBkYXRhID0gYXdhaXQgcmVzcC5qc29uKCkKICAgICAgICAgICAgICAgICAgICByZXR1cm4gZGF0YS5nZXQoIm1vZGVscyIsIFtdKQogICAgICAgIGV4Y2VwdCBhaW9odHRwLkNsaWVudEVycm9yOgogICAgICAgICAgICBwYXNzCiAgICAgICAgcmV0dXJuIFtdCgogICAgYXN5bmMgZGVmIGlzX2F2YWlsYWJsZShzZWxmKSAtPiBib29sOgogICAgICAgICIiIkNoZWNrIGlmIE9sbGFtYSBpcyBydW5uaW5nIGFuZCByZXNwb25zaXZlLiIiIgogICAgICAgIHRyeToKICAgICAgICAgICAgc2Vzc2lvbiA9IGF3YWl0IHNlbGYuX2dldF9zZXNzaW9uKCkKICAgICAgICAgICAgYXN5bmMgd2l0aCBzZXNzaW9uLmdldChzZWxmLmJhc2VfdXJsKSBhcyByZXNwOgogICAgICAgICAgICAgICAgcmV0dXJuIHJlc3Auc3RhdHVzID09IDIwMAogICAgICAgIGV4Y2VwdCAoYWlvaHR0cC5DbGllbnRFcnJvciwgRXhjZXB0aW9uKToKICAgICAgICAgICAgcmV0dXJuIEZhbHNlCgoKZGVmIGV4dHJhY3RfanNvbih0ZXh0OiBzdHIpIC0+IE9wdGlvbmFsW0FueV06CiAgICAiIiJFeHRyYWN0IEpTT04gZnJvbSBMTE0gb3V0cHV0IHRoYXQgbWF5IGNvbnRhaW4gbWFya2Rvd24gb3IgZXhwbGFuYXRpb24uCgogICAgSGFuZGxlcyBjb21tb24gcGF0dGVybnM6CiAgICAtIGBgYGpzb24gLi4uIGBgYAogICAgLSBSYXcgSlNPTiBvYmplY3RzL2FycmF5cwogICAgLSBKU09OIGVtYmVkZGVkIGluIGV4cGxhbmF0aW9uIHRleHQKICAgICIiIgogICAgIyBUcnkgZGlyZWN0IHBhcnNlIGZpcnN0CiAgICB0ZXh0ID0gdGV4dC5zdHJpcCgpCiAgICB0cnk6CiAgICAgICAgcmV0dXJuIGpzb24ubG9hZHModGV4dCkKICAgIGV4Y2VwdCBqc29uLkpTT05EZWNvZGVFcnJvcjoKICAgICAgICBwYXNzCgogICAgIyBUcnkgZXh0cmFjdGluZyBmcm9tIG1hcmtkb3duIGNvZGUgYmxvY2tzCiAgICBmb3IgbWFya2VyIGluICgiYGBganNvbiIsICJgYGAiKToKICAgICAgICBpZiBtYXJrZXIgaW4gdGV4dDoKICAgICAgICAgICAgc3RhcnQgPSB0ZXh0LmZpbmQobWFya2VyKSArIGxlbihtYXJrZXIpCiAgICAgICAgICAgIGVuZCA9IHRleHQuZmluZCgiYGBgIiwgc3RhcnQpCiAgICAgICAgICAgIGlmIGVuZCA+IHN0YXJ0OgogICAgICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgICAgIHJldHVybiBqc29uLmxvYWRzKHRleHRbc3RhcnQ6ZW5kXS5zdHJpcCgpKQogICAgICAgICAgICAgICAgZXhjZXB0IGpzb24uSlNPTkRlY29kZUVycm9yOgogICAgICAgICAgICAgICAgICAgIHBhc3MKCiAgICAjIFRyeSBmaW5kaW5nIEpTT04gb2JqZWN0CiAgICBmb3Igb3Blbl9jaGFyLCBjbG9zZV9jaGFyIGluIFsoInsiLCAifSIpLCAoIlsiLCAiXSIpXToKICAgICAgICBzdGFydCA9IHRleHQuZmluZChvcGVuX2NoYXIpCiAgICAgICAgaWYgc3RhcnQgPT0gLTE6CiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgIyBGaW5kIG1hdGNoaW5nIGNsb3NlIGJyYWNrZXQgKGhhbmRsZSBuZXN0aW5nKQogICAgICAgIGRlcHRoID0gMAogICAgICAgIGZvciBpIGluIHJhbmdlKHN0YXJ0LCBsZW4odGV4dCkpOgogICAgICAgICAgICBpZiB0ZXh0W2ldID09IG9wZW5fY2hhcjoKICAgICAgICAgICAgICAgIGRlcHRoICs9IDEKICAgICAgICAgICAgZWxpZiB0ZXh0W2ldID09IGNsb3NlX2NoYXI6CiAgICAgICAgICAgICAgICBkZXB0aCAtPSAxCiAgICAgICAgICAgICAgICBpZiBkZXB0aCA9PSAwOgogICAgICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIGpzb24ubG9hZHModGV4dFtzdGFydDppICsgMV0pCiAgICAgICAgICAgICAgICAgICAgZXhjZXB0IGpzb24uSlNPTkRlY29kZUVycm9yOgogICAgICAgICAgICAgICAgICAgICAgICBicmVhawoKICAgIHJldHVybiBOb25lCgoKY2xhc3MgT2xsYW1hRXJyb3IoRXhjZXB0aW9uKToKICAgICIiIlJhaXNlZCB3aGVuIE9sbGFtYSBjb21tdW5pY2F0aW9uIGZhaWxzLiIiIgogICAgcGFzcwo=
+"""LLM client for Ollama interaction."""
+
+from __future__ import annotations
+
+import json
+import logging
+import time
+from typing import Any, AsyncIterator, Dict, List, Optional
+
+import aiohttp
+
+from nexus.agent.models import AgentConfig
+
+logger = logging.getLogger(__name__)
+
+
+class OllamaClient:
+    """Async client for Ollama API.
+
+    Wraps Ollama's REST API with retry logic, streaming support,
+    and structured JSON extraction from responses.
+    """
+
+    def __init__(self, config: Optional[AgentConfig] = None):
+        self.config = config or AgentConfig()
+        self.base_url = self.config.ollama_url
+        self._session: Optional[aiohttp.ClientSession] = None
+
+    async def _get_session(self) -> aiohttp.ClientSession:
+        if self._session is None or self._session.closed:
+            timeout = aiohttp.ClientTimeout(total=self.config.llm_timeout)
+            self._session = aiohttp.ClientSession(timeout=timeout)
+        return self._session
+
+    async def close(self) -> None:
+        if self._session and not self._session.closed:
+            await self._session.close()
+
+    async def generate(
+        self,
+        prompt: str,
+        model: Optional[str] = None,
+        system: Optional[str] = None,
+        temperature: Optional[float] = None,
+        max_tokens: Optional[int] = None,
+    ) -> str:
+        """Generate a completion from Ollama.
+
+        Args:
+            prompt: The user prompt.
+            model: Model name (defaults to coding_model from config).
+            system: Optional system prompt.
+            temperature: Sampling temperature override.
+            max_tokens: Max tokens override.
+
+        Returns:
+            The generated text response.
+        """
+        model = model or self.config.coding_model
+        temperature = temperature if temperature is not None else self.config.temperature
+        max_tokens = max_tokens or self.config.max_tokens
+
+        payload: Dict[str, Any] = {
+            "model": model,
+            "prompt": prompt,
+            "stream": False,
+            "options": {
+                "temperature": temperature,
+                "num_predict": max_tokens,
+            },
+        }
+        if system:
+            payload["system"] = system
+
+        session = await self._get_session()
+        url = f"{self.base_url}/api/generate"
+
+        for attempt in range(self.config.max_retries):
+            try:
+                async with session.post(url, json=payload) as resp:
+                    if resp.status != 200:
+                        body = await resp.text()
+                        logger.warning(
+                            "Ollama returned %s on attempt %d: %s",
+                            resp.status, attempt + 1, body[:200],
+                        )
+                        if attempt < self.config.max_retries - 1:
+                            continue
+                        raise OllamaError(
+                            f"Ollama returned {resp.status}: {body[:200]}"
+                        )
+                    data = await resp.json()
+                    return data.get("response", "")
+            except aiohttp.ClientError as exc:
+                logger.warning(
+                    "Ollama connection error on attempt %d: %s",
+                    attempt + 1, exc,
+                )
+                if attempt < self.config.max_retries - 1:
+                    continue
+                raise OllamaError(f"Failed to connect to Ollama: {exc}") from exc
+
+        return ""  # unreachable but satisfies type checker
+
+    async def chat(
+        self,
+        messages: List[Dict[str, str]],
+        model: Optional[str] = None,
+        temperature: Optional[float] = None,
+    ) -> str:
+        """Chat completion with message history.
+
+        Args:
+            messages: List of {role, content} message dicts.
+            model: Model name override.
+            temperature: Temperature override.
+
+        Returns:
+            The assistant's response text.
+        """
+        model = model or self.config.coding_model
+        temperature = temperature if temperature is not None else self.config.temperature
+
+        payload = {
+            "model": model,
+            "messages": messages,
+            "stream": False,
+            "options": {
+                "temperature": temperature,
+            },
+        }
+
+        session = await self._get_session()
+        url = f"{self.base_url}/api/chat"
+
+        for attempt in range(self.config.max_retries):
+            try:
+                async with session.post(url, json=payload) as resp:
+                    if resp.status != 200:
+                        body = await resp.text()
+                        if attempt < self.config.max_retries - 1:
+                            continue
+                        raise OllamaError(
+                            f"Ollama chat returned {resp.status}: {body[:200]}"
+                        )
+                    data = await resp.json()
+                    return data.get("message", {}).get("content", "")
+            except aiohttp.ClientError as exc:
+                if attempt < self.config.max_retries - 1:
+                    continue
+                raise OllamaError(f"Failed to connect to Ollama: {exc}") from exc
+
+        return ""
+
+    async def stream_generate(
+        self,
+        prompt: str,
+        model: Optional[str] = None,
+        system: Optional[str] = None,
+    ) -> AsyncIterator[str]:
+        """Stream a generation token by token.
+
+        Yields individual tokens as they arrive from Ollama.
+        """
+        model = model or self.config.coding_model
+
+        payload: Dict[str, Any] = {
+            "model": model,
+            "prompt": prompt,
+            "stream": True,
+            "options": {
+                "temperature": self.config.temperature,
+            },
+        }
+        if system:
+            payload["system"] = system
+
+        session = await self._get_session()
+        url = f"{self.base_url}/api/generate"
+
+        async with session.post(url, json=payload) as resp:
+            async for line in resp.content:
+                if not line:
+                    continue
+                try:
+                    data = json.loads(line)
+                    token = data.get("response", "")
+                    if token:
+                        yield token
+                    if data.get("done", False):
+                        break
+                except json.JSONDecodeError:
+                    continue
+
+    async def list_models(self) -> List[Dict[str, Any]]:
+        """List locally available Ollama models."""
+        session = await self._get_session()
+        try:
+            async with session.get(f"{self.base_url}/api/tags") as resp:
+                if resp.status == 200:
+                    data = await resp.json()
+                    return data.get("models", [])
+        except aiohttp.ClientError:
+            pass
+        return []
+
+    async def is_available(self) -> bool:
+        """Check if Ollama is running and responsive."""
+        try:
+            session = await self._get_session()
+            async with session.get(self.base_url) as resp:
+                return resp.status == 200
+        except (aiohttp.ClientError, Exception):
+            return False
+
+
+def extract_json(text: str) -> Optional[Any]:
+    """Extract JSON from LLM output that may contain markdown or explanation.
+
+    Handles common patterns:
+    - ```json ... ```
+    - Raw JSON objects/arrays
+    - JSON embedded in explanation text
+    """
+    # Try direct parse first
+    text = text.strip()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    # Try extracting from markdown code blocks
+    for marker in ("```json", "```"):
+        if marker in text:
+            start = text.find(marker) + len(marker)
+            end = text.find("```", start)
+            if end > start:
+                try:
+                    return json.loads(text[start:end].strip())
+                except json.JSONDecodeError:
+                    pass
+
+    # Try finding JSON object
+    for open_char, close_char in [("{", "}"), ("[", "]")]:
+        start = text.find(open_char)
+        if start == -1:
+            continue
+        # Find matching close bracket (handle nesting)
+        depth = 0
+        for i in range(start, len(text)):
+            if text[i] == open_char:
+                depth += 1
+            elif text[i] == close_char:
+                depth -= 1
+                if depth == 0:
+                    try:
+                        return json.loads(text[start:i + 1])
+                    except json.JSONDecodeError:
+                        break
+
+    return None
+
+
+class OllamaError(Exception):
+    """Raised when Ollama communication fails."""
+    pass

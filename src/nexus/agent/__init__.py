@@ -1,1 +1,23 @@
-IiIiTmV4dXMgQWdlbnQgQ29yZSAtIHRoZSBhdXRvbm9tb3VzIGNvZGluZyBhZ2VudCBicmFpbi4iIiIKCmZyb20gbmV4dXMuYWdlbnQubW9kZWxzIGltcG9ydCAoCiAgICBBZ2VudFN0YXRlLAogICAgQWdlbnRSb2xlLAogICAgVGFza1N0YXR1cywKICAgIFF1YWxpdHlMZXZlbCwKICAgIFRhc2ssCiAgICBTdGVwLAogICAgQWdlbnRDb25maWcsCikKZnJvbSBuZXh1cy5hZ2VudC5sb29wIGltcG9ydCBBZ2VudExvb3AKCl9fYWxsX18gPSBbCiAgICAiQWdlbnRMb29wIiwKICAgICJBZ2VudFN0YXRlIiwKICAgICJBZ2VudFJvbGUiLAogICAgIlRhc2tTdGF0dXMiLAogICAgIlF1YWxpdHlMZXZlbCIsCiAgICAiVGFzayIsCiAgICAiU3RlcCIsCiAgICAiQWdlbnRDb25maWciLApdCg==
+"""Nexus Agent Core - the autonomous coding agent brain."""
+
+from nexus.agent.models import (
+    AgentState,
+    AgentRole,
+    TaskStatus,
+    QualityLevel,
+    Task,
+    Step,
+    AgentConfig,
+)
+from nexus.agent.loop import AgentLoop
+
+__all__ = [
+    "AgentLoop",
+    "AgentState",
+    "AgentRole",
+    "TaskStatus",
+    "QualityLevel",
+    "Task",
+    "Step",
+    "AgentConfig",
+]

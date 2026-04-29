@@ -1,1 +1,27 @@
-IiIiTmV4dXMgR2F0ZXdheSDigJQgTExNIHByb3h5LCBSQUcgbWlkZGxld2FyZSwgYW5kIHRvb2wgZW11bGF0aW9uLiIiIgoKIyBMYXp5IGltcG9ydHMgdG8gYXZvaWQgaGFyZCBkZXBlbmRlbmN5IG9uIGNocm9tYWRiCnRyeToKICAgIGZyb20gLnJhZ19taWRkbGV3YXJlIGltcG9ydCAoCiAgICAgICAgUkFHTWlkZGxld2FyZSwKICAgICAgICBEeW5hbWljUkFHLAogICAgICAgIFJldHJpZXZlZENvbnRleHQsCiAgICAgICAgZ2V0X3JhZ19taWRkbGV3YXJlLAogICAgKQpleGNlcHQgSW1wb3J0RXJyb3I6CiAgICBSQUdNaWRkbGV3YXJlID0gTm9uZSAgIyB0eXBlOiBpZ25vcmVbYXNzaWdubWVudCxtaXNjXQogICAgRHluYW1pY1JBRyA9IE5vbmUgICMgdHlwZTogaWdub3JlW2Fzc2lnbm1lbnQsbWlzY10KICAgIFJldHJpZXZlZENvbnRleHQgPSBOb25lICAjIHR5cGU6IGlnbm9yZVthc3NpZ25tZW50LG1pc2NdCiAgICBnZXRfcmFnX21pZGRsZXdhcmUgPSBOb25lICAjIHR5cGU6IGlnbm9yZVthc3NpZ25tZW50LG1pc2NdCgpmcm9tIC5jbGllbnQgaW1wb3J0IEdhdGV3YXlDbGllbnQKZnJvbSAudG9vbF9lbXVsYXRvciBpbXBvcnQgVG9vbEVtdWxhdG9yCgpfX2FsbF9fID0gWwogICAgIkdhdGV3YXlDbGllbnQiLAogICAgIlRvb2xFbXVsYXRvciIsCiAgICAiUkFHTWlkZGxld2FyZSIsCiAgICAiRHluYW1pY1JBRyIsCiAgICAiUmV0cmlldmVkQ29udGV4dCIsCiAgICAiZ2V0X3JhZ19taWRkbGV3YXJlIiwKXQo=
+"""Nexus Gateway — LLM proxy, RAG middleware, and tool emulation."""
+
+# Lazy imports to avoid hard dependency on chromadb
+try:
+    from .rag_middleware import (
+        RAGMiddleware,
+        DynamicRAG,
+        RetrievedContext,
+        get_rag_middleware,
+    )
+except ImportError:
+    RAGMiddleware = None  # type: ignore[assignment,misc]
+    DynamicRAG = None  # type: ignore[assignment,misc]
+    RetrievedContext = None  # type: ignore[assignment,misc]
+    get_rag_middleware = None  # type: ignore[assignment,misc]
+
+from .client import GatewayClient
+from .tool_emulator import ToolEmulator
+
+__all__ = [
+    "GatewayClient",
+    "ToolEmulator",
+    "RAGMiddleware",
+    "DynamicRAG",
+    "RetrievedContext",
+    "get_rag_middleware",
+]

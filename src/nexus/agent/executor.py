@@ -1,1 +1,124 @@
-IiIiVG9vbCBleGVjdXRpb24gZW5naW5lIGZvciB0aGUgTmV4dXMgYWdlbnQuCgpUaGUgZXhlY3V0b3IgdGFrZXMgcGxhbm5lZCBzdGVwcyAod2l0aCB0b29sIG5hbWUgKyBhcmdzKSBhbmQgZGlzcGF0Y2hlcwp0aGVtIHRvIHRoZSBhcHByb3ByaWF0ZSB0b29sIGltcGxlbWVudGF0aW9uLCBjYXB0dXJpbmcgcmVzdWx0cy4KIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgbG9nZ2luZwppbXBvcnQgdGltZQpmcm9tIHR5cGluZyBpbXBvcnQgQW55LCBEaWN0LCBPcHRpb25hbAoKZnJvbSBuZXh1cy5hZ2VudC5tb2RlbHMgaW1wb3J0IEFnZW50Q29uZmlnLCBTdGVwCgpsb2dnZXIgPSBsb2dnaW5nLmdldExvZ2dlcihfX25hbWVfXykKCgpjbGFzcyBFeGVjdXRvcjoKICAgICIiIkRpc3BhdGNoZXMgdG9vbCBjYWxscyB0byByZWdpc3RlcmVkIHRvb2wgaW1wbGVtZW50YXRpb25zLgoKICAgIFRoZSBleGVjdXRvciBpcyB0aGUgYnJpZGdlIGJldHdlZW4gdGhlIHBsYW5uZXIncyBkZWNpc2lvbnMgYW5kCiAgICBhY3R1YWwgdG9vbCBleGVjdXRpb24uIEl0IGhhbmRsZXM6CiAgICAtIFRvb2wgZGlzcGF0Y2ggYnkgbmFtZQogICAgLSBUaW1lb3V0IGVuZm9yY2VtZW50CiAgICAtIFJlc3VsdCBjYXB0dXJlIGFuZCBmb3JtYXR0aW5nCiAgICAtIEVycm9yIGhhbmRsaW5nIGFuZCByZWNvdmVyeQogICAgIiIiCgogICAgZGVmIF9faW5pdF9fKHNlbGYsIGNvbmZpZzogT3B0aW9uYWxbQWdlbnRDb25maWddID0gTm9uZSk6CiAgICAgICAgc2VsZi5jb25maWcgPSBjb25maWcgb3IgQWdlbnRDb25maWcoKQogICAgICAgIHNlbGYuX3Rvb2xzOiBEaWN0W3N0ciwgQW55XSA9IHt9CgogICAgZGVmIHJlZ2lzdGVyX3Rvb2woc2VsZiwgbmFtZTogc3RyLCB0b29sOiBBbnkpIC0+IE5vbmU6CiAgICAgICAgIiIiUmVnaXN0ZXIgYSB0b29sIGltcGxlbWVudGF0aW9uLgoKICAgICAgICBBcmdzOgogICAgICAgICAgICBuYW1lOiBUb29sIG5hbWUgKG11c3QgbWF0Y2ggd2hhdCBwbGFubmVyIHJlZmVyZW5jZXMpLgogICAgICAgICAgICB0b29sOiBUb29sIGluc3RhbmNlIHdpdGggYW4gYXN5bmMgZXhlY3V0ZSgpIG1ldGhvZC4KICAgICAgICAiIiIKICAgICAgICBzZWxmLl90b29sc1tuYW1lXSA9IHRvb2wKICAgICAgICBsb2dnZXIuZGVidWcoIlJlZ2lzdGVyZWQgdG9vbDogJXMiLCBuYW1lKQoKICAgIGRlZiByZWdpc3Rlcl90b29scyhzZWxmLCB0b29sczogRGljdFtzdHIsIEFueV0pIC0+IE5vbmU6CiAgICAgICAgIiIiUmVnaXN0ZXIgbXVsdGlwbGUgdG9vbHMgYXQgb25jZS4iIiIKICAgICAgICBmb3IgbmFtZSwgdG9vbCBpbiB0b29scy5pdGVtcygpOgogICAgICAgICAgICBzZWxmLnJlZ2lzdGVyX3Rvb2wobmFtZSwgdG9vbCkKCiAgICBAcHJvcGVydHkKICAgIGRlZiBhdmFpbGFibGVfdG9vbHMoc2VsZikgLT4gbGlzdFtzdHJdOgogICAgICAgIHJldHVybiBsaXN0KHNlbGYuX3Rvb2xzLmtleXMoKSkKCiAgICBkZWYgZ2V0X3Rvb2xfZGVzY3JpcHRpb25zKHNlbGYpIC0+IHN0cjoKICAgICAgICAiIiJHZXQgZm9ybWF0dGVkIHRvb2wgZGVzY3JpcHRpb25zIGZvciBMTE0gY29udGV4dC4iIiIKICAgICAgICBkZXNjcmlwdGlvbnMgPSBbXQogICAgICAgIGZvciBuYW1lLCB0b29sIGluIHNlbGYuX3Rvb2xzLml0ZW1zKCk6CiAgICAgICAgICAgIGRlc2MgPSBnZXRhdHRyKHRvb2wsICJkZXNjcmlwdGlvbiIsIGYiVG9vbDoge25hbWV9IikKICAgICAgICAgICAgc2NoZW1hID0gZ2V0YXR0cih0b29sLCAic2NoZW1hIiwge30pCiAgICAgICAgICAgIGRlc2NyaXB0aW9ucy5hcHBlbmQoZiItIHtuYW1lfToge2Rlc2N9IikKICAgICAgICAgICAgaWYgc2NoZW1hOgogICAgICAgICAgICAgICAgZm9yIHBhcmFtLCBpbmZvIGluIHNjaGVtYS5pdGVtcygpOgogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9ucy5hcHBlbmQoZiIgICAge3BhcmFtfToge2luZm99IikKICAgICAgICByZXR1cm4gIlxuIi5qb2luKGRlc2NyaXB0aW9ucykKCiAgICBhc3luYyBkZWYgZXhlY3V0ZV9zdGVwKHNlbGYsIHN0ZXBfcGxhbjogRGljdFtzdHIsIEFueV0pIC0+IFN0ZXA6CiAgICAgICAgIiIiRXhlY3V0ZSBhIHNpbmdsZSBwbGFubmVkIHN0ZXAuCgogICAgICAgIEFyZ3M6CiAgICAgICAgICAgIHN0ZXBfcGxhbjogRGljdCB3aXRoICdhY3Rpb24nLCAndG9vbCcsICdhcmdzJywgJ3JlYXNvbmluZycuCgogICAgICAgIFJldHVybnM6CiAgICAgICAgICAgIFN0ZXAgb2JqZWN0IHdpdGggZXhlY3V0aW9uIHJlc3VsdHMuCiAgICAgICAgIiIiCiAgICAgICAgc3RlcCA9IFN0ZXAoCiAgICAgICAgICAgIGFjdGlvbj1zdGVwX3BsYW4uZ2V0KCJhY3Rpb24iLCAidW5rbm93biIpLAogICAgICAgICAgICB0b29sX25hbWU9c3RlcF9wbGFuLmdldCgidG9vbCIsICIiKSwKICAgICAgICAgICAgdG9vbF9hcmdzPXN0ZXBfcGxhbi5nZXQoImFyZ3MiLCB7fSksCiAgICAgICAgKQoKICAgICAgICB0b29sX25hbWUgPSBzdGVwLnRvb2xfbmFtZQogICAgICAgIHN0YXJ0X3RpbWUgPSB0aW1lLnRpbWUoKQoKICAgICAgICAjIEhhbmRsZSBzcGVjaWFsIGNhc2VzCiAgICAgICAgaWYgdG9vbF9uYW1lIGluICgibm9uZSIsICJkb25lIiwgIiIpOgogICAgICAgICAgICBzdGVwLnJlc3VsdCA9ICJObyB0b29sIGV4ZWN1dGlvbiBuZWVkZWQiCiAgICAgICAgICAgIHN0ZXAuc3VjY2VzcyA9IFRydWUKICAgICAgICAgICAgc3RlcC5kdXJhdGlvbl9tcyA9ICh0aW1lLnRpbWUoKSAtIHN0YXJ0X3RpbWUpICogMTAwMAogICAgICAgICAgICByZXR1cm4gc3RlcAoKICAgICAgICAjIEZpbmQgYW5kIGV4ZWN1dGUgdG9vbAogICAgICAgIHRvb2wgPSBzZWxmLl90b29scy5nZXQodG9vbF9uYW1lKQogICAgICAgIGlmIHRvb2wgaXMgTm9uZToKICAgICAgICAgICAgIyBUcnkgZnV6enkgbWF0Y2hpbmcgKGUuZy4sICJmaWxlX3JlYWQiIHZzICJyZWFkX2ZpbGUiKQogICAgICAgICAgICBmb3IgcmVnaXN0ZXJlZF9uYW1lLCByZWdpc3RlcmVkX3Rvb2wgaW4gc2VsZi5fdG9vbHMuaXRlbXMoKToKICAgICAgICAgICAgICAgIGFsaWFzZXMgPSBnZXRhdHRyKHJlZ2lzdGVyZWRfdG9vbCwgImFsaWFzZXMiLCBbXSkKICAgICAgICAgICAgICAgIGlmIHRvb2xfbmFtZSBpbiBhbGlhc2VzOgogICAgICAgICAgICAgICAgICAgIHRvb2wgPSByZWdpc3RlcmVkX3Rvb2wKICAgICAgICAgICAgICAgICAgICBicmVhawoKICAgICAgICBpZiB0b29sIGlzIE5vbmU6CiAgICAgICAgICAgIHN0ZXAucmVzdWx0ID0gKAogICAgICAgICAgICAgICAgZiJVbmtub3duIHRvb2w6IHt0b29sX25hbWV9LiAiCiAgICAgICAgICAgICAgICBmIkF2YWlsYWJsZTogeycsICcuam9pbihzZWxmLl90b29scy5rZXlzKCkpfSIKICAgICAgICAgICAgKQogICAgICAgICAgICBzdGVwLnN1Y2Nlc3MgPSBGYWxzZQogICAgICAgICAgICBzdGVwLmR1cmF0aW9uX21zID0gKHRpbWUudGltZSgpIC0gc3RhcnRfdGltZSkgKiAxMDAwCiAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKCJVbmtub3duIHRvb2wgcmVxdWVzdGVkOiAlcyIsIHRvb2xfbmFtZSkKICAgICAgICAgICAgcmV0dXJuIHN0ZXAKCiAgICAgICAgdHJ5OgogICAgICAgICAgICByZXN1bHQgPSBhd2FpdCB0b29sLmV4ZWN1dGUoKipzdGVwLnRvb2xfYXJncykKICAgICAgICAgICAgc3RlcC5yZXN1bHQgPSBzdHIocmVzdWx0KSBpZiByZXN1bHQgaXMgbm90IE5vbmUgZWxzZSAiIgogICAgICAgICAgICBzdGVwLnN1Y2Nlc3MgPSBUcnVlCiAgICAgICAgICAgIGxvZ2dlci5pbmZvKAogICAgICAgICAgICAgICAgIlRvb2wgJXMgZXhlY3V0ZWQgc3VjY2Vzc2Z1bGx5ICglLjBmbXMpIiwKICAgICAgICAgICAgICAgIHRvb2xfbmFtZSwKICAgICAgICAgICAgICAgICh0aW1lLnRpbWUoKSAtIHN0YXJ0X3RpbWUpICogMTAwMCwKICAgICAgICAgICAgKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXhjOgogICAgICAgICAgICBzdGVwLnJlc3VsdCA9IGYiRXJyb3I6IHt0eXBlKGV4YykuX19uYW1lX199OiB7ZXhjfSIKICAgICAgICAgICAgc3RlcC5zdWNjZXNzID0gRmFsc2UKICAgICAgICAgICAgbG9nZ2VyLmVycm9yKCJUb29sICVzIGZhaWxlZDogJXMiLCB0b29sX25hbWUsIGV4YykKCiAgICAgICAgc3RlcC5kdXJhdGlvbl9tcyA9ICh0aW1lLnRpbWUoKSAtIHN0YXJ0X3RpbWUpICogMTAwMAogICAgICAgIHJldHVybiBzdGVwCg==
+"""Tool execution engine for the Nexus agent.
+
+The executor takes planned steps (with tool name + args) and dispatches
+them to the appropriate tool implementation, capturing results.
+"""
+
+from __future__ import annotations
+
+import logging
+import time
+from typing import Any, Dict, Optional
+
+from nexus.agent.models import AgentConfig, Step
+
+logger = logging.getLogger(__name__)
+
+
+class Executor:
+    """Dispatches tool calls to registered tool implementations.
+
+    The executor is the bridge between the planner's decisions and
+    actual tool execution. It handles:
+    - Tool dispatch by name
+    - Timeout enforcement
+    - Result capture and formatting
+    - Error handling and recovery
+    """
+
+    def __init__(self, config: Optional[AgentConfig] = None):
+        self.config = config or AgentConfig()
+        self._tools: Dict[str, Any] = {}
+
+    def register_tool(self, name: str, tool: Any) -> None:
+        """Register a tool implementation.
+
+        Args:
+            name: Tool name (must match what planner references).
+            tool: Tool instance with an async execute() method.
+        """
+        self._tools[name] = tool
+        logger.debug("Registered tool: %s", name)
+
+    def register_tools(self, tools: Dict[str, Any]) -> None:
+        """Register multiple tools at once."""
+        for name, tool in tools.items():
+            self.register_tool(name, tool)
+
+    @property
+    def available_tools(self) -> list[str]:
+        return list(self._tools.keys())
+
+    def get_tool_descriptions(self) -> str:
+        """Get formatted tool descriptions for LLM context."""
+        descriptions = []
+        for name, tool in self._tools.items():
+            desc = getattr(tool, "description", f"Tool: {name}")
+            schema = getattr(tool, "schema", {})
+            descriptions.append(f"- {name}: {desc}")
+            if schema:
+                for param, info in schema.items():
+                    descriptions.append(f"    {param}: {info}")
+        return "\n".join(descriptions)
+
+    async def execute_step(self, step_plan: Dict[str, Any]) -> Step:
+        """Execute a single planned step.
+
+        Args:
+            step_plan: Dict with 'action', 'tool', 'args', 'reasoning'.
+
+        Returns:
+            Step object with execution results.
+        """
+        step = Step(
+            action=step_plan.get("action", "unknown"),
+            tool_name=step_plan.get("tool", ""),
+            tool_args=step_plan.get("args", {}),
+        )
+
+        tool_name = step.tool_name
+        start_time = time.time()
+
+        # Handle special cases
+        if tool_name in ("none", "done", ""):
+            step.result = "No tool execution needed"
+            step.success = True
+            step.duration_ms = (time.time() - start_time) * 1000
+            return step
+
+        # Find and execute tool
+        tool = self._tools.get(tool_name)
+        if tool is None:
+            # Try fuzzy matching (e.g., "file_read" vs "read_file")
+            for registered_name, registered_tool in self._tools.items():
+                aliases = getattr(registered_tool, "aliases", [])
+                if tool_name in aliases:
+                    tool = registered_tool
+                    break
+
+        if tool is None:
+            step.result = (
+                f"Unknown tool: {tool_name}. "
+                f"Available: {', '.join(self._tools.keys())}"
+            )
+            step.success = False
+            step.duration_ms = (time.time() - start_time) * 1000
+            logger.warning("Unknown tool requested: %s", tool_name)
+            return step
+
+        try:
+            result = await tool.execute(**step.tool_args)
+            step.result = str(result) if result is not None else ""
+            step.success = True
+            logger.info(
+                "Tool %s executed successfully (%.0fms)",
+                tool_name,
+                (time.time() - start_time) * 1000,
+            )
+        except Exception as exc:
+            step.result = f"Error: {type(exc).__name__}: {exc}"
+            step.success = False
+            logger.error("Tool %s failed: %s", tool_name, exc)
+
+        step.duration_ms = (time.time() - start_time) * 1000
+        return step
