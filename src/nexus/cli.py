@@ -910,6 +910,46 @@ def quickstart():
     console.print('  [cyan]nexus run "Build a hello-world Flask app"[/cyan]\n')
 
 
+# ---------------------------------------------------------------------------
+#  nexus init  —  initialize .nexus/ project configuration
+# ---------------------------------------------------------------------------
+
+@cli.command()
+@click.option("--workspace", "-w", type=click.Path(), default=".", help="Project root directory")
+def init(workspace):
+    """Initialize a .nexus/ configuration directory.
+
+    \b
+    Creates:
+      .nexus/config.yaml    — Project settings, model preferences, watchers
+      .nexus/rules.md       — Instructions the AI follows for this project
+      .nexus/stances/       — Custom AI behavior modes
+      .nexus/hooks/         — Pre/post action hooks
+      .nexus/sessions/      — Saved conversation history
+
+    \b
+    Example:
+      nexus init
+      nexus init --workspace /path/to/project
+    """
+    from nexus.config.plugin_config import PluginConfigLoader
+
+    loader = PluginConfigLoader(workspace)
+    if loader.exists:
+        console.print(f"[yellow]⚠  .nexus/ already exists in {Path(workspace).resolve()}[/yellow]")
+        console.print("[dim]  Existing files will not be overwritten.[/dim]")
+
+    path = loader.init()
+    console.print(f"\n[bold green]✓[/bold green] Initialized [cyan].nexus/[/cyan] in {Path(workspace).resolve()}\n")
+    console.print("  Created:")
+    for item in sorted(path.rglob("*")):
+        if item.is_file():
+            rel = item.relative_to(path)
+            console.print(f"    [dim]•[/dim] .nexus/{rel}")
+    console.print(f"\n  [dim]Edit .nexus/config.yaml to customize model preferences, hooks, and watchers.")
+    console.print(f"  Edit .nexus/rules.md to set project-specific AI instructions.[/dim]\n")
+
+
 def main():
     """Main entry point."""
     cli()
