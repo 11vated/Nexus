@@ -1,1 +1,43 @@
-IiIiTmV4dXMgVG9vbCBTeXN0ZW0g4oCUIGV4dGVuc2libGUgdG9vbCByZWdpc3RyeSBmb3IgdGhlIGFnZW50LiIiIgoKZnJvbSBuZXh1cy50b29scy5yZWdpc3RyeSBpbXBvcnQgVG9vbFJlZ2lzdHJ5LCBCYXNlVG9vbApmcm9tIG5leHVzLnRvb2xzLnNoZWxsIGltcG9ydCBTaGVsbFRvb2wKZnJvbSBuZXh1cy50b29scy5maWxlX29wcyBpbXBvcnQgRmlsZVJlYWRUb29sLCBGaWxlV3JpdGVUb29sLCBGaWxlTGlzdFRvb2wKZnJvbSBuZXh1cy50b29scy5jb2RlX3J1bm5lciBpbXBvcnQgQ29kZVJ1bm5lclRvb2wKZnJvbSBuZXh1cy50b29scy50ZXN0X3J1bm5lciBpbXBvcnQgVGVzdFJ1bm5lclRvb2wKZnJvbSBuZXh1cy50b29scy5zZWFyY2ggaW1wb3J0IFNlYXJjaFRvb2wKZnJvbSBuZXh1cy50b29scy5naXQgaW1wb3J0IEdpdFRvb2wKCl9fYWxsX18gPSBbCiAgICAiVG9vbFJlZ2lzdHJ5IiwKICAgICJCYXNlVG9vbCIsCiAgICAiU2hlbGxUb29sIiwKICAgICJGaWxlUmVhZFRvb2wiLAogICAgIkZpbGVXcml0ZVRvb2wiLAogICAgIkZpbGVMaXN0VG9vbCIsCiAgICAiQ29kZVJ1bm5lclRvb2wiLAogICAgIlRlc3RSdW5uZXJUb29sIiwKICAgICJTZWFyY2hUb29sIiwKICAgICJHaXRUb29sIiwKXQoKCmRlZiBjcmVhdGVfZGVmYXVsdF90b29scyh3b3Jrc3BhY2U6IHN0ciA9ICIuIikgLT4gZGljdDoKICAgICIiIkNyZWF0ZSB0aGUgc3RhbmRhcmQgc2V0IG9mIHRvb2xzIGZvciB0aGUgYWdlbnQuCgogICAgQXJnczoKICAgICAgICB3b3Jrc3BhY2U6IFJvb3Qgd29ya3NwYWNlIHBhdGguCgogICAgUmV0dXJuczoKICAgICAgICBEaWN0IG9mIHRvb2xfbmFtZSAtPiB0b29sX2luc3RhbmNlLgogICAgIiIiCiAgICByZXR1cm4gewogICAgICAgICJzaGVsbCI6IFNoZWxsVG9vbCh3b3Jrc3BhY2U9d29ya3NwYWNlKSwKICAgICAgICAiZmlsZV9yZWFkIjogRmlsZVJlYWRUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpLAogICAgICAgICJmaWxlX3dyaXRlIjogRmlsZVdyaXRlVG9vbCh3b3Jrc3BhY2U9d29ya3NwYWNlKSwKICAgICAgICAiZmlsZV9saXN0IjogRmlsZUxpc3RUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpLAogICAgICAgICJjb2RlX3J1biI6IENvZGVSdW5uZXJUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpLAogICAgICAgICJ0ZXN0X3J1biI6IFRlc3RSdW5uZXJUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpLAogICAgICAgICJzZWFyY2giOiBTZWFyY2hUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpLAogICAgICAgICJnaXQiOiBHaXRUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpLAogICAgfQo=
+"""Nexus Tool System — extensible tool registry for the agent."""
+
+from nexus.tools.registry import ToolRegistry, BaseTool
+from nexus.tools.shell import ShellTool
+from nexus.tools.file_ops import FileReadTool, FileWriteTool, FileListTool
+from nexus.tools.code_runner import CodeRunnerTool
+from nexus.tools.test_runner import TestRunnerTool
+from nexus.tools.search import SearchTool
+from nexus.tools.git import GitTool
+
+__all__ = [
+    "ToolRegistry",
+    "BaseTool",
+    "ShellTool",
+    "FileReadTool",
+    "FileWriteTool",
+    "FileListTool",
+    "CodeRunnerTool",
+    "TestRunnerTool",
+    "SearchTool",
+    "GitTool",
+]
+
+
+def create_default_tools(workspace: str = ".") -> dict:
+    """Create the standard set of tools for the agent.
+
+    Args:
+        workspace: Root workspace path.
+
+    Returns:
+        Dict of tool_name -> tool_instance.
+    """
+    return {
+        "shell": ShellTool(workspace=workspace),
+        "file_read": FileReadTool(workspace=workspace),
+        "file_write": FileWriteTool(workspace=workspace),
+        "file_list": FileListTool(workspace=workspace),
+        "code_run": CodeRunnerTool(workspace=workspace),
+        "test_run": TestRunnerTool(workspace=workspace),
+        "search": SearchTool(workspace=workspace),
+        "git": GitTool(workspace=workspace),
+    }

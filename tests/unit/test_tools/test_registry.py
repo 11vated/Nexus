@@ -1,1 +1,94 @@
-IiIiVGVzdHMgZm9yIG5leHVzLnRvb2xzLnJlZ2lzdHJ5IOKAlCBCYXNlVG9vbCBhbmQgVG9vbFJlZ2lzdHJ5LiIiIgppbXBvcnQgcHl0ZXN0CmZyb20gbmV4dXMudG9vbHMucmVnaXN0cnkgaW1wb3J0IEJhc2VUb29sLCBUb29sUmVnaXN0cnkKCgpjbGFzcyBEdW1teVRvb2woQmFzZVRvb2wpOgogICAgbmFtZSA9ICJkdW1teSIKICAgIGRlc2NyaXB0aW9uID0gIkEgdGVzdCB0b29sIgogICAgYWxpYXNlcyA9IFsiZCIsICJ0ZXN0X3Rvb2wiXQogICAgc2NoZW1hID0geyJpbnB1dCI6ICJUaGUgaW5wdXQgdmFsdWUifQoKICAgIGFzeW5jIGRlZiBleGVjdXRlKHNlbGYsICoqa3dhcmdzKToKICAgICAgICByZXR1cm4gZiJleGVjdXRlZCB3aXRoIHtrd2FyZ3N9IgoKCmNsYXNzIEFub3RoZXJUb29sKEJhc2VUb29sKToKICAgIG5hbWUgPSAiYW5vdGhlciIKICAgIGRlc2NyaXB0aW9uID0gIkFub3RoZXIgdGVzdCB0b29sIgoKICAgIGFzeW5jIGRlZiBleGVjdXRlKHNlbGYsICoqa3dhcmdzKToKICAgICAgICByZXR1cm4gImFub3RoZXIgcmVzdWx0IgoKCmNsYXNzIFRlc3RCYXNlVG9vbDoKICAgIGRlZiB0ZXN0X3Byb21wdF9kZXNjcmlwdGlvbihzZWxmKToKICAgICAgICB0b29sID0gRHVtbXlUb29sKCkKICAgICAgICBkZXNjID0gdG9vbC50b19wcm9tcHRfZGVzY3JpcHRpb24oKQogICAgICAgIGFzc2VydCAiZHVtbXkiIGluIGRlc2MKICAgICAgICBhc3NlcnQgIkEgdGVzdCB0b29sIiBpbiBkZXNjCiAgICAgICAgYXNzZXJ0ICJpbnB1dCIgaW4gZGVzYwoKICAgIGRlZiB0ZXN0X2RlZmF1bHRfd29ya3NwYWNlKHNlbGYpOgogICAgICAgIHRvb2wgPSBEdW1teVRvb2woKQogICAgICAgIGFzc2VydCB0b29sLndvcmtzcGFjZSA9PSAiLiIKCiAgICBkZWYgdGVzdF9jdXN0b21fd29ya3NwYWNlKHNlbGYpOgogICAgICAgIHRvb2wgPSBEdW1teVRvb2wod29ya3NwYWNlPSIvdG1wL3Rlc3QiKQogICAgICAgIGFzc2VydCB0b29sLndvcmtzcGFjZSA9PSAiL3RtcC90ZXN0IgoKCmNsYXNzIFRlc3RUb29sUmVnaXN0cnk6CiAgICBkZWYgdGVzdF9yZWdpc3Rlcl9hbmRfZ2V0KHNlbGYpOgogICAgICAgIHJlZyA9IFRvb2xSZWdpc3RyeSgpCiAgICAgICAgdG9vbCA9IER1bW15VG9vbCgpCiAgICAgICAgcmVnLnJlZ2lzdGVyKHRvb2wpCiAgICAgICAgYXNzZXJ0IHJlZy5nZXQoImR1bW15IikgaXMgdG9vbAoKICAgIGRlZiB0ZXN0X2dldF9ieV9hbGlhcyhzZWxmKToKICAgICAgICByZWcgPSBUb29sUmVnaXN0cnkoKQogICAgICAgIHRvb2wgPSBEdW1teVRvb2woKQogICAgICAgIHJlZy5yZWdpc3Rlcih0b29sKQogICAgICAgIGFzc2VydCByZWcuZ2V0KCJkIikgaXMgdG9vbAogICAgICAgIGFzc2VydCByZWcuZ2V0KCJ0ZXN0X3Rvb2wiKSBpcyB0b29sCgogICAgZGVmIHRlc3RfZ2V0X21pc3Npbmcoc2VsZik6CiAgICAgICAgcmVnID0gVG9vbFJlZ2lzdHJ5KCkKICAgICAgICBhc3NlcnQgcmVnLmdldCgibm9uZXhpc3RlbnQiKSBpcyBOb25lCgogICAgZGVmIHRlc3RfbGlzdF90b29sc19ub19kdXBsaWNhdGVzKHNlbGYpOgogICAgICAgIHJlZyA9IFRvb2xSZWdpc3RyeSgpCiAgICAgICAgcmVnLnJlZ2lzdGVyKER1bW15VG9vbCgpKQogICAgICAgIG5hbWVzID0gcmVnLmxpc3RfdG9vbHMoKQogICAgICAgIGFzc2VydCBuYW1lcyA9PSBbImR1bW15Il0KCiAgICBkZWYgdGVzdF9tdWx0aXBsZV90b29scyhzZWxmKToKICAgICAgICByZWcgPSBUb29sUmVnaXN0cnkoKQogICAgICAgIHJlZy5yZWdpc3RlcihEdW1teVRvb2woKSkKICAgICAgICByZWcucmVnaXN0ZXIoQW5vdGhlclRvb2woKSkKICAgICAgICBuYW1lcyA9IHJlZy5saXN0X3Rvb2xzKCkKICAgICAgICBhc3NlcnQgc2V0KG5hbWVzKSA9PSB7ImR1bW15IiwgImFub3RoZXIifQoKICAgIGRlZiB0ZXN0X2FzX2RpY3Qoc2VsZik6CiAgICAgICAgcmVnID0gVG9vbFJlZ2lzdHJ5KCkKICAgICAgICByZWcucmVnaXN0ZXIoRHVtbXlUb29sKCkpCiAgICAgICAgcmVnLnJlZ2lzdGVyKEFub3RoZXJUb29sKCkpCiAgICAgICAgZCA9IHJlZy5hc19kaWN0KCkKICAgICAgICBhc3NlcnQgbGVuKGQpID09IDIKICAgICAgICBhc3NlcnQgImR1bW15IiBpbiBkCiAgICAgICAgYXNzZXJ0ICJhbm90aGVyIiBpbiBkCgogICAgZGVmIHRlc3RfZ2V0X3Byb21wdF9kZXNjcmlwdGlvbnMoc2VsZik6CiAgICAgICAgcmVnID0gVG9vbFJlZ2lzdHJ5KCkKICAgICAgICByZWcucmVnaXN0ZXIoRHVtbXlUb29sKCkpCiAgICAgICAgcmVnLnJlZ2lzdGVyKEFub3RoZXJUb29sKCkpCiAgICAgICAgZGVzYyA9IHJlZy5nZXRfcHJvbXB0X2Rlc2NyaXB0aW9ucygpCiAgICAgICAgYXNzZXJ0ICJkdW1teSIgaW4gZGVzYwogICAgICAgIGFzc2VydCAiYW5vdGhlciIgaW4gZGVzYwoKICAgIGRlZiB0ZXN0X3JlZ2lzdGVyX2NsYXNzKHNlbGYpOgogICAgICAgIHJlZyA9IFRvb2xSZWdpc3RyeSgpCiAgICAgICAgcmVnLnJlZ2lzdGVyX2NsYXNzKER1bW15VG9vbCwgd29ya3NwYWNlPSIvdGVzdCIpCiAgICAgICAgdG9vbCA9IHJlZy5nZXQoImR1bW15IikKICAgICAgICBhc3NlcnQgdG9vbCBpcyBub3QgTm9uZQogICAgICAgIGFzc2VydCB0b29sLndvcmtzcGFjZSA9PSAiL3Rlc3QiCg==
+"""Tests for nexus.tools.registry — BaseTool and ToolRegistry."""
+import pytest
+from nexus.tools.registry import BaseTool, ToolRegistry
+
+
+class DummyTool(BaseTool):
+    name = "dummy"
+    description = "A test tool"
+    aliases = ["d", "test_tool"]
+    schema = {"input": "The input value"}
+
+    async def execute(self, **kwargs):
+        return f"executed with {kwargs}"
+
+
+class AnotherTool(BaseTool):
+    name = "another"
+    description = "Another test tool"
+
+    async def execute(self, **kwargs):
+        return "another result"
+
+
+class TestBaseTool:
+    def test_prompt_description(self):
+        tool = DummyTool()
+        desc = tool.to_prompt_description()
+        assert "dummy" in desc
+        assert "A test tool" in desc
+        assert "input" in desc
+
+    def test_default_workspace(self):
+        tool = DummyTool()
+        assert tool.workspace == "."
+
+    def test_custom_workspace(self):
+        tool = DummyTool(workspace="/tmp/test")
+        assert tool.workspace == "/tmp/test"
+
+
+class TestToolRegistry:
+    def test_register_and_get(self):
+        reg = ToolRegistry()
+        tool = DummyTool()
+        reg.register(tool)
+        assert reg.get("dummy") is tool
+
+    def test_get_by_alias(self):
+        reg = ToolRegistry()
+        tool = DummyTool()
+        reg.register(tool)
+        assert reg.get("d") is tool
+        assert reg.get("test_tool") is tool
+
+    def test_get_missing(self):
+        reg = ToolRegistry()
+        assert reg.get("nonexistent") is None
+
+    def test_list_tools_no_duplicates(self):
+        reg = ToolRegistry()
+        reg.register(DummyTool())
+        names = reg.list_tools()
+        assert names == ["dummy"]
+
+    def test_multiple_tools(self):
+        reg = ToolRegistry()
+        reg.register(DummyTool())
+        reg.register(AnotherTool())
+        names = reg.list_tools()
+        assert set(names) == {"dummy", "another"}
+
+    def test_as_dict(self):
+        reg = ToolRegistry()
+        reg.register(DummyTool())
+        reg.register(AnotherTool())
+        d = reg.as_dict()
+        assert len(d) == 2
+        assert "dummy" in d
+        assert "another" in d
+
+    def test_get_prompt_descriptions(self):
+        reg = ToolRegistry()
+        reg.register(DummyTool())
+        reg.register(AnotherTool())
+        desc = reg.get_prompt_descriptions()
+        assert "dummy" in desc
+        assert "another" in desc
+
+    def test_register_class(self):
+        reg = ToolRegistry()
+        reg.register_class(DummyTool, workspace="/test")
+        tool = reg.get("dummy")
+        assert tool is not None
+        assert tool.workspace == "/test"

@@ -1,1 +1,97 @@
-IiIiR2l0IHRvb2wg4oCUIHZlcnNpb24gY29udHJvbCBvcGVyYXRpb25zLiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGFzeW5jaW8KaW1wb3J0IGxvZ2dpbmcKZnJvbSB0eXBpbmcgaW1wb3J0IEFueQoKZnJvbSBuZXh1cy50b29scy5yZWdpc3RyeSBpbXBvcnQgQmFzZVRvb2wKCmxvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKF9fbmFtZV9fKQoKCmNsYXNzIEdpdFRvb2woQmFzZVRvb2wpOgogICAgIiIiR2l0IG9wZXJhdGlvbnMgZm9yIHRoZSBhZ2VudCB3b3Jrc3BhY2UuCgogICAgUHJvdmlkZXMgc2FmZSBnaXQgb3BlcmF0aW9uczogc3RhdHVzLCBkaWZmLCBhZGQsIGNvbW1pdCwgbG9nLgogICAgRG9lcyBOT1Qgc3VwcG9ydCBwdXNoL3B1bGwgKHRob3NlIHNob3VsZCBiZSBleHBsaWNpdCB1c2VyIGFjdGlvbnMpLgogICAgIiIiCgogICAgbmFtZSA9ICJnaXQiCiAgICBkZXNjcmlwdGlvbiA9ICJSdW4gZ2l0IGNvbW1hbmRzIChzdGF0dXMsIGRpZmYsIGFkZCwgY29tbWl0LCBsb2cpIgogICAgYWxpYXNlcyA9IFsiZ2l0X3Rvb2wiXQogICAgc2NoZW1hID0gewogICAgICAgICJjb21tYW5kIjogIihyZXF1aXJlZCkgR2l0IHN1YmNvbW1hbmQ6IHN0YXR1cywgZGlmZiwgYWRkLCBjb21taXQsIGxvZywgYnJhbmNoIiwKICAgICAgICAiYXJncyI6ICIob3B0aW9uYWwpIEFkZGl0aW9uYWwgYXJndW1lbnRzIGFzIGEgc3RyaW5nIiwKICAgIH0KCiAgICAjIE9ubHkgYWxsb3cgc2FmZSBnaXQgb3BlcmF0aW9ucwogICAgQUxMT1dFRF9DT01NQU5EUyA9IGZyb3plbnNldCh7CiAgICAgICAgInN0YXR1cyIsICJkaWZmIiwgImFkZCIsICJjb21taXQiLCAibG9nIiwgImJyYW5jaCIsCiAgICAgICAgInNob3ciLCAic3Rhc2giLCAiY2hlY2tvdXQiLCAicmVzZXQiLCAicmVzdG9yZSIsCiAgICB9KQoKICAgICMgRXhwbGljaXRseSBibG9ja2VkCiAgICBCTE9DS0VEX0NPTU1BTkRTID0gZnJvemVuc2V0KHsKICAgICAgICAicHVzaCIsICJwdWxsIiwgImZldGNoIiwgInJlbW90ZSIsICJjbG9uZSIsCiAgICAgICAgImZvcmNlLXB1c2giLCAicmViYXNlIiwKICAgIH0pCgogICAgYXN5bmMgZGVmIGV4ZWN1dGUoc2VsZiwgY29tbWFuZDogc3RyID0gIiIsIGFyZ3M6IHN0ciA9ICIiLCAqKmt3YXJnczogQW55KSAtPiBzdHI6CiAgICAgICAgaWYgbm90IGNvbW1hbmQ6CiAgICAgICAgICAgIHJldHVybiAiRXJyb3I6IE5vIGdpdCBjb21tYW5kIHByb3ZpZGVkIgoKICAgICAgICBjb21tYW5kID0gY29tbWFuZC5zdHJpcCgpLmxvd2VyKCkKCiAgICAgICAgaWYgY29tbWFuZCBpbiBzZWxmLkJMT0NLRURfQ09NTUFORFM6CiAgICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAgICAgICBmIkVycm9yOiAne2NvbW1hbmR9JyBpcyBub3QgYWxsb3dlZCB2aWEgdGhlIGFnZW50LiAiCiAgICAgICAgICAgICAgICAiVXNlIHRoZSBDTEkgZGlyZWN0bHkgZm9yIHJlbW90ZSBvcGVyYXRpb25zLiIKICAgICAgICAgICAgKQoKICAgICAgICBpZiBjb21tYW5kIG5vdCBpbiBzZWxmLkFMTE9XRURfQ09NTUFORFM6CiAgICAgICAgICAgIHJldHVybiAoCiAgICAgICAgICAgICAgICBmIkVycm9yOiBVbmtub3duIGdpdCBjb21tYW5kOiB7Y29tbWFuZH0uICIKICAgICAgICAgICAgICAgIGYiQWxsb3dlZDogeycsICcuam9pbihzb3J0ZWQoc2VsZi5BTExPV0VEX0NPTU1BTkRTKSl9IgogICAgICAgICAgICApCgogICAgICAgICMgQnVpbGQgdGhlIGdpdCBjb21tYW5kCiAgICAgICAgY21kID0gWyJnaXQiLCBjb21tYW5kXQogICAgICAgIGlmIGFyZ3M6CiAgICAgICAgICAgIGNtZC5leHRlbmQoYXJncy5zcGxpdCgpKQoKICAgICAgICAjIFNwZWNpYWwgaGFuZGxpbmcgZm9yIGNvbW1pdCAocmVxdWlyZSAtbSBtZXNzYWdlKQogICAgICAgIGlmIGNvbW1hbmQgPT0gImNvbW1pdCIgYW5kICItbSIgbm90IGluIGFyZ3M6CiAgICAgICAgICAgIHJldHVybiAiRXJyb3I6IENvbW1pdCByZXF1aXJlcyBhIG1lc3NhZ2UuIFVzZSBhcmdzOiAnLW0gXCJ5b3VyIG1lc3NhZ2VcIiciCgogICAgICAgIHRyeToKICAgICAgICAgICAgcHJvY2VzcyA9IGF3YWl0IGFzeW5jaW8uY3JlYXRlX3N1YnByb2Nlc3NfZXhlYygKICAgICAgICAgICAgICAgICpjbWQsCiAgICAgICAgICAgICAgICBzdGRvdXQ9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBzdGRlcnI9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBjd2Q9c2VsZi53b3Jrc3BhY2UsCiAgICAgICAgICAgICkKICAgICAgICAgICAgc3Rkb3V0LCBzdGRlcnIgPSBhd2FpdCBhc3luY2lvLndhaXRfZm9yKAogICAgICAgICAgICAgICAgcHJvY2Vzcy5jb21tdW5pY2F0ZSgpLCB0aW1lb3V0PTMwCiAgICAgICAgICAgICkKCiAgICAgICAgICAgIG91dHB1dCA9IHN0ZG91dC5kZWNvZGUoInV0Zi04IiwgZXJyb3JzPSJyZXBsYWNlIikKICAgICAgICAgICAgZXJyb3JzID0gc3RkZXJyLmRlY29kZSgidXRmLTgiLCBlcnJvcnM9InJlcGxhY2UiKQoKICAgICAgICAgICAgcmVzdWx0ID0gb3V0cHV0LnN0cmlwKCkKICAgICAgICAgICAgaWYgZXJyb3JzOgogICAgICAgICAgICAgICAgIyBHaXQgb2Z0ZW4gd3JpdGVzIHRvIHN0ZGVyciBmb3IgaW5mbyAobm90IGp1c3QgZXJyb3JzKQogICAgICAgICAgICAgICAgcmVzdWx0ICs9IGYiXG57ZXJyb3JzLnN0cmlwKCl9IiBpZiByZXN1bHQgZWxzZSBlcnJvcnMuc3RyaXAoKQoKICAgICAgICAgICAgaWYgbGVuKHJlc3VsdCkgPiA1MDAwOgogICAgICAgICAgICAgICAgcmVzdWx0ID0gcmVzdWx0Wzo1MDAwXSArICJcbi4uLiBbdHJ1bmNhdGVkXSIKCiAgICAgICAgICAgIHJldHVybiByZXN1bHQgb3IgIihubyBvdXRwdXQpIgoKICAgICAgICBleGNlcHQgYXN5bmNpby5UaW1lb3V0RXJyb3I6CiAgICAgICAgICAgIHJldHVybiAiRXJyb3I6IEdpdCBjb21tYW5kIHRpbWVkIG91dCIKICAgICAgICBleGNlcHQgRmlsZU5vdEZvdW5kRXJyb3I6CiAgICAgICAgICAgIHJldHVybiAiRXJyb3I6IGdpdCBub3QgZm91bmQiCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBleGM6CiAgICAgICAgICAgIHJldHVybiBmIkVycm9yOiB7ZXhjfSIK
+"""Git tool — version control operations."""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+from typing import Any
+
+from nexus.tools.registry import BaseTool
+
+logger = logging.getLogger(__name__)
+
+
+class GitTool(BaseTool):
+    """Git operations for the agent workspace.
+
+    Provides safe git operations: status, diff, add, commit, log.
+    Does NOT support push/pull (those should be explicit user actions).
+    """
+
+    name = "git"
+    description = "Run git commands (status, diff, add, commit, log)"
+    aliases = ["git_tool"]
+    schema = {
+        "command": "(required) Git subcommand: status, diff, add, commit, log, branch",
+        "args": "(optional) Additional arguments as a string",
+    }
+
+    # Only allow safe git operations
+    ALLOWED_COMMANDS = frozenset({
+        "status", "diff", "add", "commit", "log", "branch",
+        "show", "stash", "checkout", "reset", "restore",
+    })
+
+    # Explicitly blocked
+    BLOCKED_COMMANDS = frozenset({
+        "push", "pull", "fetch", "remote", "clone",
+        "force-push", "rebase",
+    })
+
+    async def execute(self, command: str = "", args: str = "", **kwargs: Any) -> str:
+        if not command:
+            return "Error: No git command provided"
+
+        command = command.strip().lower()
+
+        if command in self.BLOCKED_COMMANDS:
+            return (
+                f"Error: '{command}' is not allowed via the agent. "
+                "Use the CLI directly for remote operations."
+            )
+
+        if command not in self.ALLOWED_COMMANDS:
+            return (
+                f"Error: Unknown git command: {command}. "
+                f"Allowed: {', '.join(sorted(self.ALLOWED_COMMANDS))}"
+            )
+
+        # Build the git command
+        cmd = ["git", command]
+        if args:
+            cmd.extend(args.split())
+
+        # Special handling for commit (require -m message)
+        if command == "commit" and "-m" not in args:
+            return "Error: Commit requires a message. Use args: '-m \"your message\"'"
+
+        try:
+            process = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=30
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+            errors = stderr.decode("utf-8", errors="replace")
+
+            result = output.strip()
+            if errors:
+                # Git often writes to stderr for info (not just errors)
+                result += f"\n{errors.strip()}" if result else errors.strip()
+
+            if len(result) > 5000:
+                result = result[:5000] + "\n... [truncated]"
+
+            return result or "(no output)"
+
+        except asyncio.TimeoutError:
+            return "Error: Git command timed out"
+        except FileNotFoundError:
+            return "Error: git not found"
+        except Exception as exc:
+            return f"Error: {exc}"

@@ -1,1 +1,159 @@
-IiIiU2VhcmNoIHRvb2wg4oCUIGdyZXAvcmlwZ3JlcCBjb2RlYmFzZSBzZWFyY2guIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgYXN5bmNpbwppbXBvcnQgbG9nZ2luZwpmcm9tIHR5cGluZyBpbXBvcnQgQW55Cgpmcm9tIG5leHVzLnRvb2xzLnJlZ2lzdHJ5IGltcG9ydCBCYXNlVG9vbAoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoX19uYW1lX18pCgoKY2xhc3MgU2VhcmNoVG9vbChCYXNlVG9vbCk6CiAgICAiIiJTZWFyY2ggY29kZWJhc2UgdXNpbmcgZ3JlcCBvciByaXBncmVwLgoKICAgIFByb3ZpZGVzIGZhc3QgY29kZSBzZWFyY2ggd2l0aCBjb250ZXh0IGxpbmVzLiBQcmVmZXJzIHJpcGdyZXAgKHJnKQogICAgaWYgYXZhaWxhYmxlLCBmYWxscyBiYWNrIHRvIGdyZXAuCiAgICAiIiIKCiAgICBuYW1lID0gInNlYXJjaCIKICAgIGRlc2NyaXB0aW9uID0gIlNlYXJjaCBjb2RlYmFzZSBmb3IgYSBwYXR0ZXJuIChyZWdleCBzdXBwb3J0ZWQpIgogICAgYWxpYXNlcyA9IFsiZ3JlcCIsICJyZyIsICJmaW5kX2luX2ZpbGVzIl0KICAgIHNjaGVtYSA9IHsKICAgICAgICAicGF0dGVybiI6ICIocmVxdWlyZWQpIFNlYXJjaCBwYXR0ZXJuIChyZWdleCkiLAogICAgICAgICJwYXRoIjogIihvcHRpb25hbCkgRGlyZWN0b3J5IG9yIGZpbGUgdG8gc2VhcmNoIChkZWZhdWx0OiB3b3Jrc3BhY2UpIiwKICAgICAgICAiZmlsZV9wYXR0ZXJuIjogIihvcHRpb25hbCkgRmlsZSBnbG9iIGZpbHRlciwgZS5nLiAnKi5weSciLAogICAgICAgICJjb250ZXh0X2xpbmVzIjogIihvcHRpb25hbCkgTGluZXMgb2YgY29udGV4dCBhcm91bmQgbWF0Y2hlcyAoZGVmYXVsdDogMikiLAogICAgICAgICJjYXNlX2luc2Vuc2l0aXZlIjogIihvcHRpb25hbCkgQ2FzZSBpbnNlbnNpdGl2ZSBzZWFyY2ggKGRlZmF1bHQ6IGZhbHNlKSIsCiAgICB9CgogICAgYXN5bmMgZGVmIGV4ZWN1dGUoCiAgICAgICAgc2VsZiwKICAgICAgICBwYXR0ZXJuOiBzdHIgPSAiIiwKICAgICAgICBwYXRoOiBzdHIgPSAiLiIsCiAgICAgICAgZmlsZV9wYXR0ZXJuOiBzdHIgPSAiIiwKICAgICAgICBjb250ZXh0X2xpbmVzOiBpbnQgPSAyLAogICAgICAgIGNhc2VfaW5zZW5zaXRpdmU6IGJvb2wgPSBGYWxzZSwKICAgICAgICAqKmt3YXJnczogQW55LAogICAgKSAtPiBzdHI6CiAgICAgICAgaWYgbm90IHBhdHRlcm46CiAgICAgICAgICAgIHJldHVybiAiRXJyb3I6IE5vIHNlYXJjaCBwYXR0ZXJuIHByb3ZpZGVkIgoKICAgICAgICAjIFRyeSByaXBncmVwIGZpcnN0IChmYXN0ZXIpLCBmYWxsIGJhY2sgdG8gZ3JlcAogICAgICAgIHJnX2F2YWlsYWJsZSA9IGF3YWl0IHNlbGYuX2NoZWNrX2NvbW1hbmQoInJnIikKCiAgICAgICAgaWYgcmdfYXZhaWxhYmxlOgogICAgICAgICAgICByZXR1cm4gYXdhaXQgc2VsZi5fc2VhcmNoX3JnKAogICAgICAgICAgICAgICAgcGF0dGVybiwgcGF0aCwgZmlsZV9wYXR0ZXJuLCBjb250ZXh0X2xpbmVzLCBjYXNlX2luc2Vuc2l0aXZlCiAgICAgICAgICAgICkKICAgICAgICBlbHNlOgogICAgICAgICAgICByZXR1cm4gYXdhaXQgc2VsZi5fc2VhcmNoX2dyZXAoCiAgICAgICAgICAgICAgICBwYXR0ZXJuLCBwYXRoLCBmaWxlX3BhdHRlcm4sIGNvbnRleHRfbGluZXMsIGNhc2VfaW5zZW5zaXRpdmUKICAgICAgICAgICAgKQoKICAgIGFzeW5jIGRlZiBfY2hlY2tfY29tbWFuZChzZWxmLCBjbWQ6IHN0cikgLT4gYm9vbDoKICAgICAgICAiIiJDaGVjayBpZiBhIGNvbW1hbmQgaXMgYXZhaWxhYmxlLiIiIgogICAgICAgIHRyeToKICAgICAgICAgICAgcHJvY2VzcyA9IGF3YWl0IGFzeW5jaW8uY3JlYXRlX3N1YnByb2Nlc3NfZXhlYygKICAgICAgICAgICAgICAgICJ3aGljaCIsIGNtZCwKICAgICAgICAgICAgICAgIHN0ZG91dD1hc3luY2lvLnN1YnByb2Nlc3MuUElQRSwKICAgICAgICAgICAgICAgIHN0ZGVycj1hc3luY2lvLnN1YnByb2Nlc3MuUElQRSwKICAgICAgICAgICAgKQogICAgICAgICAgICBhd2FpdCBwcm9jZXNzLmNvbW11bmljYXRlKCkKICAgICAgICAgICAgcmV0dXJuIHByb2Nlc3MucmV0dXJuY29kZSA9PSAwCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgcmV0dXJuIEZhbHNlCgogICAgYXN5bmMgZGVmIF9zZWFyY2hfcmcoCiAgICAgICAgc2VsZiwKICAgICAgICBwYXR0ZXJuOiBzdHIsCiAgICAgICAgcGF0aDogc3RyLAogICAgICAgIGZpbGVfcGF0dGVybjogc3RyLAogICAgICAgIGNvbnRleHRfbGluZXM6IGludCwKICAgICAgICBjYXNlX2luc2Vuc2l0aXZlOiBib29sLAogICAgKSAtPiBzdHI6CiAgICAgICAgIiIiU2VhcmNoIHVzaW5nIHJpcGdyZXAuIiIiCiAgICAgICAgY21kID0gWyJyZyIsICItLW5vLWhlYWRpbmciLCAiLW4iLCBmIi1De2NvbnRleHRfbGluZXN9Il0KICAgICAgICBpZiBjYXNlX2luc2Vuc2l0aXZlOgogICAgICAgICAgICBjbWQuYXBwZW5kKCItaSIpCiAgICAgICAgaWYgZmlsZV9wYXR0ZXJuOgogICAgICAgICAgICBjbWQuZXh0ZW5kKFsiLWciLCBmaWxlX3BhdHRlcm5dKQogICAgICAgIGNtZC5leHRlbmQoW3BhdHRlcm4sIHBhdGhdKQoKICAgICAgICB0cnk6CiAgICAgICAgICAgIHByb2Nlc3MgPSBhd2FpdCBhc3luY2lvLmNyZWF0ZV9zdWJwcm9jZXNzX2V4ZWMoCiAgICAgICAgICAgICAgICAqY21kLAogICAgICAgICAgICAgICAgc3Rkb3V0PWFzeW5jaW8uc3VicHJvY2Vzcy5QSVBFLAogICAgICAgICAgICAgICAgc3RkZXJyPWFzeW5jaW8uc3VicHJvY2Vzcy5QSVBFLAogICAgICAgICAgICAgICAgY3dkPXNlbGYud29ya3NwYWNlLAogICAgICAgICAgICApCiAgICAgICAgICAgIHN0ZG91dCwgc3RkZXJyID0gYXdhaXQgYXN5bmNpby53YWl0X2ZvcigKICAgICAgICAgICAgICAgIHByb2Nlc3MuY29tbXVuaWNhdGUoKSwgdGltZW91dD0zMAogICAgICAgICAgICApCgogICAgICAgICAgICBvdXRwdXQgPSBzdGRvdXQuZGVjb2RlKCJ1dGYtOCIsIGVycm9ycz0icmVwbGFjZSIpCgogICAgICAgICAgICBpZiBub3Qgb3V0cHV0LnN0cmlwKCk6CiAgICAgICAgICAgICAgICByZXR1cm4gZiJObyBtYXRjaGVzIGZvdW5kIGZvciAne3BhdHRlcm59JyIKCiAgICAgICAgICAgICMgQ291bnQgbWF0Y2hlcwogICAgICAgICAgICBtYXRjaF9jb3VudCA9IHN1bSgxIGZvciBsaW5lIGluIG91dHB1dC5zcGxpdGxpbmVzKCkgaWYgbGluZSBhbmQgbm90IGxpbmUuc3RhcnRzd2l0aCgiLS0iKSkKCiAgICAgICAgICAgIHJlc3VsdCA9IGYiRm91bmQge21hdGNoX2NvdW50fSBtYXRjaGVzOlxuXG57b3V0cHV0fSIKCiAgICAgICAgICAgIGlmIGxlbihyZXN1bHQpID4gNTAwMDoKICAgICAgICAgICAgICAgIHJlc3VsdCA9IHJlc3VsdFs6NTAwMF0gKyAiXG4uLi4gW3RydW5jYXRlZF0iCgogICAgICAgICAgICByZXR1cm4gcmVzdWx0CgogICAgICAgIGV4Y2VwdCBhc3luY2lvLlRpbWVvdXRFcnJvcjoKICAgICAgICAgICAgcmV0dXJuICJFcnJvcjogU2VhcmNoIHRpbWVkIG91dCIKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGV4YzoKICAgICAgICAgICAgcmV0dXJuIGYiRXJyb3I6IHtleGN9IgoKICAgIGFzeW5jIGRlZiBfc2VhcmNoX2dyZXAoCiAgICAgICAgc2VsZiwKICAgICAgICBwYXR0ZXJuOiBzdHIsCiAgICAgICAgcGF0aDogc3RyLAogICAgICAgIGZpbGVfcGF0dGVybjogc3RyLAogICAgICAgIGNvbnRleHRfbGluZXM6IGludCwKICAgICAgICBjYXNlX2luc2Vuc2l0aXZlOiBib29sLAogICAgKSAtPiBzdHI6CiAgICAgICAgIiIiRmFsbGJhY2sgc2VhcmNoIHVzaW5nIGdyZXAuIiIiCiAgICAgICAgY21kID0gWyJncmVwIiwgIi1ybiIsIGYiLUN7Y29udGV4dF9saW5lc30iXQogICAgICAgIGlmIGNhc2VfaW5zZW5zaXRpdmU6CiAgICAgICAgICAgIGNtZC5hcHBlbmQoIi1pIikKICAgICAgICBpZiBmaWxlX3BhdHRlcm46CiAgICAgICAgICAgIGNtZC5leHRlbmQoWyItLWluY2x1ZGUiLCBmaWxlX3BhdHRlcm5dKQogICAgICAgIGNtZC5leHRlbmQoW3BhdHRlcm4sIHBhdGhdKQoKICAgICAgICB0cnk6CiAgICAgICAgICAgIHByb2Nlc3MgPSBhd2FpdCBhc3luY2lvLmNyZWF0ZV9zdWJwcm9jZXNzX2V4ZWMoCiAgICAgICAgICAgICAgICAqY21kLAogICAgICAgICAgICAgICAgc3Rkb3V0PWFzeW5jaW8uc3VicHJvY2Vzcy5QSVBFLAogICAgICAgICAgICAgICAgc3RkZXJyPWFzeW5jaW8uc3VicHJvY2Vzcy5QSVBFLAogICAgICAgICAgICAgICAgY3dkPXNlbGYud29ya3NwYWNlLAogICAgICAgICAgICApCiAgICAgICAgICAgIHN0ZG91dCwgc3RkZXJyID0gYXdhaXQgYXN5bmNpby53YWl0X2ZvcigKICAgICAgICAgICAgICAgIHByb2Nlc3MuY29tbXVuaWNhdGUoKSwgdGltZW91dD0zMAogICAgICAgICAgICApCgogICAgICAgICAgICBvdXRwdXQgPSBzdGRvdXQuZGVjb2RlKCJ1dGYtOCIsIGVycm9ycz0icmVwbGFjZSIpCgogICAgICAgICAgICBpZiBub3Qgb3V0cHV0LnN0cmlwKCk6CiAgICAgICAgICAgICAgICByZXR1cm4gZiJObyBtYXRjaGVzIGZvdW5kIGZvciAne3BhdHRlcm59JyIKCiAgICAgICAgICAgIG1hdGNoX2NvdW50ID0gc3VtKDEgZm9yIGxpbmUgaW4gb3V0cHV0LnNwbGl0bGluZXMoKSBpZiAiOiIgaW4gbGluZSBhbmQgbm90IGxpbmUuc3RhcnRzd2l0aCgiLS0iKSkKICAgICAgICAgICAgcmVzdWx0ID0gZiJGb3VuZCB+e21hdGNoX2NvdW50fSBtYXRjaGVzOlxuXG57b3V0cHV0fSIKCiAgICAgICAgICAgIGlmIGxlbihyZXN1bHQpID4gNTAwMDoKICAgICAgICAgICAgICAgIHJlc3VsdCA9IHJlc3VsdFs6NTAwMF0gKyAiXG4uLi4gW3RydW5jYXRlZF0iCgogICAgICAgICAgICByZXR1cm4gcmVzdWx0CgogICAgICAgIGV4Y2VwdCBhc3luY2lvLlRpbWVvdXRFcnJvcjoKICAgICAgICAgICAgcmV0dXJuICJFcnJvcjogU2VhcmNoIHRpbWVkIG91dCIKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGV4YzoKICAgICAgICAgICAgcmV0dXJuIGYiRXJyb3I6IHtleGN9Igo=
+"""Search tool — grep/ripgrep codebase search."""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+from typing import Any
+
+from nexus.tools.registry import BaseTool
+
+logger = logging.getLogger(__name__)
+
+
+class SearchTool(BaseTool):
+    """Search codebase using grep or ripgrep.
+
+    Provides fast code search with context lines. Prefers ripgrep (rg)
+    if available, falls back to grep.
+    """
+
+    name = "search"
+    description = "Search codebase for a pattern (regex supported)"
+    aliases = ["grep", "rg", "find_in_files"]
+    schema = {
+        "pattern": "(required) Search pattern (regex)",
+        "path": "(optional) Directory or file to search (default: workspace)",
+        "file_pattern": "(optional) File glob filter, e.g. '*.py'",
+        "context_lines": "(optional) Lines of context around matches (default: 2)",
+        "case_insensitive": "(optional) Case insensitive search (default: false)",
+    }
+
+    async def execute(
+        self,
+        pattern: str = "",
+        path: str = ".",
+        file_pattern: str = "",
+        context_lines: int = 2,
+        case_insensitive: bool = False,
+        **kwargs: Any,
+    ) -> str:
+        if not pattern:
+            return "Error: No search pattern provided"
+
+        # Try ripgrep first (faster), fall back to grep
+        rg_available = await self._check_command("rg")
+
+        if rg_available:
+            return await self._search_rg(
+                pattern, path, file_pattern, context_lines, case_insensitive
+            )
+        else:
+            return await self._search_grep(
+                pattern, path, file_pattern, context_lines, case_insensitive
+            )
+
+    async def _check_command(self, cmd: str) -> bool:
+        """Check if a command is available."""
+        try:
+            process = await asyncio.create_subprocess_exec(
+                "which", cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+            await process.communicate()
+            return process.returncode == 0
+        except Exception:
+            return False
+
+    async def _search_rg(
+        self,
+        pattern: str,
+        path: str,
+        file_pattern: str,
+        context_lines: int,
+        case_insensitive: bool,
+    ) -> str:
+        """Search using ripgrep."""
+        cmd = ["rg", "--no-heading", "-n", f"-C{context_lines}"]
+        if case_insensitive:
+            cmd.append("-i")
+        if file_pattern:
+            cmd.extend(["-g", file_pattern])
+        cmd.extend([pattern, path])
+
+        try:
+            process = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=30
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+
+            if not output.strip():
+                return f"No matches found for '{pattern}'"
+
+            # Count matches
+            match_count = sum(1 for line in output.splitlines() if line and not line.startswith("--"))
+
+            result = f"Found {match_count} matches:\n\n{output}"
+
+            if len(result) > 5000:
+                result = result[:5000] + "\n... [truncated]"
+
+            return result
+
+        except asyncio.TimeoutError:
+            return "Error: Search timed out"
+        except Exception as exc:
+            return f"Error: {exc}"
+
+    async def _search_grep(
+        self,
+        pattern: str,
+        path: str,
+        file_pattern: str,
+        context_lines: int,
+        case_insensitive: bool,
+    ) -> str:
+        """Fallback search using grep."""
+        cmd = ["grep", "-rn", f"-C{context_lines}"]
+        if case_insensitive:
+            cmd.append("-i")
+        if file_pattern:
+            cmd.extend(["--include", file_pattern])
+        cmd.extend([pattern, path])
+
+        try:
+            process = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=30
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+
+            if not output.strip():
+                return f"No matches found for '{pattern}'"
+
+            match_count = sum(1 for line in output.splitlines() if ":" in line and not line.startswith("--"))
+            result = f"Found ~{match_count} matches:\n\n{output}"
+
+            if len(result) > 5000:
+                result = result[:5000] + "\n... [truncated]"
+
+            return result
+
+        except asyncio.TimeoutError:
+            return "Error: Search timed out"
+        except Exception as exc:
+            return f"Error: {exc}"

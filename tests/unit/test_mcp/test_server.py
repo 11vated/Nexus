@@ -1,1 +1,133 @@
-IiIiVGVzdHMgZm9yIG5leHVzLm1jcC5zZXJ2ZXIg4oCUIE1DUCBwcm90b2NvbCBoYW5kbGVyLiIiIgppbXBvcnQgcHl0ZXN0CmZyb20gbmV4dXMubWNwLnNlcnZlciBpbXBvcnQgTmV4dXNNQ1BTZXJ2ZXIKCgpAcHl0ZXN0LmZpeHR1cmUKZGVmIHNlcnZlcih0bXBfcGF0aCk6CiAgICByZXR1cm4gTmV4dXNNQ1BTZXJ2ZXIod29ya3NwYWNlPXN0cih0bXBfcGF0aCkpCgoKY2xhc3MgVGVzdE1DUEluaXRpYWxpemU6CiAgICBAcHl0ZXN0Lm1hcmsuYXN5bmNpbwogICAgYXN5bmMgZGVmIHRlc3RfaW5pdGlhbGl6ZShzZWxmLCBzZXJ2ZXIpOgogICAgICAgIHJlcXVlc3QgPSB7CiAgICAgICAgICAgICJqc29ucnBjIjogIjIuMCIsCiAgICAgICAgICAgICJpZCI6IDEsCiAgICAgICAgICAgICJtZXRob2QiOiAiaW5pdGlhbGl6ZSIsCiAgICAgICAgICAgICJwYXJhbXMiOiB7CiAgICAgICAgICAgICAgICAicHJvdG9jb2xWZXJzaW9uIjogIjIwMjQtMTEtMDUiLAogICAgICAgICAgICAgICAgImNsaWVudEluZm8iOiB7Im5hbWUiOiAidGVzdCIsICJ2ZXJzaW9uIjogIjEuMCJ9LAogICAgICAgICAgICB9LAogICAgICAgIH0KICAgICAgICByZXNwb25zZSA9IGF3YWl0IHNlcnZlci5oYW5kbGVfcmVxdWVzdChyZXF1ZXN0KQogICAgICAgIGFzc2VydCByZXNwb25zZVsiaWQiXSA9PSAxCiAgICAgICAgYXNzZXJ0ICJwcm90b2NvbFZlcnNpb24iIGluIHJlc3BvbnNlWyJyZXN1bHQiXQogICAgICAgIGFzc2VydCByZXNwb25zZVsicmVzdWx0Il1bInNlcnZlckluZm8iXVsibmFtZSJdID09ICJuZXh1cyIKCiAgICBAcHl0ZXN0Lm1hcmsuYXN5bmNpbwogICAgYXN5bmMgZGVmIHRlc3RfaW5pdGlhbGl6ZWRfbm90aWZpY2F0aW9uKHNlbGYsIHNlcnZlcik6CiAgICAgICAgcmVxdWVzdCA9IHsKICAgICAgICAgICAgImpzb25ycGMiOiAiMi4wIiwKICAgICAgICAgICAgIm1ldGhvZCI6ICJub3RpZmljYXRpb25zL2luaXRpYWxpemVkIiwKICAgICAgICB9CiAgICAgICAgcmVzcG9uc2UgPSBhd2FpdCBzZXJ2ZXIuaGFuZGxlX3JlcXVlc3QocmVxdWVzdCkKICAgICAgICBhc3NlcnQgcmVzcG9uc2UgaXMgTm9uZQogICAgICAgIGFzc2VydCBzZXJ2ZXIuaW5pdGlhbGl6ZWQgaXMgVHJ1ZQoKCmNsYXNzIFRlc3RNQ1BUb29sc0xpc3Q6CiAgICBAcHl0ZXN0Lm1hcmsuYXN5bmNpbwogICAgYXN5bmMgZGVmIHRlc3RfdG9vbHNfbGlzdChzZWxmLCBzZXJ2ZXIpOgogICAgICAgIHJlcXVlc3QgPSB7CiAgICAgICAgICAgICJqc29ucnBjIjogIjIuMCIsCiAgICAgICAgICAgICJpZCI6IDIsCiAgICAgICAgICAgICJtZXRob2QiOiAidG9vbHMvbGlzdCIsCiAgICAgICAgICAgICJwYXJhbXMiOiB7fSwKICAgICAgICB9CiAgICAgICAgcmVzcG9uc2UgPSBhd2FpdCBzZXJ2ZXIuaGFuZGxlX3JlcXVlc3QocmVxdWVzdCkKICAgICAgICB0b29scyA9IHJlc3BvbnNlWyJyZXN1bHQiXVsidG9vbHMiXQogICAgICAgIGFzc2VydCBsZW4odG9vbHMpID4gMAogICAgICAgICMgQ2hlY2sgc3RydWN0dXJlCiAgICAgICAgZm9yIHRvb2wgaW4gdG9vbHM6CiAgICAgICAgICAgIGFzc2VydCAibmFtZSIgaW4gdG9vbAogICAgICAgICAgICBhc3NlcnQgImRlc2NyaXB0aW9uIiBpbiB0b29sCiAgICAgICAgICAgIGFzc2VydCAiaW5wdXRTY2hlbWEiIGluIHRvb2wKCiAgICBAcHl0ZXN0Lm1hcmsuYXN5bmNpbwogICAgYXN5bmMgZGVmIHRlc3RfdG9vbHNfaGF2ZV9leHBlY3RlZF9uYW1lcyhzZWxmLCBzZXJ2ZXIpOgogICAgICAgIHJlcXVlc3QgPSB7Impzb25ycGMiOiAiMi4wIiwgImlkIjogMywgIm1ldGhvZCI6ICJ0b29scy9saXN0IiwgInBhcmFtcyI6IHt9fQogICAgICAgIHJlc3BvbnNlID0gYXdhaXQgc2VydmVyLmhhbmRsZV9yZXF1ZXN0KHJlcXVlc3QpCiAgICAgICAgbmFtZXMgPSB7dFsibmFtZSJdIGZvciB0IGluIHJlc3BvbnNlWyJyZXN1bHQiXVsidG9vbHMiXX0KICAgICAgICBhc3NlcnQgInNoZWxsIiBpbiBuYW1lcwogICAgICAgIGFzc2VydCAiZmlsZV9yZWFkIiBpbiBuYW1lcwogICAgICAgIGFzc2VydCAiZmlsZV93cml0ZSIgaW4gbmFtZXMKICAgICAgICBhc3NlcnQgInNlYXJjaCIgaW4gbmFtZXMKCgpjbGFzcyBUZXN0TUNQVG9vbHNDYWxsOgogICAgQHB5dGVzdC5tYXJrLmFzeW5jaW8KICAgIGFzeW5jIGRlZiB0ZXN0X2NhbGxfZmlsZV9saXN0KHNlbGYsIHNlcnZlciwgdG1wX3BhdGgpOgogICAgICAgICMgQ3JlYXRlIGEgdGVzdCBmaWxlCiAgICAgICAgKHRtcF9wYXRoIC8gInRlc3QudHh0Iikud3JpdGVfdGV4dCgiaGVsbG8iKQoKICAgICAgICByZXF1ZXN0ID0gewogICAgICAgICAgICAianNvbnJwYyI6ICIyLjAiLAogICAgICAgICAgICAiaWQiOiA0LAogICAgICAgICAgICAibWV0aG9kIjogInRvb2xzL2NhbGwiLAogICAgICAgICAgICAicGFyYW1zIjogewogICAgICAgICAgICAgICAgIm5hbWUiOiAiZmlsZV9saXN0IiwKICAgICAgICAgICAgICAgICJhcmd1bWVudHMiOiB7InBhdGgiOiAiLiJ9LAogICAgICAgICAgICB9LAogICAgICAgIH0KICAgICAgICByZXNwb25zZSA9IGF3YWl0IHNlcnZlci5oYW5kbGVfcmVxdWVzdChyZXF1ZXN0KQogICAgICAgIHJlc3VsdCA9IHJlc3BvbnNlWyJyZXN1bHQiXQogICAgICAgIGFzc2VydCByZXN1bHRbImlzRXJyb3IiXSBpcyBGYWxzZQogICAgICAgIGFzc2VydCAidGVzdC50eHQiIGluIHJlc3VsdFsiY29udGVudCJdWzBdWyJ0ZXh0Il0KCiAgICBAcHl0ZXN0Lm1hcmsuYXN5bmNpbwogICAgYXN5bmMgZGVmIHRlc3RfY2FsbF9maWxlX3dyaXRlX2FuZF9yZWFkKHNlbGYsIHNlcnZlciwgdG1wX3BhdGgpOgogICAgICAgICMgV3JpdGUKICAgICAgICB3cml0ZV9yZXEgPSB7CiAgICAgICAgICAgICJqc29ucnBjIjogIjIuMCIsICJpZCI6IDUsCiAgICAgICAgICAgICJtZXRob2QiOiAidG9vbHMvY2FsbCIsCiAgICAgICAgICAgICJwYXJhbXMiOiB7Im5hbWUiOiAiZmlsZV93cml0ZSIsICJhcmd1bWVudHMiOiB7InBhdGgiOiAibWNwX3Rlc3QudHh0IiwgImNvbnRlbnQiOiAibWNwIHdvcmtzIn19LAogICAgICAgIH0KICAgICAgICByZXNwID0gYXdhaXQgc2VydmVyLmhhbmRsZV9yZXF1ZXN0KHdyaXRlX3JlcSkKICAgICAgICBhc3NlcnQgcmVzcFsicmVzdWx0Il1bImlzRXJyb3IiXSBpcyBGYWxzZQoKICAgICAgICAjIFJlYWQgYmFjawogICAgICAgIHJlYWRfcmVxID0gewogICAgICAgICAgICAianNvbnJwYyI6ICIyLjAiLCAiaWQiOiA2LAogICAgICAgICAgICAibWV0aG9kIjogInRvb2xzL2NhbGwiLAogICAgICAgICAgICAicGFyYW1zIjogeyJuYW1lIjogImZpbGVfcmVhZCIsICJhcmd1bWVudHMiOiB7InBhdGgiOiAibWNwX3Rlc3QudHh0In19LAogICAgICAgIH0KICAgICAgICByZXNwID0gYXdhaXQgc2VydmVyLmhhbmRsZV9yZXF1ZXN0KHJlYWRfcmVxKQogICAgICAgIGFzc2VydCByZXNwWyJyZXN1bHQiXVsiaXNFcnJvciJdIGlzIEZhbHNlCiAgICAgICAgYXNzZXJ0ICJtY3Agd29ya3MiIGluIHJlc3BbInJlc3VsdCJdWyJjb250ZW50Il1bMF1bInRleHQiXQoKICAgIEBweXRlc3QubWFyay5hc3luY2lvCiAgICBhc3luYyBkZWYgdGVzdF9jYWxsX3Vua25vd25fdG9vbChzZWxmLCBzZXJ2ZXIpOgogICAgICAgIHJlcXVlc3QgPSB7CiAgICAgICAgICAgICJqc29ucnBjIjogIjIuMCIsICJpZCI6IDcsCiAgICAgICAgICAgICJtZXRob2QiOiAidG9vbHMvY2FsbCIsCiAgICAgICAgICAgICJwYXJhbXMiOiB7Im5hbWUiOiAibm9uZXhpc3RlbnRfdG9vbCIsICJhcmd1bWVudHMiOiB7fX0sCiAgICAgICAgfQogICAgICAgIHJlc3BvbnNlID0gYXdhaXQgc2VydmVyLmhhbmRsZV9yZXF1ZXN0KHJlcXVlc3QpCiAgICAgICAgYXNzZXJ0IHJlc3BvbnNlWyJyZXN1bHQiXVsiaXNFcnJvciJdIGlzIFRydWUKCgpjbGFzcyBUZXN0TUNQUHJvdG9jb2w6CiAgICBAcHl0ZXN0Lm1hcmsuYXN5bmNpbwogICAgYXN5bmMgZGVmIHRlc3RfdW5rbm93bl9tZXRob2Qoc2VsZiwgc2VydmVyKToKICAgICAgICByZXF1ZXN0ID0geyJqc29ucnBjIjogIjIuMCIsICJpZCI6IDgsICJtZXRob2QiOiAidW5rbm93bi9tZXRob2QiLCAicGFyYW1zIjoge319CiAgICAgICAgcmVzcG9uc2UgPSBhd2FpdCBzZXJ2ZXIuaGFuZGxlX3JlcXVlc3QocmVxdWVzdCkKICAgICAgICBhc3NlcnQgImVycm9yIiBpbiByZXNwb25zZQogICAgICAgIGFzc2VydCByZXNwb25zZVsiZXJyb3IiXVsiY29kZSJdID09IC0zMjYwMQoKICAgIEBweXRlc3QubWFyay5hc3luY2lvCiAgICBhc3luYyBkZWYgdGVzdF9waW5nKHNlbGYsIHNlcnZlcik6CiAgICAgICAgcmVxdWVzdCA9IHsianNvbnJwYyI6ICIyLjAiLCAiaWQiOiA5LCAibWV0aG9kIjogInBpbmciLCAicGFyYW1zIjoge319CiAgICAgICAgcmVzcG9uc2UgPSBhd2FpdCBzZXJ2ZXIuaGFuZGxlX3JlcXVlc3QocmVxdWVzdCkKICAgICAgICBhc3NlcnQgcmVzcG9uc2VbImlkIl0gPT0gOQogICAgICAgIGFzc2VydCAicmVzdWx0IiBpbiByZXNwb25zZQo=
+"""Tests for nexus.mcp.server — MCP protocol handler."""
+import pytest
+from nexus.mcp.server import NexusMCPServer
+
+
+@pytest.fixture
+def server(tmp_path):
+    return NexusMCPServer(workspace=str(tmp_path))
+
+
+class TestMCPInitialize:
+    @pytest.mark.asyncio
+    async def test_initialize(self, server):
+        request = {
+            "jsonrpc": "2.0",
+            "id": 1,
+            "method": "initialize",
+            "params": {
+                "protocolVersion": "2024-11-05",
+                "clientInfo": {"name": "test", "version": "1.0"},
+            },
+        }
+        response = await server.handle_request(request)
+        assert response["id"] == 1
+        assert "protocolVersion" in response["result"]
+        assert response["result"]["serverInfo"]["name"] == "nexus"
+
+    @pytest.mark.asyncio
+    async def test_initialized_notification(self, server):
+        request = {
+            "jsonrpc": "2.0",
+            "method": "notifications/initialized",
+        }
+        response = await server.handle_request(request)
+        assert response is None
+        assert server.initialized is True
+
+
+class TestMCPToolsList:
+    @pytest.mark.asyncio
+    async def test_tools_list(self, server):
+        request = {
+            "jsonrpc": "2.0",
+            "id": 2,
+            "method": "tools/list",
+            "params": {},
+        }
+        response = await server.handle_request(request)
+        tools = response["result"]["tools"]
+        assert len(tools) > 0
+        # Check structure
+        for tool in tools:
+            assert "name" in tool
+            assert "description" in tool
+            assert "inputSchema" in tool
+
+    @pytest.mark.asyncio
+    async def test_tools_have_expected_names(self, server):
+        request = {"jsonrpc": "2.0", "id": 3, "method": "tools/list", "params": {}}
+        response = await server.handle_request(request)
+        names = {t["name"] for t in response["result"]["tools"]}
+        assert "shell" in names
+        assert "file_read" in names
+        assert "file_write" in names
+        assert "search" in names
+
+
+class TestMCPToolsCall:
+    @pytest.mark.asyncio
+    async def test_call_file_list(self, server, tmp_path):
+        # Create a test file
+        (tmp_path / "test.txt").write_text("hello")
+
+        request = {
+            "jsonrpc": "2.0",
+            "id": 4,
+            "method": "tools/call",
+            "params": {
+                "name": "file_list",
+                "arguments": {"path": "."},
+            },
+        }
+        response = await server.handle_request(request)
+        result = response["result"]
+        assert result["isError"] is False
+        assert "test.txt" in result["content"][0]["text"]
+
+    @pytest.mark.asyncio
+    async def test_call_file_write_and_read(self, server, tmp_path):
+        # Write
+        write_req = {
+            "jsonrpc": "2.0", "id": 5,
+            "method": "tools/call",
+            "params": {"name": "file_write", "arguments": {"path": "mcp_test.txt", "content": "mcp works"}},
+        }
+        resp = await server.handle_request(write_req)
+        assert resp["result"]["isError"] is False
+
+        # Read back
+        read_req = {
+            "jsonrpc": "2.0", "id": 6,
+            "method": "tools/call",
+            "params": {"name": "file_read", "arguments": {"path": "mcp_test.txt"}},
+        }
+        resp = await server.handle_request(read_req)
+        assert resp["result"]["isError"] is False
+        assert "mcp works" in resp["result"]["content"][0]["text"]
+
+    @pytest.mark.asyncio
+    async def test_call_unknown_tool(self, server):
+        request = {
+            "jsonrpc": "2.0", "id": 7,
+            "method": "tools/call",
+            "params": {"name": "nonexistent_tool", "arguments": {}},
+        }
+        response = await server.handle_request(request)
+        assert response["result"]["isError"] is True
+
+
+class TestMCPProtocol:
+    @pytest.mark.asyncio
+    async def test_unknown_method(self, server):
+        request = {"jsonrpc": "2.0", "id": 8, "method": "unknown/method", "params": {}}
+        response = await server.handle_request(request)
+        assert "error" in response
+        assert response["error"]["code"] == -32601
+
+    @pytest.mark.asyncio
+    async def test_ping(self, server):
+        request = {"jsonrpc": "2.0", "id": 9, "method": "ping", "params": {}}
+        response = await server.handle_request(request)
+        assert response["id"] == 9
+        assert "result" in response

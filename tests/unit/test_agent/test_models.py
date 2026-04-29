@@ -1,1 +1,82 @@
-IiIiVGVzdHMgZm9yIG5leHVzLmFnZW50Lm1vZGVscyDigJQgZGF0YWNsYXNzZXMgYW5kIGVudW1zLiIiIgppbXBvcnQgcHl0ZXN0CmZyb20gbmV4dXMuYWdlbnQubW9kZWxzIGltcG9ydCAoCiAgICBBZ2VudENvbmZpZywKICAgIEFnZW50U3RhdGUsCiAgICBBZ2VudFJvbGUsCiAgICBUYXNrU3RhdHVzLAogICAgUXVhbGl0eUxldmVsLAogICAgVGFzaywKICAgIFN0ZXAsCiAgICBUb29sQ2FsbCwKKQoKCmNsYXNzIFRlc3RBZ2VudENvbmZpZzoKICAgIGRlZiB0ZXN0X2RlZmF1bHRzKHNlbGYpOgogICAgICAgIGNmZyA9IEFnZW50Q29uZmlnKCkKICAgICAgICBhc3NlcnQgY2ZnLnBsYW5uaW5nX21vZGVsID09ICJkZWVwc2Vlay1yMTo3YiIKICAgICAgICBhc3NlcnQgY2ZnLmNvZGluZ19tb2RlbCA9PSAicXdlbjIuNS1jb2RlcjoxNGIiCiAgICAgICAgYXNzZXJ0IGNmZy5tYXhfaXRlcmF0aW9ucyA9PSAyNQogICAgICAgIGFzc2VydCBjZmcucmVmbGVjdGlvbl9lbmFibGVkIGlzIFRydWUKICAgICAgICBhc3NlcnQgY2ZnLm1lbW9yeV9lbmFibGVkIGlzIFRydWUKCiAgICBkZWYgdGVzdF9vdmVycmlkZShzZWxmKToKICAgICAgICBjZmcgPSBBZ2VudENvbmZpZyhwbGFubmluZ19tb2RlbD0ibGxhbWEzOjhiIiwgbWF4X2l0ZXJhdGlvbnM9MTApCiAgICAgICAgYXNzZXJ0IGNmZy5wbGFubmluZ19tb2RlbCA9PSAibGxhbWEzOjhiIgogICAgICAgIGFzc2VydCBjZmcubWF4X2l0ZXJhdGlvbnMgPT0gMTAKCiAgICBkZWYgdGVzdF93b3Jrc3BhY2VfZGVmYXVsdChzZWxmKToKICAgICAgICBjZmcgPSBBZ2VudENvbmZpZygpCiAgICAgICAgYXNzZXJ0IGNmZy53b3Jrc3BhY2VfcGF0aCA9PSAiLiIKCgpjbGFzcyBUZXN0QWdlbnRTdGF0ZToKICAgIGRlZiB0ZXN0X2FsbF9zdGF0ZXNfZXhpc3Qoc2VsZik6CiAgICAgICAgZXhwZWN0ZWQgPSB7ImlkbGUiLCAicGxhbm5pbmciLCAiYWN0aW5nIiwgIm9ic2VydmluZyIsICJyZWZsZWN0aW5nIiwgImNvcnJlY3RpbmciLCAiZG9uZSIsICJlcnJvciJ9CiAgICAgICAgYWN0dWFsID0ge3MudmFsdWUgZm9yIHMgaW4gQWdlbnRTdGF0ZX0KICAgICAgICBhc3NlcnQgZXhwZWN0ZWQgPT0gYWN0dWFsCgoKY2xhc3MgVGVzdFN0ZXA6CiAgICBkZWYgdGVzdF9zdGVwX2NyZWF0aW9uKHNlbGYpOgogICAgICAgIHN0ZXAgPSBTdGVwKGFjdGlvbj0iV3JpdGUgZmlsZSIsIHRvb2xfbmFtZT0iZmlsZV93cml0ZSIsIHN1Y2Nlc3M9VHJ1ZSwgcmVzdWx0PSJPSyIpCiAgICAgICAgYXNzZXJ0IHN0ZXAuYWN0aW9uID09ICJXcml0ZSBmaWxlIgogICAgICAgIGFzc2VydCBzdGVwLnN1Y2Nlc3MgaXMgVHJ1ZQoKICAgIGRlZiB0ZXN0X3N0ZXBfdG9fY29udGV4dChzZWxmKToKICAgICAgICBzdGVwID0gU3RlcChhY3Rpb249IlJ1biB0ZXN0cyIsIHRvb2xfbmFtZT0idGVzdF9ydW4iLCBzdWNjZXNzPUZhbHNlLCByZXN1bHQ9IjIgZmFpbGVkIikKICAgICAgICBjdHggPSBzdGVwLnRvX2NvbnRleHQoKQogICAgICAgIGFzc2VydCAiUnVuIHRlc3RzIiBpbiBjdHgKICAgICAgICBhc3NlcnQgIjIgZmFpbGVkIiBpbiBjdHgKCiAgICBkZWYgdGVzdF9zdGVwX2RlZmF1bHRzKHNlbGYpOgogICAgICAgIHN0ZXAgPSBTdGVwKGFjdGlvbj0idGVzdCIsIHRvb2xfbmFtZT0ic2hlbGwiLCBzdWNjZXNzPVRydWUsIHJlc3VsdD0iZG9uZSIpCiAgICAgICAgYXNzZXJ0IHN0ZXAucXVhbGl0eV9zY29yZSA9PSAwLjAKICAgICAgICBhc3NlcnQgc3RlcC5kdXJhdGlvbl9tcyA9PSAwLjAKCgpjbGFzcyBUZXN0VGFzazoKICAgIGRlZiB0ZXN0X3Rhc2tfY3JlYXRpb24oc2VsZik6CiAgICAgICAgdGFzayA9IFRhc2soZGVzY3JpcHRpb249IkJ1aWxkIEFQSSIsIHN0YXR1cz1UYXNrU3RhdHVzLlBFTkRJTkcpCiAgICAgICAgYXNzZXJ0IHRhc2suZGVzY3JpcHRpb24gPT0gIkJ1aWxkIEFQSSIKICAgICAgICBhc3NlcnQgdGFzay5zdGF0dXMgPT0gVGFza1N0YXR1cy5QRU5ESU5HCgoKY2xhc3MgVGVzdFRvb2xDYWxsOgogICAgZGVmIHRlc3RfdG9vbF9jYWxsKHNlbGYpOgogICAgICAgIHRjID0gVG9vbENhbGwobmFtZT0ic2hlbGwiLCBhcmd1bWVudHM9eyJjb21tYW5kIjogImxzIn0pCiAgICAgICAgYXNzZXJ0IHRjLm5hbWUgPT0gInNoZWxsIgogICAgICAgIGFzc2VydCB0Yy5hcmd1bWVudHNbImNvbW1hbmQiXSA9PSAibHMiCgogICAgZGVmIHRlc3RfdG9vbF9jYWxsX3JhdyhzZWxmKToKICAgICAgICB0YyA9IFRvb2xDYWxsKG5hbWU9InRlc3QiLCBhcmd1bWVudHM9e30sIHJhdz0icmF3IG91dHB1dCIpCiAgICAgICAgYXNzZXJ0IHRjLnJhdyA9PSAicmF3IG91dHB1dCIKCgpjbGFzcyBUZXN0UXVhbGl0eUxldmVsOgogICAgZGVmIHRlc3RfcXVhbGl0eV9sZXZlbHMoc2VsZik6CiAgICAgICAgYXNzZXJ0IFF1YWxpdHlMZXZlbC5HT09ELnZhbHVlID09IDMKICAgICAgICBhc3NlcnQgUXVhbGl0eUxldmVsLlJFSkVDVEVELnZhbHVlID09IDAKICAgICAgICBhc3NlcnQgUXVhbGl0eUxldmVsLkZBSVIudmFsdWUgPT0gMgogICAgICAgIGFzc2VydCBRdWFsaXR5TGV2ZWwuUE9PUi52YWx1ZSA9PSAxCg==
+"""Tests for nexus.agent.models — dataclasses and enums."""
+import pytest
+from nexus.agent.models import (
+    AgentConfig,
+    AgentState,
+    AgentRole,
+    TaskStatus,
+    QualityLevel,
+    Task,
+    Step,
+    ToolCall,
+)
+
+
+class TestAgentConfig:
+    def test_defaults(self):
+        cfg = AgentConfig()
+        assert cfg.planning_model == "deepseek-r1:7b"
+        assert cfg.coding_model == "qwen2.5-coder:14b"
+        assert cfg.max_iterations == 25
+        assert cfg.reflection_enabled is True
+        assert cfg.memory_enabled is True
+
+    def test_override(self):
+        cfg = AgentConfig(planning_model="llama3:8b", max_iterations=10)
+        assert cfg.planning_model == "llama3:8b"
+        assert cfg.max_iterations == 10
+
+    def test_workspace_default(self):
+        cfg = AgentConfig()
+        assert cfg.workspace_path == "."
+
+
+class TestAgentState:
+    def test_all_states_exist(self):
+        expected = {"idle", "planning", "acting", "observing", "reflecting", "correcting", "done", "error"}
+        actual = {s.value for s in AgentState}
+        assert expected == actual
+
+
+class TestStep:
+    def test_step_creation(self):
+        step = Step(action="Write file", tool_name="file_write", success=True, result="OK")
+        assert step.action == "Write file"
+        assert step.success is True
+
+    def test_step_to_context(self):
+        step = Step(action="Run tests", tool_name="test_run", success=False, result="2 failed")
+        ctx = step.to_context()
+        assert "Run tests" in ctx
+        assert "2 failed" in ctx
+
+    def test_step_defaults(self):
+        step = Step(action="test", tool_name="shell", success=True, result="done")
+        assert step.quality_score == 0.0
+        assert step.duration_ms == 0.0
+
+
+class TestTask:
+    def test_task_creation(self):
+        task = Task(description="Build API", status=TaskStatus.PENDING)
+        assert task.description == "Build API"
+        assert task.status == TaskStatus.PENDING
+
+
+class TestToolCall:
+    def test_tool_call(self):
+        tc = ToolCall(name="shell", arguments={"command": "ls"})
+        assert tc.name == "shell"
+        assert tc.arguments["command"] == "ls"
+
+    def test_tool_call_raw(self):
+        tc = ToolCall(name="test", arguments={}, raw="raw output")
+        assert tc.raw == "raw output"
+
+
+class TestQualityLevel:
+    def test_quality_levels(self):
+        assert QualityLevel.GOOD.value == 3
+        assert QualityLevel.REJECTED.value == 0
+        assert QualityLevel.FAIR.value == 2
+        assert QualityLevel.POOR.value == 1

@@ -92,6 +92,9 @@ class TerminalAwareUI:
                             models: dict) -> Layout:
         """Create a layout that adapts to terminal size."""
         sizes = self.calculate_pane_sizes()
+        w = self.terminal_width
+        h = self.terminal_height
+        agent_width = sizes["agent_pane"]
         
         # Calculate log lines that fit
         min_log_lines = max(10, h - 20)

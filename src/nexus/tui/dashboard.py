@@ -1,1 +1,299 @@
-IiIiSW50ZXJhY3RpdmUgVFVJIGRhc2hib2FyZCBmb3IgdGhlIE5leHVzIGFnZW50LgoKUHJvdmlkZXMgYSBmdWxsLXNjcmVlbiBSaWNoLWJhc2VkIGRhc2hib2FyZCB0aGF0IHNob3dzOgotIEFnZW50IHN0YXRlIGFuZCBwcm9ncmVzcwotIExpdmUgc3RlcCBleGVjdXRpb24KLSBUb29sIHJlZ2lzdHJ5Ci0gTWVtb3J5IHN0YXRzCi0gR29hbCBpbnB1dAoKVXNlOiBuZXh1cyB0dWkKIiIiCgpmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zCgppbXBvcnQgYXN5bmNpbwppbXBvcnQgdGltZQpmcm9tIHBhdGhsaWIgaW1wb3J0IFBhdGgKZnJvbSB0eXBpbmcgaW1wb3J0IEFueSwgRGljdCwgTGlzdCwgT3B0aW9uYWwKCmZyb20gcmljaC5jb25zb2xlIGltcG9ydCBDb25zb2xlLCBHcm91cApmcm9tIHJpY2gubGF5b3V0IGltcG9ydCBMYXlvdXQKZnJvbSByaWNoLmxpdmUgaW1wb3J0IExpdmUKZnJvbSByaWNoLnBhbmVsIGltcG9ydCBQYW5lbApmcm9tIHJpY2gudGFibGUgaW1wb3J0IFRhYmxlCmZyb20gcmljaC50ZXh0IGltcG9ydCBUZXh0CmZyb20gcmljaC5zcGlubmVyIGltcG9ydCBTcGlubmVyCmZyb20gcmljaC5hbGlnbiBpbXBvcnQgQWxpZ24KZnJvbSByaWNoLmNvbHVtbnMgaW1wb3J0IENvbHVtbnMKZnJvbSByaWNoLnByb21wdCBpbXBvcnQgUHJvbXB0Cgpmcm9tIG5leHVzLmFnZW50Lmxvb3AgaW1wb3J0IEFnZW50TG9vcApmcm9tIG5leHVzLmFnZW50Lm1vZGVscyBpbXBvcnQgQWdlbnRDb25maWcsIEFnZW50U3RhdGUsIFN0ZXAKZnJvbSBuZXh1cy50b29scyBpbXBvcnQgY3JlYXRlX2RlZmF1bHRfdG9vbHMKClNUQVRFX1NUWUxFUyA9IHsKICAgICJpZGxlIjogKCLij7ggSURMRSIsICJkaW0iKSwKICAgICJwbGFubmluZyI6ICgi8J+noCBQTEFOTklORyIsICJib2xkIHllbGxvdyIpLAogICAgImFjdGluZyI6ICgi4pqhIEFDVElORyIsICJib2xkIGN5YW4iKSwKICAgICJvYnNlcnZpbmciOiAoIvCfkYEgT0JTRVJWSU5HIiwgImJvbGQgYmx1ZSIpLAogICAgInJlZmxlY3RpbmciOiAoIvCflI0gUkVGTEVDVElORyIsICJib2xkIG1hZ2VudGEiKSwKICAgICJjb3JyZWN0aW5nIjogKCLwn5SnIENPUlJFQ1RJTkciLCAiYm9sZCB5ZWxsb3ciKSwKICAgICJkb25lIjogKCLinIUgRE9ORSIsICJib2xkIGdyZWVuIiksCiAgICAiZXJyb3IiOiAoIuKdjCBFUlJPUiIsICJib2xkIHJlZCIpLAp9CgoKY2xhc3MgTmV4dXNEYXNoYm9hcmQ6CiAgICAiIiJGdWxsLXNjcmVlbiBpbnRlcmFjdGl2ZSBhZ2VudCBkYXNoYm9hcmQuCgogICAgTGF5b3V0OgogICAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCiAgICDilIIgIE5FWFVTIOKAlCBzdGF0ZSBiYW5uZXIgICAgICAgICAgICAgICDilIIKICAgIOKUnOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUrOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUpAogICAg4pSCICBTdGVwcyAobWFpbikgICAg4pSCICBJbmZvIHNpZGViYXIgICAg4pSCCiAgICDilIIgICAgICAgICAgICAgICAgICDilIIgIC0gVG9vbHMgICAgICAgICDilIIKICAgIOKUgiAgICAgICAgICAgICAgICAgIOKUgiAgLSBNZW1vcnkgICAgICAgIOKUggogICAg4pSCICAgICAgICAgICAgICAgICAg4pSCICAtIENvbmZpZyAgICAgICAg4pSCCiAgICDilJzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilLTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilKQKICAgIOKUgiAgQ3VycmVudCBzdGVwIGRldGFpbCAvIGlucHV0ICAgICAgICDilIIKICAgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmAogICAgIiIiCgogICAgZGVmIF9faW5pdF9fKAogICAgICAgIHNlbGYsCiAgICAgICAgd29ya3NwYWNlOiBzdHIgPSAiLiIsCiAgICAgICAgY29uZmlnOiBPcHRpb25hbFtBZ2VudENvbmZpZ10gPSBOb25lLAogICAgKToKICAgICAgICBzZWxmLmNvbnNvbGUgPSBDb25zb2xlKCkKICAgICAgICBzZWxmLndvcmtzcGFjZSA9IHN0cihQYXRoKHdvcmtzcGFjZSkucmVzb2x2ZSgpKQogICAgICAgIHNlbGYuY29uZmlnID0gY29uZmlnIG9yIEFnZW50Q29uZmlnKHdvcmtzcGFjZV9wYXRoPXNlbGYud29ya3NwYWNlKQogICAgICAgIHNlbGYuYWdlbnQ6IE9wdGlvbmFsW0FnZW50TG9vcF0gPSBOb25lCiAgICAgICAgc2VsZi5zdGVwX2xvZzogTGlzdFtEaWN0W3N0ciwgQW55XV0gPSBbXQogICAgICAgIHNlbGYuY3VycmVudF9zdGF0ZSA9ICJpZGxlIgogICAgICAgIHNlbGYuY3VycmVudF9nb2FsID0gIiIKICAgICAgICBzZWxmLnN0YXJ0X3RpbWU6IE9wdGlvbmFsW2Zsb2F0XSA9IE5vbmUKICAgICAgICBzZWxmLnJlc3VsdDogT3B0aW9uYWxbRGljdFtzdHIsIEFueV1dID0gTm9uZQogICAgICAgIHNlbGYuX3Rvb2xfbmFtZXM6IExpc3Rbc3RyXSA9IFtdCgogICAgZGVmIF9tYWtlX2xheW91dChzZWxmKSAtPiBMYXlvdXQ6CiAgICAgICAgIiIiQ3JlYXRlIHRoZSBkYXNoYm9hcmQgbGF5b3V0IHN0cnVjdHVyZS4iIiIKICAgICAgICBsYXlvdXQgPSBMYXlvdXQoKQogICAgICAgIGxheW91dC5zcGxpdF9jb2x1bW4oCiAgICAgICAgICAgIExheW91dChuYW1lPSJoZWFkZXIiLCBzaXplPTMpLAogICAgICAgICAgICBMYXlvdXQobmFtZT0iYm9keSIsIHJhdGlvPTEpLAogICAgICAgICAgICBMYXlvdXQobmFtZT0iZm9vdGVyIiwgc2l6ZT01KSwKICAgICAgICApCiAgICAgICAgbGF5b3V0WyJib2R5Il0uc3BsaXRfcm93KAogICAgICAgICAgICBMYXlvdXQobmFtZT0ic3RlcHMiLCByYXRpbz0zKSwKICAgICAgICAgICAgTGF5b3V0KG5hbWU9InNpZGViYXIiLCByYXRpbz0xLCBtaW5pbXVtX3NpemU9MjgpLAogICAgICAgICkKICAgICAgICByZXR1cm4gbGF5b3V0CgogICAgZGVmIF9yZW5kZXJfaGVhZGVyKHNlbGYpIC0+IFBhbmVsOgogICAgICAgICIiIlJlbmRlciB0aGUgdG9wIHN0YXR1cyBiYXIuIiIiCiAgICAgICAgc3RhdGVfdGV4dCwgc3RhdGVfc3R5bGUgPSBTVEFURV9TVFlMRVMuZ2V0KAogICAgICAgICAgICBzZWxmLmN1cnJlbnRfc3RhdGUsICgiPyBVTktOT1dOIiwgImRpbSIpCiAgICAgICAgKQogICAgICAgIGVsYXBzZWQgPSBmIiDCtyB7dGltZS50aW1lKCkgLSBzZWxmLnN0YXJ0X3RpbWU6LjBmfXMiIGlmIHNlbGYuc3RhcnRfdGltZSBlbHNlICIiCiAgICAgICAgZ29hbF9kaXNwbGF5ID0gc2VsZi5jdXJyZW50X2dvYWxbOjgwXSBpZiBzZWxmLmN1cnJlbnRfZ29hbCBlbHNlICJObyBnb2FsIHNldCIKCiAgICAgICAgaGVhZGVyID0gVGV4dC5hc3NlbWJsZSgKICAgICAgICAgICAgKCIgIE5FWFVTICAiLCAiYm9sZCB3aGl0ZSBvbiBibHVlIiksCiAgICAgICAgICAgICgiICAiLCAiIiksCiAgICAgICAgICAgIChzdGF0ZV90ZXh0LCBzdGF0ZV9zdHlsZSksCiAgICAgICAgICAgIChlbGFwc2VkLCAiZGltIiksCiAgICAgICAgICAgICgiICDilIIgICIsICJkaW0iKSwKICAgICAgICAgICAgKGdvYWxfZGlzcGxheSwgIml0YWxpYyIpLAogICAgICAgICkKICAgICAgICByZXR1cm4gUGFuZWwoaGVhZGVyLCBzdHlsZT0iYmx1ZSIsIGhlaWdodD0zKQoKICAgIGRlZiBfcmVuZGVyX3N0ZXBzKHNlbGYpIC0+IFBhbmVsOgogICAgICAgICIiIlJlbmRlciB0aGUgbWFpbiBzdGVwcyBwYW5lbC4iIiIKICAgICAgICBpZiBub3Qgc2VsZi5zdGVwX2xvZzoKICAgICAgICAgICAgY29udGVudCA9IEFsaWduLmNlbnRlcigKICAgICAgICAgICAgICAgIFRleHQoIk5vIHN0ZXBzIHlldCDigJQgZW50ZXIgYSBnb2FsIHRvIHN0YXJ0Iiwgc3R5bGU9ImRpbSIpLAogICAgICAgICAgICAgICAgdmVydGljYWw9Im1pZGRsZSIsCiAgICAgICAgICAgICkKICAgICAgICAgICAgcmV0dXJuIFBhbmVsKGNvbnRlbnQsIHRpdGxlPSJTdGVwcyIsIGJvcmRlcl9zdHlsZT0iY3lhbiIpCgogICAgICAgIHRhYmxlID0gVGFibGUoc2hvd19oZWFkZXI9VHJ1ZSwgZXhwYW5kPVRydWUsIHNob3dfbGluZXM9RmFsc2UpCiAgICAgICAgdGFibGUuYWRkX2NvbHVtbigiIyIsIHN0eWxlPSJkaW0iLCB3aWR0aD0zKQogICAgICAgIHRhYmxlLmFkZF9jb2x1bW4oIkFjdGlvbiIsIHJhdGlvPTMpCiAgICAgICAgdGFibGUuYWRkX2NvbHVtbigiVG9vbCIsIHN0eWxlPSJjeWFuIiwgd2lkdGg9MTIpCiAgICAgICAgdGFibGUuYWRkX2NvbHVtbigiIiwgd2lkdGg9MikKICAgICAgICB0YWJsZS5hZGRfY29sdW1uKCJUaW1lIiwgc3R5bGU9ImRpbSIsIHdpZHRoPTcpCgogICAgICAgIGZvciBpLCBzIGluIGVudW1lcmF0ZShzZWxmLnN0ZXBfbG9nWy0yMDpdLCAxKTogICMgU2hvdyBsYXN0IDIwCiAgICAgICAgICAgIGljb24gPSAi4pyTIiBpZiBzWyJzdWNjZXNzIl0gZWxzZSAi4pyXIgogICAgICAgICAgICBzdHlsZSA9ICJncmVlbiIgaWYgc1sic3VjY2VzcyJdIGVsc2UgInJlZCIKICAgICAgICAgICAgYWN0aW9uID0gc1siYWN0aW9uIl1bOjU1XSArICgi4oCmIiBpZiBsZW4oc1siYWN0aW9uIl0pID4gNTUgZWxzZSAiIikKICAgICAgICAgICAgbXMgPSBmIntzWydkdXJhdGlvbl9tcyddOi4wZn1tcyIgaWYgcy5nZXQoImR1cmF0aW9uX21zIikgZWxzZSAiIgogICAgICAgICAgICB0YWJsZS5hZGRfcm93KHN0cihpKSwgYWN0aW9uLCBzLmdldCgidG9vbCIsICIiKSwgZiJbe3N0eWxlfV17aWNvbn1bL3tzdHlsZX1dIiwgbXMpCgogICAgICAgIHJldHVybiBQYW5lbCh0YWJsZSwgdGl0bGU9ZiJTdGVwcyAoe2xlbihzZWxmLnN0ZXBfbG9nKX0pIiwgYm9yZGVyX3N0eWxlPSJjeWFuIikKCiAgICBkZWYgX3JlbmRlcl9zaWRlYmFyKHNlbGYpIC0+IFBhbmVsOgogICAgICAgICIiIlJlbmRlciB0aGUgaW5mbyBzaWRlYmFyLiIiIgogICAgICAgIHNlY3Rpb25zID0gW10KCiAgICAgICAgIyBUb29scyBzZWN0aW9uCiAgICAgICAgdG9vbHNfdGV4dCA9IFRleHQoKQogICAgICAgIHRvb2xzX3RleHQuYXBwZW5kKCJUb29sc1xuIiwgc3R5bGU9ImJvbGQgY3lhbiIpCiAgICAgICAgZm9yIHQgaW4gc2VsZi5fdG9vbF9uYW1lc1s6MTBdOgogICAgICAgICAgICB0b29sc190ZXh0LmFwcGVuZChmIiAg4oCiIHt0fVxuIiwgc3R5bGU9ImRpbSIpCiAgICAgICAgc2VjdGlvbnMuYXBwZW5kKHRvb2xzX3RleHQpCgogICAgICAgICMgTWVtb3J5IHNlY3Rpb24KICAgICAgICBtZW1fdGV4dCA9IFRleHQoKQogICAgICAgIG1lbV90ZXh0LmFwcGVuZCgiXG5NZW1vcnlcbiIsIHN0eWxlPSJib2xkIG1hZ2VudGEiKQogICAgICAgIGlmIHNlbGYuYWdlbnQ6CiAgICAgICAgICAgIG1lbV90ZXh0LmFwcGVuZChmIiAgU2hvcnQtdGVybToge3NlbGYuYWdlbnQuc2hvcnRfdGVybS5zaXplfSBlbnRyaWVzXG4iLCBzdHlsZT0iZGltIikKICAgICAgICAgICAgaWYgc2VsZi5hZ2VudC5sb25nX3Rlcm06CiAgICAgICAgICAgICAgICBtZW1fdGV4dC5hcHBlbmQoZiIgIExvbmctdGVybTogIHtzZWxmLmFnZW50LmxvbmdfdGVybS5jb3VudH0gZG9jc1xuIiwgc3R5bGU9ImRpbSIpCiAgICAgICAgc2VjdGlvbnMuYXBwZW5kKG1lbV90ZXh0KQoKICAgICAgICAjIFN0YXRzIHNlY3Rpb24KICAgICAgICBpZiBzZWxmLnN0ZXBfbG9nOgogICAgICAgICAgICBzdGF0c190ZXh0ID0gVGV4dCgpCiAgICAgICAgICAgIHN0YXRzX3RleHQuYXBwZW5kKCJcblN0YXRzXG4iLCBzdHlsZT0iYm9sZCB5ZWxsb3ciKQogICAgICAgICAgICBvayA9IHN1bSgxIGZvciBzIGluIHNlbGYuc3RlcF9sb2cgaWYgc1sic3VjY2VzcyJdKQogICAgICAgICAgICB0b3RhbCA9IGxlbihzZWxmLnN0ZXBfbG9nKQogICAgICAgICAgICBzdGF0c190ZXh0LmFwcGVuZChmIiAgUGFzc2VkOiB7b2t9L3t0b3RhbH1cbiIsIHN0eWxlPSJkaW0iKQogICAgICAgICAgICBpZiBzZWxmLnN0YXJ0X3RpbWU6CiAgICAgICAgICAgICAgICBzdGF0c190ZXh0LmFwcGVuZChmIiAgVGltZTogICB7dGltZS50aW1lKCkgLSBzZWxmLnN0YXJ0X3RpbWU6LjBmfXNcbiIsIHN0eWxlPSJkaW0iKQogICAgICAgICAgICBzZWN0aW9ucy5hcHBlbmQoc3RhdHNfdGV4dCkKCiAgICAgICAgIyBDb25maWcgc2VjdGlvbgogICAgICAgIGNvbmZpZ190ZXh0ID0gVGV4dCgpCiAgICAgICAgY29uZmlnX3RleHQuYXBwZW5kKCJcbkNvbmZpZ1xuIiwgc3R5bGU9ImJvbGQgYmx1ZSIpCiAgICAgICAgY29uZmlnX3RleHQuYXBwZW5kKGYiICBQbGFuOiB7c2VsZi5jb25maWcucGxhbm5pbmdfbW9kZWx9XG4iLCBzdHlsZT0iZGltIikKICAgICAgICBjb25maWdfdGV4dC5hcHBlbmQoZiIgIENvZGU6IHtzZWxmLmNvbmZpZy5jb2RpbmdfbW9kZWx9XG4iLCBzdHlsZT0iZGltIikKICAgICAgICBjb25maWdfdGV4dC5hcHBlbmQoZiIgIE1heDogIHtzZWxmLmNvbmZpZy5tYXhfaXRlcmF0aW9uc30gaXRlcnNcbiIsIHN0eWxlPSJkaW0iKQogICAgICAgIHNlY3Rpb25zLmFwcGVuZChjb25maWdfdGV4dCkKCiAgICAgICAgcmV0dXJuIFBhbmVsKEdyb3VwKCpzZWN0aW9ucyksIHRpdGxlPSJJbmZvIiwgYm9yZGVyX3N0eWxlPSJibHVlIikKCiAgICBkZWYgX3JlbmRlcl9mb290ZXIoc2VsZikgLT4gUGFuZWw6CiAgICAgICAgIiIiUmVuZGVyIHRoZSBib3R0b20gZGV0YWlsIC8gc3RhdHVzIHBhbmVsLiIiIgogICAgICAgIGlmIHNlbGYucmVzdWx0OgogICAgICAgICAgICBzdWNjZXNzID0gc2VsZi5yZXN1bHQuZ2V0KCJzdWNjZXNzIiwgRmFsc2UpCiAgICAgICAgICAgIHN0eWxlID0gImdyZWVuIiBpZiBzdWNjZXNzIGVsc2UgInJlZCIKICAgICAgICAgICAgaWNvbiA9ICLinIUiIGlmIHN1Y2Nlc3MgZWxzZSAi4p2MIgogICAgICAgICAgICB0ZXh0ID0gKAogICAgICAgICAgICAgICAgZiJ7aWNvbn0geydTVUNDRVNTJyBpZiBzdWNjZXNzIGVsc2UgJ0ZBSUxFRCd9IOKAlCAiCiAgICAgICAgICAgICAgICBmIntzZWxmLnJlc3VsdC5nZXQoJ3N0ZXBzX3N1Y2Nlc3NmdWwnLCAwKX0ve3NlbGYucmVzdWx0LmdldCgnc3RlcHNfdG90YWwnLCAwKX0gc3RlcHMsICIKICAgICAgICAgICAgICAgIGYie3NlbGYucmVzdWx0LmdldCgnZHVyYXRpb25fc2Vjb25kcycsIDApfXMiCiAgICAgICAgICAgICkKICAgICAgICAgICAgcmV0dXJuIFBhbmVsKHRleHQsIHRpdGxlPSJSZXN1bHQiLCBib3JkZXJfc3R5bGU9c3R5bGUpCgogICAgICAgIGlmIHNlbGYuc3RlcF9sb2c6CiAgICAgICAgICAgIGxhc3QgPSBzZWxmLnN0ZXBfbG9nWy0xXQogICAgICAgICAgICBkZXRhaWwgPSBsYXN0LmdldCgicmVzdWx0IiwgIiIpWzoyMDBdCiAgICAgICAgICAgIGljb24gPSAi4pyTIiBpZiBsYXN0WyJzdWNjZXNzIl0gZWxzZSAi4pyXIgogICAgICAgICAgICByZXR1cm4gUGFuZWwoCiAgICAgICAgICAgICAgICBmIlt7J2dyZWVuJyBpZiBsYXN0WydzdWNjZXNzJ10gZWxzZSAncmVkJ31de2ljb259Wy9dIHtsYXN0WydhY3Rpb24nXX1cbntkZXRhaWx9IiwKICAgICAgICAgICAgICAgIHRpdGxlPSJMYXRlc3QgU3RlcCIsCiAgICAgICAgICAgICAgICBib3JkZXJfc3R5bGU9ImN5YW4iLAogICAgICAgICAgICApCgogICAgICAgIHJldHVybiBQYW5lbCgKICAgICAgICAgICAgIltkaW1dV2FpdGluZyBmb3IgaW5wdXTigKZbL2RpbV1cbiIKICAgICAgICAgICAgIltkaW1dRW50ZXIgYSBnb2FsIGxpa2U6Wy9kaW1dIEJ1aWxkIGEgRmxhc2sgQVBJIHdpdGggL2hlYWx0aCBlbmRwb2ludCIsCiAgICAgICAgICAgIHRpdGxlPSJSZWFkeSIsCiAgICAgICAgICAgIGJvcmRlcl9zdHlsZT0iZGltIiwKICAgICAgICApCgogICAgZGVmIF9yZW5kZXIoc2VsZikgLT4gTGF5b3V0OgogICAgICAgICIiIlJlbmRlciB0aGUgZnVsbCBkYXNoYm9hcmQuIiIiCiAgICAgICAgbGF5b3V0ID0gc2VsZi5fbWFrZV9sYXlvdXQoKQogICAgICAgIGxheW91dFsiaGVhZGVyIl0udXBkYXRlKHNlbGYuX3JlbmRlcl9oZWFkZXIoKSkKICAgICAgICBsYXlvdXRbInN0ZXBzIl0udXBkYXRlKHNlbGYuX3JlbmRlcl9zdGVwcygpKQogICAgICAgIGxheW91dFsic2lkZWJhciJdLnVwZGF0ZShzZWxmLl9yZW5kZXJfc2lkZWJhcigpKQogICAgICAgIGxheW91dFsiZm9vdGVyIl0udXBkYXRlKHNlbGYuX3JlbmRlcl9mb290ZXIoKSkKICAgICAgICByZXR1cm4gbGF5b3V0CgogICAgYXN5bmMgZGVmIHJ1bl9nb2FsKHNlbGYsIGdvYWw6IHN0cikgLT4gRGljdFtzdHIsIEFueV06CiAgICAgICAgIiIiUnVuIGEgZ29hbCB3aXRoIHRoZSBsaXZlIGRhc2hib2FyZC4iIiIKICAgICAgICBzZWxmLmN1cnJlbnRfZ29hbCA9IGdvYWwKICAgICAgICBzZWxmLnN0YXJ0X3RpbWUgPSB0aW1lLnRpbWUoKQogICAgICAgIHNlbGYuc3RlcF9sb2cuY2xlYXIoKQogICAgICAgIHNlbGYucmVzdWx0ID0gTm9uZQoKICAgICAgICAjIENyZWF0ZSBhZ2VudAogICAgICAgIHNlbGYuYWdlbnQgPSBBZ2VudExvb3Aoc2VsZi5jb25maWcpCiAgICAgICAgdG9vbHMgPSBjcmVhdGVfZGVmYXVsdF90b29scyh3b3Jrc3BhY2U9c2VsZi53b3Jrc3BhY2UpCiAgICAgICAgc2VsZi5hZ2VudC5yZWdpc3Rlcl90b29scyh0b29scykKICAgICAgICBzZWxmLl90b29sX25hbWVzID0gbGlzdCh0b29scy5rZXlzKCkpCgogICAgICAgICMgV2lyZSBjYWxsYmFja3MKICAgICAgICBkZWYgb25fc3RlcChzdGVwOiBTdGVwLCBzdGF0ZTogQWdlbnRTdGF0ZSk6CiAgICAgICAgICAgIHNlbGYuc3RlcF9sb2cuYXBwZW5kKHsKICAgICAgICAgICAgICAgICJhY3Rpb24iOiBzdGVwLmFjdGlvbiwKICAgICAgICAgICAgICAgICJ0b29sIjogc3RlcC50b29sX25hbWUsCiAgICAgICAgICAgICAgICAic3VjY2VzcyI6IHN0ZXAuc3VjY2VzcywKICAgICAgICAgICAgICAgICJkdXJhdGlvbl9tcyI6IHN0ZXAuZHVyYXRpb25fbXMsCiAgICAgICAgICAgICAgICAicmVzdWx0Ijogc3RlcC5yZXN1bHQsCiAgICAgICAgICAgIH0pCgogICAgICAgIGRlZiBvbl9zdGF0ZShzdGF0ZTogQWdlbnRTdGF0ZSk6CiAgICAgICAgICAgIHNlbGYuY3VycmVudF9zdGF0ZSA9IHN0YXRlLnZhbHVlCgogICAgICAgIHNlbGYuYWdlbnQub25fc3RlcChvbl9zdGVwKQogICAgICAgIHNlbGYuYWdlbnQub25fc3RhdGVfY2hhbmdlKG9uX3N0YXRlKQoKICAgICAgICAjIFJ1biB3aXRoIGxpdmUgZGlzcGxheQogICAgICAgIHdpdGggTGl2ZShzZWxmLl9yZW5kZXIoKSwgY29uc29sZT1zZWxmLmNvbnNvbGUsIHJlZnJlc2hfcGVyX3NlY29uZD00LCBzY3JlZW49VHJ1ZSkgYXMgbGl2ZToKICAgICAgICAgICAgdGFzayA9IGFzeW5jaW8uY3JlYXRlX3Rhc2soc2VsZi5hZ2VudC5ydW4oZ29hbCkpCgogICAgICAgICAgICB3aGlsZSBub3QgdGFzay5kb25lKCk6CiAgICAgICAgICAgICAgICBsaXZlLnVwZGF0ZShzZWxmLl9yZW5kZXIoKSkKICAgICAgICAgICAgICAgIGF3YWl0IGFzeW5jaW8uc2xlZXAoMC4yNSkKCiAgICAgICAgICAgIHNlbGYucmVzdWx0ID0gYXdhaXQgdGFzawogICAgICAgICAgICBsaXZlLnVwZGF0ZShzZWxmLl9yZW5kZXIoKSkKICAgICAgICAgICAgYXdhaXQgYXN5bmNpby5zbGVlcCgxKSAgIyBIb2xkIGZpbmFsIHN0YXRlIGJyaWVmbHkKCiAgICAgICAgcmV0dXJuIHNlbGYucmVzdWx0CgogICAgZGVmIHJ1bl9pbnRlcmFjdGl2ZShzZWxmKSAtPiBOb25lOgogICAgICAgICIiIlJ1biB0aGUgaW50ZXJhY3RpdmUgVFVJIGxvb3Ag4oCUIHByb21wdCBmb3IgZ29hbHMgcmVwZWF0ZWRseS4iIiIKICAgICAgICBzZWxmLmNvbnNvbGUuY2xlYXIoKQogICAgICAgIHNlbGYuY29uc29sZS5wcmludChQYW5lbCgKICAgICAgICAgICAgIltib2xkIGN5YW5dV2VsY29tZSB0byBOZXh1cyFbL2JvbGQgY3lhbl1cblxuIgogICAgICAgICAgICAiRW50ZXIgYSBnb2FsIHRvIHN0YXJ0IHRoZSBhZ2VudC4gVHlwZSBbYm9sZF1xdWl0Wy9ib2xkXSB0byBleGl0LlxuIgogICAgICAgICAgICAiVGhlIGFnZW50IHdpbGwgcGxhbiwgZXhlY3V0ZSwgYW5kIHJlZmxlY3QgYXV0b25vbW91c2x5LiIsCiAgICAgICAgICAgIHRpdGxlPSLwn5qAIE5leHVzIFRVSSIsCiAgICAgICAgICAgIGJvcmRlcl9zdHlsZT0iY3lhbiIsCiAgICAgICAgKSkKCiAgICAgICAgIyBTaG93IHRvb2xzCiAgICAgICAgdG9vbHMgPSBjcmVhdGVfZGVmYXVsdF90b29scyh3b3Jrc3BhY2U9c2VsZi53b3Jrc3BhY2UpCiAgICAgICAgc2VsZi5fdG9vbF9uYW1lcyA9IGxpc3QodG9vbHMua2V5cygpKQogICAgICAgIHNlbGYuY29uc29sZS5wcmludChmIlxuW2RpbV1Xb3Jrc3BhY2U6Wy9kaW1dIHtzZWxmLndvcmtzcGFjZX0iKQogICAgICAgIHNlbGYuY29uc29sZS5wcmludChmIltkaW1dVG9vbHM6Wy9kaW1dIHsnLCAnLmpvaW4oc2VsZi5fdG9vbF9uYW1lcyl9IikKICAgICAgICBzZWxmLmNvbnNvbGUucHJpbnQoZiJbZGltXU1vZGVsczpbL2RpbV0ge3NlbGYuY29uZmlnLnBsYW5uaW5nX21vZGVsfSAocGxhbiksIHtzZWxmLmNvbmZpZy5jb2RpbmdfbW9kZWx9IChjb2RlKVxuIikKCiAgICAgICAgd2hpbGUgVHJ1ZToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgZ29hbCA9IFByb21wdC5hc2soIltib2xkIGN5YW5dR29hbFsvYm9sZCBjeWFuXSIpCiAgICAgICAgICAgIGV4Y2VwdCAoS2V5Ym9hcmRJbnRlcnJ1cHQsIEVPRkVycm9yKToKICAgICAgICAgICAgICAgIGJyZWFrCgogICAgICAgICAgICBnb2FsID0gZ29hbC5zdHJpcCgpCiAgICAgICAgICAgIGlmIG5vdCBnb2FsIG9yIGdvYWwubG93ZXIoKSBpbiAoInF1aXQiLCAiZXhpdCIsICJxIik6CiAgICAgICAgICAgICAgICBicmVhawoKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgcmVzdWx0ID0gYXN5bmNpby5ydW4oc2VsZi5ydW5fZ29hbChnb2FsKSkKICAgICAgICAgICAgICAgIHNlbGYuY29uc29sZS5wcmludCgpCiAgICAgICAgICAgICAgICBpZiByZXN1bHQuZ2V0KCJzdWNjZXNzIik6CiAgICAgICAgICAgICAgICAgICAgc2VsZi5jb25zb2xlLnByaW50KCJbYm9sZCBncmVlbl3inIUgR29hbCBjb21wbGV0ZWQgc3VjY2Vzc2Z1bGx5IVsvYm9sZCBncmVlbl1cbiIpCiAgICAgICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgICAgIHNlbGYuY29uc29sZS5wcmludCgiW2JvbGQgcmVkXeKdjCBHb2FsIGZhaWxlZC5bL2JvbGQgcmVkXVxuIikKICAgICAgICAgICAgZXhjZXB0IEtleWJvYXJkSW50ZXJydXB0OgogICAgICAgICAgICAgICAgc2VsZi5jb25zb2xlLnByaW50KCJcblt5ZWxsb3ddSW50ZXJydXB0ZWQuWy95ZWxsb3ddXG4iKQogICAgICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgICAgICAgICBzZWxmLmNvbnNvbGUucHJpbnQoZiJcbltyZWRdRXJyb3I6IHtlfVsvcmVkXVxuIikKCiAgICAgICAgc2VsZi5jb25zb2xlLnByaW50KCJcbltkaW1dR29vZGJ5ZSFbL2RpbV0iKQo=
+"""Interactive TUI dashboard for the Nexus agent.
+
+Provides a full-screen Rich-based dashboard that shows:
+- Agent state and progress
+- Live step execution
+- Tool registry
+- Memory stats
+- Goal input
+
+Use: nexus tui
+"""
+
+from __future__ import annotations
+
+import asyncio
+import time
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+from rich.console import Console, Group
+from rich.layout import Layout
+from rich.live import Live
+from rich.panel import Panel
+from rich.table import Table
+from rich.text import Text
+from rich.spinner import Spinner
+from rich.align import Align
+from rich.columns import Columns
+from rich.prompt import Prompt
+
+from nexus.agent.loop import AgentLoop
+from nexus.agent.models import AgentConfig, AgentState, Step
+from nexus.tools import create_default_tools
+
+STATE_STYLES = {
+    "idle": ("⏸ IDLE", "dim"),
+    "planning": ("🧠 PLANNING", "bold yellow"),
+    "acting": ("⚡ ACTING", "bold cyan"),
+    "observing": ("👁 OBSERVING", "bold blue"),
+    "reflecting": ("🔍 REFLECTING", "bold magenta"),
+    "correcting": ("🔧 CORRECTING", "bold yellow"),
+    "done": ("✅ DONE", "bold green"),
+    "error": ("❌ ERROR", "bold red"),
+}
+
+
+class NexusDashboard:
+    """Full-screen interactive agent dashboard.
+
+    Layout:
+    ┌─────────────────────────────────────┐
+    │  NEXUS — state banner               │
+    ├──────────────────┬──────────────────┤
+    │  Steps (main)    │  Info sidebar    │
+    │                  │  - Tools         │
+    │                  │  - Memory        │
+    │                  │  - Config        │
+    ├──────────────────┴──────────────────┤
+    │  Current step detail / input        │
+    └─────────────────────────────────────┘
+    """
+
+    def __init__(
+        self,
+        workspace: str = ".",
+        config: Optional[AgentConfig] = None,
+    ):
+        self.console = Console()
+        self.workspace = str(Path(workspace).resolve())
+        self.config = config or AgentConfig(workspace_path=self.workspace)
+        self.agent: Optional[AgentLoop] = None
+        self.step_log: List[Dict[str, Any]] = []
+        self.current_state = "idle"
+        self.current_goal = ""
+        self.start_time: Optional[float] = None
+        self.result: Optional[Dict[str, Any]] = None
+        self._tool_names: List[str] = []
+
+    def _make_layout(self) -> Layout:
+        """Create the dashboard layout structure."""
+        layout = Layout()
+        layout.split_column(
+            Layout(name="header", size=3),
+            Layout(name="body", ratio=1),
+            Layout(name="footer", size=5),
+        )
+        layout["body"].split_row(
+            Layout(name="steps", ratio=3),
+            Layout(name="sidebar", ratio=1, minimum_size=28),
+        )
+        return layout
+
+    def _render_header(self) -> Panel:
+        """Render the top status bar."""
+        state_text, state_style = STATE_STYLES.get(
+            self.current_state, ("? UNKNOWN", "dim")
+        )
+        elapsed = f" · {time.time() - self.start_time:.0f}s" if self.start_time else ""
+        goal_display = self.current_goal[:80] if self.current_goal else "No goal set"
+
+        header = Text.assemble(
+            ("  NEXUS  ", "bold white on blue"),
+            ("  ", ""),
+            (state_text, state_style),
+            (elapsed, "dim"),
+            ("  │  ", "dim"),
+            (goal_display, "italic"),
+        )
+        return Panel(header, style="blue", height=3)
+
+    def _render_steps(self) -> Panel:
+        """Render the main steps panel."""
+        if not self.step_log:
+            content = Align.center(
+                Text("No steps yet — enter a goal to start", style="dim"),
+                vertical="middle",
+            )
+            return Panel(content, title="Steps", border_style="cyan")
+
+        table = Table(show_header=True, expand=True, show_lines=False)
+        table.add_column("#", style="dim", width=3)
+        table.add_column("Action", ratio=3)
+        table.add_column("Tool", style="cyan", width=12)
+        table.add_column("", width=2)
+        table.add_column("Time", style="dim", width=7)
+
+        for i, s in enumerate(self.step_log[-20:], 1):  # Show last 20
+            icon = "✓" if s["success"] else "✗"
+            style = "green" if s["success"] else "red"
+            action = s["action"][:55] + ("…" if len(s["action"]) > 55 else "")
+            ms = f"{s['duration_ms']:.0f}ms" if s.get("duration_ms") else ""
+            table.add_row(str(i), action, s.get("tool", ""), f"[{style}]{icon}[/{style}]", ms)
+
+        return Panel(table, title=f"Steps ({len(self.step_log)})", border_style="cyan")
+
+    def _render_sidebar(self) -> Panel:
+        """Render the info sidebar."""
+        sections = []
+
+        # Tools section
+        tools_text = Text()
+        tools_text.append("Tools\n", style="bold cyan")
+        for t in self._tool_names[:10]:
+            tools_text.append(f"  • {t}\n", style="dim")
+        sections.append(tools_text)
+
+        # Memory section
+        mem_text = Text()
+        mem_text.append("\nMemory\n", style="bold magenta")
+        if self.agent:
+            mem_text.append(f"  Short-term: {self.agent.short_term.size} entries\n", style="dim")
+            if self.agent.long_term:
+                mem_text.append(f"  Long-term:  {self.agent.long_term.count} docs\n", style="dim")
+        sections.append(mem_text)
+
+        # Stats section
+        if self.step_log:
+            stats_text = Text()
+            stats_text.append("\nStats\n", style="bold yellow")
+            ok = sum(1 for s in self.step_log if s["success"])
+            total = len(self.step_log)
+            stats_text.append(f"  Passed: {ok}/{total}\n", style="dim")
+            if self.start_time:
+                stats_text.append(f"  Time:   {time.time() - self.start_time:.0f}s\n", style="dim")
+            sections.append(stats_text)
+
+        # Config section
+        config_text = Text()
+        config_text.append("\nConfig\n", style="bold blue")
+        config_text.append(f"  Plan: {self.config.planning_model}\n", style="dim")
+        config_text.append(f"  Code: {self.config.coding_model}\n", style="dim")
+        config_text.append(f"  Max:  {self.config.max_iterations} iters\n", style="dim")
+        sections.append(config_text)
+
+        return Panel(Group(*sections), title="Info", border_style="blue")
+
+    def _render_footer(self) -> Panel:
+        """Render the bottom detail / status panel."""
+        if self.result:
+            success = self.result.get("success", False)
+            style = "green" if success else "red"
+            icon = "✅" if success else "❌"
+            text = (
+                f"{icon} {'SUCCESS' if success else 'FAILED'} — "
+                f"{self.result.get('steps_successful', 0)}/{self.result.get('steps_total', 0)} steps, "
+                f"{self.result.get('duration_seconds', 0)}s"
+            )
+            return Panel(text, title="Result", border_style=style)
+
+        if self.step_log:
+            last = self.step_log[-1]
+            detail = last.get("result", "")[:200]
+            icon = "✓" if last["success"] else "✗"
+            return Panel(
+                f"[{'green' if last['success'] else 'red'}]{icon}[/] {last['action']}\n{detail}",
+                title="Latest Step",
+                border_style="cyan",
+            )
+
+        return Panel(
+            "[dim]Waiting for input…[/dim]\n"
+            "[dim]Enter a goal like:[/dim] Build a Flask API with /health endpoint",
+            title="Ready",
+            border_style="dim",
+        )
+
+    def _render(self) -> Layout:
+        """Render the full dashboard."""
+        layout = self._make_layout()
+        layout["header"].update(self._render_header())
+        layout["steps"].update(self._render_steps())
+        layout["sidebar"].update(self._render_sidebar())
+        layout["footer"].update(self._render_footer())
+        return layout
+
+    async def run_goal(self, goal: str) -> Dict[str, Any]:
+        """Run a goal with the live dashboard."""
+        self.current_goal = goal
+        self.start_time = time.time()
+        self.step_log.clear()
+        self.result = None
+
+        # Create agent
+        self.agent = AgentLoop(self.config)
+        tools = create_default_tools(workspace=self.workspace)
+        self.agent.register_tools(tools)
+        self._tool_names = list(tools.keys())
+
+        # Wire callbacks
+        def on_step(step: Step, state: AgentState):
+            self.step_log.append({
+                "action": step.action,
+                "tool": step.tool_name,
+                "success": step.success,
+                "duration_ms": step.duration_ms,
+                "result": step.result,
+            })
+
+        def on_state(state: AgentState):
+            self.current_state = state.value
+
+        self.agent.on_step(on_step)
+        self.agent.on_state_change(on_state)
+
+        # Run with live display
+        with Live(self._render(), console=self.console, refresh_per_second=4, screen=True) as live:
+            task = asyncio.create_task(self.agent.run(goal))
+
+            while not task.done():
+                live.update(self._render())
+                await asyncio.sleep(0.25)
+
+            self.result = await task
+            live.update(self._render())
+            await asyncio.sleep(1)  # Hold final state briefly
+
+        return self.result
+
+    def run_interactive(self) -> None:
+        """Run the interactive TUI loop — prompt for goals repeatedly."""
+        self.console.clear()
+        self.console.print(Panel(
+            "[bold cyan]Welcome to Nexus![/bold cyan]\n\n"
+            "Enter a goal to start the agent. Type [bold]quit[/bold] to exit.\n"
+            "The agent will plan, execute, and reflect autonomously.",
+            title="🚀 Nexus TUI",
+            border_style="cyan",
+        ))
+
+        # Show tools
+        tools = create_default_tools(workspace=self.workspace)
+        self._tool_names = list(tools.keys())
+        self.console.print(f"\n[dim]Workspace:[/dim] {self.workspace}")
+        self.console.print(f"[dim]Tools:[/dim] {', '.join(self._tool_names)}")
+        self.console.print(f"[dim]Models:[/dim] {self.config.planning_model} (plan), {self.config.coding_model} (code)\n")
+
+        while True:
+            try:
+                goal = Prompt.ask("[bold cyan]Goal[/bold cyan]")
+            except (KeyboardInterrupt, EOFError):
+                break
+
+            goal = goal.strip()
+            if not goal or goal.lower() in ("quit", "exit", "q"):
+                break
+
+            try:
+                result = asyncio.run(self.run_goal(goal))
+                self.console.print()
+                if result.get("success"):
+                    self.console.print("[bold green]✅ Goal completed successfully![/bold green]\n")
+                else:
+                    self.console.print("[bold red]❌ Goal failed.[/bold red]\n")
+            except KeyboardInterrupt:
+                self.console.print("\n[yellow]Interrupted.[/yellow]\n")
+            except Exception as e:
+                self.console.print(f"\n[red]Error: {e}[/red]\n")
+
+        self.console.print("\n[dim]Goodbye![/dim]")

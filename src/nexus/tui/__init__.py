@@ -1,1 +1,5 @@
-IiIiTmV4dXMgVFVJIOKAlCBpbnRlcmFjdGl2ZSB0ZXJtaW5hbCBkYXNoYm9hcmQgZm9yIHRoZSBhZ2VudC4iIiIKCmZyb20gbmV4dXMudHVpLmRhc2hib2FyZCBpbXBvcnQgTmV4dXNEYXNoYm9hcmQKCl9fYWxsX18gPSBbIk5leHVzRGFzaGJvYXJkIl0K
+"""Nexus TUI — interactive terminal dashboard for the agent."""
+
+from nexus.tui.dashboard import NexusDashboard
+
+__all__ = ["NexusDashboard"]

@@ -1,1 +1,159 @@
-IiIiQ29kZSBydW5uZXIgdG9vbCDigJQgZXhlY3V0ZSBzY3JpcHRzIGluIGEgc2FuZGJveGVkIGVudmlyb25tZW50LiIiIgoKZnJvbSBfX2Z1dHVyZV9fIGltcG9ydCBhbm5vdGF0aW9ucwoKaW1wb3J0IGFzeW5jaW8KaW1wb3J0IGxvZ2dpbmcKaW1wb3J0IHRlbXBmaWxlCmZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aApmcm9tIHR5cGluZyBpbXBvcnQgQW55Cgpmcm9tIG5leHVzLnRvb2xzLnJlZ2lzdHJ5IGltcG9ydCBCYXNlVG9vbAoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoX19uYW1lX18pCgoKY2xhc3MgQ29kZVJ1bm5lclRvb2woQmFzZVRvb2wpOgogICAgIiIiRXhlY3V0ZSBjb2RlIHNjcmlwdHMgYW5kIGNhcHR1cmUgb3V0cHV0LgoKICAgIFJ1bnMgUHl0aG9uIChvciBvdGhlciBsYW5ndWFnZSkgc2NyaXB0cyBpbiBhIHN1YnByb2Nlc3Mgd2l0aAogICAgdGltZW91dCBwcm90ZWN0aW9uLiBGb3IgZGFuZ2Vyb3VzIGNvZGUsIHVzZSB3aXRoIHRoZSBzYW5kYm94IG1vZHVsZS4KICAgICIiIgoKICAgIG5hbWUgPSAiY29kZV9ydW4iCiAgICBkZXNjcmlwdGlvbiA9ICJFeGVjdXRlIGEgY29kZSBzbmlwcGV0IChQeXRob24gYnkgZGVmYXVsdCkgYW5kIGNhcHR1cmUgb3V0cHV0IgogICAgYWxpYXNlcyA9IFsicnVuX2NvZGUiLCAiZXhlY3V0ZV9jb2RlIiwgInB5dGhvbiJdCiAgICBzY2hlbWEgPSB7CiAgICAgICAgImNvZGUiOiAiKHJlcXVpcmVkKSBUaGUgY29kZSB0byBleGVjdXRlIiwKICAgICAgICAibGFuZ3VhZ2UiOiAiKG9wdGlvbmFsKSBMYW5ndWFnZTogcHl0aG9uLCBub2RlLCBiYXNoIChkZWZhdWx0OiBweXRob24pIiwKICAgICAgICAidGltZW91dCI6ICIob3B0aW9uYWwpIFRpbWVvdXQgaW4gc2Vjb25kcyAoZGVmYXVsdDogMzApIiwKICAgIH0KCiAgICBhc3luYyBkZWYgZXhlY3V0ZSgKICAgICAgICBzZWxmLAogICAgICAgIGNvZGU6IHN0ciA9ICIiLAogICAgICAgIGxhbmd1YWdlOiBzdHIgPSAicHl0aG9uIiwKICAgICAgICB0aW1lb3V0OiBpbnQgPSAzMCwKICAgICAgICAqKmt3YXJnczogQW55LAogICAgKSAtPiBzdHI6CiAgICAgICAgaWYgbm90IGNvZGU6CiAgICAgICAgICAgIHJldHVybiAiRXJyb3I6IE5vIGNvZGUgcHJvdmlkZWQiCgogICAgICAgIHJ1bm5lcnMgPSB7CiAgICAgICAgICAgICJweXRob24iOiBzZWxmLl9ydW5fcHl0aG9uLAogICAgICAgICAgICAibm9kZSI6IHNlbGYuX3J1bl9ub2RlLAogICAgICAgICAgICAiYmFzaCI6IHNlbGYuX3J1bl9iYXNoLAogICAgICAgIH0KCiAgICAgICAgcnVubmVyID0gcnVubmVycy5nZXQobGFuZ3VhZ2UubG93ZXIoKSkKICAgICAgICBpZiBub3QgcnVubmVyOgogICAgICAgICAgICByZXR1cm4gZiJFcnJvcjogVW5zdXBwb3J0ZWQgbGFuZ3VhZ2U6IHtsYW5ndWFnZX0uIFN1cHBvcnRlZDogeycsICcuam9pbihydW5uZXJzKX0iCgogICAgICAgIHJldHVybiBhd2FpdCBydW5uZXIoY29kZSwgdGltZW91dCkKCiAgICBhc3luYyBkZWYgX3J1bl9weXRob24oc2VsZiwgY29kZTogc3RyLCB0aW1lb3V0OiBpbnQpIC0+IHN0cjoKICAgICAgICAiIiJSdW4gUHl0aG9uIGNvZGUgaW4gYSB0ZW1wIGZpbGUuIiIiCiAgICAgICAgd2l0aCB0ZW1wZmlsZS5OYW1lZFRlbXBvcmFyeUZpbGUoCiAgICAgICAgICAgIG1vZGU9InciLCBzdWZmaXg9Ii5weSIsIGRpcj1zZWxmLndvcmtzcGFjZSwgZGVsZXRlPUZhbHNlCiAgICAgICAgKSBhcyBmOgogICAgICAgICAgICBmLndyaXRlKGNvZGUpCiAgICAgICAgICAgIHNjcmlwdF9wYXRoID0gZi5uYW1lCgogICAgICAgIHRyeToKICAgICAgICAgICAgcHJvY2VzcyA9IGF3YWl0IGFzeW5jaW8uY3JlYXRlX3N1YnByb2Nlc3NfZXhlYygKICAgICAgICAgICAgICAgICJweXRob24zIiwgc2NyaXB0X3BhdGgsCiAgICAgICAgICAgICAgICBzdGRvdXQ9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBzdGRlcnI9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBjd2Q9c2VsZi53b3Jrc3BhY2UsCiAgICAgICAgICAgICkKICAgICAgICAgICAgc3Rkb3V0LCBzdGRlcnIgPSBhd2FpdCBhc3luY2lvLndhaXRfZm9yKAogICAgICAgICAgICAgICAgcHJvY2Vzcy5jb21tdW5pY2F0ZSgpLCB0aW1lb3V0PXRpbWVvdXQKICAgICAgICAgICAgKQoKICAgICAgICAgICAgb3V0cHV0ID0gc3Rkb3V0LmRlY29kZSgidXRmLTgiLCBlcnJvcnM9InJlcGxhY2UiKQogICAgICAgICAgICBlcnJvcnMgPSBzdGRlcnIuZGVjb2RlKCJ1dGYtOCIsIGVycm9ycz0icmVwbGFjZSIpCgogICAgICAgICAgICByZXN1bHQgPSAiIgogICAgICAgICAgICBpZiBvdXRwdXQ6CiAgICAgICAgICAgICAgICByZXN1bHQgKz0gb3V0cHV0CiAgICAgICAgICAgIGlmIGVycm9yczoKICAgICAgICAgICAgICAgIHJlc3VsdCArPSBmIlxuW3N0ZGVycl0ge2Vycm9yc30iIGlmIHJlc3VsdCBlbHNlIGYiW3N0ZGVycl0ge2Vycm9yc30iCiAgICAgICAgICAgIGlmIHByb2Nlc3MucmV0dXJuY29kZSAhPSAwOgogICAgICAgICAgICAgICAgcmVzdWx0ID0gZiJbZXhpdCBjb2RlIHtwcm9jZXNzLnJldHVybmNvZGV9XVxue3Jlc3VsdH0iCgogICAgICAgICAgICByZXR1cm4gcmVzdWx0LnN0cmlwKCkgb3IgIihubyBvdXRwdXQpIgoKICAgICAgICBleGNlcHQgYXN5bmNpby5UaW1lb3V0RXJyb3I6CiAgICAgICAgICAgIHJldHVybiBmIkVycm9yOiBTY3JpcHQgdGltZWQgb3V0IGFmdGVyIHt0aW1lb3V0fXMiCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBleGM6CiAgICAgICAgICAgIHJldHVybiBmIkVycm9yOiB7ZXhjfSIKICAgICAgICBmaW5hbGx5OgogICAgICAgICAgICBQYXRoKHNjcmlwdF9wYXRoKS51bmxpbmsobWlzc2luZ19vaz1UcnVlKQoKICAgIGFzeW5jIGRlZiBfcnVuX25vZGUoc2VsZiwgY29kZTogc3RyLCB0aW1lb3V0OiBpbnQpIC0+IHN0cjoKICAgICAgICAiIiJSdW4gSmF2YVNjcmlwdCBjb2RlIHdpdGggTm9kZS5qcy4iIiIKICAgICAgICB3aXRoIHRlbXBmaWxlLk5hbWVkVGVtcG9yYXJ5RmlsZSgKICAgICAgICAgICAgbW9kZT0idyIsIHN1ZmZpeD0iLmpzIiwgZGlyPXNlbGYud29ya3NwYWNlLCBkZWxldGU9RmFsc2UKICAgICAgICApIGFzIGY6CiAgICAgICAgICAgIGYud3JpdGUoY29kZSkKICAgICAgICAgICAgc2NyaXB0X3BhdGggPSBmLm5hbWUKCiAgICAgICAgdHJ5OgogICAgICAgICAgICBwcm9jZXNzID0gYXdhaXQgYXN5bmNpby5jcmVhdGVfc3VicHJvY2Vzc19leGVjKAogICAgICAgICAgICAgICAgIm5vZGUiLCBzY3JpcHRfcGF0aCwKICAgICAgICAgICAgICAgIHN0ZG91dD1hc3luY2lvLnN1YnByb2Nlc3MuUElQRSwKICAgICAgICAgICAgICAgIHN0ZGVycj1hc3luY2lvLnN1YnByb2Nlc3MuUElQRSwKICAgICAgICAgICAgICAgIGN3ZD1zZWxmLndvcmtzcGFjZSwKICAgICAgICAgICAgKQogICAgICAgICAgICBzdGRvdXQsIHN0ZGVyciA9IGF3YWl0IGFzeW5jaW8ud2FpdF9mb3IoCiAgICAgICAgICAgICAgICBwcm9jZXNzLmNvbW11bmljYXRlKCksIHRpbWVvdXQ9dGltZW91dAogICAgICAgICAgICApCgogICAgICAgICAgICBvdXRwdXQgPSBzdGRvdXQuZGVjb2RlKCJ1dGYtOCIsIGVycm9ycz0icmVwbGFjZSIpCiAgICAgICAgICAgIGVycm9ycyA9IHN0ZGVyci5kZWNvZGUoInV0Zi04IiwgZXJyb3JzPSJyZXBsYWNlIikKICAgICAgICAgICAgcmVzdWx0ID0gb3V0cHV0ICsgKGYiXG5bc3RkZXJyXSB7ZXJyb3JzfSIgaWYgZXJyb3JzIGVsc2UgIiIpCgogICAgICAgICAgICBpZiBwcm9jZXNzLnJldHVybmNvZGUgIT0gMDoKICAgICAgICAgICAgICAgIHJlc3VsdCA9IGYiW2V4aXQgY29kZSB7cHJvY2Vzcy5yZXR1cm5jb2RlfV1cbntyZXN1bHR9IgoKICAgICAgICAgICAgcmV0dXJuIHJlc3VsdC5zdHJpcCgpIG9yICIobm8gb3V0cHV0KSIKCiAgICAgICAgZXhjZXB0IGFzeW5jaW8uVGltZW91dEVycm9yOgogICAgICAgICAgICByZXR1cm4gZiJFcnJvcjogU2NyaXB0IHRpbWVkIG91dCBhZnRlciB7dGltZW91dH1zIgogICAgICAgIGV4Y2VwdCBGaWxlTm90Rm91bmRFcnJvcjoKICAgICAgICAgICAgcmV0dXJuICJFcnJvcjogTm9kZS5qcyBub3QgZm91bmQuIEluc3RhbGwgd2l0aDogYXB0IGluc3RhbGwgbm9kZWpzIgogICAgICAgIGZpbmFsbHk6CiAgICAgICAgICAgIFBhdGgoc2NyaXB0X3BhdGgpLnVubGluayhtaXNzaW5nX29rPVRydWUpCgogICAgYXN5bmMgZGVmIF9ydW5fYmFzaChzZWxmLCBjb2RlOiBzdHIsIHRpbWVvdXQ6IGludCkgLT4gc3RyOgogICAgICAgICIiIlJ1biBiYXNoIHNjcmlwdC4iIiIKICAgICAgICB3aXRoIHRlbXBmaWxlLk5hbWVkVGVtcG9yYXJ5RmlsZSgKICAgICAgICAgICAgbW9kZT0idyIsIHN1ZmZpeD0iLnNoIiwgZGlyPXNlbGYud29ya3NwYWNlLCBkZWxldGU9RmFsc2UKICAgICAgICApIGFzIGY6CiAgICAgICAgICAgIGYud3JpdGUoY29kZSkKICAgICAgICAgICAgc2NyaXB0X3BhdGggPSBmLm5hbWUKCiAgICAgICAgdHJ5OgogICAgICAgICAgICBwcm9jZXNzID0gYXdhaXQgYXN5bmNpby5jcmVhdGVfc3VicHJvY2Vzc19leGVjKAogICAgICAgICAgICAgICAgImJhc2giLCBzY3JpcHRfcGF0aCwKICAgICAgICAgICAgICAgIHN0ZG91dD1hc3luY2lvLnN1YnByb2Nlc3MuUElQRSwKICAgICAgICAgICAgICAgIHN0ZGVycj1hc3luY2lvLnN1YnByb2Nlc3MuUElQRSwKICAgICAgICAgICAgICAgIGN3ZD1zZWxmLndvcmtzcGFjZSwKICAgICAgICAgICAgKQogICAgICAgICAgICBzdGRvdXQsIHN0ZGVyciA9IGF3YWl0IGFzeW5jaW8ud2FpdF9mb3IoCiAgICAgICAgICAgICAgICBwcm9jZXNzLmNvbW11bmljYXRlKCksIHRpbWVvdXQ9dGltZW91dAogICAgICAgICAgICApCgogICAgICAgICAgICBvdXRwdXQgPSBzdGRvdXQuZGVjb2RlKCJ1dGYtOCIsIGVycm9ycz0icmVwbGFjZSIpCiAgICAgICAgICAgIGVycm9ycyA9IHN0ZGVyci5kZWNvZGUoInV0Zi04IiwgZXJyb3JzPSJyZXBsYWNlIikKICAgICAgICAgICAgcmVzdWx0ID0gb3V0cHV0ICsgKGYiXG5bc3RkZXJyXSB7ZXJyb3JzfSIgaWYgZXJyb3JzIGVsc2UgIiIpCgogICAgICAgICAgICBpZiBwcm9jZXNzLnJldHVybmNvZGUgIT0gMDoKICAgICAgICAgICAgICAgIHJlc3VsdCA9IGYiW2V4aXQgY29kZSB7cHJvY2Vzcy5yZXR1cm5jb2RlfV1cbntyZXN1bHR9IgoKICAgICAgICAgICAgcmV0dXJuIHJlc3VsdC5zdHJpcCgpIG9yICIobm8gb3V0cHV0KSIKCiAgICAgICAgZXhjZXB0IGFzeW5jaW8uVGltZW91dEVycm9yOgogICAgICAgICAgICByZXR1cm4gZiJFcnJvcjogU2NyaXB0IHRpbWVkIG91dCBhZnRlciB7dGltZW91dH1zIgogICAgICAgIGZpbmFsbHk6CiAgICAgICAgICAgIFBhdGgoc2NyaXB0X3BhdGgpLnVubGluayhtaXNzaW5nX29rPVRydWUpCg==
+"""Code runner tool — execute scripts in a sandboxed environment."""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import tempfile
+from pathlib import Path
+from typing import Any
+
+from nexus.tools.registry import BaseTool
+
+logger = logging.getLogger(__name__)
+
+
+class CodeRunnerTool(BaseTool):
+    """Execute code scripts and capture output.
+
+    Runs Python (or other language) scripts in a subprocess with
+    timeout protection. For dangerous code, use with the sandbox module.
+    """
+
+    name = "code_run"
+    description = "Execute a code snippet (Python by default) and capture output"
+    aliases = ["run_code", "execute_code", "python"]
+    schema = {
+        "code": "(required) The code to execute",
+        "language": "(optional) Language: python, node, bash (default: python)",
+        "timeout": "(optional) Timeout in seconds (default: 30)",
+    }
+
+    async def execute(
+        self,
+        code: str = "",
+        language: str = "python",
+        timeout: int = 30,
+        **kwargs: Any,
+    ) -> str:
+        if not code:
+            return "Error: No code provided"
+
+        runners = {
+            "python": self._run_python,
+            "node": self._run_node,
+            "bash": self._run_bash,
+        }
+
+        runner = runners.get(language.lower())
+        if not runner:
+            return f"Error: Unsupported language: {language}. Supported: {', '.join(runners)}"
+
+        return await runner(code, timeout)
+
+    async def _run_python(self, code: str, timeout: int) -> str:
+        """Run Python code in a temp file."""
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".py", dir=self.workspace, delete=False
+        ) as f:
+            f.write(code)
+            script_path = f.name
+
+        try:
+            process = await asyncio.create_subprocess_exec(
+                "python3", script_path,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=timeout
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+            errors = stderr.decode("utf-8", errors="replace")
+
+            result = ""
+            if output:
+                result += output
+            if errors:
+                result += f"\n[stderr] {errors}" if result else f"[stderr] {errors}"
+            if process.returncode != 0:
+                result = f"[exit code {process.returncode}]\n{result}"
+
+            return result.strip() or "(no output)"
+
+        except asyncio.TimeoutError:
+            return f"Error: Script timed out after {timeout}s"
+        except Exception as exc:
+            return f"Error: {exc}"
+        finally:
+            Path(script_path).unlink(missing_ok=True)
+
+    async def _run_node(self, code: str, timeout: int) -> str:
+        """Run JavaScript code with Node.js."""
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".js", dir=self.workspace, delete=False
+        ) as f:
+            f.write(code)
+            script_path = f.name
+
+        try:
+            process = await asyncio.create_subprocess_exec(
+                "node", script_path,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=timeout
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+            errors = stderr.decode("utf-8", errors="replace")
+            result = output + (f"\n[stderr] {errors}" if errors else "")
+
+            if process.returncode != 0:
+                result = f"[exit code {process.returncode}]\n{result}"
+
+            return result.strip() or "(no output)"
+
+        except asyncio.TimeoutError:
+            return f"Error: Script timed out after {timeout}s"
+        except FileNotFoundError:
+            return "Error: Node.js not found. Install with: apt install nodejs"
+        finally:
+            Path(script_path).unlink(missing_ok=True)
+
+    async def _run_bash(self, code: str, timeout: int) -> str:
+        """Run bash script."""
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".sh", dir=self.workspace, delete=False
+        ) as f:
+            f.write(code)
+            script_path = f.name
+
+        try:
+            process = await asyncio.create_subprocess_exec(
+                "bash", script_path,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=timeout
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+            errors = stderr.decode("utf-8", errors="replace")
+            result = output + (f"\n[stderr] {errors}" if errors else "")
+
+            if process.returncode != 0:
+                result = f"[exit code {process.returncode}]\n{result}"
+
+            return result.strip() or "(no output)"
+
+        except asyncio.TimeoutError:
+            return f"Error: Script timed out after {timeout}s"
+        finally:
+            Path(script_path).unlink(missing_ok=True)

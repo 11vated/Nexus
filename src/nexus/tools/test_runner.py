@@ -1,1 +1,132 @@
-IiIiVGVzdCBydW5uZXIgdG9vbCDigJQgZXhlY3V0ZSB0ZXN0IHN1aXRlcyBhbmQgcGFyc2UgcmVzdWx0cy4iIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBhc3luY2lvCmltcG9ydCBsb2dnaW5nCmltcG9ydCByZQpmcm9tIHR5cGluZyBpbXBvcnQgQW55Cgpmcm9tIG5leHVzLnRvb2xzLnJlZ2lzdHJ5IGltcG9ydCBCYXNlVG9vbAoKbG9nZ2VyID0gbG9nZ2luZy5nZXRMb2dnZXIoX19uYW1lX18pCgoKY2xhc3MgVGVzdFJ1bm5lclRvb2woQmFzZVRvb2wpOgogICAgIiIiUnVuIHRlc3Qgc3VpdGVzIGFuZCBwYXJzZSByZXN1bHRzLgoKICAgIFN1cHBvcnRzIHB5dGVzdCAoUHl0aG9uKSBhbmQgYmFzaWMgbnBtIHRlc3QgKE5vZGUuanMpLgogICAgUGFyc2VzIG91dHB1dCB0byBleHRyYWN0IHBhc3MvZmFpbCBjb3VudHMgYW5kIGZhaWx1cmUgZGV0YWlscy4KICAgICIiIgoKICAgIG5hbWUgPSAidGVzdF9ydW4iCiAgICBkZXNjcmlwdGlvbiA9ICJSdW4gdGVzdCBzdWl0ZSAocHl0ZXN0IG9yIG5wbSB0ZXN0KSBhbmQgZ2V0IHN0cnVjdHVyZWQgcmVzdWx0cyIKICAgIGFsaWFzZXMgPSBbInJ1bl90ZXN0cyIsICJweXRlc3QiLCAidGVzdCJdCiAgICBzY2hlbWEgPSB7CiAgICAgICAgInBhdGgiOiAiKG9wdGlvbmFsKSBUZXN0IGZpbGUgb3IgZGlyZWN0b3J5IChkZWZhdWx0OiBjdXJyZW50IGRpcmVjdG9yeSkiLAogICAgICAgICJmcmFtZXdvcmsiOiAiKG9wdGlvbmFsKSBUZXN0IGZyYW1ld29yazogcHl0ZXN0LCBucG0gKGRlZmF1bHQ6IHB5dGVzdCkiLAogICAgICAgICJ2ZXJib3NlIjogIihvcHRpb25hbCkgVmVyYm9zZSBvdXRwdXQgKGRlZmF1bHQ6IHRydWUpIiwKICAgICAgICAidGltZW91dCI6ICIob3B0aW9uYWwpIFRpbWVvdXQgaW4gc2Vjb25kcyAoZGVmYXVsdDogNjApIiwKICAgIH0KCiAgICBhc3luYyBkZWYgZXhlY3V0ZSgKICAgICAgICBzZWxmLAogICAgICAgIHBhdGg6IHN0ciA9ICIuIiwKICAgICAgICBmcmFtZXdvcms6IHN0ciA9ICJweXRlc3QiLAogICAgICAgIHZlcmJvc2U6IGJvb2wgPSBUcnVlLAogICAgICAgIHRpbWVvdXQ6IGludCA9IDYwLAogICAgICAgICoqa3dhcmdzOiBBbnksCiAgICApIC0+IHN0cjoKICAgICAgICBpZiBmcmFtZXdvcmsgPT0gInB5dGVzdCI6CiAgICAgICAgICAgIHJldHVybiBhd2FpdCBzZWxmLl9ydW5fcHl0ZXN0KHBhdGgsIHZlcmJvc2UsIHRpbWVvdXQpCiAgICAgICAgZWxpZiBmcmFtZXdvcmsgPT0gIm5wbSI6CiAgICAgICAgICAgIHJldHVybiBhd2FpdCBzZWxmLl9ydW5fbnBtX3Rlc3QodGltZW91dCkKICAgICAgICBlbHNlOgogICAgICAgICAgICByZXR1cm4gZiJFcnJvcjogVW5rbm93biBmcmFtZXdvcms6IHtmcmFtZXdvcmt9LiBTdXBwb3J0ZWQ6IHB5dGVzdCwgbnBtIgoKICAgIGFzeW5jIGRlZiBfcnVuX3B5dGVzdChzZWxmLCBwYXRoOiBzdHIsIHZlcmJvc2U6IGJvb2wsIHRpbWVvdXQ6IGludCkgLT4gc3RyOgogICAgICAgICIiIlJ1biBweXRlc3QgYW5kIHBhcnNlIHJlc3VsdHMuIiIiCiAgICAgICAgY21kID0gWyJweXRob24zIiwgIi1tIiwgInB5dGVzdCIsIHBhdGhdCiAgICAgICAgaWYgdmVyYm9zZToKICAgICAgICAgICAgY21kLmFwcGVuZCgiLXYiKQogICAgICAgIGNtZC5hcHBlbmQoIi0tdGI9c2hvcnQiKSAgIyBTaG9ydCB0cmFjZWJhY2tzCgogICAgICAgIHRyeToKICAgICAgICAgICAgcHJvY2VzcyA9IGF3YWl0IGFzeW5jaW8uY3JlYXRlX3N1YnByb2Nlc3NfZXhlYygKICAgICAgICAgICAgICAgICpjbWQsCiAgICAgICAgICAgICAgICBzdGRvdXQ9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBzdGRlcnI9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBjd2Q9c2VsZi53b3Jrc3BhY2UsCiAgICAgICAgICAgICkKICAgICAgICAgICAgc3Rkb3V0LCBzdGRlcnIgPSBhd2FpdCBhc3luY2lvLndhaXRfZm9yKAogICAgICAgICAgICAgICAgcHJvY2Vzcy5jb21tdW5pY2F0ZSgpLCB0aW1lb3V0PXRpbWVvdXQKICAgICAgICAgICAgKQoKICAgICAgICAgICAgb3V0cHV0ID0gc3Rkb3V0LmRlY29kZSgidXRmLTgiLCBlcnJvcnM9InJlcGxhY2UiKQogICAgICAgICAgICBlcnJvcnMgPSBzdGRlcnIuZGVjb2RlKCJ1dGYtOCIsIGVycm9ycz0icmVwbGFjZSIpCgogICAgICAgICAgICAjIFBhcnNlIHB5dGVzdCBzdW1tYXJ5CiAgICAgICAgICAgIHN1bW1hcnkgPSBzZWxmLl9wYXJzZV9weXRlc3Rfc3VtbWFyeShvdXRwdXQpCgogICAgICAgICAgICByZXN1bHQgPSBvdXRwdXQKICAgICAgICAgICAgaWYgZXJyb3JzIGFuZCAid2FybmluZyIgbm90IGluIGVycm9ycy5sb3dlcigpOgogICAgICAgICAgICAgICAgcmVzdWx0ICs9IGYiXG5bc3RkZXJyXSB7ZXJyb3JzfSIKCiAgICAgICAgICAgIGlmIHN1bW1hcnk6CiAgICAgICAgICAgICAgICByZXN1bHQgPSBmIlNVTU1BUlk6IHtzdW1tYXJ5fVxuXG57cmVzdWx0fSIKCiAgICAgICAgICAgICMgVHJ1bmNhdGUgaWYgdG9vIGxvbmcKICAgICAgICAgICAgaWYgbGVuKHJlc3VsdCkgPiA1MDAwOgogICAgICAgICAgICAgICAgcmVzdWx0ID0gcmVzdWx0Wzo1MDAwXSArICJcbi4uLiBbdHJ1bmNhdGVkXSIKCiAgICAgICAgICAgIHJldHVybiByZXN1bHQKCiAgICAgICAgZXhjZXB0IGFzeW5jaW8uVGltZW91dEVycm9yOgogICAgICAgICAgICByZXR1cm4gZiJFcnJvcjogVGVzdHMgdGltZWQgb3V0IGFmdGVyIHt0aW1lb3V0fXMiCiAgICAgICAgZXhjZXB0IEZpbGVOb3RGb3VuZEVycm9yOgogICAgICAgICAgICByZXR1cm4gIkVycm9yOiBweXRlc3Qgbm90IGZvdW5kLiBJbnN0YWxsIHdpdGg6IHBpcCBpbnN0YWxsIHB5dGVzdCIKICAgICAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGV4YzoKICAgICAgICAgICAgcmV0dXJuIGYiRXJyb3IgcnVubmluZyB0ZXN0czoge2V4Y30iCgogICAgZGVmIF9wYXJzZV9weXRlc3Rfc3VtbWFyeShzZWxmLCBvdXRwdXQ6IHN0cikgLT4gc3RyOgogICAgICAgICIiIkV4dHJhY3QgcHl0ZXN0IHN1bW1hcnkgbGluZS4iIiIKICAgICAgICAjIExvb2sgZm9yICJYIHBhc3NlZCwgWSBmYWlsZWQiIHBhdHRlcm4KICAgICAgICBmb3IgbGluZSBpbiByZXZlcnNlZChvdXRwdXQuc3BsaXRsaW5lcygpKToKICAgICAgICAgICAgaWYgInBhc3NlZCIgaW4gbGluZSBvciAiZmFpbGVkIiBpbiBsaW5lIG9yICJlcnJvciIgaW4gbGluZToKICAgICAgICAgICAgICAgICMgQ2xlYW4gdXAgQU5TSSBjb2RlcwogICAgICAgICAgICAgICAgY2xlYW4gPSByZS5zdWIociJceDFiXFtbMC05O10qbSIsICIiLCBsaW5lKS5zdHJpcCgpCiAgICAgICAgICAgICAgICBpZiBjbGVhbi5zdGFydHN3aXRoKCI9Iik6CiAgICAgICAgICAgICAgICAgICAgY2xlYW4gPSBjbGVhbi5zdHJpcCgiPSAiKQogICAgICAgICAgICAgICAgcmV0dXJuIGNsZWFuCiAgICAgICAgcmV0dXJuICIiCgogICAgYXN5bmMgZGVmIF9ydW5fbnBtX3Rlc3Qoc2VsZiwgdGltZW91dDogaW50KSAtPiBzdHI6CiAgICAgICAgIiIiUnVuIG5wbSB0ZXN0LiIiIgogICAgICAgIHRyeToKICAgICAgICAgICAgcHJvY2VzcyA9IGF3YWl0IGFzeW5jaW8uY3JlYXRlX3N1YnByb2Nlc3NfZXhlYygKICAgICAgICAgICAgICAgICJucG0iLCAidGVzdCIsCiAgICAgICAgICAgICAgICBzdGRvdXQ9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBzdGRlcnI9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICBjd2Q9c2VsZi53b3Jrc3BhY2UsCiAgICAgICAgICAgICkKICAgICAgICAgICAgc3Rkb3V0LCBzdGRlcnIgPSBhd2FpdCBhc3luY2lvLndhaXRfZm9yKAogICAgICAgICAgICAgICAgcHJvY2Vzcy5jb21tdW5pY2F0ZSgpLCB0aW1lb3V0PXRpbWVvdXQKICAgICAgICAgICAgKQoKICAgICAgICAgICAgb3V0cHV0ID0gc3Rkb3V0LmRlY29kZSgidXRmLTgiLCBlcnJvcnM9InJlcGxhY2UiKQogICAgICAgICAgICBlcnJvcnMgPSBzdGRlcnIuZGVjb2RlKCJ1dGYtOCIsIGVycm9ycz0icmVwbGFjZSIpCgogICAgICAgICAgICByZXN1bHQgPSBvdXRwdXQgKyAoZiJcbntlcnJvcnN9IiBpZiBlcnJvcnMgZWxzZSAiIikKCiAgICAgICAgICAgIGlmIHByb2Nlc3MucmV0dXJuY29kZSAhPSAwOgogICAgICAgICAgICAgICAgcmVzdWx0ID0gZiJbVEVTVFMgRkFJTEVEIC0gZXhpdCBjb2RlIHtwcm9jZXNzLnJldHVybmNvZGV9XVxue3Jlc3VsdH0iCgogICAgICAgICAgICBpZiBsZW4ocmVzdWx0KSA+IDUwMDA6CiAgICAgICAgICAgICAgICByZXN1bHQgPSByZXN1bHRbOjUwMDBdICsgIlxuLi4uIFt0cnVuY2F0ZWRdIgoKICAgICAgICAgICAgcmV0dXJuIHJlc3VsdAoKICAgICAgICBleGNlcHQgYXN5bmNpby5UaW1lb3V0RXJyb3I6CiAgICAgICAgICAgIHJldHVybiBmIkVycm9yOiBUZXN0cyB0aW1lZCBvdXQgYWZ0ZXIge3RpbWVvdXR9cyIKICAgICAgICBleGNlcHQgRmlsZU5vdEZvdW5kRXJyb3I6CiAgICAgICAgICAgIHJldHVybiAiRXJyb3I6IG5wbSBub3QgZm91bmQiCg==
+"""Test runner tool — execute test suites and parse results."""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import re
+from typing import Any
+
+from nexus.tools.registry import BaseTool
+
+logger = logging.getLogger(__name__)
+
+
+class TestRunnerTool(BaseTool):
+    """Run test suites and parse results.
+
+    Supports pytest (Python) and basic npm test (Node.js).
+    Parses output to extract pass/fail counts and failure details.
+    """
+
+    name = "test_run"
+    description = "Run test suite (pytest or npm test) and get structured results"
+    aliases = ["run_tests", "pytest", "test"]
+    schema = {
+        "path": "(optional) Test file or directory (default: current directory)",
+        "framework": "(optional) Test framework: pytest, npm (default: pytest)",
+        "verbose": "(optional) Verbose output (default: true)",
+        "timeout": "(optional) Timeout in seconds (default: 60)",
+    }
+
+    async def execute(
+        self,
+        path: str = ".",
+        framework: str = "pytest",
+        verbose: bool = True,
+        timeout: int = 60,
+        **kwargs: Any,
+    ) -> str:
+        if framework == "pytest":
+            return await self._run_pytest(path, verbose, timeout)
+        elif framework == "npm":
+            return await self._run_npm_test(timeout)
+        else:
+            return f"Error: Unknown framework: {framework}. Supported: pytest, npm"
+
+    async def _run_pytest(self, path: str, verbose: bool, timeout: int) -> str:
+        """Run pytest and parse results."""
+        cmd = ["python3", "-m", "pytest", path]
+        if verbose:
+            cmd.append("-v")
+        cmd.append("--tb=short")  # Short tracebacks
+
+        try:
+            process = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=timeout
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+            errors = stderr.decode("utf-8", errors="replace")
+
+            # Parse pytest summary
+            summary = self._parse_pytest_summary(output)
+
+            result = output
+            if errors and "warning" not in errors.lower():
+                result += f"\n[stderr] {errors}"
+
+            if summary:
+                result = f"SUMMARY: {summary}\n\n{result}"
+
+            # Truncate if too long
+            if len(result) > 5000:
+                result = result[:5000] + "\n... [truncated]"
+
+            return result
+
+        except asyncio.TimeoutError:
+            return f"Error: Tests timed out after {timeout}s"
+        except FileNotFoundError:
+            return "Error: pytest not found. Install with: pip install pytest"
+        except Exception as exc:
+            return f"Error running tests: {exc}"
+
+    def _parse_pytest_summary(self, output: str) -> str:
+        """Extract pytest summary line."""
+        # Look for "X passed, Y failed" pattern
+        for line in reversed(output.splitlines()):
+            if "passed" in line or "failed" in line or "error" in line:
+                # Clean up ANSI codes
+                clean = re.sub(r"\x1b\[[0-9;]*m", "", line).strip()
+                if clean.startswith("="):
+                    clean = clean.strip("= ")
+                return clean
+        return ""
+
+    async def _run_npm_test(self, timeout: int) -> str:
+        """Run npm test."""
+        try:
+            process = await asyncio.create_subprocess_exec(
+                "npm", "test",
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                cwd=self.workspace,
+            )
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(), timeout=timeout
+            )
+
+            output = stdout.decode("utf-8", errors="replace")
+            errors = stderr.decode("utf-8", errors="replace")
+
+            result = output + (f"\n{errors}" if errors else "")
+
+            if process.returncode != 0:
+                result = f"[TESTS FAILED - exit code {process.returncode}]\n{result}"
+
+            if len(result) > 5000:
+                result = result[:5000] + "\n... [truncated]"
+
+            return result
+
+        except asyncio.TimeoutError:
+            return f"Error: Tests timed out after {timeout}s"
+        except FileNotFoundError:
+            return "Error: npm not found"

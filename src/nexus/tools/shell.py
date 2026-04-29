@@ -1,1 +1,117 @@
-IiIiU2hlbGwgdG9vbCDigJQgc2FmZSBjb21tYW5kIGV4ZWN1dGlvbi4KCkJ1aWxkcyBvbiB0aGUgZXhpc3Rpbmcgc3VicHJvY2Vzc191dGlscyBmb3Igc2FmZSBjb21tYW5kIGV4ZWN1dGlvbgp3aXRob3V0IHNoZWxsPVRydWUgdnVsbmVyYWJpbGl0aWVzLgoiIiIKCmZyb20gX19mdXR1cmVfXyBpbXBvcnQgYW5ub3RhdGlvbnMKCmltcG9ydCBhc3luY2lvCmltcG9ydCBsb2dnaW5nCmltcG9ydCBvcwppbXBvcnQgc2hsZXgKZnJvbSB0eXBpbmcgaW1wb3J0IEFueQoKZnJvbSBuZXh1cy50b29scy5yZWdpc3RyeSBpbXBvcnQgQmFzZVRvb2wKCmxvZ2dlciA9IGxvZ2dpbmcuZ2V0TG9nZ2VyKF9fbmFtZV9fKQoKIyBDb21tYW5kcyB0aGF0IHNob3VsZCBuZXZlciBiZSBydW4gYnkgdGhlIGFnZW50CkJMT0NLRURfQ09NTUFORFMgPSBmcm96ZW5zZXQoewogICAgInJtIC1yZiAvIiwgInJtIC1yZiAvKiIsICJta2ZzIiwgImRkIGlmPS9kZXYvemVybyIsCiAgICAiOigpeyA6fDomIH07OiIsICJzaHV0ZG93biIsICJyZWJvb3QiLCAiaGFsdCIsCiAgICAiY2htb2QgLVIgNzc3IC8iLCAiY2hvd24gLVIiLAp9KQoKIyBDb21tYW5kcyB0aGF0IHJlcXVpcmUgZXh0cmEgY2F1dGlvbgpDQVVUSU9OX1BSRUZJWEVTID0gKCJybSAiLCAic3VkbyAiLCAiYXB0ICIsICJwaXAgaW5zdGFsbCIsICJucG0gaW5zdGFsbCAtZyIpCgoKY2xhc3MgU2hlbGxUb29sKEJhc2VUb29sKToKICAgICIiIkV4ZWN1dGUgc2hlbGwgY29tbWFuZHMgc2FmZWx5LgoKICAgIFJ1bnMgY29tbWFuZHMgYXMgc3VicHJvY2Vzc2VzIChubyBzaGVsbD1UcnVlKSB3aXRoIHRpbWVvdXQKICAgIHByb3RlY3Rpb24gYW5kIG91dHB1dCBjYXB0dXJlLgogICAgIiIiCgogICAgbmFtZSA9ICJzaGVsbCIKICAgIGRlc2NyaXB0aW9uID0gIlJ1biBhIHNoZWxsIGNvbW1hbmQgYW5kIGNhcHR1cmUgb3V0cHV0IgogICAgYWxpYXNlcyA9IFsiYmFzaCIsICJydW5fY29tbWFuZCIsICJzaGVsbF9ydW4iLCAiZXhlY3V0ZSJdCiAgICBzY2hlbWEgPSB7CiAgICAgICAgImNvbW1hbmQiOiAiKHJlcXVpcmVkKSBUaGUgY29tbWFuZCB0byBleGVjdXRlIiwKICAgICAgICAidGltZW91dCI6ICIob3B0aW9uYWwpIFRpbWVvdXQgaW4gc2Vjb25kcyAoZGVmYXVsdDogMzApIiwKICAgIH0KCiAgICBhc3luYyBkZWYgZXhlY3V0ZShzZWxmLCBjb21tYW5kOiBzdHIgPSAiIiwgdGltZW91dDogaW50ID0gMzAsICoqa3dhcmdzOiBBbnkpIC0+IHN0cjoKICAgICAgICAiIiJFeGVjdXRlIGEgc2hlbGwgY29tbWFuZC4KCiAgICAgICAgQXJnczoKICAgICAgICAgICAgY29tbWFuZDogVGhlIGNvbW1hbmQgc3RyaW5nIHRvIGV4ZWN1dGUuCiAgICAgICAgICAgIHRpbWVvdXQ6IE1heGltdW0gZXhlY3V0aW9uIHRpbWUgaW4gc2Vjb25kcy4KCiAgICAgICAgUmV0dXJuczoKICAgICAgICAgICAgQ29tYmluZWQgc3Rkb3V0ICsgc3RkZXJyIG91dHB1dC4KICAgICAgICAiIiIKICAgICAgICBpZiBub3QgY29tbWFuZDoKICAgICAgICAgICAgcmV0dXJuICJFcnJvcjogTm8gY29tbWFuZCBwcm92aWRlZCIKCiAgICAgICAgIyBTZWN1cml0eSBjaGVjawogICAgICAgIGNvbW1hbmRfbG93ZXIgPSBjb21tYW5kLnN0cmlwKCkubG93ZXIoKQogICAgICAgIGlmIGNvbW1hbmRfbG93ZXIgaW4gQkxPQ0tFRF9DT01NQU5EUzoKICAgICAgICAgICAgcmV0dXJuIGYiRXJyb3I6IEJsb2NrZWQgZGFuZ2Vyb3VzIGNvbW1hbmQ6IHtjb21tYW5kfSIKCiAgICAgICAgZm9yIHByZWZpeCBpbiBDQVVUSU9OX1BSRUZJWEVTOgogICAgICAgICAgICBpZiBjb21tYW5kX2xvd2VyLnN0YXJ0c3dpdGgocHJlZml4KToKICAgICAgICAgICAgICAgIGxvZ2dlci53YXJuaW5nKCJDYXV0aW9uIGNvbW1hbmQgZXhlY3V0ZWQ6ICVzIiwgY29tbWFuZFs6ODBdKQoKICAgICAgICB0cnk6CiAgICAgICAgICAgICMgUGFyc2UgY29tbWFuZCB0byBhdm9pZCBzaGVsbD1UcnVlCiAgICAgICAgICAgICMgQnV0IGFsbG93IHBpcGVzIGFuZCByZWRpcmVjdHMgYnkgdXNpbmcgc2hlbGwgZm9yIGNvbXBsZXggY29tbWFuZHMKICAgICAgICAgICAgaWYgYW55KGMgaW4gY29tbWFuZCBmb3IgYyBpbiAoInwiLCAiPiIsICI8IiwgIiYmIiwgInx8IiwgIjsiLCAiYCIsICIkKCIpKToKICAgICAgICAgICAgICAgICMgQ29tcGxleCBjb21tYW5kIOKAlCB1c2Ugc2hlbGwgYnV0IGxvZyB3YXJuaW5nCiAgICAgICAgICAgICAgICBsb2dnZXIuZGVidWcoIlVzaW5nIHNoZWxsIGZvciBjb21wbGV4IGNvbW1hbmQ6ICVzIiwgY29tbWFuZFs6ODBdKQogICAgICAgICAgICAgICAgcHJvY2VzcyA9IGF3YWl0IGFzeW5jaW8uY3JlYXRlX3N1YnByb2Nlc3Nfc2hlbGwoCiAgICAgICAgICAgICAgICAgICAgY29tbWFuZCwKICAgICAgICAgICAgICAgICAgICBzdGRvdXQ9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICAgICAgc3RkZXJyPWFzeW5jaW8uc3VicHJvY2Vzcy5QSVBFLAogICAgICAgICAgICAgICAgICAgIGN3ZD1zZWxmLndvcmtzcGFjZSwKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgZWxzZToKICAgICAgICAgICAgICAgICMgU2ltcGxlIGNvbW1hbmQg4oCUIHBhcnNlIHNhZmVseQogICAgICAgICAgICAgICAgYXJncyA9IHNobGV4LnNwbGl0KGNvbW1hbmQpCiAgICAgICAgICAgICAgICBwcm9jZXNzID0gYXdhaXQgYXN5bmNpby5jcmVhdGVfc3VicHJvY2Vzc19leGVjKAogICAgICAgICAgICAgICAgICAgICphcmdzLAogICAgICAgICAgICAgICAgICAgIHN0ZG91dD1hc3luY2lvLnN1YnByb2Nlc3MuUElQRSwKICAgICAgICAgICAgICAgICAgICBzdGRlcnI9YXN5bmNpby5zdWJwcm9jZXNzLlBJUEUsCiAgICAgICAgICAgICAgICAgICAgY3dkPXNlbGYud29ya3NwYWNlLAogICAgICAgICAgICAgICAgKQoKICAgICAgICAgICAgc3Rkb3V0LCBzdGRlcnIgPSBhd2FpdCBhc3luY2lvLndhaXRfZm9yKAogICAgICAgICAgICAgICAgcHJvY2Vzcy5jb21tdW5pY2F0ZSgpLAogICAgICAgICAgICAgICAgdGltZW91dD10aW1lb3V0LAogICAgICAgICAgICApCgogICAgICAgICAgICBvdXRwdXRfcGFydHMgPSBbXQogICAgICAgICAgICBpZiBzdGRvdXQ6CiAgICAgICAgICAgICAgICBvdXRwdXRfcGFydHMuYXBwZW5kKHN0ZG91dC5kZWNvZGUoInV0Zi04IiwgZXJyb3JzPSJyZXBsYWNlIikpCiAgICAgICAgICAgIGlmIHN0ZGVycjoKICAgICAgICAgICAgICAgIG91dHB1dF9wYXJ0cy5hcHBlbmQoZiJbc3RkZXJyXSB7c3RkZXJyLmRlY29kZSgndXRmLTgnLCBlcnJvcnM9J3JlcGxhY2UnKX0iKQoKICAgICAgICAgICAgb3V0cHV0ID0gIlxuIi5qb2luKG91dHB1dF9wYXJ0cykuc3RyaXAoKQoKICAgICAgICAgICAgaWYgcHJvY2Vzcy5yZXR1cm5jb2RlICE9IDA6CiAgICAgICAgICAgICAgICBvdXRwdXQgPSBmIltleGl0IGNvZGUge3Byb2Nlc3MucmV0dXJuY29kZX1dXG57b3V0cHV0fSIKCiAgICAgICAgICAgICMgVHJ1bmNhdGUgdmVyeSBsb25nIG91dHB1dAogICAgICAgICAgICBpZiBsZW4ob3V0cHV0KSA+IDUwMDA6CiAgICAgICAgICAgICAgICBvdXRwdXQgPSBvdXRwdXRbOjUwMDBdICsgZiJcbi4uLiBbdHJ1bmNhdGVkLCB7bGVuKG91dHB1dCl9IHRvdGFsIGNoYXJzXSIKCiAgICAgICAgICAgIHJldHVybiBvdXRwdXQgb3IgIihubyBvdXRwdXQpIgoKICAgICAgICBleGNlcHQgYXN5bmNpby5UaW1lb3V0RXJyb3I6CiAgICAgICAgICAgIHJldHVybiBmIkVycm9yOiBDb21tYW5kIHRpbWVkIG91dCBhZnRlciB7dGltZW91dH1zOiB7Y29tbWFuZFs6ODBdfSIKICAgICAgICBleGNlcHQgRmlsZU5vdEZvdW5kRXJyb3I6CiAgICAgICAgICAgIGNtZF9uYW1lID0gY29tbWFuZC5zcGxpdCgpWzBdIGlmIGNvbW1hbmQuc3BsaXQoKSBlbHNlIGNvbW1hbmQKICAgICAgICAgICAgcmV0dXJuIGYiRXJyb3I6IENvbW1hbmQgbm90IGZvdW5kOiB7Y21kX25hbWV9IgogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZXhjOgogICAgICAgICAgICByZXR1cm4gZiJFcnJvciBleGVjdXRpbmcgY29tbWFuZDoge3R5cGUoZXhjKS5fX25hbWVfX306IHtleGN9Igo=
+"""Shell tool — safe command execution.
+
+Builds on the existing subprocess_utils for safe command execution
+without shell=True vulnerabilities.
+"""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import os
+import shlex
+from typing import Any
+
+from nexus.tools.registry import BaseTool
+
+logger = logging.getLogger(__name__)
+
+# Commands that should never be run by the agent
+BLOCKED_COMMANDS = frozenset({
+    "rm -rf /", "rm -rf /*", "mkfs", "dd if=/dev/zero",
+    ":(){ :|:& };:", "shutdown", "reboot", "halt",
+    "chmod -R 777 /", "chown -R",
+})
+
+# Commands that require extra caution
+CAUTION_PREFIXES = ("rm ", "sudo ", "apt ", "pip install", "npm install -g")
+
+
+class ShellTool(BaseTool):
+    """Execute shell commands safely.
+
+    Runs commands as subprocesses (no shell=True) with timeout
+    protection and output capture.
+    """
+
+    name = "shell"
+    description = "Run a shell command and capture output"
+    aliases = ["bash", "run_command", "shell_run", "execute"]
+    schema = {
+        "command": "(required) The command to execute",
+        "timeout": "(optional) Timeout in seconds (default: 30)",
+    }
+
+    async def execute(self, command: str = "", timeout: int = 30, **kwargs: Any) -> str:
+        """Execute a shell command.
+
+        Args:
+            command: The command string to execute.
+            timeout: Maximum execution time in seconds.
+
+        Returns:
+            Combined stdout + stderr output.
+        """
+        if not command:
+            return "Error: No command provided"
+
+        # Security check
+        command_lower = command.strip().lower()
+        if command_lower in BLOCKED_COMMANDS:
+            return f"Error: Blocked dangerous command: {command}"
+
+        for prefix in CAUTION_PREFIXES:
+            if command_lower.startswith(prefix):
+                logger.warning("Caution command executed: %s", command[:80])
+
+        try:
+            # Parse command to avoid shell=True
+            # But allow pipes and redirects by using shell for complex commands
+            if any(c in command for c in ("|", ">", "<", "&&", "||", ";", "`", "$(")):
+                # Complex command — use shell but log warning
+                logger.debug("Using shell for complex command: %s", command[:80])
+                process = await asyncio.create_subprocess_shell(
+                    command,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                    cwd=self.workspace,
+                )
+            else:
+                # Simple command — parse safely
+                args = shlex.split(command)
+                process = await asyncio.create_subprocess_exec(
+                    *args,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                    cwd=self.workspace,
+                )
+
+            stdout, stderr = await asyncio.wait_for(
+                process.communicate(),
+                timeout=timeout,
+            )
+
+            output_parts = []
+            if stdout:
+                output_parts.append(stdout.decode("utf-8", errors="replace"))
+            if stderr:
+                output_parts.append(f"[stderr] {stderr.decode('utf-8', errors='replace')}")
+
+            output = "\n".join(output_parts).strip()
+
+            if process.returncode != 0:
+                output = f"[exit code {process.returncode}]\n{output}"
+
+            # Truncate very long output
+            if len(output) > 5000:
+                output = output[:5000] + f"\n... [truncated, {len(output)} total chars]"
+
+            return output or "(no output)"
+
+        except asyncio.TimeoutError:
+            return f"Error: Command timed out after {timeout}s: {command[:80]}"
+        except FileNotFoundError:
+            cmd_name = command.split()[0] if command.split() else command
+            return f"Error: Command not found: {cmd_name}"
+        except Exception as exc:
+            return f"Error executing command: {type(exc).__name__}: {exc}"

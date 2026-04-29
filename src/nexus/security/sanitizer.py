@@ -1,1 +1,141 @@
-ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmltcG9ydCByZQpmcm9tIHR5cGluZyBpbXBvcnQgTGlzdCwgT3B0aW9uYWwKCgpBTExPV0VEX01PREVMUyA9IHsKICAgICJxd2VuMi41LWNvZGVyOjE0YiIsCiAgICAicXdlbjIuNS1jb2Rlcjo3YiIsCiAgICAiY29kZWxsYW1hIiwKICAgICJkZWVwc2Vlay1yMTo3YiIsCiAgICAiZGVlcHNlZWstcjE6MS41YiIsCiAgICAiZ3B0LTUtbmFubyIsCiAgICAibWluaW1heC1tYXgtbTIuNS1mcmVlIiwKICAgICJiaWdwaWNrbGUiLAogICAgImxpbmctMi42LWZsYXNoLWZyZWUiLAogICAgImh5My1wcmV2aWV3LWZyZWUiLAogICAgIm5lbW90cm9uLXN1cGVyLTNiIiwKICAgICJsbGFtYTMuMjpsYXRlc3QiLAogICAgImxsYW1hMy4yOjFiIiwKICAgICJsbGFtYTMuMjozYiIsCiAgICAibWlzdHJhbDo3YiIsCiAgICAibWl4dHJhbDo4eDdiIiwKICAgICJsbGF2YSIsCiAgICAibW9vbmRyZWFtIiwKICAgICJkb2xwaGluLW1pc3RyYWwiLAogICAgInBoaTM6bWluaSIsCiAgICAicGhpMzptZWRpdW0iLAogICAgImdlbW1hOjJiIiwKICAgICJnZW1tYTo3YiIsCn0KCkFMTE9XRURfVE9PTF9BUkdTID0gewogICAgImFpZGVyIjogWyItLW1vZGVsIiwgIi0tbWVzc2FnZSIsICItLXllcyIsICItLW5vLWdpdCIsICItLXJlYWQiLCAiLS13cml0ZSJdLAogICAgIm9wZW5jb2RlIjogWyItLW1vZGVsIiwgIi0tcHJvbXB0IiwgIi0tY29udGV4dCJdLAogICAgIm9sbGFtYSI6IFsicnVuIiwgImxpc3QiLCAicHVsbCIsICJzdG9wIl0sCn0KCgpkZWYgdmFsaWRhdGVfbW9kZWxfbmFtZShuYW1lOiBzdHIpIC0+IHN0cjoKICAgICIiIlZhbGlkYXRlIG1vZGVsIG5hbWUgYWdhaW5zdCB3aGl0ZWxpc3QuIiIiCiAgICBpZiBub3QgaXNpbnN0YW5jZShuYW1lLCBzdHIpIG9yIG5vdCBuYW1lLnN0cmlwKCk6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiTW9kZWwgbmFtZSBtdXN0IGJlIGEgbm9uLWVtcHR5IHN0cmluZyIpCiAgICAKICAgIG5hbWUgPSBuYW1lLnN0cmlwKCkKICAgIAogICAgaWYgbmFtZSBub3QgaW4gQUxMT1dFRF9NT0RFTFM6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigKICAgICAgICAgICAgZiJNb2RlbCAne25hbWV9JyBub3QgYWxsb3dlZC4gQ2hvb3NlIGZyb206IHsnLCAnLmpvaW4oc29ydGVkKEFMTE9XRURfTU9ERUxTKSl9IgogICAgICAgICkKICAgIHJldHVybiBuYW1lCgoKZGVmIHZhbGlkYXRlX2NvbW1hbmRfYXJncyh0b29sOiBzdHIsIGFyZ3M6IExpc3Rbc3RyXSkgLT4gTGlzdFtzdHJdOgogICAgIiIiVmFsaWRhdGUgY29tbWFuZCBhcmd1bWVudHMgdG8gcHJldmVudCBpbmplY3Rpb24uIiIiCiAgICBpZiBub3QgYXJnczoKICAgICAgICByZXR1cm4gYXJncwogICAgCiAgICBzYWZlX3BhdHRlcm4gPSByZS5jb21waWxlKHInXlthLXpBLVowLTlfXC0uOi9dKyQnKQogICAgCiAgICBmb3IgYXJnIGluIGFyZ3M6CiAgICAgICAgaWYgbm90IHNhZmVfcGF0dGVybi5tYXRjaChhcmcpOgogICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKGYiVW5zYWZlIGFyZ3VtZW50IHZhbHVlOiB7YXJnfSIpCiAgICAKICAgIGlmIHRvb2wgaW4gQUxMT1dFRF9UT09MX0FSR1M6CiAgICAgICAgYWxsb3dlZCA9IEFMTE9XRURfVE9PTF9BUkdTW3Rvb2xdCiAgICAgICAgZm9yIGksIGFyZyBpbiBlbnVtZXJhdGUoYXJncyk6CiAgICAgICAgICAgIGlmIGFyZy5zdGFydHN3aXRoKCItLSIpIGFuZCBhcmcgbm90IGluIGFsbG93ZWQ6CiAgICAgICAgICAgICAgICByYWlzZSBWYWx1ZUVycm9yKGYiQXJndW1lbnQgJ3thcmd9JyBub3QgYWxsb3dlZCBmb3Ige3Rvb2x9IikKICAgIAogICAgcmV0dXJuIGFyZ3MKCgpkZWYgc2FmZV9wYXRoX2pvaW4oYmFzZTogUGF0aCwgdXNlcl9wYXRoOiBzdHIpIC0+IFBhdGg6CiAgICAiIiJQcmV2ZW50IGRpcmVjdG9yeSB0cmF2ZXJzYWwgYXR0YWNrcy4iIiIKICAgIGlmIG5vdCB1c2VyX3BhdGg6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiUGF0aCBjYW5ub3QgYmUgZW1wdHkiKQogICAgCiAgICAjIEJsb2NrIGRpcmVjdG9yeSB0cmF2ZXJzYWwgcGF0dGVybnMKICAgIGlmICIuLiIgaW4gdXNlcl9wYXRoOgogICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoZiJQYXRoICd7dXNlcl9wYXRofScgZXNjYXBlcyB3b3Jrc3BhY2UiKQogICAgCiAgICAjIEV4cGFuZCB0aWxkZSBzYWZlbHkgKHJlc29sdmUgdG8gd29ya3NwYWNlLCBub3QgaG9tZSBkaXIpCiAgICB1c2VyX3BhdGggPSB1c2VyX3BhdGgucmVwbGFjZSgifiIsICIiKQogICAgCiAgICAjIFJlbW92ZSBsZWFkaW5nIHNsYXNoZXMgdG8ga2VlcCBpdCByZWxhdGl2ZQogICAgdXNlcl9wYXRoID0gdXNlcl9wYXRoLmxzdHJpcCgiLyIpCiAgICAKICAgIHJlc29sdmVkID0gKGJhc2UgLyB1c2VyX3BhdGgpLnJlc29sdmUoKQogICAgCiAgICBpZiBub3Qgc3RyKHJlc29sdmVkKS5zdGFydHN3aXRoKHN0cihiYXNlLnJlc29sdmUoKSkpOgogICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoZiJQYXRoICd7dXNlcl9wYXRofScgZXNjYXBlcyB3b3Jrc3BhY2UiKQogICAgCiAgICByZXR1cm4gcmVzb2x2ZWQKCgpkZWYgc2FuaXRpemVfZmlsZW5hbWUobmFtZTogc3RyKSAtPiBzdHI6CiAgICAiIiJTYW5pdGl6ZSBmaWxlbmFtZSB0byBwcmV2ZW50IHBhdGggdHJhdmVyc2FsLiIiIgogICAgIyBSZW1vdmUgcGF0aCBzZXBhcmF0b3JzIChkaXJlY3RvcnkgdHJhdmVyc2FsKQogICAgbmFtZSA9IG5hbWUucmVwbGFjZSgiLyIsICIiKS5yZXBsYWNlKCJcXCIsICIiKQogICAgIyBSZW1vdmUgb3RoZXIgZGFuZ2Vyb3VzIGNoYXJhY3RlcnMgYnV0IGtlZXAgZG90cyBhbmQgZGFzaGVzCiAgICBuYW1lID0gcmUuc3ViKHInW15cd1xzXC0uXScsICcnLCBuYW1lKQogICAgIyBTdHJpcCBsZWFkaW5nIGRvdHMgdG8gcHJldmVudCBoaWRkZW4gZmlsZXMgLyB0cmF2ZXJzYWwgYXJ0aWZhY3RzCiAgICBuYW1lID0gbmFtZS5sc3RyaXAoIi4iKQogICAgcmV0dXJuIG5hbWUuc3RyaXAoKQoKCmRlZiBzYW5pdGl6ZV9wcm9tcHQocHJvbXB0OiBzdHIsIG1heF9sZW5ndGg6IGludCA9IDEwMDAwKSAtPiBzdHI6CiAgICAiIiJTYW5pdGl6ZSBhbmQgdHJ1bmNhdGUgcHJvbXB0IGlmIHRvbyBsb25nLiIiIgogICAgaWYgbm90IHByb21wdCBvciBub3QgaXNpbnN0YW5jZShwcm9tcHQsIHN0cik6CiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcigiUHJvbXB0IG11c3QgYmUgYSBub24tZW1wdHkgc3RyaW5nIikKICAgIAogICAgcHJvbXB0ID0gcHJvbXB0LnN0cmlwKCkKICAgIAogICAgaWYgbGVuKHByb21wdCkgPiBtYXhfbGVuZ3RoOgogICAgICAgIHByb21wdCA9IHByb21wdFs6bWF4X2xlbmd0aF0gKyAiLi4uIFt0cnVuY2F0ZWRdIgogICAgCiAgICAjIFJlbW92ZSBkYW5nZXJvdXMgbGl0ZXJhbCBjaGFyYWN0ZXJzCiAgICBwcm9tcHQgPSBwcm9tcHQucmVwbGFjZSgnXHgwMCcsICcnKQogICAgcHJvbXB0ID0gcHJvbXB0LnJlcGxhY2UoJ1xyXG4nLCAnXG4nKQogICAgcHJvbXB0ID0gcHJvbXB0LnJlcGxhY2UoJ1xyJywgJycpCiAgICAKICAgICMgU2FuaXRpemUgZGFuZ2Vyb3VzIGNvZGUgcGF0dGVybnMKICAgIGRhbmdlcm91c19wYXR0ZXJucyA9IFsKICAgICAgICByZS5jb21waWxlKHInZXZhbFxzKlwoJywgcmUuSUdOT1JFQ0FTRSksCiAgICAgICAgcmUuY29tcGlsZShyJ2V4ZWNccypcKCcsIHJlLklHTk9SRUNBU0UpLAogICAgICAgIHJlLmNvbXBpbGUocidfX2ltcG9ydF9fXHMqXCgnLCByZS5JR05PUkVDQVNFKSwKICAgIF0KICAgIAogICAgZm9yIHBhdHRlcm4gaW4gZGFuZ2Vyb3VzX3BhdHRlcm5zOgogICAgICAgIHByb21wdCA9IHBhdHRlcm4uc3ViKCdbU0FOSVRJWkVEXSgnLCBwcm9tcHQpCiAgICAKICAgIHJldHVybiBwcm9tcHQKCgpkZWYgc2FmZV9zdWJwcm9jZXNzX2FyZ3MoY21kOiBMaXN0W3N0cl0pIC0+IExpc3Rbc3RyXToKICAgICIiIkVuc3VyZSBzdWJwcm9jZXNzIGFyZ3MgYXJlIHNhZmUuIiIiCiAgICBmb3IgYXJnIGluIGNtZDoKICAgICAgICBpZiBpc2luc3RhbmNlKGFyZywgc3RyKToKICAgICAgICAgICAgaWYgJ1x4MDAnIGluIGFyZyBvciAnXHInIGluIGFyZzoKICAgICAgICAgICAgICAgIHJhaXNlIFZhbHVlRXJyb3IoZiJJbnZhbGlkIGNoYXJhY3RlcnMgaW4gYXJndW1lbnQ6IHthcmd9IikKICAgIHJldHVybiBjbWQ=
+from pathlib import Path
+import re
+from typing import List, Optional
+
+
+ALLOWED_MODELS = {
+    "qwen2.5-coder:14b",
+    "qwen2.5-coder:7b",
+    "codellama",
+    "deepseek-r1:7b",
+    "deepseek-r1:1.5b",
+    "gpt-5-nano",
+    "minimax-max-m2.5-free",
+    "bigpickle",
+    "ling-2.6-flash-free",
+    "hy3-preview-free",
+    "nemotron-super-3b",
+    "llama3.2:latest",
+    "llama3.2:1b",
+    "llama3.2:3b",
+    "mistral:7b",
+    "mixtral:8x7b",
+    "llava",
+    "moondream",
+    "dolphin-mistral",
+    "phi3:mini",
+    "phi3:medium",
+    "gemma:2b",
+    "gemma:7b",
+}
+
+ALLOWED_TOOL_ARGS = {
+    "aider": ["--model", "--message", "--yes", "--no-git", "--read", "--write"],
+    "opencode": ["--model", "--prompt", "--context"],
+    "ollama": ["run", "list", "pull", "stop"],
+}
+
+
+def validate_model_name(name: str) -> str:
+    """Validate model name against whitelist."""
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("Model name must be a non-empty string")
+    
+    name = name.strip()
+    
+    if name not in ALLOWED_MODELS:
+        raise ValueError(
+            f"Model '{name}' not allowed. Choose from: {', '.join(sorted(ALLOWED_MODELS))}"
+        )
+    return name
+
+
+def validate_command_args(tool: str, args: List[str]) -> List[str]:
+    """Validate command arguments to prevent injection."""
+    if not args:
+        return args
+    
+    safe_pattern = re.compile(r'^[a-zA-Z0-9_\-.:/]+$')
+    
+    for arg in args:
+        if not safe_pattern.match(arg):
+            raise ValueError(f"Unsafe argument value: {arg}")
+    
+    if tool in ALLOWED_TOOL_ARGS:
+        allowed = ALLOWED_TOOL_ARGS[tool]
+        for i, arg in enumerate(args):
+            if arg.startswith("--") and arg not in allowed:
+                raise ValueError(f"Argument '{arg}' not allowed for {tool}")
+    
+    return args
+
+
+def safe_path_join(base: Path, user_path: str) -> Path:
+    """Prevent directory traversal attacks."""
+    if not user_path:
+        raise ValueError("Path cannot be empty")
+    
+    # Block directory traversal patterns
+    if ".." in user_path:
+        raise ValueError(f"Path '{user_path}' escapes workspace")
+    
+    # Expand tilde safely (resolve to workspace, not home dir)
+    user_path = user_path.replace("~", "")
+    
+    # Remove leading slashes to keep it relative
+    user_path = user_path.lstrip("/")
+    
+    resolved = (base / user_path).resolve()
+    
+    if not str(resolved).startswith(str(base.resolve())):
+        raise ValueError(f"Path '{user_path}' escapes workspace")
+    
+    return resolved
+
+
+def sanitize_filename(name: str) -> str:
+    """Sanitize filename to prevent path traversal."""
+    # Remove path separators (directory traversal)
+    name = name.replace("/", "").replace("\\", "")
+    # Remove other dangerous characters but keep dots and dashes
+    name = re.sub(r'[^\w\s\-.]', '', name)
+    # Strip leading dots to prevent hidden files / traversal artifacts
+    name = name.lstrip(".")
+    return name.strip()
+
+
+def sanitize_prompt(prompt: str, max_length: int = 10000) -> str:
+    """Sanitize and truncate prompt if too long."""
+    if not prompt or not isinstance(prompt, str):
+        raise ValueError("Prompt must be a non-empty string")
+    
+    prompt = prompt.strip()
+    
+    if len(prompt) > max_length:
+        prompt = prompt[:max_length] + "... [truncated]"
+    
+    # Remove dangerous literal characters
+    prompt = prompt.replace('\x00', '')
+    prompt = prompt.replace('\r\n', '\n')
+    prompt = prompt.replace('\r', '')
+    
+    # Sanitize dangerous code patterns
+    dangerous_patterns = [
+        re.compile(r'eval\s*\(', re.IGNORECASE),
+        re.compile(r'exec\s*\(', re.IGNORECASE),
+        re.compile(r'__import__\s*\(', re.IGNORECASE),
+    ]
+    
+    for pattern in dangerous_patterns:
+        prompt = pattern.sub('[SANITIZED](', prompt)
+    
+    return prompt
+
+
+def safe_subprocess_args(cmd: List[str]) -> List[str]:
+    """Ensure subprocess args are safe."""
+    for arg in cmd:
+        if isinstance(arg, str):
+            if '\x00' in arg or '\r' in arg:
+                raise ValueError(f"Invalid characters in argument: {arg}")
+    return cmd

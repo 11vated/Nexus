@@ -1,1 +1,102 @@
-IiIiVGVzdHMgZm9yIG5leHVzLmFnZW50LmNvbnRleHQg4oCUIGNvbnRleHQgd2luZG93IG1hbmFnZW1lbnQuIiIiCmltcG9ydCBweXRlc3QKZnJvbSBuZXh1cy5hZ2VudC5jb250ZXh0IGltcG9ydCBDb250ZXh0TWFuYWdlciwgQ29udGV4dEVudHJ5CmZyb20gbmV4dXMuYWdlbnQubW9kZWxzIGltcG9ydCBTdGVwCgoKY2xhc3MgVGVzdENvbnRleHRNYW5hZ2VyOgogICAgZGVmIHRlc3RfZW1wdHlfY29udGV4dChzZWxmKToKICAgICAgICBjdHggPSBDb250ZXh0TWFuYWdlcigpCiAgICAgICAgcmVzdWx0ID0gY3R4LmJ1aWxkX3Byb21wdF9jb250ZXh0KCkKICAgICAgICBhc3NlcnQgcmVzdWx0ID09ICIiCgogICAgZGVmIHRlc3RfZ29hbF9hbHdheXNfaW5jbHVkZWQoc2VsZik6CiAgICAgICAgY3R4ID0gQ29udGV4dE1hbmFnZXIoKQogICAgICAgIGN0eC5nb2FsID0gIkJ1aWxkIGEgRmxhc2sgYXBwIgogICAgICAgIHJlc3VsdCA9IGN0eC5idWlsZF9wcm9tcHRfY29udGV4dCgpCiAgICAgICAgYXNzZXJ0ICJCdWlsZCBhIEZsYXNrIGFwcCIgaW4gcmVzdWx0CgogICAgZGVmIHRlc3Rfd29ya3NwYWNlX2luZm8oc2VsZik6CiAgICAgICAgY3R4ID0gQ29udGV4dE1hbmFnZXIoKQogICAgICAgIGN0eC5nb2FsID0gInRlc3QiCiAgICAgICAgY3R4LndvcmtzcGFjZV9pbmZvID0gIi9ob21lL3VzZXIvcHJvamVjdCIKICAgICAgICByZXN1bHQgPSBjdHguYnVpbGRfcHJvbXB0X2NvbnRleHQoKQogICAgICAgIGFzc2VydCAiL2hvbWUvdXNlci9wcm9qZWN0IiBpbiByZXN1bHQKCiAgICBkZWYgdGVzdF9hZGRfZW50cnkoc2VsZik6CiAgICAgICAgY3R4ID0gQ29udGV4dE1hbmFnZXIoKQogICAgICAgIGN0eC5nb2FsID0gInRlc3QiCiAgICAgICAgY3R4LmFkZCgiU29tZSBjb250ZXh0Iiwgc291cmNlPSJ0ZXN0IikKICAgICAgICByZXN1bHQgPSBjdHguYnVpbGRfcHJvbXB0X2NvbnRleHQoKQogICAgICAgIGFzc2VydCAiU29tZSBjb250ZXh0IiBpbiByZXN1bHQKCiAgICBkZWYgdGVzdF9waW5fYWx3YXlzX2luY2x1ZGVkKHNlbGYpOgogICAgICAgIGN0eCA9IENvbnRleHRNYW5hZ2VyKCkKICAgICAgICBjdHguZ29hbCA9ICJ0ZXN0IgogICAgICAgIGN0eC5waW4oIkltcG9ydGFudCBmYWN0Iiwgc291cmNlPSJtZW1vcnkiKQogICAgICAgIHJlc3VsdCA9IGN0eC5idWlsZF9wcm9tcHRfY29udGV4dCgpCiAgICAgICAgYXNzZXJ0ICJJbXBvcnRhbnQgZmFjdCIgaW4gcmVzdWx0CgogICAgZGVmIHRlc3RfYnVkZ2V0X3Jlc3BlY3RlZChzZWxmKToKICAgICAgICBjdHggPSBDb250ZXh0TWFuYWdlcihtYXhfY2hhcnM9MTAwKQogICAgICAgIGN0eC5nb2FsID0gInNob3J0IgogICAgICAgICMgQWRkIGEgdmVyeSBsb25nIGVudHJ5IHRoYXQgZXhjZWVkcyBidWRnZXQKICAgICAgICBjdHguYWRkKCJ4IiAqIDIwMCwgc291cmNlPSJiaWciKQogICAgICAgIHJlc3VsdCA9IGN0eC5idWlsZF9wcm9tcHRfY29udGV4dCgpCiAgICAgICAgIyBUaGUgYmlnIGVudHJ5IHNob3VsZCBiZSBleGNsdWRlZCBzaW5jZSBpdCBleGNlZWRzIHJlbWFpbmluZyBidWRnZXQKICAgICAgICBhc3NlcnQgbGVuKHJlc3VsdCkgPD0gMjAwICAjIGdvYWwgKyBzb21lIG92ZXJoZWFkCgogICAgZGVmIHRlc3RfYWRkX3N0ZXAoc2VsZik6CiAgICAgICAgY3R4ID0gQ29udGV4dE1hbmFnZXIoKQogICAgICAgIGN0eC5nb2FsID0gInRlc3QiCiAgICAgICAgc3RlcCA9IFN0ZXAoYWN0aW9uPSJSZWFkIGZpbGUiLCB0b29sX25hbWU9ImZpbGVfcmVhZCIsIHN1Y2Nlc3M9VHJ1ZSwgcmVzdWx0PSJjb250ZW50cyBoZXJlIikKICAgICAgICBjdHguYWRkX3N0ZXAoc3RlcCkKICAgICAgICByZXN1bHQgPSBjdHguYnVpbGRfcHJvbXB0X2NvbnRleHQoKQogICAgICAgIGFzc2VydCAiUmVhZCBmaWxlIiBpbiByZXN1bHQKCiAgICBkZWYgdGVzdF9hZGRfZmlsZV9jb250ZW50X3RydW5jYXRpb24oc2VsZik6CiAgICAgICAgY3R4ID0gQ29udGV4dE1hbmFnZXIoKQogICAgICAgIGxvbmdfY29udGVudCA9ICJhIiAqIDUwMDAKICAgICAgICBjdHguYWRkX2ZpbGVfY29udGVudCgiYmlnLnB5IiwgbG9uZ19jb250ZW50KQogICAgICAgICMgQ2hlY2sgaXQgd2FzIHRydW5jYXRlZAogICAgICAgIGVudHJpZXMgPSBsaXN0KGN0eC5fZW50cmllcykKICAgICAgICBhc3NlcnQgbGVuKGVudHJpZXMpID09IDEKICAgICAgICBhc3NlcnQgInRydW5jYXRlZCIgaW4gZW50cmllc1swXS5jb250ZW50CgogICAgZGVmIHRlc3RfZ2V0X3JlY2VudF9zdGVwcyhzZWxmKToKICAgICAgICBjdHggPSBDb250ZXh0TWFuYWdlcigpCiAgICAgICAgZm9yIGkgaW4gcmFuZ2UoMTApOgogICAgICAgICAgICBzdGVwID0gU3RlcChhY3Rpb249ZiJTdGVwIHtpfSIsIHRvb2xfbmFtZT0ic2hlbGwiLCBzdWNjZXNzPVRydWUsIHJlc3VsdD0ib2siKQogICAgICAgICAgICBjdHguYWRkX3N0ZXAoc3RlcCkKICAgICAgICByZWNlbnQgPSBjdHguZ2V0X3JlY2VudF9zdGVwcygzKQogICAgICAgIGFzc2VydCBsZW4ocmVjZW50KSA9PSAzCiAgICAgICAgYXNzZXJ0ICJTdGVwIDkiIGluIHJlY2VudFstMV0KCiAgICBkZWYgdGVzdF9jbGVhcihzZWxmKToKICAgICAgICBjdHggPSBDb250ZXh0TWFuYWdlcigpCiAgICAgICAgY3R4LmdvYWwgPSAidGVzdCIKICAgICAgICBjdHguYWRkKCJkYXRhIiwgc291cmNlPSJ0ZXN0IikKICAgICAgICBjdHguY2xlYXIoKQogICAgICAgIGFzc2VydCBjdHguZ29hbCA9PSAiIgogICAgICAgIHJlc3VsdCA9IGN0eC5idWlsZF9wcm9tcHRfY29udGV4dCgpCiAgICAgICAgYXNzZXJ0IHJlc3VsdCA9PSAiIgoKICAgIGRlZiB0ZXN0X3N1bW1hcnkoc2VsZik6CiAgICAgICAgY3R4ID0gQ29udGV4dE1hbmFnZXIoKQogICAgICAgIGN0eC5nb2FsID0gInRlc3QiCiAgICAgICAgY3R4LmFkZCgiZGF0YSIsIHNvdXJjZT0idGVzdCIpCiAgICAgICAgY3R4LnBpbigicGlubmVkIiwgc291cmNlPSJ0ZXN0IikKICAgICAgICBzID0gY3R4LnN1bW1hcnkoKQogICAgICAgIGFzc2VydCBzWyJlbnRyaWVzIl0gPT0gMQogICAgICAgIGFzc2VydCBzWyJwaW5uZWQiXSA9PSAxCiAgICAgICAgYXNzZXJ0IHNbImhhc19nb2FsIl0gaXMgVHJ1ZQoKICAgIGRlZiB0ZXN0X3ByaW9yaXR5X29yZGVyaW5nKHNlbGYpOgogICAgICAgIGN0eCA9IENvbnRleHRNYW5hZ2VyKG1heF9jaGFycz01MDApCiAgICAgICAgY3R4LmdvYWwgPSAidGVzdCIKICAgICAgICBjdHguYWRkKCJsb3cgcHJpb3JpdHkiLCBzb3VyY2U9InRlc3QiLCBwcmlvcml0eT0xKQogICAgICAgIGN0eC5hZGQoImhpZ2ggcHJpb3JpdHkiLCBzb3VyY2U9InRlc3QiLCBwcmlvcml0eT0xMCkKICAgICAgICByZXN1bHQgPSBjdHguYnVpbGRfcHJvbXB0X2NvbnRleHQoKQogICAgICAgICMgQm90aCBzaG91bGQgYmUgaW5jbHVkZWQgd2hlbiBidWRnZXQgYWxsb3dzCiAgICAgICAgYXNzZXJ0ICJoaWdoIHByaW9yaXR5IiBpbiByZXN1bHQKICAgICAgICBhc3NlcnQgImxvdyBwcmlvcml0eSIgaW4gcmVzdWx0Cg==
+"""Tests for nexus.agent.context — context window management."""
+import pytest
+from nexus.agent.context import ContextManager, ContextEntry
+from nexus.agent.models import Step
+
+
+class TestContextManager:
+    def test_empty_context(self):
+        ctx = ContextManager()
+        result = ctx.build_prompt_context()
+        assert result == ""
+
+    def test_goal_always_included(self):
+        ctx = ContextManager()
+        ctx.goal = "Build a Flask app"
+        result = ctx.build_prompt_context()
+        assert "Build a Flask app" in result
+
+    def test_workspace_info(self):
+        ctx = ContextManager()
+        ctx.goal = "test"
+        ctx.workspace_info = "/home/user/project"
+        result = ctx.build_prompt_context()
+        assert "/home/user/project" in result
+
+    def test_add_entry(self):
+        ctx = ContextManager()
+        ctx.goal = "test"
+        ctx.add("Some context", source="test")
+        result = ctx.build_prompt_context()
+        assert "Some context" in result
+
+    def test_pin_always_included(self):
+        ctx = ContextManager()
+        ctx.goal = "test"
+        ctx.pin("Important fact", source="memory")
+        result = ctx.build_prompt_context()
+        assert "Important fact" in result
+
+    def test_budget_respected(self):
+        ctx = ContextManager(max_chars=100)
+        ctx.goal = "short"
+        # Add a very long entry that exceeds budget
+        ctx.add("x" * 200, source="big")
+        result = ctx.build_prompt_context()
+        # The big entry should be excluded since it exceeds remaining budget
+        assert len(result) <= 200  # goal + some overhead
+
+    def test_add_step(self):
+        ctx = ContextManager()
+        ctx.goal = "test"
+        step = Step(action="Read file", tool_name="file_read", success=True, result="contents here")
+        ctx.add_step(step)
+        result = ctx.build_prompt_context()
+        assert "Read file" in result
+
+    def test_add_file_content_truncation(self):
+        ctx = ContextManager()
+        long_content = "a" * 5000
+        ctx.add_file_content("big.py", long_content)
+        # Check it was truncated
+        entries = list(ctx._entries)
+        assert len(entries) == 1
+        assert "truncated" in entries[0].content
+
+    def test_get_recent_steps(self):
+        ctx = ContextManager()
+        for i in range(10):
+            step = Step(action=f"Step {i}", tool_name="shell", success=True, result="ok")
+            ctx.add_step(step)
+        recent = ctx.get_recent_steps(3)
+        assert len(recent) == 3
+        assert "Step 9" in recent[-1]
+
+    def test_clear(self):
+        ctx = ContextManager()
+        ctx.goal = "test"
+        ctx.add("data", source="test")
+        ctx.clear()
+        assert ctx.goal == ""
+        result = ctx.build_prompt_context()
+        assert result == ""
+
+    def test_summary(self):
+        ctx = ContextManager()
+        ctx.goal = "test"
+        ctx.add("data", source="test")
+        ctx.pin("pinned", source="test")
+        s = ctx.summary()
+        assert s["entries"] == 1
+        assert s["pinned"] == 1
+        assert s["has_goal"] is True
+
+    def test_priority_ordering(self):
+        ctx = ContextManager(max_chars=500)
+        ctx.goal = "test"
+        ctx.add("low priority", source="test", priority=1)
+        ctx.add("high priority", source="test", priority=10)
+        result = ctx.build_prompt_context()
+        # Both should be included when budget allows
+        assert "high priority" in result
+        assert "low priority" in result

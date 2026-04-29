@@ -1,1 +1,76 @@
-IiIiVGVzdHMgZm9yIG5leHVzLnRvb2xzLmZpbGVfb3BzIOKAlCBmaWxlIHJlYWQvd3JpdGUvbGlzdCB0b29scy4iIiIKaW1wb3J0IG9zCmltcG9ydCBweXRlc3QKaW1wb3J0IHRlbXBmaWxlCmZyb20gbmV4dXMudG9vbHMuZmlsZV9vcHMgaW1wb3J0IEZpbGVSZWFkVG9vbCwgRmlsZVdyaXRlVG9vbCwgRmlsZUxpc3RUb29sCgoKQHB5dGVzdC5maXh0dXJlCmRlZiB3b3Jrc3BhY2UodG1wX3BhdGgpOgogICAgIiIiQ3JlYXRlIGEgdGVtcG9yYXJ5IHdvcmtzcGFjZSB3aXRoIHNvbWUgZmlsZXMuIiIiCiAgICAodG1wX3BhdGggLyAiaGVsbG8ucHkiKS53cml0ZV90ZXh0KCJwcmludCgnaGVsbG8nKSIpCiAgICAodG1wX3BhdGggLyAic3ViZGlyIikubWtkaXIoKQogICAgKHRtcF9wYXRoIC8gInN1YmRpciIgLyAibmVzdGVkLnR4dCIpLndyaXRlX3RleHQoIm5lc3RlZCBjb250ZW50IikKICAgIHJldHVybiBzdHIodG1wX3BhdGgpCgoKY2xhc3MgVGVzdEZpbGVSZWFkVG9vbDoKICAgIEBweXRlc3QubWFyay5hc3luY2lvCiAgICBhc3luYyBkZWYgdGVzdF9yZWFkX2V4aXN0aW5nX2ZpbGUoc2VsZiwgd29ya3NwYWNlKToKICAgICAgICB0b29sID0gRmlsZVJlYWRUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpCiAgICAgICAgcmVzdWx0ID0gYXdhaXQgdG9vbC5leGVjdXRlKHBhdGg9ImhlbGxvLnB5IikKICAgICAgICBhc3NlcnQgInByaW50KCdoZWxsbycpIiBpbiByZXN1bHQKCiAgICBAcHl0ZXN0Lm1hcmsuYXN5bmNpbwogICAgYXN5bmMgZGVmIHRlc3RfcmVhZF9uZXN0ZWRfZmlsZShzZWxmLCB3b3Jrc3BhY2UpOgogICAgICAgIHRvb2wgPSBGaWxlUmVhZFRvb2wod29ya3NwYWNlPXdvcmtzcGFjZSkKICAgICAgICByZXN1bHQgPSBhd2FpdCB0b29sLmV4ZWN1dGUocGF0aD0ic3ViZGlyL25lc3RlZC50eHQiKQogICAgICAgIGFzc2VydCAibmVzdGVkIGNvbnRlbnQiIGluIHJlc3VsdAoKICAgIEBweXRlc3QubWFyay5hc3luY2lvCiAgICBhc3luYyBkZWYgdGVzdF9yZWFkX21pc3NpbmdfZmlsZShzZWxmLCB3b3Jrc3BhY2UpOgogICAgICAgIHRvb2wgPSBGaWxlUmVhZFRvb2wod29ya3NwYWNlPXdvcmtzcGFjZSkKICAgICAgICByZXN1bHQgPSBhd2FpdCB0b29sLmV4ZWN1dGUocGF0aD0ibm9uZXhpc3RlbnQucHkiKQogICAgICAgIGFzc2VydCAiZXJyb3IiIGluIHJlc3VsdC5sb3dlcigpIG9yICJub3QgZm91bmQiIGluIHJlc3VsdC5sb3dlcigpCgogICAgQHB5dGVzdC5tYXJrLmFzeW5jaW8KICAgIGFzeW5jIGRlZiB0ZXN0X3BhdGhfdHJhdmVyc2FsX2Jsb2NrZWQoc2VsZiwgd29ya3NwYWNlKToKICAgICAgICB0b29sID0gRmlsZVJlYWRUb29sKHdvcmtzcGFjZT13b3Jrc3BhY2UpCiAgICAgICAgcmVzdWx0ID0gYXdhaXQgdG9vbC5leGVjdXRlKHBhdGg9Ii4uLy4uLy4uL2V0Yy9wYXNzd2QiKQogICAgICAgIGFzc2VydCAiZXJyb3IiIGluIHJlc3VsdC5sb3dlcigpIG9yICJkZW5pZWQiIGluIHJlc3VsdC5sb3dlcigpIG9yICJvdXRzaWRlIiBpbiByZXN1bHQubG93ZXIoKQoKCmNsYXNzIFRlc3RGaWxlV3JpdGVUb29sOgogICAgQHB5dGVzdC5tYXJrLmFzeW5jaW8KICAgIGFzeW5jIGRlZiB0ZXN0X3dyaXRlX25ld19maWxlKHNlbGYsIHdvcmtzcGFjZSk6CiAgICAgICAgdG9vbCA9IEZpbGVXcml0ZVRvb2wod29ya3NwYWNlPXdvcmtzcGFjZSkKICAgICAgICByZXN1bHQgPSBhd2FpdCB0b29sLmV4ZWN1dGUocGF0aD0ibmV3LnB5IiwgY29udGVudD0ieCA9IDEiKQogICAgICAgIGFzc2VydCBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4od29ya3NwYWNlLCAibmV3LnB5IikpCiAgICAgICAgYXNzZXJ0IG9wZW4ob3MucGF0aC5qb2luKHdvcmtzcGFjZSwgIm5ldy5weSIpKS5yZWFkKCkgPT0gInggPSAxIgoKICAgIEBweXRlc3QubWFyay5hc3luY2lvCiAgICBhc3luYyBkZWYgdGVzdF93cml0ZV9jcmVhdGVzX2RpcmVjdG9yaWVzKHNlbGYsIHdvcmtzcGFjZSk6CiAgICAgICAgdG9vbCA9IEZpbGVXcml0ZVRvb2wod29ya3NwYWNlPXdvcmtzcGFjZSkKICAgICAgICByZXN1bHQgPSBhd2FpdCB0b29sLmV4ZWN1dGUocGF0aD0iZGVlcC9uZXN0ZWQvZGlyL2ZpbGUudHh0IiwgY29udGVudD0iaGVsbG8iKQogICAgICAgIGFzc2VydCBvcy5wYXRoLmV4aXN0cyhvcy5wYXRoLmpvaW4od29ya3NwYWNlLCAiZGVlcC9uZXN0ZWQvZGlyL2ZpbGUudHh0IikpCgogICAgQHB5dGVzdC5tYXJrLmFzeW5jaW8KICAgIGFzeW5jIGRlZiB0ZXN0X3dyaXRlX292ZXJ3cml0ZXMoc2VsZiwgd29ya3NwYWNlKToKICAgICAgICB0b29sID0gRmlsZVdyaXRlVG9vbCh3b3Jrc3BhY2U9d29ya3NwYWNlKQogICAgICAgIGF3YWl0IHRvb2wuZXhlY3V0ZShwYXRoPSJoZWxsby5weSIsIGNvbnRlbnQ9Im5ldyBjb250ZW50IikKICAgICAgICBhc3NlcnQgb3Blbihvcy5wYXRoLmpvaW4od29ya3NwYWNlLCAiaGVsbG8ucHkiKSkucmVhZCgpID09ICJuZXcgY29udGVudCIKCgpjbGFzcyBUZXN0RmlsZUxpc3RUb29sOgogICAgQHB5dGVzdC5tYXJrLmFzeW5jaW8KICAgIGFzeW5jIGRlZiB0ZXN0X2xpc3Rfcm9vdChzZWxmLCB3b3Jrc3BhY2UpOgogICAgICAgIHRvb2wgPSBGaWxlTGlzdFRvb2wod29ya3NwYWNlPXdvcmtzcGFjZSkKICAgICAgICByZXN1bHQgPSBhd2FpdCB0b29sLmV4ZWN1dGUocGF0aD0iLiIpCiAgICAgICAgYXNzZXJ0ICJoZWxsby5weSIgaW4gcmVzdWx0CiAgICAgICAgYXNzZXJ0ICJzdWJkaXIiIGluIHJlc3VsdAoKICAgIEBweXRlc3QubWFyay5hc3luY2lvCiAgICBhc3luYyBkZWYgdGVzdF9saXN0X3N1YmRpcihzZWxmLCB3b3Jrc3BhY2UpOgogICAgICAgIHRvb2wgPSBGaWxlTGlzdFRvb2wod29ya3NwYWNlPXdvcmtzcGFjZSkKICAgICAgICByZXN1bHQgPSBhd2FpdCB0b29sLmV4ZWN1dGUocGF0aD0ic3ViZGlyIikKICAgICAgICBhc3NlcnQgIm5lc3RlZC50eHQiIGluIHJlc3VsdAo=
+"""Tests for nexus.tools.file_ops — file read/write/list tools."""
+import os
+import pytest
+import tempfile
+from nexus.tools.file_ops import FileReadTool, FileWriteTool, FileListTool
+
+
+@pytest.fixture
+def workspace(tmp_path):
+    """Create a temporary workspace with some files."""
+    (tmp_path / "hello.py").write_text("print('hello')")
+    (tmp_path / "subdir").mkdir()
+    (tmp_path / "subdir" / "nested.txt").write_text("nested content")
+    return str(tmp_path)
+
+
+class TestFileReadTool:
+    @pytest.mark.asyncio
+    async def test_read_existing_file(self, workspace):
+        tool = FileReadTool(workspace=workspace)
+        result = await tool.execute(path="hello.py")
+        assert "print('hello')" in result
+
+    @pytest.mark.asyncio
+    async def test_read_nested_file(self, workspace):
+        tool = FileReadTool(workspace=workspace)
+        result = await tool.execute(path="subdir/nested.txt")
+        assert "nested content" in result
+
+    @pytest.mark.asyncio
+    async def test_read_missing_file(self, workspace):
+        tool = FileReadTool(workspace=workspace)
+        result = await tool.execute(path="nonexistent.py")
+        assert "error" in result.lower() or "not found" in result.lower()
+
+    @pytest.mark.asyncio
+    async def test_path_traversal_blocked(self, workspace):
+        tool = FileReadTool(workspace=workspace)
+        result = await tool.execute(path="../../../etc/passwd")
+        assert "error" in result.lower() or "denied" in result.lower() or "outside" in result.lower()
+
+
+class TestFileWriteTool:
+    @pytest.mark.asyncio
+    async def test_write_new_file(self, workspace):
+        tool = FileWriteTool(workspace=workspace)
+        result = await tool.execute(path="new.py", content="x = 1")
+        assert os.path.exists(os.path.join(workspace, "new.py"))
+        assert open(os.path.join(workspace, "new.py")).read() == "x = 1"
+
+    @pytest.mark.asyncio
+    async def test_write_creates_directories(self, workspace):
+        tool = FileWriteTool(workspace=workspace)
+        result = await tool.execute(path="deep/nested/dir/file.txt", content="hello")
+        assert os.path.exists(os.path.join(workspace, "deep/nested/dir/file.txt"))
+
+    @pytest.mark.asyncio
+    async def test_write_overwrites(self, workspace):
+        tool = FileWriteTool(workspace=workspace)
+        await tool.execute(path="hello.py", content="new content")
+        assert open(os.path.join(workspace, "hello.py")).read() == "new content"
+
+
+class TestFileListTool:
+    @pytest.mark.asyncio
+    async def test_list_root(self, workspace):
+        tool = FileListTool(workspace=workspace)
+        result = await tool.execute(path=".")
+        assert "hello.py" in result
+        assert "subdir" in result
+
+    @pytest.mark.asyncio
+    async def test_list_subdir(self, workspace):
+        tool = FileListTool(workspace=workspace)
+        result = await tool.execute(path="subdir")
+        assert "nested.txt" in result

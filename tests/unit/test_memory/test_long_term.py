@@ -1,1 +1,84 @@
-IiIiVGVzdHMgZm9yIG5leHVzLm1lbW9yeS5sb25nX3Rlcm0g4oCUIHBlcnNpc3RlbnQgbWVtb3J5IChKU09OIGZhbGxiYWNrKS4iIiIKaW1wb3J0IHB5dGVzdApmcm9tIG5leHVzLm1lbW9yeS5sb25nX3Rlcm0gaW1wb3J0IExvbmdUZXJtTWVtb3J5CgoKQHB5dGVzdC5maXh0dXJlCmRlZiBtZW1vcnkodG1wX3BhdGgpOgogICAgIiIiQ3JlYXRlIGEgTG9uZ1Rlcm1NZW1vcnkgd2l0aCBKU09OIGZhbGxiYWNrLiIiIgogICAgcmV0dXJuIExvbmdUZXJtTWVtb3J5KHBlcnNpc3RfZGlyPXN0cih0bXBfcGF0aCAvICJtZW1vcnkiKSkKCgpjbGFzcyBUZXN0TG9uZ1Rlcm1NZW1vcnk6CiAgICBkZWYgdGVzdF9zdG9yZV9hbmRfY291bnQoc2VsZiwgbWVtb3J5KToKICAgICAgICBtZW1vcnkuc3RvcmUoIlRlc3QgZG9jdW1lbnQiLCBtZXRhZGF0YT17InR5cGUiOiAidGVzdCJ9KQogICAgICAgIGFzc2VydCBtZW1vcnkuY291bnQgPT0gMQoKICAgIGRlZiB0ZXN0X3N0b3JlX3dpdGhfZXhwbGljaXRfaWQoc2VsZiwgbWVtb3J5KToKICAgICAgICBkb2NfaWQgPSBtZW1vcnkuc3RvcmUoIkhlbGxvIiwgZG9jX2lkPSJkb2MxIikKICAgICAgICBhc3NlcnQgZG9jX2lkID09ICJkb2MxIgogICAgICAgIGFzc2VydCBtZW1vcnkuY291bnQgPT0gMQoKICAgIGRlZiB0ZXN0X3N0b3JlX2F1dG9faWQoc2VsZiwgbWVtb3J5KToKICAgICAgICBkb2NfaWQgPSBtZW1vcnkuc3RvcmUoIkF1dG8gSUQgZG9jdW1lbnQiKQogICAgICAgIGFzc2VydCBsZW4oZG9jX2lkKSA9PSAxNiAgIyBTSEEyNTYgdHJ1bmNhdGVkCgogICAgZGVmIHRlc3RfdXBzZXJ0X3NhbWVfaWQoc2VsZiwgbWVtb3J5KToKICAgICAgICBtZW1vcnkuc3RvcmUoIlZlcnNpb24gMSIsIGRvY19pZD0iZG9jMSIpCiAgICAgICAgbWVtb3J5LnN0b3JlKCJWZXJzaW9uIDIiLCBkb2NfaWQ9ImRvYzEiKQogICAgICAgIGFzc2VydCBtZW1vcnkuY291bnQgPT0gMSAgIyBVcGRhdGVkLCBub3QgZHVwbGljYXRlZAoKICAgIGRlZiB0ZXN0X3NlYXJjaF9rZXl3b3JkKHNlbGYsIG1lbW9yeSk6CiAgICAgICAgbWVtb3J5LnN0b3JlKCJQeXRob24gRmxhc2sgQVBJIGRldmVsb3BtZW50IiwgZG9jX2lkPSJkMSIpCiAgICAgICAgbWVtb3J5LnN0b3JlKCJSZWFjdCBmcm9udGVuZCBjb21wb25lbnRzIiwgZG9jX2lkPSJkMiIpCiAgICAgICAgbWVtb3J5LnN0b3JlKCJEamFuZ28gUkVTVCBmcmFtZXdvcmsiLCBkb2NfaWQ9ImQzIikKCiAgICAgICAgcmVzdWx0cyA9IG1lbW9yeS5zZWFyY2goIkZsYXNrIEFQSSIpCiAgICAgICAgYXNzZXJ0IGxlbihyZXN1bHRzKSA+IDAKICAgICAgICAjIEZsYXNrIGRvYyBzaG91bGQgYmUgZmlyc3QgKG1vc3Qga2V5d29yZCBtYXRjaGVzKQogICAgICAgIGFzc2VydCByZXN1bHRzWzBdWzBdID09ICJkMSIKCiAgICBkZWYgdGVzdF9zZWFyY2hfbm9fcmVzdWx0cyhzZWxmLCBtZW1vcnkpOgogICAgICAgIG1lbW9yeS5zdG9yZSgiVW5yZWxhdGVkIGNvbnRlbnQiLCBkb2NfaWQ9ImQxIikKICAgICAgICByZXN1bHRzID0gbWVtb3J5LnNlYXJjaCgieHl6bm9uZXhpc3RlbnQiKQogICAgICAgIGFzc2VydCBsZW4ocmVzdWx0cykgPT0gMAoKICAgIGRlZiB0ZXN0X3NlYXJjaF9lbXB0eV9zdG9yZShzZWxmLCBtZW1vcnkpOgogICAgICAgIHJlc3VsdHMgPSBtZW1vcnkuc2VhcmNoKCJhbnl0aGluZyIpCiAgICAgICAgYXNzZXJ0IGxlbihyZXN1bHRzKSA9PSAwCgogICAgZGVmIHRlc3RfZGVsZXRlKHNlbGYsIG1lbW9yeSk6CiAgICAgICAgbWVtb3J5LnN0b3JlKCJUbyBkZWxldGUiLCBkb2NfaWQ9ImRlbDEiKQogICAgICAgIGFzc2VydCBtZW1vcnkuY291bnQgPT0gMQogICAgICAgIGRlbGV0ZWQgPSBtZW1vcnkuZGVsZXRlKCJkZWwxIikKICAgICAgICBhc3NlcnQgZGVsZXRlZCBpcyBUcnVlCiAgICAgICAgYXNzZXJ0IG1lbW9yeS5jb3VudCA9PSAwCgogICAgZGVmIHRlc3RfZGVsZXRlX25vbmV4aXN0ZW50KHNlbGYsIG1lbW9yeSk6CiAgICAgICAgZGVsZXRlZCA9IG1lbW9yeS5kZWxldGUoIm5vbmV4aXN0ZW50IikKICAgICAgICBhc3NlcnQgZGVsZXRlZCBpcyBGYWxzZQoKICAgIGRlZiB0ZXN0X3BlcnNpc3RlbmNlKHNlbGYsIHRtcF9wYXRoKToKICAgICAgICBwZXJzaXN0X2RpciA9IHN0cih0bXBfcGF0aCAvICJwZXJzaXN0IikKICAgICAgICBtZW0xID0gTG9uZ1Rlcm1NZW1vcnkocGVyc2lzdF9kaXI9cGVyc2lzdF9kaXIpCiAgICAgICAgbWVtMS5zdG9yZSgiUGVyc2lzdGVudCBkYXRhIiwgZG9jX2lkPSJwMSIpCiAgICAgICAgYXNzZXJ0IG1lbTEuY291bnQgPT0gMQoKICAgICAgICAjIENyZWF0ZSBuZXcgaW5zdGFuY2UgcG9pbnRpbmcgdG8gc2FtZSBkaXIKICAgICAgICBtZW0yID0gTG9uZ1Rlcm1NZW1vcnkocGVyc2lzdF9kaXI9cGVyc2lzdF9kaXIpCiAgICAgICAgYXNzZXJ0IG1lbTIuY291bnQgPT0gMQoKICAgIGRlZiB0ZXN0X3NlYXJjaF9yZXR1cm5zX3R1cGxlcyhzZWxmLCBtZW1vcnkpOgogICAgICAgIG1lbW9yeS5zdG9yZSgiVGVzdCBkb2N1bWVudCBmb3Igc2VhcmNoIiwgZG9jX2lkPSJzMSIpCiAgICAgICAgcmVzdWx0cyA9IG1lbW9yeS5zZWFyY2goIlRlc3QgZG9jdW1lbnQiKQogICAgICAgIGFzc2VydCBsZW4ocmVzdWx0cykgPT0gMQogICAgICAgIGRvY19pZCwgY29udGVudCwgc2NvcmUgPSByZXN1bHRzWzBdCiAgICAgICAgYXNzZXJ0IGRvY19pZCA9PSAiczEiCiAgICAgICAgYXNzZXJ0ICJUZXN0IGRvY3VtZW50IiBpbiBjb250ZW50CiAgICAgICAgYXNzZXJ0IDAuMCA8IHNjb3JlIDw9IDEuMAoKICAgIGRlZiB0ZXN0X25fcmVzdWx0c19saW1pdChzZWxmLCBtZW1vcnkpOgogICAgICAgIGZvciBpIGluIHJhbmdlKDEwKToKICAgICAgICAgICAgbWVtb3J5LnN0b3JlKGYiRG9jdW1lbnQgYWJvdXQgdG9waWMge2l9IiwgZG9jX2lkPWYiZHtpfSIpCiAgICAgICAgcmVzdWx0cyA9IG1lbW9yeS5zZWFyY2goIkRvY3VtZW50IHRvcGljIiwgbl9yZXN1bHRzPTMpCiAgICAgICAgYXNzZXJ0IGxlbihyZXN1bHRzKSA8PSAzCg==
+"""Tests for nexus.memory.long_term — persistent memory (JSON fallback)."""
+import pytest
+from nexus.memory.long_term import LongTermMemory
+
+
+@pytest.fixture
+def memory(tmp_path):
+    """Create a LongTermMemory with JSON fallback."""
+    return LongTermMemory(persist_dir=str(tmp_path / "memory"))
+
+
+class TestLongTermMemory:
+    def test_store_and_count(self, memory):
+        memory.store("Test document", metadata={"type": "test"})
+        assert memory.count == 1
+
+    def test_store_with_explicit_id(self, memory):
+        doc_id = memory.store("Hello", doc_id="doc1")
+        assert doc_id == "doc1"
+        assert memory.count == 1
+
+    def test_store_auto_id(self, memory):
+        doc_id = memory.store("Auto ID document")
+        assert len(doc_id) == 16  # SHA256 truncated
+
+    def test_upsert_same_id(self, memory):
+        memory.store("Version 1", doc_id="doc1")
+        memory.store("Version 2", doc_id="doc1")
+        assert memory.count == 1  # Updated, not duplicated
+
+    def test_search_keyword(self, memory):
+        memory.store("Python Flask API development", doc_id="d1")
+        memory.store("React frontend components", doc_id="d2")
+        memory.store("Django REST framework", doc_id="d3")
+
+        results = memory.search("Flask API")
+        assert len(results) > 0
+        # Flask doc should be first (most keyword matches)
+        assert results[0][0] == "d1"
+
+    def test_search_no_results(self, memory):
+        memory.store("Unrelated content", doc_id="d1")
+        results = memory.search("xyznonexistent")
+        assert len(results) == 0
+
+    def test_search_empty_store(self, memory):
+        results = memory.search("anything")
+        assert len(results) == 0
+
+    def test_delete(self, memory):
+        memory.store("To delete", doc_id="del1")
+        assert memory.count == 1
+        deleted = memory.delete("del1")
+        assert deleted is True
+        assert memory.count == 0
+
+    def test_delete_nonexistent(self, memory):
+        deleted = memory.delete("nonexistent")
+        assert deleted is False
+
+    def test_persistence(self, tmp_path):
+        persist_dir = str(tmp_path / "persist")
+        mem1 = LongTermMemory(persist_dir=persist_dir)
+        mem1.store("Persistent data", doc_id="p1")
+        assert mem1.count == 1
+
+        # Create new instance pointing to same dir
+        mem2 = LongTermMemory(persist_dir=persist_dir)
+        assert mem2.count == 1
+
+    def test_search_returns_tuples(self, memory):
+        memory.store("Test document for search", doc_id="s1")
+        results = memory.search("Test document")
+        assert len(results) == 1
+        doc_id, content, score = results[0]
+        assert doc_id == "s1"
+        assert "Test document" in content
+        assert 0.0 < score <= 1.0
+
+    def test_n_results_limit(self, memory):
+        for i in range(10):
+            memory.store(f"Document about topic {i}", doc_id=f"d{i}")
+        results = memory.search("Document topic", n_results=3)
+        assert len(results) <= 3
