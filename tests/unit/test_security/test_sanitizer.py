@@ -136,8 +136,7 @@ class TestSanitizePrompt:
     def test_eval_pattern_sanitized(self):
         """Test dangerous patterns are sanitized."""
         result = sanitize_prompt("Execute eval('malicious')")
-        assert "eval" in result
-        assert "[SANITIZED]" in result or "eval" not in result.lower()
+        assert "[SANITIZED]" in result
 
 
 class TestSafeSubprocessArgs:

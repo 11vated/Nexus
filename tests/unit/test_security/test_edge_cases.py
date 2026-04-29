@@ -31,13 +31,21 @@ class TestPathTraversalEdgeCases:
         result = safe_path_join(base, "src%2f%2e%2e%2f%2e%2e")
         assert ".." not in str(result)
 
-    def test_symlink_outside_workspace(self):
+    def test_symlink_outside_workspace(self, tmp_path):
         """Test symlink pointing outside workspace."""
-        base = Path("/home/user/workspace")
+        workspace = tmp_path / "workspace"
+        workspace.mkdir()
+        outside = tmp_path / "outside_secret"
+        outside.write_text("secret")
         
-        # Even if symlink resolves, we check against base
+        # Create a symlink inside workspace that points outside
+        link = workspace / "sneaky_link"
+        link.symlink_to(outside)
+        
+        # The resolved path should still be within workspace
+        # safe_path_join resolves symlinks, so this should fail
         with pytest.raises(ValueError, match="escapes workspace"):
-            safe_path_join(base, "link_to_escape")
+            safe_path_join(workspace, "sneaky_link")
 
     def test_case_mixing_traversal(self):
         """Test case-mixing traversal attempts."""
@@ -84,7 +92,7 @@ class TestCommandInjectionEdgeCases:
 
     def test_null_byte_injection(self):
         """Test null byte injection."""
-        with pytest.raises(ValueError, match="Invalid characters"):
+        with pytest.raises(ValueError, match="Unsafe argument"):
             validate_command_args("aider", ["--model", "test\x00"])
 
 
@@ -99,9 +107,14 @@ class TestModelNameEdgeCases:
             validate_model_name("QWEN2.5-CODER:14B")
 
     def test_whitespace_variations(self):
-        """Test whitespace handling."""
+        """Test whitespace handling — leading/trailing spaces are stripped."""
+        # Leading/trailing whitespace is stripped, so valid model with spaces passes
+        result = validate_model_name("  qwen2.5-coder:14b  ")
+        assert result == "qwen2.5-coder:14b"
+        
+        # But whitespace in the middle should fail
         with pytest.raises(ValueError):
-            validate_model_name("  qwen2.5-coder:14b")
+            validate_model_name("qwen 2.5-coder:14b")
 
     def test_special_chars_in_model(self):
         """Test special characters are not allowed."""

@@ -95,13 +95,21 @@ def safe_path_join(base: Path, user_path: str) -> Path:
 
 def sanitize_filename(name: str) -> str:
     """Sanitize filename to prevent path traversal."""
+    if not name:
+        return ""
     # Remove path separators (directory traversal)
     name = name.replace("/", "").replace("\\", "")
+    # Remove null bytes
+    name = name.replace("\x00", "")
     # Remove other dangerous characters but keep dots and dashes
     name = re.sub(r'[^\w\s\-.]', '', name)
     # Strip leading dots to prevent hidden files / traversal artifacts
     name = name.lstrip(".")
-    return name.strip()
+    name = name.strip()
+    # If everything was stripped, return a safe fallback
+    if not name:
+        return "unnamed"
+    return name
 
 
 def sanitize_prompt(prompt: str, max_length: int = 10000) -> str:
@@ -118,6 +126,23 @@ def sanitize_prompt(prompt: str, max_length: int = 10000) -> str:
     prompt = prompt.replace('\x00', '')
     prompt = prompt.replace('\r\n', '\n')
     prompt = prompt.replace('\r', '')
+    
+    # Remove bidirectional unicode override characters (security risk)
+    bidi_chars = [
+        '\u202A',  # LRE (Left-to-Right Embedding)
+        '\u202B',  # RLE (Right-to-Left Embedding)
+        '\u202C',  # PDF (Pop Directional Formatting)
+        '\u202D',  # LRO (Left-to-Right Override)
+        '\u202E',  # RLO (Right-to-Left Override)
+        '\u2066',  # LRI (Left-to-Right Isolate)
+        '\u2067',  # RLI (Right-to-Left Isolate)
+        '\u2068',  # FSI (First Strong Isolate)
+        '\u2069',  # PDI (Pop Directional Isolate)
+        '\u200F',  # RLM (Right-to-Left Mark)
+        '\u200E',  # LRM (Left-to-Right Mark)
+    ]
+    for char in bidi_chars:
+        prompt = prompt.replace(char, '')
     
     # Sanitize dangerous code patterns
     dangerous_patterns = [
