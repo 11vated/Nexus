@@ -1,18 +1,1 @@
-"""Core agent system for Nexus."""
-from nexus.core.profound_system import (
-    ProfoundSystem,
-    AutonomousOrchestrator,
-    OllamaModel,
-    AgentRole,
-    TaskStatus,
-    Task,
-)
-
-__all__ = [
-    "ProfoundSystem",
-    "AutonomousOrchestrator",
-    "OllamaModel",
-    "AgentRole",
-    "TaskStatus",
-    "Task",
-]
+IiIiQ29yZSBhZ2VudCBzeXN0ZW0gZm9yIE5leHVzLiIiIgojIENvcmUgZXhwb3J0cwojIE5vdGU6IEFnZW50IG9yY2hlc3RyYXRpb24gbW9kdWxlcyBhcmUgYmVpbmcgY29uc29saWRhdGVkIGludG8gc3JjL25leHVzL2FnZW50LwojIFRoZXNlIHdpbGwgYmUgcmUtZXhwb3J0ZWQgb25jZSB0aGUgY29uc29saWRhdGlvbiBpcyBjb21wbGV0ZS4KZnJvbSBuZXh1cy5jb3JlLmNhY2hlIGltcG9ydCBSZXNwb25zZUNhY2hlCmZyb20gbmV4dXMuY29yZS52ZXJpZmljYXRpb24gaW1wb3J0IENvZGVWZXJpZmllciwgSXRlcmF0aXZlQWdlbnQKCl9fYWxsX18gPSBbCiAgICAiUHJvZm91bmRTeXN0ZW0iLAogICAgIkF1dG9ub21vdXNPcmNoZXN0cmF0b3IiLAogICAgIk9sbGFtYU1vZGVsIiwKICAgICJBZ2VudFJvbGUiLAogICAgIlRhc2tTdGF0dXMiLAogICAgIlRhc2siLApdCg==
