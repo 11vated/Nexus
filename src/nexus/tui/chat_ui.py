@@ -5,11 +5,11 @@ terminal UI with:
   - Chat pane:   streaming LLM responses
   - Tool pane:   live activity log of tool calls and results
   - Input pane:  user text entry with history
-  - Status bar:  model, workspace, session stats
+  - Status bar:  model, workspace, stance, routing info
 
 Layout:
 ┌──────────────────────────────────────────────┐
-│  NEXUS CHAT — model · workspace   [stats]    │
+│  NEXUS CHAT — model · workspace  🏗 Arch  │
 ├────────────────────────────┬─────────────────┤
 │                            │  Tool Activity   │
 │   Chat history +           │  ─────────────── │
@@ -58,21 +58,32 @@ I can help you:
 • Run commands, tests, and debug issues
 • Search your codebase and explain code
 
+*Intelligence features active:*
+• 🧠 Multi-model routing — best model for each task
+• 🔄 Adaptive stances — behavior shifts to match your need
+• 🗺  Project map — I already understand your codebase
+• 💾 Session save/resume — pick up where you left off
+
 Type your request below. I'll propose a plan before making changes.
 Type `/help` for commands, `/quit` to exit.
 """
 
 HELP_TEXT = """\
 *Commands:*
-  /help      — Show this help
-  /quit      — Exit the chat
-  /clear     — Clear conversation history
-  /stats     — Show session statistics
-  /model     — Show or change the active model
-  /tools     — List available tools
-  /plan      — Ask Nexus to plan without executing
-  /goal <g>  — Switch to autonomous mode for a single goal
-  /rules     — Show loaded project rules (.nexus/rules.md)
+  /help        — Show this help
+  /quit        — Exit the chat
+  /clear       — Clear conversation history
+  /stats       — Show session statistics
+  /model [m]   — Show or change the active model
+  /tools       — List available tools
+  /plan <desc> — Ask Nexus to plan without executing
+  /rules       — Show loaded project rules (.nexus/rules.md)
+  /stance [s]  — Show or set stance (architect|pair_programmer|debugger|reviewer|teacher|explorer)
+  /project     — Show project intelligence summary
+  /route       — Show model routing history
+  /save [name] — Save current session
+  /load        — List and load saved sessions
+  /sessions    — List saved sessions
 """
 
 
@@ -138,11 +149,19 @@ class NexusChatTUI:
         turns = stats.get("turns", 0)
         tool_calls = stats.get("tool_calls", 0)
         duration = stats.get("duration_seconds", 0)
+        stance = stats.get("stance", "default")
 
         left = Text(f"  NEXUS CHAT — {model_name}", style="bold cyan")
         mid = Text(f"  {self.workspace}", style="dim")
+
+        # Stance indicator
+        stance_display = ""
+        if stance != "default" and self.session and self.session._stances:
+            cfg = self.session._stances.current_config
+            stance_display = f"  {cfg.emoji} {cfg.display_name}"
+
         right = Text(
-            f"turns:{turns}  tools:{tool_calls}  {duration:.0f}s  ",
+            f"{stance_display}  turns:{turns}  tools:{tool_calls}  {duration:.0f}s  ",
             style="dim",
         )
 
@@ -173,6 +192,10 @@ class NexusChatTUI:
                 lines.append(content + "\n\n")
             elif role == "system":
                 lines.append(f"  ℹ {content}\n", style="dim")
+            elif role == "routing":
+                lines.append(f"  🧠 {content}\n", style="dim magenta")
+            elif role == "stance":
+                lines.append(f"  {content}\n", style="dim yellow")
 
         # Current streaming response
         if self.is_streaming and self.current_response:
@@ -223,6 +246,12 @@ class NexusChatTUI:
                     desc = Text(f"{name}", style="red")
                     if detail:
                         desc.append(f"\n  {detail[:60]}", style="dim red")
+                elif status == "routing":
+                    icon = Text("🧠", style="magenta")
+                    desc = Text(f"{name}", style="magenta")
+                elif status == "stance":
+                    icon = Text("🔄", style="yellow")
+                    desc = Text(f"{name}", style="yellow")
                 else:
                     icon = Text("·")
                     desc = Text(name)
@@ -231,7 +260,7 @@ class NexusChatTUI:
 
         return Panel(
             table,
-            title="[bold]Tools[/bold]",
+            title="[bold]Activity[/bold]",
             border_style="blue",
         )
 
@@ -274,13 +303,19 @@ class NexusChatTUI:
         elif command == "/stats":
             if self.session:
                 stats = self.session.stats()
-                return (
-                    f"Turns: {stats['turns']} | "
-                    f"Messages: {stats['messages']} | "
-                    f"Tool calls: {stats['tool_calls']} | "
-                    f"Duration: {stats['duration_seconds']}s | "
-                    f"Model: {stats['model']}"
-                )
+                lines = [
+                    f"Turns: {stats['turns']} | Messages: {stats['messages']} | Tool calls: {stats['tool_calls']}",
+                    f"Duration: {stats['duration_seconds']}s | Model: {stats['model']}",
+                ]
+                if "stance" in stats:
+                    lines.append(f"Stance: {stats['stance']}")
+                if "routing" in stats:
+                    r = stats["routing"]
+                    lines.append(f"Routing: {r.get('total_routes', 0)} decisions, avg confidence: {r.get('avg_confidence', 0):.0%}")
+                if "project" in stats:
+                    p = stats["project"]
+                    lines.append(f"Project: {p.get('type', '?')} ({p.get('files', 0)} files)")
+                return "\n".join(lines)
             return "No active session."
 
         elif command == "/tools":
@@ -307,6 +342,86 @@ class NexusChatTUI:
             if len(parts) > 1:
                 return None  # Pass to LLM with plan prefix
             return "Usage: /plan <description of what you want>"
+
+        elif command == "/stance":
+            if not self.session:
+                return "No active session."
+            if len(parts) > 1:
+                result = self.session.set_stance(parts[1])
+                if result:
+                    return f"Stance set to: {result}"
+                else:
+                    stances = [s["name"] for s in self.session.list_stances()]
+                    return f"Unknown stance. Available: {', '.join(stances)}"
+            else:
+                stances = self.session.list_stances()
+                lines = ["Available stances:"]
+                for s in stances:
+                    marker = " ← active" if s.get("active") else ""
+                    lines.append(f"  {s['display']}: {s['description']}{marker}")
+                return "\n".join(lines)
+
+        elif command == "/project":
+            if not self.session:
+                return "No active session."
+            summary = self.session.get_project_summary()
+            if not summary:
+                return "Project not scanned. Intelligence layer may not be available."
+            lines = [
+                f"Project: {summary.get('name', '?')}",
+                f"Type: {summary.get('type', '?')}",
+                f"Frameworks: {', '.join(summary.get('frameworks', [])) or 'none detected'}",
+                f"Total files: {summary.get('total_files', 0)}",
+                f"Languages: {summary.get('languages', {})}",
+            ]
+            top = summary.get("top_files", [])
+            if top:
+                lines.append("Top files:")
+                for path, score in top:
+                    lines.append(f"  {score:.2f}  {path}")
+            return "\n".join(lines)
+
+        elif command == "/route":
+            if not self.session:
+                return "No active session."
+            stats = self.session.get_routing_stats()
+            if not stats or stats.get("total_routes", 0) == 0:
+                return "No routing decisions yet."
+            lines = [
+                f"Total routing decisions: {stats['total_routes']}",
+                f"Avg confidence: {stats.get('avg_confidence', 0):.0%}",
+                f"Intent distribution: {stats.get('intent_distribution', {})}",
+                f"Model distribution: {stats.get('model_distribution', {})}",
+            ]
+            return "\n".join(lines)
+
+        elif command == "/save":
+            if not self.session:
+                return "No active session."
+            title = parts[1] if len(parts) > 1 else None
+            sid = self.session.save_session(title=title)
+            if sid:
+                return f"Session saved: {sid}"
+            return "Failed to save session."
+
+        elif command in ("/load", "/sessions"):
+            if not self.session:
+                return "No active session."
+            sessions = self.session.list_sessions()
+            if not sessions:
+                return "No saved sessions."
+            if command == "/load" and len(parts) > 1:
+                # Load by ID
+                sid = parts[1].strip()
+                if self.session.load_session(sid):
+                    return f"Session loaded: {sid} ({len(self.session.history)} messages)"
+                return f"Session not found: {sid}"
+            lines = ["Saved sessions:"]
+            for s in sessions:
+                lines.append(f"  {s['id']}  {s['title']}  ({s['messages']} msgs, {s['when']})")
+            if command == "/load":
+                lines.append("\nUsage: /load <session_id>")
+            return "\n".join(lines)
 
         return None
 
@@ -344,6 +459,27 @@ class NexusChatTUI:
                         "content": event.content[:200],
                     })
                     self.is_thinking = False
+
+                elif event.type == EventType.ROUTING:
+                    self.chat_messages.append({
+                        "role": "routing",
+                        "content": f"Routed: {event.data.get('reasoning', event.content)}",
+                    })
+                    self.tool_log.append({
+                        "status": "routing",
+                        "tool": event.content,
+                        "detail": event.data.get("intent", ""),
+                    })
+
+                elif event.type == EventType.STANCE_CHANGE:
+                    self.chat_messages.append({
+                        "role": "stance",
+                        "content": f"Mode: {event.content}",
+                    })
+                    self.tool_log.append({
+                        "status": "stance",
+                        "tool": event.content,
+                    })
 
                 elif event.type == EventType.TOOL_CALL:
                     tool_name = event.data.get("tool", "?")
@@ -403,16 +539,23 @@ class NexusChatTUI:
 
         self.console.clear()
 
-        # Print welcome
+        # Print welcome with intelligence info
         rules_loaded = " (rules loaded)" if self.session.project_rules else ""
         model_name = self.model or self.config.coding_model
+        project_info = ""
+        if self.session._project_map and self.session._project_map._scanned:
+            pm = self.session._project_map
+            project_info = f" · project: [yellow]{pm.project_type}[/yellow] ({len(pm.files)} files)"
+
         self.console.print(
             Panel(
                 f"[bold cyan]NEXUS CHAT[/bold cyan] — "
                 f"model: [green]{model_name}[/green] · "
-                f"workspace: [dim]{self.workspace}[/dim]{rules_loaded}\n\n"
-                f"[dim]Type your message and press Enter. "
-                f"Type /help for commands, /quit to exit.[/dim]",
+                f"workspace: [dim]{self.workspace}[/dim]{project_info}{rules_loaded}\n\n"
+                f"[dim]Intelligence: 🧠 multi-model routing · "
+                f"🔄 adaptive stances · "
+                f"🗺  project map · "
+                f"💾 session persistence[/dim]",
                 border_style="cyan",
             )
         )
@@ -443,6 +586,11 @@ class NexusChatTUI:
             if user_input.startswith("/"):
                 result = self._handle_command(user_input)
                 if result == "__QUIT__":
+                    # Auto-save on exit
+                    if self.session and self.session.turn_count > 0:
+                        sid = self.session.save_session()
+                        if sid:
+                            self.console.print(f"  [dim]Session auto-saved: {sid}[/dim]")
                     self.console.print("  [dim]Goodbye![/dim]")
                     break
                 elif result is not None:
@@ -468,6 +616,16 @@ class NexusChatTUI:
                     elif event.type == EventType.THINKING:
                         self.console.print(
                             f"\n  [dim italic]{event.content[:200]}[/dim italic]"
+                        )
+
+                    elif event.type == EventType.ROUTING:
+                        self.console.print(
+                            f"\n  [dim magenta]🧠 {event.data.get('reasoning', event.content)}[/dim magenta]"
+                        )
+
+                    elif event.type == EventType.STANCE_CHANGE:
+                        self.console.print(
+                            f"  [dim yellow]Mode: {event.content}[/dim yellow]"
                         )
 
                     elif event.type == EventType.TOOL_CALL:
