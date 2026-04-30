@@ -1,32 +1,30 @@
-FROM python:3.11-slim AS builder
+FROM python:3.12-slim
 
-WORKDIR /app
-
+# System deps for tools (git, ripgrep, node for code_runner)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    curl \
     git \
+    ripgrep \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
-COPY pyproject.toml .
-RUN pip install --no-cache-dir --user -e .
-
-FROM python:3.11-slim
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    git \
+# Optional: Node.js for code_runner tool
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY --from=builder /root/.local /root/.local
-ENV PATH=/root/.local/bin:$PATH
-ENV PYTHONPATH=/app/src
+# Install Nexus
+COPY pyproject.toml README.md ./
+COPY src/ src/
+RUN pip install --no-cache-dir -e ".[all]" 2>/dev/null || pip install --no-cache-dir -e .
 
-EXPOSE 8000 8080
+# Default workspace
+RUN mkdir -p /workspace
+WORKDIR /workspace
 
-LABEL org.opencontainers.image.source="https://github.com/11vated/Nexus"
-LABEL org.opencontainers.image.description="Nexus - Ultimate AI Agent Workstation"
+# Ollama URL default (host network mode expected)
+ENV NEXUS_OLLAMA_URL=http://localhost:11434
 
-CMD ["python", "-m", "nexus.cli", "--help"]
+ENTRYPOINT ["nexus"]
+CMD ["--help"]

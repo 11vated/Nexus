@@ -143,7 +143,15 @@ class PersistentCache:
     def get(self, key: str) -> Optional[Dict]:
         """Get cached data."""
         if key in self._memory_cache:
-            return self._memory_cache[key]
+            data = self._memory_cache[key]
+            if time.time() > data.get("expires_at", 0):
+                del self._memory_cache[key]
+                # Also remove file
+                cache_file = self._get_cache_file(key)
+                if cache_file.exists():
+                    cache_file.unlink()
+                return None
+            return data
         
         cache_file = self._get_cache_file(key)
         if not cache_file.exists():

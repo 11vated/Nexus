@@ -341,7 +341,7 @@ class BestPatchSelector:
         # Fallback: highest temperature patch
         sorted_patches = sorted(
             [p for p in patches if p.content],
-            key=lambda p: p.content.length()
+            key=lambda p: len(p.content)
         )
         
         return sorted_patches[0] if sorted_patches else None
