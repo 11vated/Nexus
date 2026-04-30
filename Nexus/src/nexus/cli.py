@@ -758,6 +758,145 @@ def tui(workspace, model, coding_model):
 
 
 # ---------------------------------------------------------------------------
+#  nexus plugin — Plugin system management
+# ---------------------------------------------------------------------------
+
+@cli.group()
+def plugin():
+    """Plugin system — manage extensions, tools, and hooks."""
+    pass
+
+
+@plugin.command("list")
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+@click.option("--json-output", is_flag=True, help="Output as JSON")
+def plugin_list(workspace, json_output):
+    """List all discovered plugins and their status."""
+    from nexus.plugins.manager import PluginManager
+
+    manager = PluginManager(workspace=workspace)
+    manager.loader.discover()
+    plugins = manager.list_plugins()
+
+    if json_output:
+        import json
+        console.print_json(json.dumps(plugins, indent=2))
+    else:
+        if not plugins:
+            console.print("[dim]No plugins found. Create one in .nexus/plugins/[/dim]")
+            return
+
+        for p in plugins:
+            status = "[green]enabled[/green]" if p["enabled"] else "[yellow]disabled[/yellow]"
+            console.print(f"  {p['name']} v{p['version']} — {status}")
+            if p["description"]:
+                console.print(f"    {p['description']}")
+
+
+@plugin.command("info")
+@click.argument("name")
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+def plugin_info(name, workspace):
+    """Show detailed information about a plugin."""
+    from nexus.plugins.manager import PluginManager
+
+    manager = PluginManager(workspace=workspace)
+    manager.loader.discover()
+    info = manager.get_plugin_info(name)
+
+    if info is None:
+        console.print(f"[red]Plugin '{name}' not found[/red]")
+        return
+
+    console.print(Panel(
+        f"[bold]{info['name']}[/bold] v{info['version']}\n"
+        f"[dim]{info['description']}[/dim]\n"
+        f"Author: {info['author']} | License: {info['license']}\n"
+        f"State: {info['state']} | Enabled: {info['enabled']}\n"
+        f"Dependencies: {', '.join(info['dependencies']) or 'none'}\n"
+        f"Tags: {', '.join(info['tags']) or 'none'}",
+        title="Plugin Info",
+        border_style="cyan",
+    ))
+
+
+@plugin.command("enable")
+@click.argument("name")
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+def plugin_enable(name, workspace):
+    """Enable a plugin."""
+    from nexus.plugins.manager import PluginManager
+
+    manager = PluginManager(workspace=workspace)
+    manager.loader.discover()
+    result = manager.enable_plugin(name)
+
+    if result.get("success"):
+        console.print(f"[green]Enabled {name} v{result.get('version', '?')}[/green]")
+        if result.get("tools_registered"):
+            console.print(f"  Tools: {result['tools_registered']}")
+        if result.get("hooks_registered"):
+            console.print(f"  Hooks: {result['hooks_registered']}")
+    else:
+        console.print(f"[red]Failed: {result.get('error', 'unknown')}[/red]")
+
+
+@plugin.command("disable")
+@click.argument("name")
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+def plugin_disable(name, workspace):
+    """Disable a plugin."""
+    from nexus.plugins.manager import PluginManager
+
+    manager = PluginManager(workspace=workspace)
+    manager.loader.discover()
+    result = manager.disable_plugin(name)
+
+    if result.get("success"):
+        disabled = ", ".join(result.get("disabled", [name]))
+        console.print(f"[green]Disabled: {disabled}[/green]")
+    else:
+        console.print(f"[red]Failed: {result.get('error', 'unknown')}[/red]")
+
+
+@plugin.command("reload")
+@click.argument("name")
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+def plugin_reload(name, workspace):
+    """Hot-reload a plugin."""
+    from nexus.plugins.manager import PluginManager
+
+    manager = PluginManager(workspace=workspace)
+    manager.loader.discover()
+    result = manager.reload_plugin(name)
+
+    if result.get("success"):
+        console.print(f"[green]Reloaded {name}[/green]")
+    else:
+        console.print(f"[red]Failed: {result.get('error', 'unknown')}[/red]")
+
+
+@plugin.command("stats")
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+def plugin_stats(workspace):
+    """Show plugin system statistics."""
+    from nexus.plugins.manager import PluginManager
+
+    manager = PluginManager(workspace=workspace)
+    manager.loader.discover()
+    stats = manager.get_stats()
+
+    console.print(Panel(
+        f"Total plugins: {stats['total_plugins']}\n"
+        f"Enabled: {stats['enabled_plugins']}\n"
+        f"Disabled: {stats['disabled_plugins']}\n"
+        f"Plugin dirs: {', '.join(stats['loader_stats'].get('plugin_dirs', []))}",
+        title="Plugin System Stats",
+        border_style="cyan",
+    ))
+
+
+# ---------------------------------------------------------------------------
 #  nexus mcp — Model Context Protocol server
 # ---------------------------------------------------------------------------
 

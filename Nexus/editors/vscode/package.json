@@ -1,0 +1,110 @@
+{
+  "name": "nexus-ai",
+  "displayName": "Nexus AI",
+  "description": "Local-first AI coding assistant powered by Ollama",
+  "version": "0.1.0",
+  "publisher": "nexus",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:nexus.chat",
+    "onCommand:nexus.run",
+    "onCommand:nexus.diff",
+    "onView:nexus.chatView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "nexus.chat",
+        "title": "Nexus: Open Chat",
+        "icon": "$(comment-discussion)"
+      },
+      {
+        "command": "nexus.run",
+        "title": "Nexus: Run Autonomous Agent",
+        "icon": "$(play)"
+      },
+      {
+        "command": "nexus.diff",
+        "title": "Nexus: Preview Diff",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "nexus.accept",
+        "title": "Nexus: Accept Changes",
+        "icon": "$(check)"
+      },
+      {
+        "command": "nexus.reject",
+        "title": "Nexus: Reject Changes",
+        "icon": "$(discard)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "nexus",
+          "title": "Nexus AI",
+          "icon": "$(hubot)"
+        }
+      ]
+    },
+    "views": {
+      "nexus": [
+        {
+          "id": "nexus.chatView",
+          "name": "Chat",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Nexus AI",
+      "properties": {
+        "nexus.ollamaUrl": {
+          "type": "string",
+          "default": "http://localhost:11434",
+          "description": "Ollama server URL"
+        },
+        "nexus.workspacePath": {
+          "type": "string",
+          "default": "",
+          "description": "Workspace path for Nexus"
+        },
+        "nexus.model": {
+          "type": "string",
+          "default": "qwen2.5-coder:14b",
+          "description": "Default model for code generation"
+        },
+        "nexus.planningModel": {
+          "type": "string",
+          "default": "deepseek-r1:7b",
+          "description": "Model for planning tasks"
+        },
+        "nexus.autoApplyDiffs": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically apply diffs from Nexus"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}

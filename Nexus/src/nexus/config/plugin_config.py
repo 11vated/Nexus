@@ -420,3 +420,31 @@ hooks:
     message: "Python file modified — consider running linter"
     priority: 50
 """
+
+
+# -- Plugin System Integration ----------------------------------------------
+
+def initialize_plugins(workspace: str = ".", nexus_instance: Optional[Any] = None) -> Optional[Any]:
+    """Initialize the plugin system for a workspace.
+
+    Args:
+        workspace: Project workspace path.
+        nexus_instance: The Nexus ChatSession or AgentLoop instance.
+
+    Returns:
+        PluginManager instance, or None if initialization fails.
+    """
+    try:
+        from nexus.plugins.manager import PluginManager
+
+        manager = PluginManager(workspace=workspace)
+        if nexus_instance is not None:
+            manager.initialize(nexus_instance)
+            logger.info("Plugin system initialized for workspace: %s", workspace)
+        return manager
+    except ImportError:
+        logger.warning("Plugin system not available")
+        return None
+    except Exception as exc:
+        logger.error("Plugin initialization failed: %s", exc)
+        return None
