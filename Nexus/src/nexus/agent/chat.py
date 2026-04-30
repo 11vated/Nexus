@@ -1100,10 +1100,10 @@ class ChatSession:
                 logger.warning("Failed to save cognitive state: %s", exc)
 
         # Archive conversation if it has messages
-        if self.history and self.session_id:
+        if self.history and self._session_id:
             try:
                 self._persistence.archive_conversation(
-                    self.session_id,
+                    self._session_id,
                     list(self.history),
                     metadata={
                         "workspace": self.workspace,
