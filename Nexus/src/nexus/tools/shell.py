@@ -9,6 +9,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import re
 import shlex
 from typing import Any
 
@@ -25,6 +26,16 @@ BLOCKED_COMMANDS = frozenset({
 
 # Commands that require extra caution
 CAUTION_PREFIXES = ("rm ", "sudo ", "apt ", "pip install", "npm install -g")
+
+# Dangerous shell patterns that indicate injection attempts
+INJECTION_PATTERNS = [
+    r"\$\(.+\)",         # Command substitution $(...)
+    r"`[^`]+`",          # Backtick command substitution
+    r";\s*\w+",          # Command chaining with semicolon
+    r"\|\s*\w+",         # Pipe to unexpected command
+    r">\s*/",            # Redirect to root paths
+    r"&&\s*(rm|sudo)",   # Chained dangerous commands
+]
 
 
 class ShellTool(BaseTool):
@@ -60,6 +71,13 @@ class ShellTool(BaseTool):
         if command_lower in BLOCKED_COMMANDS:
             return f"Error: Blocked dangerous command: {command}"
 
+        # Check for injection patterns
+        if self._contains_injection(command):
+            return (
+                f"Error: Command contains potentially dangerous shell patterns. "
+                f"Use separate tool calls instead of shell injection."
+            )
+
         for prefix in CAUTION_PREFIXES:
             if command_lower.startswith(prefix):
                 logger.warning("Caution command executed: %s", command[:80])
@@ -67,11 +85,15 @@ class ShellTool(BaseTool):
         try:
             # Parse command to avoid shell=True
             # But allow pipes and redirects by using shell for complex commands
-            if any(c in command for c in ("|", ">", "<", "&&", "||", ";", "`", "$(")):
-                # Complex command — use shell but log warning
+            if any(c in command for c in ("|", ">", "<", "&&", "||")):
+                # Complex command — use shell but with sanitization
+                sanitized = self._sanitize_shell_command(command)
+                if sanitized is None:
+                    return "Error: Command contains unsafe shell patterns"
+
                 logger.debug("Using shell for complex command: %s", command[:80])
                 process = await asyncio.create_subprocess_shell(
-                    command,
+                    sanitized,
                     stdout=asyncio.subprocess.PIPE,
                     stderr=asyncio.subprocess.PIPE,
                     cwd=self.workspace,
@@ -115,3 +137,43 @@ class ShellTool(BaseTool):
             return f"Error: Command not found: {cmd_name}"
         except Exception as exc:
             return f"Error executing command: {type(exc).__name__}: {exc}"
+
+    def _contains_injection(self, command: str) -> bool:
+        """Check if command contains injection patterns."""
+        for pattern in INJECTION_PATTERNS:
+            if re.search(pattern, command):
+                return True
+        return False
+
+    def _sanitize_shell_command(self, command: str) -> str | None:
+        """Sanitize a complex shell command, removing dangerous constructs.
+
+        Allows safe pipes and redirects but blocks:
+        - Command substitution $(...) and backticks
+        - Semicolon chaining
+        - Redirects to system paths
+        - Nested shell execution
+
+        Returns sanitized command, or None if unsafe.
+        """
+        # Block command substitution
+        if "$(" in command or "`" in command:
+            return None
+
+        # Block semicolon chaining
+        if re.search(r";\s*\w", command):
+            return None
+
+        # Block redirects to dangerous paths
+        if re.search(r">\s*/(?:etc|dev|proc|sys|root|usr)", command):
+            return None
+
+        # Block nested eval
+        if re.search(r"\beval\b", command):
+            return None
+
+        # Block variable expansion that could be dangerous
+        if re.search(r"\$\{[^}]*\}", command):
+            return None
+
+        return command
