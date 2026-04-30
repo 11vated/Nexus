@@ -1,0 +1,314 @@
+/* Nexus TUI Theme — powered by design tokens.
+ * Dark theme is the default. Light theme available via --theme light.
+ *
+ * Colours match the CLI ANSI palette for consistency.
+ */
+
+/* ── Dark Theme ── */
+$primary: #00D4FF;
+$user: #00FF88;
+$tool: #FFB800;
+$danger: #FF3366;
+$muted: #888888;
+$bg: #0A0E14;
+$surface: #141A24;
+$border: #2A3342;
+$text: #E6EDF3;
+$text-muted: #8B949E;
+
+/* ── Spacing ── */
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 12px;
+$spacing-4: 16px;
+$spacing-5: 24px;
+
+/* ── Typography ── */
+$mono: "JetBrains Mono", "Cascadia Code", "Fira Code", monospace;
+$sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+/* ── App ── */
+NexusTUI {
+    background: $bg;
+    color: $text;
+}
+
+/* ── Header ── */
+NexusTUI Header {
+    background: $surface;
+    border-bottom: solid $border;
+}
+
+NexusTUI Header > .header-title {
+    color: $primary;
+    text-style: bold;
+    content-align: left middle;
+}
+
+NexusTUI Header > .header-subtitle {
+    color: $muted;
+}
+
+/* ── Footer ── */
+NexusTUI Footer {
+    background: $surface;
+    border-top: solid $border;
+}
+
+/* ── Chat panel ── */
+#chat-panel {
+    background: $bg;
+    border-right: solid $border;
+}
+
+#chat-log {
+    background: $bg;
+}
+
+/* User messages */
+.user-message {
+    color: $user;
+    margin: $spacing-2 $spacing-4;
+    padding: $spacing-2 $spacing-3;
+    border-left: solid $user;
+}
+
+/* Agent messages */
+.agent-message {
+    color: $text;
+    margin: $spacing-2 $spacing-4;
+    padding: $spacing-2 $spacing-3;
+}
+
+/* Tool calls */
+.tool-call {
+    color: $tool;
+    margin: $spacing-2 $spacing-4;
+    padding: $spacing-2 $spacing-3;
+    background: $surface;
+    border-left: solid $tool;
+}
+
+/* Thinking animation */
+.thinking {
+    color: $muted;
+    text-style: italic;
+}
+
+/* ── Sidebar ── */
+#sidebar {
+    background: $surface;
+}
+
+#sidebar-tabs {
+    background: $surface;
+    border-bottom: solid $border;
+}
+
+#sidebar-tabs > .tabbed-content--tab-bar {
+    background: $surface;
+}
+
+#sidebar-tabs > .tabbed-content--tab-bar > .tab {
+    color: $muted;
+}
+
+#sidebar-tabs > .tabbed-content--tab-bar > .tab.-active {
+    color: $primary;
+    text-style: bold;
+}
+
+/* ── Branch tree ── */
+#branch-tree {
+    background: $surface;
+    color: $text;
+}
+
+#branch-tree > .tree--node-selected {
+    background: $border;
+    color: $primary;
+}
+
+/* ── Context panel ── */
+#context-panel {
+    background: $surface;
+    border-left: solid $border;
+}
+
+.context-label {
+    color: $muted;
+    text-style: bold;
+}
+
+.context-value {
+    color: $text;
+}
+
+/* ── Input ── */
+#chat-input {
+    background: $surface;
+    border-top: solid $border;
+    padding: $spacing-2 $spacing-3;
+}
+
+#chat-input Input {
+    background: $bg;
+    border: solid $border;
+    color: $text;
+}
+
+#chat-input Input:focus {
+    border: solid $primary;
+}
+
+/* ── Status bar ── */
+#status-bar {
+    background: $surface;
+    border-top: solid $border;
+    padding: 0 $spacing-3;
+    color: $muted;
+    height: 1;
+}
+
+.status-item {
+    margin-right: $spacing-4;
+}
+
+.status-model {
+    color: $primary;
+}
+
+.status-stance {
+    color: $tool;
+}
+
+.status-trust {
+    color: $user;
+}
+
+/* ── Buttons ── */
+Button {
+    background: $border;
+    color: $text;
+}
+
+Button:hover {
+    background: $primary;
+    color: $bg;
+}
+
+Button.-primary {
+    background: $primary;
+    color: $bg;
+}
+
+Button.-success {
+    background: $user;
+    color: $bg;
+}
+
+Button.-danger {
+    background: $danger;
+    color: $bg;
+}
+
+/* ── Diff preview ── */
+.diff-added {
+    color: $user;
+    background: transparent;
+}
+
+.diff-removed {
+    color: $danger;
+    text-style: strike;
+}
+
+.diff-header {
+    color: $primary;
+    text-style: bold;
+}
+
+/* ── Modals ── */
+.modal-screen {
+    background: rgba(10, 14, 20, 0.85);
+}
+
+.modal-box {
+    background: $surface;
+    border: solid $border;
+    padding: $spacing-4;
+}
+
+.modal-title {
+    color: $primary;
+    text-style: bold;
+    content-align: center middle;
+}
+
+/* ── Help overlay ── */
+#help-overlay {
+    background: rgba(10, 14, 20, 0.9);
+}
+
+#help-overlay > .help-table {
+    background: $surface;
+    border: solid $border;
+    padding: $spacing-4;
+}
+
+.help-key {
+    color: $primary;
+    text-style: bold;
+}
+
+.help-desc {
+    color: $text-muted;
+}
+
+/* ── Scrollbar ── */
+ScrollBar {
+    background: $surface;
+}
+
+ScrollBar > .bar {
+    background: $border;
+}
+
+ScrollBar > .bar:hover {
+    background: $primary;
+}
+
+/* ── RichLog ── */
+RichLog {
+    background: $bg;
+}
+
+/* ── Markdown ── */
+Markdown {
+    background: $bg;
+    color: $text;
+}
+
+Markdown > .markdown-header {
+    color: $primary;
+}
+
+Markdown > .markdown-code {
+    background: $surface;
+    border: solid $border;
+}
+
+Markdown > .markdown-link {
+    color: $primary;
+    text-style: underline;
+}
+
+/* ── Loading indicator ── */
+LoadingIndicator {
+    color: $primary;
+}
+
+/* ── Rule ── */
+Rule {
+    color: $border;
+}

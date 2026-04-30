@@ -328,7 +328,7 @@ if TEXTUAL_AVAILABLE:
         trace trees, and keyboard shortcuts.
         """
 
-        CSS_PATH = None
+        CSS_PATH = "nexus.tcss"
 
         BINDINGS = [
             ("f1", "help", "Help"),
@@ -341,8 +341,15 @@ if TEXTUAL_AVAILABLE:
             ("ctrl+l", "clear_chat", "Clear"),
             ("ctrl+s", "save_session", "Save"),
             ("ctrl+b", "new_branch", "Branch"),
+            ("ctrl+d", "show_diff", "Diff"),
+            ("ctrl+y", "accept_diff", "Accept"),
+            ("ctrl+n", "reject_diff", "Reject"),
+            ("ctrl+t", "cycle_stance", "Stance"),
             ("escape", "focus_input", "Focus Input"),
         ]
+
+        # Stances for cycling
+        STANCES = ["architect", "debugger", "teacher", "reviewer", "collaborative"]
 
         DEFAULT_CSS = """
         Screen {
@@ -351,14 +358,14 @@ if TEXTUAL_AVAILABLE:
         #header-bar {
             dock: top;
             height: 3;
-            background: $primary-background;
+            background: $surface;
             padding: 0 1;
         }
         #main-area {
             layout: horizontal;
         }
         #chat-pane {
-            width: 70%;
+            width: 1fr;
         }
         #chat-log {
             height: 1fr;
@@ -370,17 +377,30 @@ if TEXTUAL_AVAILABLE:
         }
         #sidebar {
             width: 30%;
-            border-left: solid $primary;
+            border-left: solid $border;
+            background: $surface;
+        }
+        #context-panel {
+            width: 20%;
+            border-left: solid $border;
+            background: $surface;
+        }
+        #status-bar {
+            dock: bottom;
+            height: 1;
+            background: $surface;
+            border-top: solid $border;
         }
         #footer-bar {
             dock: bottom;
             height: 1;
-            background: $boost;
+            background: $surface;
         }
         """
 
         current_sidebar_tab: str = reactive("plan")
         cognitive_mode: bool = reactive(False)
+        current_stance_index: int = reactive(0)
 
         def __init__(self, session: "ChatSession", **kwargs: Any) -> None:
             super().__init__(**kwargs)
@@ -388,6 +408,13 @@ if TEXTUAL_AVAILABLE:
             self._input_history: List[str] = []
             self._history_index = -1
             self._streaming_widget: Optional[StreamingMessage] = None
+            self._branches = ["main"]
+            self._current_branch = "main"
+            self._pending_diff: Optional[str] = None
+
+        @property
+        def current_stance(self) -> str:
+            return self.STANCES[self.current_stance_index % len(self.STANCES)]
 
         def compose(self) -> ComposeResult:
             yield Header(id="header-bar")
@@ -396,12 +423,32 @@ if TEXTUAL_AVAILABLE:
                     yield RichLog(id="chat-log", highlight=True, markup=True)
                 with VerticalScroll(id="sidebar"):
                     yield TabbedContent(id="sidebar-tabs")
+                with VerticalScroll(id="context-panel"):
+                    yield Label("[bold]Context[/bold]", classes="context-label")
+                    yield Label(f"Model: {self.session.model}", classes="context-value")
+                    yield Label(f"Stance: {self.current_stance}", classes="context-value")
+                    yield Label(f"Branch: {self._current_branch}", classes="context-value")
             yield Input(placeholder="Ask Nexus anything... (Ctrl+Enter to send)", id="input-bar")
+            yield Static("", id="status-bar")
             yield Footer()
 
         def on_mount(self) -> None:
             self.title = "Nexus"
-            self.sub_title = f"⚡ {self.session.model}"
+            self.sub_title = f"{self.session.model} · {self.current_stance}"
+            self._update_status_bar()
+
+        def _update_status_bar(self) -> None:
+            """Update the status bar with current state."""
+            try:
+                status = self.query_one("#status-bar", Static)
+                status.update(
+                    f"model:{self.session.model} | "
+                    f"stance:{self.current_stance} | "
+                    f"branch:{self._current_branch} | "
+                    f"tab:{self.current_sidebar_tab}"
+                )
+            except Exception:
+                pass
 
         async def on_input_submitted(self, event: Input.Submitted) -> None:
             if event.input.id != "input-bar":
@@ -416,7 +463,7 @@ if TEXTUAL_AVAILABLE:
 
         async def _handle_user_input(self, text: str) -> None:
             chat_log = self.query_one("#chat-log", RichLog)
-            chat_log.write(f"[bold cyan]👤 You:[/]\n{text}\n")
+            chat_log.write(f"[bold green]You:[/]\n{text}\n")
 
             self._streaming_widget = StreamingMessage()
             chat_log.write(self._streaming_widget)
@@ -434,7 +481,7 @@ if TEXTUAL_AVAILABLE:
                         tool_name = evt.data.get("tool", "")
                         tool_args = evt.data.get("args", {})
                         chat_log.write(
-                            f"[dim]🔧 Calling {tool_name}({json.dumps(tool_args)[:100]})...[/]\n"
+                            f"[dim]Calling {tool_name}({json.dumps(tool_args)[:100]})...[/]\n"
                         )
                     elif evt.type == EventType.TOOL_RESULT:
                         result = evt.data.get("result", "")
@@ -477,11 +524,39 @@ if TEXTUAL_AVAILABLE:
             self.notify("Session saved")
 
         def action_new_branch(self) -> None:
-            self.notify("New branch created")
+            name = f"branch-{len(self._branches)}"
+            self._branches.append(name)
+            self._current_branch = name
+            self.sub_title = f"{self.session.model} · {self.current_stance} · {name}"
+            self._update_status_bar()
+            self.notify(f"New branch: {name}")
+
+        def action_show_diff(self) -> None:
+            self.notify("Showing last diff (placeholder)")
+
+        def action_accept_diff(self) -> None:
+            self.notify("Diff accepted (placeholder)")
+
+        def action_reject_diff(self) -> None:
+            self.notify("Diff rejected (placeholder)")
+
+        def action_cycle_stance(self) -> None:
+            self.current_stance_index = (self.current_stance_index + 1) % len(self.STANCES)
+            self.sub_title = f"{self.session.model} · {self.current_stance}"
+            self._update_status_bar()
+            self.notify(f"Stance: {self.current_stance}")
 
         def action_focus_input(self) -> None:
             input_widget = self.query_one("#input-bar", Input)
             input_widget.focus()
+
+        def watch_current_sidebar_tab(self, tab: str) -> None:
+            """Update status bar when tab changes."""
+            self._update_status_bar()
+
+        def watch_current_stance_index(self, index: int) -> None:
+            """Update status bar when stance changes."""
+            self._update_status_bar()
 
 
     async def run_textual_chat(
