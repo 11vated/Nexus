@@ -1230,6 +1230,41 @@ def models(task):
         print(print_model_summary())
 
 
+# ---------------------------------------------------------------------------
+#  nexus hardware  —  detect hardware and recommend models
+# ---------------------------------------------------------------------------
+
+@cli.command()
+@click.option("--apply", "-a", is_flag=True, help="Apply recommended routing to config")
+def hardware(apply):
+    """Detect hardware and recommend optimal models.
+
+    Analyzes your CPU, RAM, GPU, and disk to recommend the best
+    models for your system. Shows compatible models with routing.
+    """
+    from nexus.ui.hardware import (
+        detect_hardware,
+        print_hardware_report,
+        print_recommendation_report,
+        generate_routing_config,
+    )
+
+    print("\nDetecting hardware...")
+    hw = detect_hardware()
+
+    print(print_hardware_report(hw))
+    print(print_recommendation_report(hw))
+
+    if apply:
+        routing = generate_routing_config(hw)
+        print("\n  To apply this routing, update your AgentConfig:")
+        print(f"    planning_model = \"{routing.get('planning', 'qwen2.5-coder:7b')}\"")
+        print(f"    coding_model = \"{routing.get('code_generation', 'qwen2.5-coder:7b')}\"")
+        print(f"    review_model = \"{routing.get('code_review', 'codellama:7b')}\"")
+        print(f"    fast_model = \"{routing.get('code_edit', 'qwen2.5-coder:1.5b')}\"")
+        print()
+
+
 def main():
     """Main entry point."""
     cli()

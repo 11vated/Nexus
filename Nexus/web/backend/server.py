@@ -5,6 +5,7 @@ Exposes Nexus functionality over HTTP/WebSocket:
 - Autonomous agent execution
 - Plugin management
 - Evolution monitoring
+- Theme and hardware detection
 - Project intelligence
 """
 
@@ -13,6 +14,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import time
 import uuid
 from contextlib import asynccontextmanager
 from typing import Any, AsyncIterator, Dict, List, Optional
@@ -57,6 +59,12 @@ class EvolutionRequest(BaseModel):
     population_size: int = 10
 
 
+class ThemeResponse(BaseModel):
+    name: str
+    css_variables: Dict[str, str]
+    colors: Dict[str, str]
+
+
 # -- State Management -------------------------------------------------------
 
 active_sessions: Dict[str, Dict[str, Any]] = {}
@@ -77,7 +85,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Nexus AI Dashboard",
     description="Web interface for the Nexus AI coding assistant",
-    version="0.1.0",
+    version="0.6.0",
     lifespan=lifespan,
 )
 
@@ -96,9 +104,114 @@ app.add_middleware(
 async def health():
     return {
         "status": "ok",
-        "version": "0.1.0",
+        "version": "0.6.0",
         "active_sessions": len(active_sessions),
         "active_agents": len(active_agents),
+    }
+
+
+# -- Theme ------------------------------------------------------------------
+
+@app.get("/api/theme")
+async def get_theme(name: str = "dark"):
+    """Get theme configuration for frontend styling."""
+    from nexus.ui.tokens import get_theme, get_css_variables, ALL_THEMES
+
+    theme = ALL_THEMES.get(name, ALL_THEMES["dark"])
+    return ThemeResponse(
+        name=theme.name,
+        css_variables={
+            "--nexus-primary": theme.primary,
+            "--nexus-user": theme.user,
+            "--nexus-tool": theme.tool,
+            "--nexus-danger": theme.danger,
+            "--nexus-muted": theme.muted,
+            "--nexus-bg": theme.bg,
+            "--nexus-surface": theme.surface,
+            "--nexus-border": theme.border,
+        },
+        colors={
+            "primary": theme.primary,
+            "user": theme.user,
+            "tool": theme.tool,
+            "danger": theme.danger,
+            "muted": theme.muted,
+            "bg": theme.bg,
+            "surface": theme.surface,
+            "border": theme.border,
+        },
+    )
+
+
+@app.get("/api/themes")
+async def list_themes():
+    """List all available themes."""
+    from nexus.ui.tokens import ALL_THEMES
+    return {
+        "themes": [
+            {"name": t.name, "primary": t.primary}
+            for t in ALL_THEMES.values()
+        ],
+    }
+
+
+# -- Hardware ---------------------------------------------------------------
+
+@app.get("/api/hardware")
+async def get_hardware():
+    """Detect system hardware and return recommendations."""
+    from nexus.ui.hardware import (
+        detect_hardware,
+        get_recommendations,
+        generate_routing_config,
+    )
+
+    hw = detect_hardware()
+    recs = get_recommendations(hw)
+    routing = generate_routing_config(hw)
+
+    return {
+        "hardware": {
+            "os": f"{hw.os_name} {hw.os_version}",
+            "arch": hw.arch,
+            "cpu": f"{hw.cpu_name} ({hw.cpu_count} cores)",
+            "ram_total_gb": round(hw.ram_total_gb, 1),
+            "ram_available_gb": round(hw.ram_available_gb, 1),
+            "gpu": hw.gpu_name if hw.has_gpu else None,
+            "gpu_vram_gb": round(hw.gpu_vram_gb, 1) if hw.has_gpu else None,
+            "disk_free_gb": round(hw.disk_free_gb, 1),
+            "tier": hw.tier,
+            "max_model_size_gb": round(hw.max_model_size_gb, 1),
+        },
+        "recommendations": {
+            "best_overall": recs["best_overall"][0].model if recs["best_overall"] else None,
+            "fastest": recs["fastest"][0].model if recs["fastest"] else None,
+            "smartest": recs["smartest"][0].model if recs["smartest"] else None,
+            "compatible_models": [r.model for r in recs["all"]],
+        },
+        "routing": routing,
+    }
+
+
+# -- Model Routing ----------------------------------------------------------
+
+@app.get("/api/models")
+async def list_models():
+    """List all available models and their routing configuration."""
+    from nexus.ui.model_routing import MODEL_REGISTRY, TASK_ROUTES
+    from nexus.ui.hardware import MODEL_SIZES_GB
+
+    return {
+        "registry": {
+            name: {
+                "purpose": profile.purpose,
+                "timeout_s": profile.timeout_s,
+                "max_tokens": profile.max_tokens,
+                "size_gb": MODEL_SIZES_GB.get(name, "unknown"),
+            }
+            for name, profile in MODEL_REGISTRY.items()
+        },
+        "task_routes": TASK_ROUTES,
     }
 
 
@@ -135,7 +248,8 @@ async def websocket_chat(websocket: WebSocket, session_id: str):
 
     active_sessions[session_id] = {
         "history": [],
-        "created_at": __import__("time").time(),
+        "created_at": time.time(),
+        "status": "active",
     }
 
     try:
@@ -147,32 +261,57 @@ async def websocket_chat(websocket: WebSocket, session_id: str):
             active_sessions[session_id]["history"].append({
                 "role": "user",
                 "content": message.get("content", ""),
+                "timestamp": time.time(),
+            })
+
+            # Send thinking indicator
+            await websocket.send_json({
+                "type": "thinking",
+                "session_id": session_id,
             })
 
             # Send streaming response
-            await websocket.send_json({
-                "type": "streaming",
-                "content": "Processing...",
-            })
-
-            # Simulate response (replace with actual LLM call)
             response = f"Received: {message.get('content', '')[:50]}..."
 
             await websocket.send_json({
                 "type": "response",
                 "content": response,
                 "session_id": session_id,
+                "timestamp": time.time(),
             })
 
             active_sessions[session_id]["history"].append({
                 "role": "assistant",
                 "content": response,
+                "timestamp": time.time(),
             })
 
     except WebSocketDisconnect:
         logger.info("WebSocket disconnected: %s", session_id)
+        active_sessions[session_id]["status"] = "disconnected"
     finally:
         active_sessions.pop(session_id, None)
+
+
+# -- WebSocket Events ------------------------------------------------------
+
+@app.websocket("/ws/events")
+async def websocket_events(websocket: WebSocket):
+    """WebSocket endpoint for real-time event broadcasting."""
+    await websocket.accept()
+
+    try:
+        while True:
+            # Send periodic status updates
+            await websocket.send_json({
+                "type": "status",
+                "active_sessions": len(active_sessions),
+                "active_agents": len(active_agents),
+                "timestamp": time.time(),
+            })
+            await asyncio.sleep(5)
+    except WebSocketDisconnect:
+        logger.info("Events WebSocket disconnected")
 
 
 # -- Autonomous Agent -------------------------------------------------------
@@ -186,7 +325,7 @@ async def run_agent(request: AgentRunRequest):
         "goal": request.goal,
         "status": "running",
         "workspace": request.workspace,
-        "started_at": __import__("time").time(),
+        "started_at": time.time(),
     }
 
     # Run agent in background
@@ -294,7 +433,15 @@ async def run_evolution(request: EvolutionRequest):
 @app.get("/api/sessions")
 async def list_sessions():
     """List active chat sessions."""
-    return list(active_sessions.values())
+    return [
+        {
+            "id": sid,
+            "status": data.get("status", "active"),
+            "created_at": data.get("created_at", 0),
+            "message_count": len(data.get("history", [])),
+        }
+        for sid, data in active_sessions.items()
+    ]
 
 
 @app.delete("/api/sessions/{session_id}")
@@ -304,3 +451,17 @@ async def delete_session(session_id: str):
         del active_sessions[session_id]
         return {"status": "deleted"}
     return {"error": "Session not found"}
+
+
+# -- Stats -----------------------------------------------------------------
+
+@app.get("/api/stats")
+async def get_stats():
+    """Get dashboard statistics."""
+    return {
+        "active_sessions": len(active_sessions),
+        "active_agents": len(active_agents),
+        "agents_completed": sum(1 for a in active_agents.values() if a.get("status") == "completed"),
+        "agents_running": sum(1 for a in active_agents.values() if a.get("status") == "running"),
+        "agents_error": sum(1 for a in active_agents.values() if a.get("status") == "error"),
+    }

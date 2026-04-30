@@ -1,4 +1,4 @@
-"""Nexus UI — design tokens, theme system, and model routing."""
+"""Nexus UI — design tokens, theme system, model routing, and hardware detection."""
 from nexus.ui.tokens import (
     DARK_THEME,
     LIGHT_THEME,
@@ -24,4 +24,13 @@ from nexus.ui.model_routing import (
     list_available_models,
     print_model_summary,
     ModelProfile,
+)
+from nexus.ui.hardware import (
+    HardwareProfile,
+    detect_hardware,
+    get_recommendations,
+    generate_routing_config,
+    print_hardware_report,
+    print_recommendation_report,
+    MODEL_SIZES_GB,
 )
