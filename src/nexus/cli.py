@@ -327,6 +327,50 @@ def chat(workspace, model, no_rules):
     ))
 
 
+# ---------------------------------------------------------------------------
+#  nexus tui  —  Textual-based cognitive coding interface (next-gen)
+# ---------------------------------------------------------------------------
+
+@cli.command()
+@click.option("--workspace", "-w", type=click.Path(exists=True), default=".", help="Workspace directory")
+@click.option("--model", "-m", default=None, help="Ollama model to use")
+def tui(workspace, model):
+    """Launch the Textual-based cognitive TUI (next-generation interface).
+
+    \b
+    A full terminal application with:
+    • Tabbed sidebar: Plan cards, Reasoning trace, Knowledge, Memory
+    • Streaming chat with cognitive event overlays
+    • Keyboard shortcuts (F1-F5, Ctrl+K/L/S/B)
+    • All slash commands from `nexus chat` plus cognitive commands
+
+    \b
+    Requires: pip install textual
+
+    \b
+    Examples:
+        nexus tui
+        nexus tui --workspace ./my-project
+        nexus tui --model qwen2.5-coder:14b
+    """
+    import asyncio
+    try:
+        from nexus.tui.textual_ui import run_textual_chat
+    except ImportError:
+        console.print(
+            "[red]Textual not installed.[/red] Install with: "
+            "[bold]pip install textual[/bold]",
+            err=True,
+        )
+        sys.exit(1)
+
+    asyncio.run(run_textual_chat(
+        workspace=workspace,
+        model=model or "",
+        ollama_url=config.ollama_url,
+    ))
+
+
 @cli.group()
 def model():
     """Model management commands."""

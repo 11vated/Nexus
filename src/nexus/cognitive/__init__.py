@@ -20,6 +20,16 @@ from .verification import DesignVerifier, DesignConstraint, ConstraintSeverity, 
 from .clarification import AmbiguityDetector, ClarificationDialog, ClarificationQuestion, AmbiguityType
 from .memory import MemoryMesh, MemoryBank, MemoryEntry, MemoryType, MemoryScope
 from .integration import CognitiveLayer, CognitiveMode, CognitiveEvent
+from .feedback import (
+    FeedbackSystem,
+    FeedbackCollector,
+    PreferenceLearner,
+    UserProfile,
+    Preference,
+    FeedbackSignal,
+    FeedbackType,
+    PreferenceCategory,
+)
 
 __all__ = [
     "CognitiveLoop",
