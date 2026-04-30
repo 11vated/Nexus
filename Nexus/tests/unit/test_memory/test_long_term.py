@@ -5,8 +5,11 @@ from nexus.memory.long_term import LongTermMemory
 
 @pytest.fixture
 def memory(tmp_path):
-    """Create a LongTermMemory with JSON fallback."""
-    return LongTermMemory(persist_dir=str(tmp_path / "memory"))
+    """Create a LongTermMemory with JSON fallback (no ChromaDB)."""
+    mem = LongTermMemory(persist_dir=str(tmp_path / "memory"))
+    # Force fallback mode to avoid ChromaDB quirks
+    mem._use_chroma = False
+    return mem
 
 
 class TestLongTermMemory:

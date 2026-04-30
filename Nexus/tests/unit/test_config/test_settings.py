@@ -56,7 +56,7 @@ LOG_LEVEL=WARNING
         }, clear=True):
             config = NexusConfig()
             assert isinstance(config.workspace_root, Path)
-            assert str(config.workspace_root) == "/test/workspace"
+            assert config.workspace_root == Path("/test/workspace")
 
     def test_find_tool_not_found(self):
         """Test find_tool returns None when tool not found."""

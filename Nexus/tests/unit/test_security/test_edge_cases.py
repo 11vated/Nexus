@@ -1,7 +1,10 @@
 """Additional security tests for edge cases."""
-import pytest
+import os
 import re
+import sys
 from pathlib import Path
+
+import pytest
 
 from nexus.security.sanitizer import (
     validate_model_name,
@@ -31,17 +34,21 @@ class TestPathTraversalEdgeCases:
         result = safe_path_join(base, "src%2f%2e%2e%2f%2e%2e")
         assert ".." not in str(result)
 
+    @pytest.mark.skipif(
+        sys.platform == "win32",
+        reason="Windows requires admin privileges to create symlinks",
+    )
     def test_symlink_outside_workspace(self, tmp_path):
         """Test symlink pointing outside workspace."""
         workspace = tmp_path / "workspace"
         workspace.mkdir()
         outside = tmp_path / "outside_secret"
         outside.write_text("secret")
-        
+
         # Create a symlink inside workspace that points outside
         link = workspace / "sneaky_link"
         link.symlink_to(outside)
-        
+
         # The resolved path should still be within workspace
         # safe_path_join resolves symlinks, so this should fail
         with pytest.raises(ValueError, match="escapes workspace"):

@@ -75,7 +75,7 @@ class TestSafePathJoin:
         """Test valid relative path."""
         base = Path("/home/user/workspace")
         result = safe_path_join(base, "src/main.py")
-        assert result == Path("/home/user/workspace/src/main.py")
+        assert result == (base / "src/main.py").resolve()
 
     def test_path_traversal_blocked(self):
         """Test path traversal is blocked."""

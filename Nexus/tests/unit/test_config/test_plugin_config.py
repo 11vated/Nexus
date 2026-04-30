@@ -414,7 +414,7 @@ class TestEdgeCases:
         assert len(config.stances) == 0
 
     def test_unicode_content(self, loader, nexus_dir):
-        (nexus_dir / "rules.md").write_text("# 规则\n使用类型提示。\n🚀 Launch!")
+        (nexus_dir / "rules.md").write_text("# 规则\n使用类型提示。\n🚀 Launch!", encoding="utf-8")
         config = loader.load()
         assert "规则" in config.rules
         assert "🚀" in config.rules
