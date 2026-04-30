@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import time
@@ -10,8 +11,14 @@ from typing import Any, AsyncIterator, Dict, List, Optional
 import aiohttp
 
 from nexus.agent.models import AgentConfig
+from nexus.utils.retry_utils import async_retry_on_exception, async_with_timeout
 
 logger = logging.getLogger(__name__)
+
+
+class OllamaError(Exception):
+    """Raised when Ollama communication fails."""
+    pass
 
 
 class OllamaClient:
@@ -26,11 +33,23 @@ class OllamaClient:
         self.base_url = self.config.ollama_url
         self._session: Optional[aiohttp.ClientSession] = None
 
-    async def _get_session(self) -> aiohttp.ClientSession:
+    async def _get_session(self, model: Optional[str] = None) -> aiohttp.ClientSession:
         if self._session is None or self._session.closed:
-            timeout = aiohttp.ClientTimeout(total=self.config.llm_timeout)
+            timeout = aiohttp.ClientTimeout(total=self._get_timeout_for_model(model))
             self._session = aiohttp.ClientSession(timeout=timeout)
         return self._session
+
+    def _get_timeout_for_model(self, model: Optional[str] = None) -> int:
+        """Get timeout based on model type for optimal performance."""
+        model = model or self.config.coding_model
+        model_lower = model.lower()
+        if "coder" in model_lower or "code" in model_lower:
+            return getattr(self.config, 'coding_timeout', self.config.llm_timeout)
+        if "deepseek" in model_lower or "r1" in model_lower:
+            return getattr(self.config, 'planning_timeout', self.config.llm_timeout)
+        if "review" in model_lower:
+            return getattr(self.config, 'review_timeout', self.config.llm_timeout)
+        return self.config.llm_timeout
 
     async def close(self) -> None:
         if self._session and not self._session.closed:
@@ -56,9 +75,33 @@ class OllamaClient:
         Returns:
             The generated text response.
         """
+        return await self._generate_with_retry(
+            prompt=prompt,
+            model=model,
+            system=system,
+            temperature=temperature,
+            max_tokens=max_tokens,
+        )
+
+    @async_retry_on_exception(
+        exceptions=(OllamaError, aiohttp.ClientError),
+        max_attempts=3,
+        min_wait=1,
+        max_wait=10,
+    )
+    async def _generate_with_retry(
+        self,
+        prompt: str,
+        model: Optional[str] = None,
+        system: Optional[str] = None,
+        temperature: Optional[float] = None,
+        max_tokens: Optional[int] = None,
+    ) -> str:
+        """Internal generate with tenacity retry decorator."""
         model = model or self.config.coding_model
         temperature = temperature if temperature is not None else self.config.temperature
         max_tokens = max_tokens or self.config.max_tokens
+        timeout = self._get_timeout_for_model(model)
 
         payload: Dict[str, Any] = {
             "model": model,
@@ -72,35 +115,24 @@ class OllamaClient:
         if system:
             payload["system"] = system
 
-        session = await self._get_session()
+        session = await self._get_session(model)
         url = f"{self.base_url}/api/generate"
 
-        for attempt in range(self.config.max_retries):
-            try:
-                async with session.post(url, json=payload) as resp:
-                    if resp.status != 200:
-                        body = await resp.text()
-                        logger.warning(
-                            "Ollama returned %s on attempt %d: %s",
-                            resp.status, attempt + 1, body[:200],
-                        )
-                        if attempt < self.config.max_retries - 1:
-                            continue
-                        raise OllamaError(
-                            f"Ollama returned {resp.status}: {body[:200]}"
-                        )
-                    data = await resp.json()
-                    return data.get("response", "")
-            except aiohttp.ClientError as exc:
-                logger.warning(
-                    "Ollama connection error on attempt %d: %s",
-                    attempt + 1, exc,
-                )
-                if attempt < self.config.max_retries - 1:
-                    continue
-                raise OllamaError(f"Failed to connect to Ollama: {exc}") from exc
-
-        return ""  # unreachable but satisfies type checker
+        try:
+            resp = await asyncio.wait_for(
+                session.post(url, json=payload),
+                timeout=timeout,
+            )
+            async with resp:
+                if resp.status != 200:
+                    body = await resp.text()
+                    raise OllamaError(
+                        f"Ollama returned {resp.status}: {body[:200]}"
+                    )
+                data = await resp.json()
+                return data.get("response", "")
+        except asyncio.TimeoutError:
+            raise OllamaError(f"Ollama request timed out after {timeout}s")
 
     async def chat(
         self,
@@ -118,8 +150,28 @@ class OllamaClient:
         Returns:
             The assistant's response text.
         """
+        return await self._chat_with_retry(
+            messages=messages,
+            model=model,
+            temperature=temperature,
+        )
+
+    @async_retry_on_exception(
+        exceptions=(OllamaError, aiohttp.ClientError),
+        max_attempts=3,
+        min_wait=1,
+        max_wait=10,
+    )
+    async def _chat_with_retry(
+        self,
+        messages: List[Dict[str, str]],
+        model: Optional[str] = None,
+        temperature: Optional[float] = None,
+    ) -> str:
+        """Internal chat with tenacity retry decorator."""
         model = model or self.config.coding_model
         temperature = temperature if temperature is not None else self.config.temperature
+        timeout = self._get_timeout_for_model(model)
 
         payload = {
             "model": model,
@@ -130,27 +182,24 @@ class OllamaClient:
             },
         }
 
-        session = await self._get_session()
+        session = await self._get_session(model)
         url = f"{self.base_url}/api/chat"
 
-        for attempt in range(self.config.max_retries):
-            try:
-                async with session.post(url, json=payload) as resp:
-                    if resp.status != 200:
-                        body = await resp.text()
-                        if attempt < self.config.max_retries - 1:
-                            continue
-                        raise OllamaError(
-                            f"Ollama chat returned {resp.status}: {body[:200]}"
-                        )
-                    data = await resp.json()
-                    return data.get("message", {}).get("content", "")
-            except aiohttp.ClientError as exc:
-                if attempt < self.config.max_retries - 1:
-                    continue
-                raise OllamaError(f"Failed to connect to Ollama: {exc}") from exc
-
-        return ""
+        try:
+            resp = await asyncio.wait_for(
+                session.post(url, json=payload),
+                timeout=timeout,
+            )
+            async with resp:
+                if resp.status != 200:
+                    body = await resp.text()
+                    raise OllamaError(
+                        f"Ollama chat returned {resp.status}: {body[:200]}"
+                    )
+                data = await resp.json()
+                return data.get("message", {}).get("content", "")
+        except asyncio.TimeoutError:
+            raise OllamaError(f"Ollama chat request timed out after {timeout}s")
 
     async def stream_generate(
         self,
@@ -175,7 +224,7 @@ class OllamaClient:
         if system:
             payload["system"] = system
 
-        session = await self._get_session()
+        session = await self._get_session(model)
         url = f"{self.base_url}/api/generate"
 
         async with session.post(url, json=payload) as resp:
@@ -194,7 +243,7 @@ class OllamaClient:
 
     async def list_models(self) -> List[Dict[str, Any]]:
         """List locally available Ollama models."""
-        session = await self._get_session()
+        session = await self._get_session(self.config.coding_model)
         try:
             async with session.get(f"{self.base_url}/api/tags") as resp:
                 if resp.status == 200:
@@ -233,7 +282,7 @@ class OllamaClient:
             },
         }
 
-        session = await self._get_session()
+        session = await self._get_session(model)
         url = f"{self.base_url}/api/chat"
 
         async with session.post(url, json=payload) as resp:
@@ -253,7 +302,7 @@ class OllamaClient:
     async def is_available(self) -> bool:
         """Check if Ollama is running and responsive."""
         try:
-            session = await self._get_session()
+            session = await self._get_session(self.config.coding_model)
             async with session.get(self.base_url) as resp:
                 return resp.status == 200
         except (aiohttp.ClientError, Exception):
@@ -305,8 +354,3 @@ def extract_json(text: str) -> Optional[Any]:
                         break
 
     return None
-
-
-class OllamaError(Exception):
-    """Raised when Ollama communication fails."""
-    pass

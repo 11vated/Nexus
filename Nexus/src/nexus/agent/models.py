@@ -134,6 +134,10 @@ class AgentConfig:
     # Timeouts
     llm_timeout: int = 120
     tool_timeout: int = 60
+    planning_timeout: int = 90
+    coding_timeout: int = 180
+    review_timeout: int = 60
+    fast_timeout: int = 30
 
     # Ollama settings
     ollama_url: str = "http://localhost:11434"

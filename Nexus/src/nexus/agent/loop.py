@@ -207,93 +207,95 @@ class AgentLoop:
         plan_index = 0
         consecutive_failures = 0
 
-        while iteration < self.config.max_iterations:
-            iteration += 1
+        try:
+            while iteration < self.config.max_iterations:
+                iteration += 1
 
-            # Get next step: from plan or from replanning
-            if plan_index < len(plan):
-                step_plan = plan[plan_index]
-                plan_index += 1
-            else:
-                # Plan exhausted — ask planner for next step
-                self._set_state(AgentState.PLANNING)
-                last_step = self.history[-1] if self.history else None
-                step_plan = await self.planner.next_step(
-                    goal=goal,
-                    history=self.history,
-                    last_result=last_step.result if last_step else "",
-                    success=last_step.success if last_step else True,
+                # Get next step: from plan or from replanning
+                if plan_index < len(plan):
+                    step_plan = plan[plan_index]
+                    plan_index += 1
+                else:
+                    # Plan exhausted — ask planner for next step
+                    self._set_state(AgentState.PLANNING)
+                    last_step = self.history[-1] if self.history else None
+                    step_plan = await self.planner.next_step(
+                        goal=goal,
+                        history=self.history,
+                        last_result=last_step.result if last_step else "",
+                        success=last_step.success if last_step else True,
+                    )
+                    if step_plan is None:
+                        logger.info("Planner says goal is complete at iteration %d", iteration)
+                        break
+
+                # Execute the step
+                self._set_state(AgentState.ACTING)
+                logger.info(
+                    "Step %d/%d: %s",
+                    iteration,
+                    self.config.max_iterations,
+                    step_plan.get("action", "unknown")[:80],
                 )
-                if step_plan is None:
-                    logger.info("Planner says goal is complete at iteration %d", iteration)
+
+                step = await self.executor.execute_step(step_plan)
+                self.history.append(step)
+                self.context.add_step(step)
+
+                # Record in short-term memory
+                self.short_term.add_tool_result(
+                    step.tool_name or "action",
+                    f"{'✓' if step.success else '✗'} {step.action}: {step.result[:200]}",
+                )
+
+                # Notify listeners
+                if self._on_step:
+                    self._on_step(step, self.state)
+
+                # Observe
+                self._set_state(AgentState.OBSERVING)
+
+                if not step.success:
+                    consecutive_failures += 1
+                    logger.warning(
+                        "Step failed (consecutive: %d): %s",
+                        consecutive_failures,
+                        step.result[:200],
+                    )
+                else:
+                    consecutive_failures = 0
+
+                # Circuit breaker: too many consecutive failures
+                if consecutive_failures >= 3:
+                    logger.error("3 consecutive failures — stopping")
+                    self._set_state(AgentState.ERROR)
                     break
 
-            # Execute the step
-            self._set_state(AgentState.ACTING)
-            logger.info(
-                "Step %d/%d: %s",
-                iteration,
-                self.config.max_iterations,
-                step_plan.get("action", "unknown")[:80],
-            )
+                # Reflect (if enabled)
+                if self.config.reflection_enabled:
+                    self._set_state(AgentState.REFLECTING)
+                    reflection = await self.reflector.reflect_on_step(
+                        step=step,
+                        goal=goal,
+                        history=self.history,
+                    )
 
-            step = await self.executor.execute_step(step_plan)
-            self.history.append(step)
-            self.context.add_step(step)
+                    if reflection.get("goal_complete"):
+                        logger.info("Reflector confirms goal complete")
+                        break
 
-            # Record in short-term memory
-            self.short_term.add_tool_result(
-                step.tool_name or "action",
-                f"{'✓' if step.success else '✗'} {step.action}: {step.result[:200]}",
-            )
-
-            # Notify listeners
-            if self._on_step:
-                self._on_step(step, self.state)
-
-            # Observe
-            self._set_state(AgentState.OBSERVING)
-
-            if not step.success:
-                consecutive_failures += 1
-                logger.warning(
-                    "Step failed (consecutive: %d): %s",
-                    consecutive_failures,
-                    step.result[:200],
-                )
-            else:
-                consecutive_failures = 0
-
-            # Circuit breaker: too many consecutive failures
-            if consecutive_failures >= 3:
-                logger.error("3 consecutive failures — stopping")
-                self._set_state(AgentState.ERROR)
-                break
-
-            # Reflect (if enabled)
-            if self.config.reflection_enabled:
-                self._set_state(AgentState.REFLECTING)
-                reflection = await self.reflector.reflect_on_step(
-                    step=step,
-                    goal=goal,
-                    history=self.history,
-                )
-
-                if reflection.get("goal_complete"):
-                    logger.info("Reflector confirms goal complete")
-                    break
-
-                if reflection.get("should_retry") and getattr(step, "can_retry", False):
-                    self._set_state(AgentState.CORRECTING)
-                    plan_index -= 1
-                    continue
+                    if reflection.get("should_retry") and getattr(step, "can_retry", False):
+                        self._set_state(AgentState.CORRECTING)
+                        plan_index -= 1
+                        continue
+        finally:
+            # Always close the LLM session to prevent resource leaks
+            await self.llm.close()
 
         # Wrap up
         total_time = time.time() - start_time
         successful_steps = sum(1 for s in self.history if s.success)
         self._set_state(AgentState.DONE)
-
-        await self.llm.close()
 
         result = {
             "success": consecutive_failures < 3 and successful_steps > 0,

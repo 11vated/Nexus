@@ -122,6 +122,16 @@ When you need to perform an action, respond with a tool call in this format:
 Available tools:
 {tool_descriptions}
 
+Code quality standards:
+- ALWAYS include proper imports at the top of every file
+- For Python web frameworks, use Pydantic models for request/response validation
+- Write complete, runnable code — no placeholders or TODO comments
+- Include error handling for all external operations (file I/O, network, database)
+- Add type hints to function signatures
+- Write tests with correct import paths (e.g., `from app import app`)
+- Follow PEP 8 for Python, standard conventions for other languages
+- Prefer explicit imports over wildcard imports
+
 Behavioral rules:
 - Never execute destructive actions (delete files, force push) without asking first
 - When the user asks you to build something, first outline a plan in numbered steps
@@ -207,6 +217,7 @@ class ChatSession:
         # Context compaction pipeline — prevents context overflow
         self._compaction_pipeline = None
         self._compaction_enabled = True
+        self._compaction_residual = None  # Stores residual state across turns
 
         # Persistence manager — auto-save/load state
         self._persistence = None
@@ -461,6 +472,13 @@ class ChatSession:
                     break
             cognitive_context = self._cognitive.get_context_augmentation(last_user_msg)
 
+        # Compaction residual state (preserves context across turns after compaction)
+        residual_context = ""
+        if self._compaction_residual:
+            residual_prompt = self._compaction_residual.to_prompt()
+            if residual_prompt:
+                residual_context = f"\n{residual_prompt}\n"
+
         prompt = CHAT_SYSTEM_PROMPT.format(
             tool_descriptions=self._get_tool_descriptions(),
             stance_prompt=stance_prompt,
@@ -470,6 +488,8 @@ class ChatSession:
             workspace=self.workspace,
         )
 
+        if residual_context:
+            prompt += f"\n{residual_context}"
         if cognitive_context:
             prompt += f"\n{cognitive_context}"
 
@@ -1039,14 +1059,8 @@ class ChatSession:
             # Replace history with compacted version
             self.history = result.messages
 
-            # Store compaction state for context building
-            if self._cognitive:
-                self._cognitive.memory.store(
-                    "session",
-                    type(self._cognitive.memory.__class__()._banks["session"].__class__())(
-                        owner="compaction",
-                    ),
-                )
+            # Store residual state for continuity across turns
+            self._compaction_residual = result.residual
 
             logger.info(
                 "Context compacted: %d → %d chars (%d messages removed)",

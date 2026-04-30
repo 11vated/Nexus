@@ -31,9 +31,13 @@ Rules:
 4. Prefer simple, working code over clever, complex code
 5. Create tests when building new functionality
 
+CRITICAL: The "action" field must contain a SPECIFIC, ACTIONABLE description of what to do.
+NEVER use placeholder text like "description", "step description", or "describe action here".
+Example: "action": "Create app.py with Flask application and /health endpoint"
+
 Respond with a JSON array of steps. Each step has:
 {{
-  "action": "description of what to do",
+  "action": "SPECIFIC actionable description of what to do (NEVER use generic placeholder text)",
   "tool": "tool_name",
   "args": {{"arg1": "value1"}},
   "reasoning": "why this step"
@@ -74,9 +78,12 @@ Execution history:
 Last step result: {last_result}
 Success: {success}
 
+CRITICAL: The "action" field must contain a SPECIFIC, ACTIONABLE description.
+NEVER use placeholder text like "description" or generic terms.
+
 What should the next step be? Respond with a single step as JSON:
 {{
-  "action": "description",
+  "action": "SPECIFIC actionable description (NEVER use generic placeholder text)",
   "tool": "tool_name",
   "args": {{}},
   "reasoning": "why"
@@ -107,6 +114,20 @@ class Planner:
         """Build the system prompt with dynamic tool descriptions."""
         tools = tool_descriptions or DEFAULT_TOOL_DESCRIPTIONS
         return SYSTEM_PROMPT_TEMPLATE.format(tool_descriptions=tools)
+
+    def _validate_plan(self, plan: List[Dict[str, Any]], goal: str) -> List[Dict[str, Any]]:
+        """Validate and fix steps with generic placeholder text in action field."""
+        generic_actions = {"description", "step description", "describe action here",
+                          "action description", "description of what to do"}
+        for i, step in enumerate(plan):
+            if not isinstance(step, dict):
+                continue
+            action = step.get("action", "").strip().lower()
+            if action in generic_actions or not action:
+                # Generate a meaningful action from the goal and step index
+                step["action"] = f"Step {i+1}: Work on {goal[:60]}"
+                logger.warning("Fixed generic action in step %d", i)
+        return plan
 
     async def create_plan(
         self,
@@ -147,12 +168,15 @@ class Planner:
 
         plan = extract_json(response)
         if isinstance(plan, list):
+            # Validate and fix any steps with generic placeholder text
+            plan = self._validate_plan(plan, goal)
             logger.info("Created plan with %d steps", len(plan))
             return plan
 
         # If we got a single step dict, wrap it
         if isinstance(plan, dict):
-            return [plan]
+            plan = self._validate_plan([plan], goal)
+            return plan
 
         # Fallback: couldn't parse plan, create a single exploratory step
         logger.warning("Could not parse plan from LLM response, using fallback")
@@ -199,7 +223,7 @@ class Planner:
         response = await self.llm.generate(
             prompt=prompt,
             model=self.config.planning_model,
-            system=SYSTEM_PROMPT,
+            system="You are a planning assistant. Respond with valid JSON only.",
             temperature=0.2,  # Lower temp for more focused replanning
         )
 
