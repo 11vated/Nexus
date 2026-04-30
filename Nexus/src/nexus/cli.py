@@ -18,6 +18,24 @@ from rich import print as rprint
 from nexus.config.settings import config
 from nexus.utils.subprocess_utils import run_command, run_ollama
 from nexus.security.sanitizer import validate_model_name
+from nexus.ui.cli_utils import (
+    play_startup_animation,
+    fmt_primary,
+    fmt_user,
+    fmt_tool,
+    fmt_danger,
+    fmt_muted,
+    fmt_bold,
+    fmt_dim,
+    print_prompt,
+    print_thinking,
+    stop_thinking,
+    print_step,
+    print_tool_call,
+    print_success,
+    print_error,
+    supports_color,
+)
 
 console = Console()
 
@@ -93,7 +111,9 @@ def cli():
 @click.option("--no-reflect", is_flag=True, help="Disable reflection after each step")
 @click.option("--verbose", "-v", is_flag=True, help="Show full tool output")
 @click.option("--json-output", is_flag=True, help="Output final result as JSON")
-def run(goal, workspace, model, coding_model, max_iterations, no_reflect, verbose, json_output):
+@click.option("--quiet", "-q", is_flag=True, help="Disable startup animation, minimal output")
+@click.option("--theme", default="dark", type=click.Choice(["dark", "light"]), help="Theme to use")
+def run(goal, workspace, model, coding_model, max_iterations, no_reflect, verbose, json_output, quiet, theme):
     """Run the autonomous agent on a goal.
 
     \b
@@ -101,7 +121,9 @@ def run(goal, workspace, model, coding_model, max_iterations, no_reflect, verbos
         nexus run "Build a Flask API with /health endpoint"
         nexus run "Fix the failing tests in tests/" --workspace ./my-project
         nexus run "Refactor utils.py to reduce duplication" -m deepseek-r1:14b
+        nexus run "Build a SaaS app" --quiet
     """
+    play_startup_animation(quiet=quiet)
     asyncio.run(_run_agent(
         goal=goal,
         workspace=workspace,
@@ -111,6 +133,8 @@ def run(goal, workspace, model, coding_model, max_iterations, no_reflect, verbos
         reflection=not no_reflect,
         verbose=verbose,
         json_output=json_output,
+        quiet=quiet,
+        theme=theme,
     ))
 
 
@@ -123,6 +147,8 @@ async def _run_agent(
     reflection: bool,
     verbose: bool,
     json_output: bool,
+    quiet: bool = False,
+    theme: str = "dark",
 ):
     """Async implementation of the agent runner."""
     from nexus.agent.loop import AgentLoop
@@ -169,7 +195,7 @@ async def _run_agent(
     agent.on_state_change(on_state)
 
     # Banner
-    if not json_output:
+    if not json_output and not quiet:
         console.print()
         console.print(Panel(
             f"[bold cyan]Goal:[/bold cyan] {goal}\n"
@@ -177,7 +203,7 @@ async def _run_agent(
             f"[dim]Planning model:[/dim] {agent_config.planning_model}\n"
             f"[dim]Coding model:[/dim] {agent_config.coding_model}\n"
             f"[dim]Max iterations:[/dim] {max_iterations}",
-            title="🚀 Nexus Agent",
+            title="Nexus Agent",
             border_style="cyan",
         ))
         console.print()
@@ -202,7 +228,7 @@ async def _run_agent(
                     display = Panel(
                         f"[cyan]{STATE_ICONS.get(current_state, '?')} {current_state.upper()}[/cyan]  "
                         f"[dim]{elapsed:.0f}s[/dim]",
-                        title="🚀 Nexus Agent",
+                        title="Nexus Agent",
                         border_style="cyan",
                     )
                 live.update(display)
@@ -217,7 +243,7 @@ async def _run_agent(
         # Summary
         console.print()
         success = result.get("success", False)
-        icon = "✅" if success else "❌"
+        icon = "✓" if success else "✗"
         style = "green" if success else "red"
         console.print(Panel(
             f"[{style} bold]{icon} {'SUCCESS' if success else 'FAILED'}[/{style} bold]\n\n"
@@ -1131,6 +1157,77 @@ def init(workspace):
             console.print(f"    [dim]•[/dim] .nexus/{rel}")
     console.print(f"\n  [dim]Edit .nexus/config.yaml to customize model preferences, hooks, and watchers.")
     console.print(f"  Edit .nexus/rules.md to set project-specific AI instructions.[/dim]\n")
+
+
+# ---------------------------------------------------------------------------
+#  nexus theme  —  preview theme colours
+# ---------------------------------------------------------------------------
+
+@cli.command()
+@click.option("--theme", "-t", default="dark", type=click.Choice(["dark", "light"]), help="Theme to preview")
+def theme(theme):
+    """Preview the Nexus colour theme.
+
+    Shows the full colour palette and ANSI codes.
+    """
+    from nexus.ui.tokens import print_theme_sample, get_css_variables, ALL_THEMES
+
+    t = ALL_THEMES.get(theme)
+    if t:
+        print(f"\n  Theme: {t.name}")
+        print(f"  Primary:  {t.primary}")
+        print(f"  User:     {t.user}")
+        print(f"  Tool:     {t.tool}")
+        print(f"  Danger:   {t.danger}")
+        print(f"  Muted:    {t.muted}")
+        print(f"  BG:       {t.bg}")
+        print(f"  Surface:  {t.surface}")
+        print(f"  Border:   {t.border}")
+        print()
+        print("  CSS variables:")
+        for line in get_css_variables(theme).split("\n"):
+            print(f"    {line}")
+        print()
+
+
+# ---------------------------------------------------------------------------
+#  nexus models  —  show model routing configuration
+# ---------------------------------------------------------------------------
+
+@cli.command()
+@click.option("--task", "-t", default=None, help="Show routing for a specific task")
+def models(task):
+    """Show model routing configuration.
+
+    Displays which model Nexus uses for each task type,
+    including fallbacks and timeouts.
+    """
+    from nexus.ui.model_routing import (
+        MODEL_REGISTRY,
+        TASK_ROUTES,
+        print_model_summary,
+        get_model_for_task,
+        get_fallback_model,
+        get_timeout_for_model,
+    )
+
+    if task:
+        if task in TASK_ROUTES:
+            route = TASK_ROUTES[task]
+            primary = route["primary"]
+            fallback = route.get("fallback")
+            timeout = get_timeout_for_model(primary)
+            print(f"\n  Task: {task}")
+            print(f"  Primary:  {primary} (timeout: {timeout}s)")
+            if fallback:
+                print(f"  Fallback: {fallback}")
+            print()
+        else:
+            print(f"\n  Unknown task: {task}")
+            print(f"  Available: {', '.join(TASK_ROUTES.keys())}")
+            print()
+    else:
+        print(print_model_summary())
 
 
 def main():
