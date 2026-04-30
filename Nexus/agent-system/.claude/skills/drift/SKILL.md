@@ -1,0 +1,14 @@
+---
+name: drift
+description: Drift chat - use when working on related tasks
+tools: Write, Read
+model: qwen2.5-coder:14b
+---
+# Drift chat
+
+## When to Use
+Use this skill when working on drift chat.
+
+## Guidelines
+- Use appropriate tools
+- Follow best practices

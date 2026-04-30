@@ -1,0 +1,50 @@
+# 100% FREE Configuration
+# No API keys required - all local/open-source
+
+model:
+  name: ollama/qwen2.5-coder:14b
+  temperature: 0.3
+  max_tokens: 4096
+
+loop:
+  max_iterations: 50
+  auto_run: true
+  reflection_on_error: true
+  max_retries: 3
+
+tools:
+  shell: true
+  aider: true
+  read_file: true
+  write_file: true
+
+memory:
+  save: true
+  path: memory.json
+  short_term_window: 10
+  vector_enabled: false
+  vector_path: memory_db
+
+workspace:
+  path: workspace
+
+sandbox:
+  enabled: false
+  docker_image: null
+  network_enabled: false
+
+tdd:
+  enabled: false
+
+thinking:
+  enabled: false
+  max_thoughts: 5
+
+github:
+  enabled: false
+  token: ""
+
+mcp:
+  filesystem: true
+  memory: true
+  shell: true

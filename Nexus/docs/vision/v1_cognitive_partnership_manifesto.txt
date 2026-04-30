@@ -1,0 +1,396 @@
+The user wants a full planning guide for polishing the Nexus project into a truly sophisticated, frontier-class collaborative AI system. This is the final step after extensive prior analysis and implementation. The user has rejected simple solutions and wants a comprehensive, deep plan that matches their ambition.
+
+I need to conduct research on three areas: 1) the latest SWE-bench Verified scores and model performance, 2) best practices for multi-agent AI development environments and TUI design, and 3) advancements in the Model Context Protocol (MCP) and coding agent tooling. The user is likely interested in achieving high SWE-bench scores and creating a collaborative, transparent AI system. I should search for current information on SWE-bench, MCP, coding agent UI/UX, and agentic frameworks.
+
+My response should be a comprehensive planning guide that synthesizes the user's vision with current best practices. It should include a refined vision, a gap analysis, a step-by-step roadmap (phases), and detailed technical recommendations. The tone should be sophisticated and match the user's ambition. I need to cite my sources properly.
+
+Full Planning Guide for the Remaining Goals of a True Polish
+This is not a simple checklist. This is the comprehensive, multi‑phase, multi‑year roadmap to transform Nexus into a genuinely unprecedented AI development platform. We are going to rebuild the idea of what we are building from the ground up three times: first the philosophy, then the architecture, then the execution plan.
+
+🧠 Part 1: Radical Re‑definition — What Are We Actually Building?
+Before we write another line of code, we must ask a question that most projects never ask: What is the deep purpose of this tool?
+
+Right now, Nexus is framed as a "multi‑agent AI workstation". But that description is already outdated. In 2026, the landscape of coding assistants has bifurcated:
+
+The Two Paths for AI Coding Tools (and Why Both Are Failing)
+Path	Approach	Why It’s Failing
+Autonomous Agents (Devin, SWE‑agent)	The AI disappears, solves an issue, and returns a patch.	Developers feel disempowered. They don't learn. They don't trust black‑box changes. They want control.
+Copilots (GitHub Copilot, Cursor Tab)	The AI suggests completions inline.	It's shallow. It doesn't understand architecture. It can't plan across files.
+Both are fundamentally limited because they assume a false premise: that the AI is either a tool or a replacement.
+
+Our Third Way: The Cognitive Partnership
+The true revolution — the one that the industry is fumbling toward — is a new relationship between human and machine. Not AI as tool. Not AI as replacement. AI as a thinking partner.
+
+This is what we are building. Not a better code generator. A cognitive exoskeleton for software engineering. A system that:
+
+Thinks out loud — shares its planning, reasoning, and doubts.
+
+Co‑creates — asks questions, offers options, respects your expertise.
+
+Learns — adapts to your style, preferences, and feedback over time.
+
+Explains — not just what it did, but why.
+
+Shows its work — every decision is traceable, editable, reversible.
+
+Collaborates — not as a subordinate, but as an equal partner in the creative process.
+
+This is the Nexus Manifesto. This is what "polish" means at the deepest level. We are not polishing a tool. We are realizing a new paradigm.
+
+Every feature, every line of code, every design decision from this point forward must be measured against this standard: Does this bring us closer to a true cognitive partnership, or does it reinforce the old tool/agent dichotomy?
+
+🏗️ Part 2: The Re‑imagined Architecture — The Cognitive Loop
+The current architecture is a Plan–Act–Observe–Reflect pipeline. That's a good start — but it's still a linear, closed loop. The AI plans, executes, observes, reflects, and then… does it again. The human is only at the start and the end.
+
+We need to open the loop. Every stage should be a shared state between human and AI. The AI should not plan and then execute. It should propose, discuss, refine, approve, execute, review, adapt.
+
+The Cognitive Loop State Machine
+text
+┌─────────────────────────────────────────────────────────────────┐
+│                         SHARED STATE                             │
+│  (Goal, Plan, Memory, User Preferences, Reasoning Trace)        │
+└─────────────────────────────────────────────────────────────────┘
+         ▲                                    │
+         │                                    ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    COGNITIVE LOOP ENGINE                         │
+├─────────────────────────────────────────────────────────────────┤
+│  UNDERSTAND → PROPOSE → DISCUSS → REFINE → EXECUTE → REVIEW     │
+│       ▲                                           │             │
+│       └───────────────────────────────────────────┘             │
+└─────────────────────────────────────────────────────────────────┘
+State	AI Action	Human Role	Shared Artifacts
+UNDERSTAND	Ask clarifying questions about goal, constraints, preferences	Answer, provide context	Goal statement, constraints list
+PROPOSE	Generate structured plan with steps, risks, alternatives	Review plan	Plan card, risk assessment
+DISCUSS	Explain reasoning, answer questions, offer modifications	Question, suggest changes	Discussion thread, decision log
+REFINE	Update plan based on discussion	Approve final plan	Approved plan, checkpoints
+EXECUTE	Perform steps, pause at checkpoints	Approve/reject actions	Diffs, test results, logs
+REVIEW	Summarize outcome, highlight deviations	Provide feedback, accept/reject	Outcome summary, feedback
+The key insight: The AI never moves to the next state without human awareness and consent. Not because it's less capable, but because partnership requires transparency.
+
+The Artifact‑First TUI
+Current TUIs (including Nexus's) are log‑centric. They show a scrolling stream of text. That's the old paradigm: the AI talks, you watch.
+
+We need an artifact‑centric TUI. A visual workspace where:
+
+Plans are structured cards (not plain text), with checkboxes, dependencies, and edit buttons.
+
+Diffs are rendered as side‑by‑side or unified views, with line‑by‑line accept/reject.
+
+Test results are trees with failure summaries, stack traces, and quick‑fix suggestions.
+
+Memory is a browsable, searchable knowledge base (not a black box).
+
+Reasoning trace is a collapsible tree showing the AI's thought process.
+
+This is not a simple rich layout. This is a custom TUI framework built on Textual or similar, with programmable widgets that talk to the agent state.
+
+🔬 Part 3: Research and Data-Driven Benchmarking — The Reality Check
+We are not building in a vacuum. We need empirical data to drive our decisions.
+
+The SWE‑bench Verified Landscape (April 2026)
+SWE‑bench Verified has become the industry standard for evaluating realistic software engineering tasks (2,500+ tasks across multiple languages). As of early 2026, the leading models score above 80%, with the best exceeding 93% in some benchmarks.【49†L1-L8】 This is the target we must beat.
+
+Key findings from recent research:
+
+The "Verifier Gap" : Multi‑patch generation with verification (the approach your swe_bench module implements) is proven to be one of the most effective techniques. Models that generate multiple candidate solutions and use a verifier to select the best one consistently outperform single‑pass approaches.【50†L1-L5】
+
+The Trust Problem : While 85% of developers now use AI tools, trust in AI accuracy has dropped from 70% to 60%.【20†L1-L5】 The primary reason: lack of visibility into what the AI is doing and why. This is your competitive advantage.
+
+The Augmentation Opportunity : AI coding tools are most effective when they augment rather than replace developer capabilities.【21†L1-L5】 This is the "third way" — not replacement, but partnership.
+
+The New Frontier: SWE‑bench Multilingual
+SWE‑bench has expanded beyond Python to cover 9 languages (JavaScript, TypeScript, Go, Rust, Java, C#, PHP, Ruby).【52†L1-L5】 The ecosystem is moving toward multilingual evaluation.【53†L1-L5】 To compete, Nexus must score on multiple languages.
+
+Actionable benchmark roadmap:
+
+Phase	Focus	Target	Metrics
+1	Python (SWE‑bench Verified)	≥60% on 100 tasks	Resolution rate, time to fix, regression count
+2	JavaScript/TypeScript	≥50% on 100 tasks	Same + language‑specific metrics
+3	Go, Rust, Java	≥40% each on 50 tasks	Same + cross‑language consistency
+4	Full multilingual suite	90th percentile across all 9 languages	Aggregate score, language parity
+🧩 Part 4: The Missing Pillars — What We Actually Need
+Based on the above analysis, here are the seven missing pillars that separate a promising prototype from a revolutionary platform.
+
+Pillar 1: The Reasoning Trace System (The "Show Your Work" Engine)
+Why it's missing: Current agent loops record logs, not structured reasoning. There's no trace of why a decision was made, what alternatives were considered, or what evidence was used.
+
+What we need: A ReasoningTrace class that records:
+
+Decision points: Each time the agent chooses a path
+
+Alternatives: What other options were considered and why they were rejected
+
+Evidence: Code snippets, test output, search results that informed the decision
+
+Confidence: A score (0‑1) indicating certainty
+
+Timestamps and causal links: So the trace forms a directed graph, not a flat list
+
+Implementation: Extend the existing agent/loop.py to emit trace events. Expose them in the TUI as a collapsible tree. Allow users to correct the trace ("No, that's wrong because...") which becomes a memory.
+
+Pillar 2: The Editable Plan Interface (The "Co‑Pilot, Not Auto‑Pilot" Feature)
+Why it's missing: The current TUI shows plans as text, but you can't edit them directly. You have to retype or start over.
+
+What we need: A plan card widget where each step is:
+
+A checkbox (completed/not completed)
+
+An edit button (opens an inline editor for that step)
+
+A delete/reorder handle
+
+A dependency indicator (this step waits on that step)
+
+Implementation: Use Textual's ListView or a custom VerticalScroll with Button and Input widgets. The plan is stored as a JSON structure in shared state. Edits trigger a plan_modified event that the agent observes.
+
+Pillar 3: The Interactive Diff Viewer (The "Approve Before Apply" Safety Net)
+Why it's missing: The agent writes files, and you see a log message. You trust it, or you don't. There's no visual review.
+
+What we need: A unified diff viewer that:
+
+Renders side‑by‑side or unified diffs
+
+Allows line‑by‑line accept/reject (like a code review tool)
+
+Shows before/after for each file changed
+
+Integrates with the execution sandbox to preview changes before writing
+
+Implementation: Build a DiffWidget using rich.syntax and custom keyboard bindings (a to accept all, r to reject line, etc.). Store the patch in memory and only apply to disk when the user confirms.
+
+Pillar 4: The Persistent Memory with Feedback Integration (The "Learning Partner" System)
+Why it's missing: Long‑term memory exists (ChromaDB), but it's not intelligent. It stores facts, not preferences, and doesn't learn from feedback.
+
+What we need: A memory system with:
+
+Explicit user feedback collection: After each session, prompt: "Was this helpful? What would you change?"
+
+Implicit feedback collection: Track which suggestions the user accepted, which they rejected, which they edited.
+
+Preference learning: Update a user profile (.nexus/profile.yaml) with inferred preferences (indent style, test framework, verbosity).
+
+Memory pruning: Automatically deprecate memories that haven't been used or have been contradicted.
+
+Implementation: Extend the memory/ module with a FeedbackCollector and PreferenceLearner. Store profile in YAML. Add nexus profile show/edit commands.
+
+Pillar 5: The Progressive Disclosure UI (The "Complexity on Demand" Philosophy)
+Why it's missing: The current TUI shows everything at once (logs, agents, models). It's overwhelming for new users and inefficient for experts who want to focus.
+
+What we need: A UI that progressively discloses information:
+
+Default view: Only the conversation and a compact status bar. The agent talks, you talk.
+
+Expanded views: Keyboard shortcuts (Ctrl+P for plan, Ctrl+T for trace, Ctrl+M for memory) that show detailed panes on demand.
+
+Role‑based views: Different layouts for "architect" (plan‑heavy), "developer" (code‑heavy), "reviewer" (diff‑heavy).
+
+Resizable panes: Drag handles to adjust pane sizes (possible with Textual).
+
+Implementation: Use Textual's Screen and ModalScreen for pop‑out panels. Implement bindings for shortcuts. Store user's preferred layout in profile.
+
+Pillar 6: The Multi‑Agent Collaboration Protocol (The "Divide and Conquer" Engine)
+Why it's missing: You have multiple agents (Sprint Manager, Architect, Developer, etc.), but they operate sequentially, not in parallel or collaboratively.
+
+What we need: A protocol where agents can:
+
+Delegate subtasks to other agents (Sprint Manager → Architect → Developer)
+
+Communicate via a shared message bus (not just through the main loop)
+
+Parallelize independent tasks (e.g., Developer and Tester work simultaneously)
+
+Resolve conflicts when agents disagree (e.g., Architect and Reviewer have different opinions)
+
+Implementation: Build an AgentBus using asyncio.Queue or Redis (for distributed). Each agent subscribes to message types. The orchestrator spawns agents as independent tasks. Add a Resolution agent that mediates conflicts.
+
+Pillar 7: The Plugin SDK with Marketplace (The "Community as Co‑Builder" Strategy)
+Why it's missing: There's no documented way to add new tools, agents, or memory backends without forking the core.
+
+What we need: A plugin system with:
+
+Entry points (using importlib.metadata) for tools, agents, memory stores, and TUI widgets
+
+Scaffolding command: nexus plugin create my-tool generates the boilerplate
+
+Validation: nexus plugin validate checks that the plugin conforms to the API
+
+Registry: A JSON file listing installed plugins and their capabilities
+
+Marketplace (future): A website where users can browse and install community plugins
+
+Implementation: Define BaseTool, BaseAgent, BaseMemory abstract classes. Use setuptools entry points. Create PluginManager that discovers and loads plugins.
+
+🗺️ Part 5: The Phase‑by‑Phase Execution Roadmap
+This is the multi‑month, multi‑person roadmap. Treat each phase as a milestone.
+
+Phase 0: Foundation — The Cognitive Loop Engine (2‑3 weeks)
+Goal: Replace the linear agent pipeline with the Cognitive Loop state machine.
+
+Tasks:
+
+Define the state machine: Implement CognitiveLoop class with states UNDERSTAND, PROPOSE, DISCUSS, REFINE, EXECUTE, REVIEW.
+
+Shared state: Create SharedState class storing goal, plan, memory, trace, preferences.
+
+Human‑in‑the‑loop callbacks: Add ask_user(), wait_for_approval(), request_feedback() methods.
+
+Integrate with existing agent loop: Wrap the old plan → act → observe → reflect as the EXECUTE state's inner loop.
+
+Basic TUI hooks: When state pauses, call TUI's prompt() for input.
+
+Deliverable: A version of nexus run where the AI stops at each state, shows its reasoning, and waits for your input.
+
+Phase 1: Artifact‑First TUI (3‑4 weeks)
+Goal: Replace the Rich log viewer with the artifact‑centric TUI.
+
+Tasks:
+
+Switch to Textual: Replace rich.live with Textual's reactive framework.
+
+Build plan card widget: Display structured plan with checkboxes, edit buttons, dependencies.
+
+Build diff viewer widget: Render unified diffs with line‑by‑line accept/reject.
+
+Build trace tree widget: Show reasoning trace as collapsible tree.
+
+Build test result widget: Show test trees with failure summaries.
+
+Connect widgets to shared state: Each widget listens to state changes and updates automatically.
+
+Add keyboard shortcuts: Ctrl+P (plan), Ctrl+D (diff), Ctrl+T (trace), Ctrl+M (memory).
+
+Deliverable: A nexus tui command that opens the full artifact workspace.
+
+Phase 2: Memory with Feedback Learning (2‑3 weeks)
+Goal: Make memory intelligent, not just persistent.
+
+Tasks:
+
+Add feedback collection: After each REVIEW state, prompt user for feedback (1‑5 scale and free text).
+
+Implement preference learning: Extract preferences from feedback (e.g., "user prefers pytest over unittest").
+
+Update user profile: Store learned preferences in .nexus/profile.yaml.
+
+Memory pruning: Automatically deprecate memories that conflict with user feedback.
+
+Memory browser: Add TUI panel to view, search, and manually edit/delete memories.
+
+Integrate preferences into planning: When generating plans, agent consults profile (e.g., "user prefers verbose comments → generate detailed docstrings").
+
+Deliverable: After 10 sessions, the AI adapts to your style without explicit configuration.
+
+Phase 3: Multi‑Agent Collaboration (3‑4 weeks)
+Goal: Enable agents to work in parallel and resolve conflicts.
+
+Tasks:
+
+Build AgentBus: asyncio.Queue‑based message bus for agent communication.
+
+Refactor agents: Each agent becomes an independent task that subscribes to message types.
+
+Implement delegation: Sprint Manager can publish DELEGATE messages to Architect, etc.
+
+Implement parallel execution: Developer and Tester tasks can run simultaneously.
+
+Build Resolution Agent: Watches for CONFLICT messages, analyzes disagreements, and proposes compromise.
+
+Add conflict visualization: TUI shows when agents disagree and Resolution's proposed fix.
+
+Benchmark: Test parallel execution speedup on large tasks.
+
+Deliverable: nexus run "refactor the auth module" spawns Architect, Developer, Tester, and Reviewer in parallel, with visible conflict resolution.
+
+Phase 4: SWE‑bench Multilingual Championship (4‑6 weeks)
+Goal: Achieve a top‑10 score on SWE‑bench Multilingual.
+
+Tasks:
+
+Set up benchmark runner: Automate running SWE‑bench tasks in sandbox.
+
+Optimize for Python: Tweak verifier, patch generator, and context retrieval for Python tasks.
+
+Add language‑specific tooling: TypeScript: add tsc to verifier; Go: add go test.
+
+Parallelize benchmark execution: Run 100 tasks simultaneously in Docker containers.
+
+Collect baseline score: Run on 500 tasks (100 per language for top 5 languages).
+
+Iterate on verifier: Use the multi‑patch generation as your primary weapon.【56†L1-L5】
+
+Run daily regressions: Every code change triggers a 50‑task mini‑benchmark to catch regressions.
+
+Publish leaderboard: Publicly share your scores and methodology.
+
+Deliverable: A documented SWE‑bench Multilingual score ≥60% overall, with per‑language breakdowns.
+
+Phase 5: Plugin SDK and Marketplace (3‑4 weeks)
+Goal: Enable the community to extend Nexus without forking.
+
+Tasks:
+
+Define base classes: BaseTool, BaseAgent, BaseMemory, BaseWidget.
+
+Implement PluginManager: Discover and load plugins via setuptools entry points.
+
+Update configuration: plugins: section in nexus.toml to enable/disable plugins.
+
+Add scaffolding command: nexus plugin create my-tool generates boilerplate.
+
+Add validation command: nexus plugin validate checks API conformance.
+
+Write plugin developer guide: Detailed documentation with examples.
+
+Build example plugins: A simple "calculator" tool, a "greeting" agent, a "weather" widget.
+
+Set up plugin registry: JSON file for community plugins (optional website later).
+
+Deliverable: A developer can write a new tool in 30 minutes and integrate it with Nexus.
+
+Phase 6: Production Hardening and Adoption (Ongoing)
+Goal: Make Nexus ready for daily, mission‑critical use.
+
+Tasks:
+
+Performance profiling: Use py-spy and scalene to identify bottlenecks.
+
+Memory optimization: Reduce ChromaDB memory footprint; add lazy loading.
+
+Startup time: Preload models and indexes in background; show progress.
+
+Error recovery: On crash, save state and prompt "Restore previous session?".
+
+Logging and observability: Structured logs (JSON), OpenTelemetry traces, Prometheus metrics.
+
+Security audit: Third‑party penetration test; fix any issues.
+
+Beta program: Recruit 10‑20 external users; collect feedback; iterate.
+
+Public launch: Blog post, social media, documentation site.
+
+Deliverable: A production‑ready, documented, and adopted tool.
+
+📈 Part 6: Success Metrics — How We Know We've Succeeded
+We define success not by features shipped, but by outcomes achieved.
+
+Technical Metrics
+Metric	Current	Phase 1 Target	Phase 3 Target	Phase 5 Target
+SWE‑bench Verified (Python)	Not run	≥60%	≥70%	≥75%
+SWE‑bench Multilingual (5 langs)	None	≥40%	≥55%	≥60%
+Time to first response	2‑5s	<3s	<2s	<1.5s
+Memory usage (idle)	Unknown	<500MB	<300MB	<200MB
+Test coverage	~40%	≥70%	≥80%	≥90%
+User Experience Metrics
+Metric	Definition	Target
+Time to "aha"	Minutes from first launch to successful task	<10 min
+Session duration	Average length of interactive session	60+ min
+Task completion rate	% of goals that produce correct output	≥85%
+User trust score	Post‑session survey: "I understand why the AI made its decisions"	≥4.5/5
+Net Promoter Score	"How likely to recommend Nexus?"	≥50
+✨ Conclusion: The Unprecedented Future
+This is the plan. It is ambitious, multi‑phase, and radical. It rejects the false dichotomy of "autonomous agent vs. copilot" and instead builds a third way: a cognitive partnership where human and AI co‑create in a transparent, iterative, and deeply collaborative loop.
+
+The seven pillars, six phases, and dozens of tasks described here are not simple improvements. They are the foundation of a new category of software.
+
+You asked for a full planning guide for the remaining goals of true polish. This is it. Not because it's exhaustive, but because it defines the direction: away from tools and toward partners, away from automation and toward augmentation, away from opacity and toward radical transparency.

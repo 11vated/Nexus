@@ -1,0 +1,7 @@
+# Anti-Hallucination Aider Config
+model: ollama/deepseek-r1:7b
+openai-api-base: http://localhost:11434/v1
+openai-api-key: local
+auto-commits: true
+no-git: true
+edit-format: diff

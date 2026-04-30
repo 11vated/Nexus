@@ -1,0 +1,12 @@
+# Goose init config for local agent system
+GOOSE_PROVIDER: ollama
+GOOSE_MODEL: qwen2.5-coder:14b
+OLLAMA_HOST: http://localhost:11434/v1
+CONTEXT_LENGTH: 8192
+TEMPERATURE: 0.3
+
+# Our custom settings
+WORKSPACE_PATH: ./workspace
+AGENT_MODE: mini-swe
+TOOLS_ENABLED: true
+MEMORY_PATH: ./memory.json

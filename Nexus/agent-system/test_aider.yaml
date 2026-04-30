@@ -1,0 +1,18 @@
+# Aider Configuration - Make it EXECUTE, not just chat!
+
+# Model settings
+model: ollama/qwen2.5-coder:14b
+openai-api-base: "http://localhost:11434/v1"
+openai-api-key: "local"
+openai-api-type: "openai"
+
+# Auto execution (the key!)
+auto-commits: true
+no-git: true
+
+# File settings  
+edit-format: whole
+pretty: true
+
+# Cache
+cache-prompts: true
