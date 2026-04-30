@@ -1,9 +1,9 @@
 {
   "name": "nexus-ai",
   "displayName": "Nexus AI",
-  "description": "Local-first AI coding assistant powered by Ollama",
-  "version": "0.1.0",
-  "publisher": "nexus",
+  "description": "AI coding assistant with local LLM support — chat, autonomous agents, and code generation",
+  "version": "0.6.0",
+  "publisher": "nexus-ai",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -13,38 +13,27 @@
     "Programming Languages"
   ],
   "activationEvents": [
-    "onCommand:nexus.chat",
-    "onCommand:nexus.run",
-    "onCommand:nexus.diff",
-    "onView:nexus.chatView"
+    "onStartupFinished"
   ],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "nexus.chat",
+        "command": "nexus.openChat",
         "title": "Nexus: Open Chat",
         "icon": "$(comment-discussion)"
       },
       {
-        "command": "nexus.run",
-        "title": "Nexus: Run Autonomous Agent",
-        "icon": "$(play)"
+        "command": "nexus.runAgent",
+        "title": "Nexus: Run Autonomous Agent"
       },
       {
-        "command": "nexus.diff",
-        "title": "Nexus: Preview Diff",
-        "icon": "$(diff)"
+        "command": "nexus.showHardware",
+        "title": "Nexus: Show Hardware Recommendations"
       },
       {
-        "command": "nexus.accept",
-        "title": "Nexus: Accept Changes",
-        "icon": "$(check)"
-      },
-      {
-        "command": "nexus.reject",
-        "title": "Nexus: Reject Changes",
-        "icon": "$(discard)"
+        "command": "nexus.toggleTheme",
+        "title": "Nexus: Toggle Theme"
       }
     ],
     "viewsContainers": {
@@ -52,16 +41,16 @@
         {
           "id": "nexus",
           "title": "Nexus AI",
-          "icon": "$(hubot)"
+          "icon": "$(brain)"
         }
       ]
     },
     "views": {
       "nexus": [
         {
+          "type": "webview",
           "id": "nexus.chatView",
-          "name": "Chat",
-          "type": "webview"
+          "name": "Chat"
         }
       ]
     },
@@ -71,30 +60,43 @@
         "nexus.ollamaUrl": {
           "type": "string",
           "default": "http://localhost:11434",
-          "description": "Ollama server URL"
-        },
-        "nexus.workspacePath": {
-          "type": "string",
-          "default": "",
-          "description": "Workspace path for Nexus"
+          "description": "Ollama API URL"
         },
         "nexus.model": {
           "type": "string",
-          "default": "qwen2.5-coder:14b",
-          "description": "Default model for code generation"
+          "default": "qwen2.5-coder:7b",
+          "description": "Default model for chat"
         },
-        "nexus.planningModel": {
+        "nexus.codingModel": {
           "type": "string",
-          "default": "deepseek-r1:7b",
-          "description": "Model for planning tasks"
+          "default": "qwen2.5-coder:14b",
+          "description": "Model for code generation"
         },
-        "nexus.autoApplyDiffs": {
+        "nexus.workspace": {
+          "type": "string",
+          "default": ".",
+          "description": "Workspace directory for Nexus"
+        },
+        "nexus.theme": {
+          "type": "string",
+          "enum": ["dark", "light"],
+          "default": "dark",
+          "description": "Nexus UI theme"
+        },
+        "nexus.autoRouting": {
           "type": "boolean",
-          "default": false,
-          "description": "Automatically apply diffs from Nexus"
+          "default": true,
+          "description": "Automatically route tasks to optimal models based on hardware"
         }
       }
-    }
+    },
+    "keybindings": [
+      {
+        "command": "nexus.openChat",
+        "key": "ctrl+shift+n",
+        "mac": "cmd+shift+n"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -103,8 +105,9 @@
     "lint": "eslint src --ext ts"
   },
   "devDependencies": {
-    "@types/node": "^20.11.0",
     "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
     "typescript": "^5.3.0"
-  }
+  },
+  "dependencies": {}
 }
