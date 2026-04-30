@@ -46,6 +46,7 @@ Usage:
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import os
@@ -210,6 +211,11 @@ class ChatSession:
         # Persistence manager — auto-save/load state
         self._persistence = None
 
+        # Tool robustness — fallback chains, validation, concurrent execution
+        self._fallback_manager = None
+        self._validation_manager = None
+        self._task_queue = None
+
         # Diff preview config
         self._diff_auto_apply = True  # Apply diffs automatically (show diff for info)
         self._diff_mode = "unified"   # Default render mode
@@ -220,6 +226,7 @@ class ChatSession:
         self._setup_cognitive()
         self._setup_compaction()
         self._setup_persistence()
+        self._setup_tool_robustness()
 
     # -- setup ---------------------------------------------------------------
 
@@ -375,8 +382,23 @@ class ChatSession:
             return
 
         if self._persistence.should_autosave():
-            self.save_session()
+            self.persist_state()
             self._persistence.record_autosave()
+
+    def _setup_tool_robustness(self) -> None:
+        """Initialize tool fallback chains, validation, and concurrent execution."""
+        try:
+            from nexus.tools.fallback import FallbackManager
+            from nexus.tools.validation import ToolValidationManager
+            from nexus.tools.concurrent import TaskQueue
+
+            self._fallback_manager = FallbackManager()
+            self._validation_manager = ToolValidationManager()
+            self._task_queue = TaskQueue(max_concurrency=5)
+
+            logger.info("Tool robustness initialized (fallbacks, validation, concurrency)")
+        except ImportError as exc:
+            logger.warning("Tool robustness not available: %s", exc)
 
     def _get_tool_descriptions(self) -> str:
         """Format tool descriptions for the system prompt."""
@@ -1047,7 +1069,7 @@ class ChatSession:
 
     # -- session persistence -------------------------------------------------
 
-    def save_session(self) -> Dict[str, bool]:
+    def persist_state(self) -> Dict[str, bool]:
         """Save all session state to disk.
 
         Persists knowledge, memory, and cognitive layer state.
@@ -1745,7 +1767,12 @@ class ChatSession:
     # -- tool execution ------------------------------------------------------
 
     async def _execute_tool(self, name: str, args: Dict[str, Any]) -> str:
-        """Execute a tool and return the result string."""
+        """Execute a tool and return the result string.
+
+        Uses fallback chains for resilience and result validation.
+        For batches of tool calls, consider using _execute_tool_batch()
+        for concurrent execution.
+        """
         tool = self._tools.get(name)
         if not tool:
             # Try fuzzy matching
@@ -1762,12 +1789,70 @@ class ChatSession:
         if not tool:
             return f"Error: Unknown tool '{name}'. Available: {', '.join(self._tools.keys())}"
 
+        # Use fallback manager if available
+        if self._fallback_manager:
+            try:
+                result = await self._fallback_manager.execute_with_fallback(
+                    tool_name=name,
+                    args=args,
+                    available_tools=self._tools,
+                )
+                if result.success:
+                    # Validate result if validation manager is available
+                    if self._validation_manager:
+                        validation = self._validation_manager.validate_result(name, result.result)
+                        if not validation.passed:
+                            logger.warning(
+                                "Tool %s result validation failed: %s", name, validation.message
+                            )
+                    return result.result
+                return result.result  # Even failed fallbacks return the error
+            except Exception as exc:
+                logger.error("Fallback execution failed for %s: %s", name, exc)
+
+        # Direct execution (fallback if manager not available)
         try:
             result = await tool.execute(**args)
             return str(result)
         except Exception as exc:
             logger.error("Tool %s failed: %s", name, exc)
             return f"Error executing {name}: {exc}"
+
+    async def _execute_tool_batch(self, calls: List[Dict[str, Any]]) -> List[str]:
+        """Execute multiple tool calls concurrently using TaskQueue.
+
+        Args:
+            calls: List of {"tool": name, "args": {...}} dicts.
+
+        Returns:
+            List of result strings in the same order as calls.
+        """
+        if not self._task_queue or len(calls) <= 1:
+            # No queue or single call — execute sequentially
+            results = []
+            for call in calls:
+                result = await self._execute_tool(call["tool"], call.get("args", {}))
+                results.append(result)
+            return results
+
+        # Add all calls to the queue
+        for i, call in enumerate(calls):
+            self._task_queue.add(
+                task_id=f"call_{i}",
+                tool_name=call["tool"],
+                args=call.get("args", {}),
+            )
+
+        # Execute concurrently
+        batch_result = await self._task_queue.execute_all(self._tools)
+
+        # Map results back in order
+        results = [""] * len(calls)
+        for task_result in batch_result.results:
+            idx = int(task_result.task_id.split("_")[1])
+            results[idx] = task_result.result if task_result.success else f"Error: {task_result.error}"
+
+        return results
 
     # -- parsing helpers -----------------------------------------------------
 

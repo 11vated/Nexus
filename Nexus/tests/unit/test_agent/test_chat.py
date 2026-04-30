@@ -2,6 +2,8 @@
 
 import asyncio
 import json
+import os
+from pathlib import Path
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 
@@ -54,7 +56,8 @@ def session(config):
 
 class TestChatSessionInit:
     def test_creates_with_defaults(self, session):
-        assert session.workspace == "/tmp/test-workspace"
+        expected = str(Path("/tmp/test-workspace").resolve())
+        assert session.workspace == expected
         assert len(session._tools) == 2
         assert session.turn_count == 0
 
