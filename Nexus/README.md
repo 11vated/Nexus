@@ -12,6 +12,67 @@ But Nexus isn't a chatbot with file access bolted on. It's built around the idea
 
 ---
 
+## Design System
+
+Nexus shares a **single design language** across every surface: CLI, TUI, web dashboard, and IDE extensions.
+
+| Token | Dark | Light | Purpose |
+|-------|------|-------|---------|
+| Primary | `#00D4FF` | `#007ACC` | Accent, links, highlights |
+| User | `#00FF88` | `#00875A` | User messages |
+| Tool | `#FFB800` | `#D48C00` | Tool call indicators |
+| Danger | `#FF3366` | `#D42E5B` | Errors and warnings |
+| Muted | `#888888` | `#6B6B6B` | Secondary text |
+
+```bash
+nexus theme          # Preview colour palette
+nexus theme --light  # Preview light theme
+```
+
+### Principles
+
+- **Calm confidence** — No frantic spinners; smooth, predictable feedback
+- **Human agency** — You always see what the AI will do before it does it
+- **Consistency** — Same colours, spacing, terminology across CLI, TUI, web, IDE
+
+---
+
+## Auto Model Routing
+
+Nexus **detects your hardware** and recommends optimal models automatically. It never guesses which model to use — every task type has an explicit routing with fallbacks.
+
+```bash
+nexus hardware       # Detect CPU, RAM, GPU — show recommendations
+nexus hardware --apply  # Show config values to apply
+nexus models         # Show full routing table
+nexus models -t code_generation  # Routing for a specific task
+```
+
+### Example (Ryzen 7, 16 GB RAM, no GPU)
+
+```
+Hardware tier: MID
+Max model: ~9.6 GB
+
+Recommended routing:
+  code_generation: qwen2.5-coder:14b
+  code_review: codellama:7b
+  planning: deepseek-r1:7b
+  chat: qwen2.5-coder:14b
+  shell_command: qwen2.5-coder:1.5b
+```
+
+### Hardware Tiers
+
+| Tier | Requirements | Best Model |
+|------|-------------|------------|
+| **Low** | < 16 GB RAM, no GPU | qwen2.5-coder:7b |
+| **Mid** | 16-32 GB RAM or 6+ GB VRAM | qwen2.5-coder:14b |
+| **High** | 32-64 GB RAM or 12+ GB VRAM | qwen2.5-coder:14b + deepseek-r1:7b |
+| **Enthusiast** | 64+ GB RAM or 24+ GB VRAM | gemma4:26b |
+
+---
+
 ## What Makes Nexus Different
 
 Most AI coding tools fall into one of two traps: autocomplete (smart but passive) or autonomous agents (powerful but opaque). Nexus occupies the space between them.
@@ -225,16 +286,28 @@ Both modes share the same tools, memory, and project understanding. Chat mode is
 | `nexus chat` | Start a collaborative chat session |
 | `nexus tui` | Launch the interactive TUI dashboard |
 | `nexus run "goal"` | Run the autonomous agent on a goal |
+| `nexus hardware` | Detect hardware, recommend optimal models |
+| `nexus models` | Show model routing configuration |
+| `nexus theme` | Preview colour theme |
 | `nexus quickstart` | Check Ollama, models, and workspace setup |
 | `nexus agent tools` | List all registered tools |
 | `nexus agent config` | Show agent configuration |
 | `nexus agent check` | Pre-flight: verify Ollama is reachable |
 | `nexus bench "issue"` | Run SWE-bench style issue resolution |
-| `nexus models` | List available Ollama models |
 | `nexus pull <model>` | Pull an Ollama model |
 
-### Slash Commands (in chat)
+### CLI Flags
 
+```
+--workspace, -w    Target project directory (default: .)
+--model, -m        Override planning model
+--coding-model, -c Override coding model
+--max-iterations   Loop iteration limit (default: 25)
+--no-reflect       Disable reflection step
+--verbose, -v      Show full tool output
+--json-output      Machine-readable JSON result
+--quiet, -q        Skip startup animation, minimal output
+--theme            Choose dark or light theme
 ```
 Conversation        /help  /clear  /history  /quit
 Intelligence        /stance [name]  /project [query]  /route  /model
@@ -263,43 +336,36 @@ Sessions            /save  /load  /sessions
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         CLI / TUI                               │
-│              nexus chat  │  nexus tui  │  nexus run              │
-└────────────────┬─────────┴─────────────┴─────────┬──────────────┘
-                 │                                  │
-    ┌────────────▼────────────┐        ┌───────────▼────────────┐
-    │      ChatSession        │        │      AgentLoop          │
-    │  (collaborative mode)   │        │  (autonomous mode)      │
-    │                         │        │  Plan→Act→Observe→      │
-    │  Intelligence Layer:    │        │  Reflect                │
-    │  ├─ ModelRouter         │        └───────────┬────────────┘
-    │  ├─ StanceManager       │                    │
-    │  ├─ ProjectMap          │                    │
-    │  └─ SessionStore        │                    │
-    │                         │                    │
-    │  Interactive Layer:     │                    │
-    │  ├─ DiffEngine          │                    │
-    │  ├─ ConversationTree    │                    │
-    │  ├─ PermissionManager   │                    │
-    │  ├─ HookEngine          │                    │
-    │  └─ WatcherEngine       │                    │
-    └────────────┬────────────┘                    │
-                 │                                  │
-    ┌────────────▼──────────────────────────────────▼─────────────┐
-    │                    Tool Registry                             │
-    │   shell · file_read · file_write · file_list                │
-    │   code_run · test_run · search · git                        │
-    └────────────────────────┬────────────────────────────────────┘
-                             │
-    ┌────────────────────────▼────────────────────────────────────┐
-    │                    Ollama (Local LLMs)                       │
-    │   deepseek-r1:7b  ·  qwen2.5-coder:14b  ·  qwen2.5:7b     │
-    └─────────────────────────────────────────────────────────────┘
-                             │
-    ┌────────────────────────▼────────────────────────────────────┐
-    │                      Memory                                  │
-    │          Short-term (session)  │  Long-term (persistent)     │
-    └─────────────────────────────────────────────────────────────┘
+│                    Surfaces (Design System)                       │
+│  CLI ── TUI ── Web Dashboard ── VS Code Extension ── JetBrains  │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+     ┌───────────────────▼───────────────────────────────────┐
+     │              UI Layer (nexus/ui/)                      │
+     │  tokens.py     ── Design tokens, themes, ANSI, CSS     │
+     │  model_routing ── Task-to-model routing with fallbacks │
+     │  hardware.py   ── CPU/RAM/GPU detection, recommendations│
+     │  cli_utils.py  ── Startup animation, colorized output  │
+     └───────────────────┬───────────────────────────────────┘
+                         │
+     ┌───────────────────▼───────────────────────────────────┐
+     │                  Chat / Agent                          │
+     │  ChatSession  ── Collaborative mode                    │
+     │  AgentLoop    ── Autonomous Plan→Act→Observe→Reflect   │
+     │  Intelligence ── Routing, stances, project map          │
+     │  Memory       ── Short-term + long-term                │
+     └───────────────────┬───────────────────────────────────┘
+                         │
+     ┌───────────────────▼───────────────────────────────────┐
+     │                    Tool Registry                       │
+     │   shell · file_read · file_write · file_list          │
+     │   code_run · test_run · search · git                  │
+     └────────────────────────┬──────────────────────────────┘
+                              │
+     ┌────────────────────────▼──────────────────────────────┐
+     │               Ollama (Local LLMs)                      │
+     │   14 models: coder, reasoning, vision, creative        │
+     └───────────────────────────────────────────────────────┘
 ```
 
 ### Tools
@@ -373,11 +439,11 @@ pytest --cov=nexus --cov-report=html
 
 # Specific module
 pytest tests/unit/test_agent/
-pytest tests/unit/test_intelligence/
-pytest tests/unit/test_chat_integration.py
+pytest tests/ui/             # Design tokens, model routing, hardware
+pytest tests/swe_bench/      # SWE-bench pipeline
 ```
 
-630 tests covering: agent core, tools, memory, security, intelligence (routing, stances, project map, sessions), interactive features (diffs, branching, permissions, hooks, watchers), chat integration, and TUI commands.
+**1643 tests** covering: agent core, tools, memory, security, intelligence (routing, stances, project map, sessions), interactive features (diffs, branching, permissions, hooks, watchers), chat integration, TUI commands, design system (tokens, themes, ANSI), model routing (hardware detection, recommendations), SWE-bench pipeline, and CLI utilities.
 
 ---
 
@@ -386,7 +452,7 @@ pytest tests/unit/test_chat_integration.py
 ```
 src/nexus/
 ├── agent/                # Core agent system
-│   ├── chat.py           # ChatSession — collaborative mode (1,450 lines)
+│   ├── chat.py           # ChatSession — collaborative mode
 │   ├── loop.py           # AgentLoop — autonomous Plan→Act→Observe→Reflect
 │   ├── planner.py        # LLM-based planning
 │   ├── executor.py       # Tool dispatch with fuzzy matching
@@ -395,11 +461,16 @@ src/nexus/
 │   ├── llm.py            # Ollama async client
 │   └── models.py         # Agent dataclasses (State, Task, Step, Config)
 ├── intelligence/         # Intelligence layer
-│   ├── model_router.py   # Intent detection → model routing (10 categories)
+│   ├── model_router.py   # Intent detection → model routing
 │   ├── stances.py        # 7 adaptive behavior modes
 │   ├── project_map.py    # AST-based codebase analysis
 │   ├── session_store.py  # Save/load/search conversations
 │   └── branching.py      # Git-like conversation branching
+├── ui/                   # Design system (NEW)
+│   ├── tokens.py         # Design tokens, themes, ANSI mapping, CSS variables
+│   ├── model_routing.py  # Task-to-model routing with fallbacks
+│   ├── hardware.py       # CPU/RAM/GPU detection, auto recommendations
+│   └── cli_utils.py      # Startup animation, colorized output
 ├── diff/                 # Live diff system
 │   ├── engine.py         # DiffEngine — generates and manages diffs
 │   └── renderer.py       # DiffRenderer — terminal-friendly diff display
@@ -407,8 +478,6 @@ src/nexus/
 │   └── permissions.py    # 4-level trust, audit trail, blocklist
 ├── hooks/                # Extensible middleware
 │   └── engine.py         # HookEngine + WatcherEngine
-├── editor/               # Editor integration
-│   └── protocol.py       # JSON-RPC 2.0 for VS Code/Cursor/Neovim
 ├── tools/                # Tool implementations
 │   ├── registry.py       # BaseTool ABC + ToolRegistry
 │   ├── shell.py          # Shell command execution
@@ -422,14 +491,35 @@ src/nexus/
 │   ├── long_term.py      # Persistent ChromaDB/JSON store
 │   └── context_store.py  # Role/category indexed retrieval
 ├── tui/                  # Terminal UI
-│   ├── chat_ui.py        # Three-pane chat TUI (856 lines)
-│   └── dashboard.py      # Full-screen agent dashboard
-├── security/             # Input sanitization, rate limiting
-├── gateway/              # Ollama gateway with middleware
+│   ├── chat_ui.py        # Three-pane chat TUI
+│   ├── textual_ui.py     # Full Textual app with CSS theme
+│   ├── dashboard.py      # Full-screen agent dashboard
+│   └── nexus.tcss        # TUI stylesheet (design tokens)
+├── swe_bench/            # SWE-bench pipeline
+│   ├── orchestrator.py   # Multi-patch generation and verification
+│   ├── patch_generator.py# Diverse patch generation
+│   └── verifier.py       # Patch application and scoring
+├── evolution/            # Cognitive evolution engine
+├── fine_tuning/          # Fine-tuning pipeline
+├── plugins/              # Plugin system
+├── web/                  # Web dashboard
+│   ├── backend/          # FastAPI server with WebSockets
+│   │   └── server.py     # API: chat, agents, plugins, theme, hardware
+│   └── frontend/         # React + Vite frontend
+│       └── src/
+│           └── App.css   # Design system CSS (dark/light themes)
 ├── mcp/                  # Model Context Protocol server
 ├── config/               # Pydantic settings
+├── security/             # Input sanitization, rate limiting
+├── gateway/              # Ollama gateway with middleware
 ├── cli.py                # Click CLI entry point
 └── __main__.py           # python -m nexus support
+
+editors/vscode/           # VS Code extension (NEW)
+├── package.json          # Extension manifest with commands, views
+├── tsconfig.json         # TypeScript configuration
+└── src/
+    └── extension.ts      # Chat webview, status bar, hardware routing
 ```
 
 ---
@@ -454,11 +544,18 @@ src/nexus/
 - [x] Editor protocol (JSON-RPC 2.0)
 - [x] MCP server
 - [x] SWE-bench pipeline
-- [ ] VS Code extension
-- [ ] Web dashboard
-- [ ] Plugin system (.nexus/ configuration)
-- [ ] Fine-tuning pipeline integration
+- [x] VS Code extension
+- [x] Web dashboard (FastAPI + React)
+- [x] Plugin system (.nexus/ configuration)
+- [x] Fine-tuning pipeline integration
+- [x] Multi-agent cognitive evolution
+- [x] Design system (tokens, themes, CSS, ANSI)
+- [x] Auto model routing (hardware detection)
+- [x] CLI polish (startup animation, --quiet, colorized output)
+- [x] Shell security hardening (injection blocking)
+- [ ] JetBrains extension
 - [ ] Multi-agent collaboration
+- [ ] Asciinema demo recordings
 
 ---
 
@@ -468,7 +565,19 @@ src/nexus/
 
 Nexus exists because we believe the best code comes from collaboration — not delegation. The AI should think *with* you, not *instead* of you. It should explain its reasoning, show you diffs before touching files, let you branch conversations to explore alternatives, and remember what you decided and why.
 
-Cloud tools charge per token and lock you into their models. Nexus runs on your machine, with your models, at your pace. The intelligence is in the system — the routing, the stances, the branching, the project understanding — not in any single model's API.
+### Design Principles
+
+- **Calm confidence** — Smooth feedback, no frantic spinners, predictable animations
+- **Transparency** — Real-time thinking trace, tool calls visible, diffs before writes
+- **Human agency** — Trust levels, accept/reject, branch/merge — you're in control
+- **Consistency** — Single design language across CLI, TUI, web, IDE
+- **Local-first** — Your hardware, your models, your data, zero cloud dependency
+
+### Intelligence
+
+The intelligence is in the system — the routing, the stances, the branching, the project understanding — not in any single model's API. Nexus automatically routes tasks to the optimal model for your hardware, with explicit fallbacks so nothing breaks.
+
+Cloud tools charge per token and lock you into their models. Nexus runs on your machine, with your models, at your pace.
 
 ---
 
